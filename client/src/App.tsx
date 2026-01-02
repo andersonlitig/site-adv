@@ -10,6 +10,10 @@ import SocialSecurityLaw from "@/pages/SocialSecurityLaw";
 import TrafficLaw from "@/pages/TrafficLaw";
 import PassengerLaw from "@/pages/PassengerLaw";
 import BankingLaw from "@/pages/BankingLaw";
+import LaborLaw from "@/pages/LaborLaw";
+import FamilyLaw from "@/pages/FamilyLaw";
+import ConsumerLaw from "@/pages/ConsumerLaw";
+import CivilLiability from "@/pages/CivilLiability";
 
 function Router() {
   return (
@@ -20,6 +24,10 @@ function Router() {
       <Route path="/atuacao/transito" component={TrafficLaw} />
       <Route path="/atuacao/passageiro" component={PassengerLaw} />
       <Route path="/atuacao/bancario" component={BankingLaw} />
+      <Route path="/atuacao/direito-do-trabalho" component={LaborLaw} />
+      <Route path="/atuacao/familia" component={FamilyLaw} />
+      <Route path="/atuacao/consumidor" component={ConsumerLaw} />
+      <Route path="/atuacao/responsabilidade-civil" component={CivilLiability} />
       <Route component={NotFound} />
     </Switch>
   );
