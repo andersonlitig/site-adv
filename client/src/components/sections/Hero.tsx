@@ -35,10 +35,10 @@ export default function Hero() {
           className="border border-white/20 bg-[#091D39]/40 backdrop-blur-sm p-8 md:p-16"
         >
           <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight font-heading mb-6 tracking-tight">
-            Soluções Jurídicas de Alta Performance para Todo o Brasil.
+            Advocacia técnica com a atenção que o seu caso exige.
           </h1>
           <h2 className="text-lg md:text-xl text-gray-300 font-light mb-10 max-w-2xl mx-auto leading-relaxed">
-            Estratégia, técnica e inovação na defesa do seu Patrimônio, Saúde e Direitos.
+            Atuação estratégica, ética e próxima para defender os seus interesses com segurança jurídica.
           </h2>
           
           <motion.a
