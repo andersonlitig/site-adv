@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus, ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 
 const services = [
   {
@@ -224,9 +225,17 @@ export default function Services() {
                       ))}
                     </ul>
                     <div className="mt-8">
-                      <button className="w-full bg-[#CFAE70] text-[#091D39] py-3 text-xs font-bold uppercase tracking-widest hover:bg-white transition-colors">
-                        Saber Mais
-                      </button>
+                      {service.id === 1 ? (
+                        <Link href="/atuacao/direito-da-saude">
+                          <a className="block w-full text-center bg-[#CFAE70] text-[#091D39] py-3 text-xs font-bold uppercase tracking-widest hover:bg-white transition-colors">
+                            Saber Mais
+                          </a>
+                        </Link>
+                      ) : (
+                        <button className="w-full bg-[#CFAE70] text-[#091D39] py-3 text-xs font-bold uppercase tracking-widest hover:bg-white transition-colors">
+                          Saber Mais
+                        </button>
+                      )}
                     </div>
                   </motion.div>
                 )}
