@@ -1,0 +1,240 @@
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Plus, Minus, ArrowRight } from "lucide-react";
+
+const services = [
+  {
+    id: 1,
+    title: "Direito da Saúde",
+    subtitle: "Defesa do Paciente",
+    details: [
+      "Negativas de tratamentos, cirurgias e medicamentos de alto custo",
+      "Reajustes abusivos de mensalidade",
+      "Erro médico e hospitalar",
+      "Home Care (internação domiciliar)",
+      "Cancelamento indevido de plano de saúde"
+    ]
+  },
+  {
+    id: 2,
+    title: "Direito Previdenciário",
+    subtitle: "INSS e Regime Próprio",
+    details: [
+      "Aposentadorias (Idade, Tempo de Contribuição, Especial)",
+      "Benefício de Prestação Continuada (BPC/LOAS)",
+      "Auxílio-doença e Aposentadoria por invalidez",
+      "Planejamento Previdenciário",
+      "Revisão de benefícios"
+    ]
+  },
+  {
+    id: 3,
+    title: "Direito de Trânsito",
+    subtitle: "Defesa de Condutores",
+    details: [
+      "Defesa em Lei Seca (Bafômetro)",
+      "Suspensão e Cassação da CNH",
+      "Recurso de Multas Graves",
+      "Acidentes de trânsito (Indenizações)"
+    ]
+  },
+  {
+    id: 4,
+    title: "Direito do Passageiro",
+    subtitle: "Problemas Aéreos",
+    details: [
+      "Cancelamento e atraso de voo",
+      "Extravio de bagagem",
+      "Overbooking",
+      "Reembolso de passagens"
+    ]
+  },
+  {
+    id: 5,
+    title: "Direito Bancário",
+    subtitle: "Defesa contra Abusos",
+    details: [
+      "Juros abusivos em contratos",
+      "Golpe do Pix e Fraudes bancárias",
+      "Defesa em Busca e Apreensão de Veículos",
+      "Negativação indevida (SPC/Serasa)"
+    ]
+  },
+  {
+    id: 6,
+    title: "Direito do Trabalho",
+    subtitle: "Defesa do Empregado",
+    details: [
+      "Reversão de Justa Causa",
+      "Reconhecimento de Vínculo Empregatício",
+      "Acidente de Trabalho e Doença Ocupacional",
+      "Rescisão Indireta",
+      "Horas Extras e Adicionais"
+    ]
+  },
+  {
+    id: 7,
+    title: "Direito da Família",
+    subtitle: "Sucessões e Divórcios",
+    details: [
+      "Divórcio e Dissolução de União Estável",
+      "Pensão Alimentícia (Fixação, Revisão e Exoneração)",
+      "Guarda e Regulamentação de Visitas",
+      "Inventário e Partilha de Bens",
+      "Testamentos"
+    ]
+  },
+  {
+    id: 8,
+    title: "Direito do Consumidor",
+    subtitle: "Relações de Consumo",
+    details: [
+      "Produtos com defeito",
+      "Publicidade enganosa",
+      "Problemas com compras online",
+      "Cobranças indevidas"
+    ]
+  },
+  {
+    id: 9,
+    title: "Responsabilidade Civil",
+    subtitle: "Indenizações",
+    details: [
+      "Danos morais e materiais",
+      "Danos estéticos",
+      "Ofensas em redes sociais",
+      "Violação de direitos de imagem"
+    ]
+  },
+  {
+    id: 10,
+    title: "Direito Imobiliário",
+    subtitle: "Imóveis e Contratos",
+    details: [
+      "Contratos de Compra e Venda",
+      "Atraso na entrega de imóvel na planta",
+      "Despejo e Cobrança de Aluguel",
+      "Usucapião"
+    ]
+  },
+  {
+    id: 11,
+    title: "Direito Contratual",
+    subtitle: "Análise e Elaboração",
+    details: [
+      "Elaboração de contratos seguros",
+      "Revisão de cláusulas contratuais",
+      "Distratos e Rescisões",
+      "Execução de contratos"
+    ]
+  },
+  {
+    id: 12,
+    title: "Direito Criminal",
+    subtitle: "Defesa Penal",
+    details: [
+      "Acompanhamento em Delegacia",
+      "Defesa em Processo Criminal",
+      "Audiência de Custódia",
+      "Habeas Corpus"
+    ]
+  },
+  {
+    id: 13,
+    title: "Direito Administrativo",
+    subtitle: "Relação com o Estado",
+    details: [
+      "Concursos Públicos (Recursos e Mandado de Segurança)",
+      "Processo Administrativo Disciplinar (PAD)",
+      "Licitações e Contratos Administrativos"
+    ]
+  },
+  {
+    id: 14,
+    title: "Direito Digital",
+    subtitle: "Internet e Tecnologia",
+    details: [
+      "Recuperação de Contas em Redes Sociais",
+      "Crimes Virtuais",
+      "Marco Civil da Internet",
+      "LGPD (Lei Geral de Proteção de Dados)"
+    ]
+  }
+];
+
+export default function Services() {
+  const [expandedId, setExpandedId] = useState<number | null>(null);
+
+  const toggleExpand = (id: number) => {
+    setExpandedId(expandedId === id ? null : id);
+  };
+
+  return (
+    <section id="services" className="bg-[#2C2C2C] py-24 text-white">
+      <div className="container mx-auto px-4 md:px-8 mb-16">
+        <h2 className="text-4xl font-bold font-heading uppercase tracking-tighter text-white border-l-4 border-[#CFAE70] pl-6">
+          Catálogo de Serviços
+        </h2>
+      </div>
+
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-[#404040] border border-[#404040]">
+          {services.map((service) => (
+            <motion.div
+              key={service.id}
+              className={`bg-[#091D39] p-8 md:p-10 cursor-pointer transition-all duration-300 hover:bg-[#0D2647] flex flex-col justify-between group ${
+                expandedId === service.id ? "bg-[#0B2242] ring-1 ring-[#CFAE70] z-10" : ""
+              }`}
+              onClick={() => toggleExpand(service.id)}
+              layout
+            >
+              <div>
+                <div className="flex justify-between items-start mb-4">
+                  <span className="text-[#CFAE70] font-mono text-sm tracking-widest opacity-60">
+                    {String(service.id).padStart(2, '0')}
+                  </span>
+                  <div className="text-[#CFAE70]">
+                    {expandedId === service.id ? <Minus size={20} /> : <Plus size={20} />}
+                  </div>
+                </div>
+                
+                <h3 className="text-xl font-bold uppercase tracking-wider mb-2 text-white group-hover:text-[#CFAE70] transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-gray-400 text-sm font-light uppercase tracking-wide mb-6">
+                  {service.subtitle}
+                </p>
+              </div>
+
+              <AnimatePresence>
+                {expandedId === service.id && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    className="overflow-hidden"
+                  >
+                    <div className="w-full h-[1px] bg-white/10 my-4" />
+                    <ul className="space-y-3">
+                      {service.details.map((detail, idx) => (
+                        <li key={idx} className="flex items-start gap-3 text-sm text-gray-300">
+                          <ArrowRight size={14} className="mt-1 text-[#CFAE70] shrink-0" />
+                          <span>{detail}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="mt-8">
+                      <button className="w-full bg-[#CFAE70] text-[#091D39] py-3 text-xs font-bold uppercase tracking-widest hover:bg-white transition-colors">
+                        Saber Mais
+                      </button>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
