@@ -1,7 +1,8 @@
 import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/sections/Hero";
-import Introduction from "@/components/sections/Introduction";
+import HowWeAct from "@/components/sections/HowWeAct";
 import Services from "@/components/sections/Services";
+import Blog from "@/components/sections/Blog";
 import Footer from "@/components/layout/Footer";
 
 export default function Home() {
@@ -10,8 +11,9 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <Introduction />
+        <HowWeAct />
         <Services />
+        <Blog />
       </main>
       <Footer />
     </div>
