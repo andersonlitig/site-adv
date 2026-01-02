@@ -5,23 +5,23 @@ export default function HowWeAct() {
   const pillars = [
     {
       icon: <Target size={24} />,
-      title: "Alta Performance",
-      description: "Estratégias jurídicas personalizadas com foco absoluto em resultados concretos e defesa rigorosa."
+      title: "Excelência Técnica",
+      description: "Aplicação rigorosa do conhecimento jurídico com foco na melhor estratégia consultiva e contenciosa."
     },
     {
       icon: <Globe size={24} />,
-      title: "Atuação Digital",
-      description: "Aproveitamos o máximo da tecnologia para oferecer atendimento ágil e eficiente em todo o território nacional."
+      title: "Inovação Jurídica",
+      description: "Utilizamos recursos tecnológicos para garantir celeridade e transparência no acompanhamento das demandas."
     },
     {
       icon: <Users size={24} />,
-      title: "Foco no Cliente",
-      description: "Tratamos cada caso como único, com uma abordagem humanizada e comunicação transparente em todas as etapas."
+      title: "Atendimento Humanizado",
+      description: "Cada situação é tratada com empatia e clareza, mantendo o cliente sempre informado sobre os atos processuais."
     },
     {
       icon: <Shield size={24} />,
-      title: "Defesa Intransigente",
-      description: "Rigor técnico e ética inabalável na proteção do seu patrimônio, da sua saúde e dos seus direitos fundamentais."
+      title: "Ética e Integridade",
+      description: "Compromisso inabalável com o Código de Ética da OAB na proteção de direitos fundamentais e patrimoniais."
     }
   ];
 
@@ -69,24 +69,6 @@ export default function HowWeAct() {
                 </motion.div>
               ))}
             </div>
-
-            <motion.div 
-              className="mt-16 p-10 bg-[#091D39] text-white flex flex-col md:flex-row items-center justify-between gap-8 border-l-8 border-[#CFAE70]"
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-            >
-              <div className="max-w-md">
-                <h4 className="text-xl font-bold uppercase tracking-widest mb-2">Atendimento Especializado</h4>
-                <p className="text-gray-400 text-sm italic leading-relaxed">Esclareça suas dúvidas sobre a atuação técnica do escritório e os procedimentos para o seu caso.</p>
-              </div>
-              <a 
-                href="#footer"
-                className="bg-[#CFAE70] text-[#091D39] px-10 py-4 font-bold uppercase tracking-widest hover:bg-white transition-all whitespace-nowrap"
-              >
-                Falar com a Equipe
-              </a>
-            </motion.div>
           </div>
         
         </div>
