@@ -1,10 +1,23 @@
 import { motion } from "framer-motion";
-import { ArrowLeft, CheckCircle2, MessageCircle, Landmark, Scale, FileText, UserCheck, Calculator, Briefcase, History, HelpCircle, ShieldCheck, ChevronRight, Gavel } from "lucide-react";
+import { ArrowLeft, CheckCircle2, MessageCircle, Landmark, Scale, FileText, UserCheck, Calculator, Briefcase, History, HelpCircle, ShieldCheck, ChevronRight, Gavel, TrendingUp, ShieldAlert } from "lucide-react";
 import { Link } from "wouter";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 export default function SocialSecurityLaw() {
+  const highlightBoxes = [
+    {
+      title: "Cálculos Previdenciários",
+      description: "Utilizamos ferramentas de análise para projetar cenários e regras aplicáveis, visando a eficiência no requerimento.",
+      icon: <Calculator className="text-[#CFAE70]" size={32} />
+    },
+    {
+      title: "Servidor Público (RPPS)",
+      description: "Análise especializada para regimes próprios, observando os critérios de paridade, integralidade e tempos de averbação.",
+      icon: <Landmark className="text-[#CFAE70]" size={32} />
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-[#E8E8E8] text-[#0D0D0D]">
       <Navbar />
@@ -31,7 +44,7 @@ export default function SocialSecurityLaw() {
                 <span className="text-[#CFAE70]">Direito Previdenciário</span>
               </h1>
               <p className="text-xl text-gray-300 font-light leading-relaxed max-w-3xl">
-                Planejamos e buscamos a melhor regra de transição para sua aposentadoria, com foco na proteção do seu histórico contributivo junto ao INSS e Regimes Próprios.
+                Planejamos e buscamos a melhor regra de transição para sua aposentadoria, com foco na proteção do seu histórico contributivo.
               </p>
             </div>
           </div>
@@ -45,24 +58,19 @@ export default function SocialSecurityLaw() {
                   <h2 className="text-3xl font-bold font-heading uppercase tracking-tighter mb-8 text-[#091D39]">Planejamento de Inativação</h2>
                   <div className="prose prose-lg text-[#2C2C2C] font-light leading-relaxed max-w-none space-y-6">
                     <p>
-                      O <strong>Planejamento Previdenciário</strong> é fundamental para identificar o momento em que as regras de transição favorecem o segurado. Nossa atuação foca na análise técnica de vínculos e contribuições para assegurar que cada período seja devidamente computado.
+                      O <strong>Planejamento Previdenciário</strong> é fundamental para identificar o momento em que as regras de transição favorecem o segurado.
                     </p>
                   </div>
                 </div>
 
                 <div className="grid sm:grid-cols-2 gap-8 mb-20">
-                  <div className="bg-white p-8 border-l-4 border-[#CFAE70] shadow-sm">
-                    <h3 className="text-xl font-bold uppercase tracking-tighter text-[#091D39] mb-4">Cálculos Previdenciários</h3>
-                    <p className="text-gray-500 text-sm leading-relaxed">
-                      Utilizamos ferramentas de análise para projetar cenários e regras aplicáveis, visando a eficiência no requerimento do benefício.
-                    </p>
-                  </div>
-                  <div className="bg-white p-8 border-l-4 border-[#CFAE70] shadow-sm">
-                    <h3 className="text-xl font-bold uppercase tracking-tighter text-[#091D39] mb-4">Servidor Público (RPPS)</h3>
-                    <p className="text-gray-500 text-sm leading-relaxed">
-                      Análise especializada para regimes próprios de previdência, observando os critérios de paridade, integralidade e tempos de averbação.
-                    </p>
-                  </div>
+                  {highlightBoxes.map((box, idx) => (
+                    <div key={idx} className="bg-white p-10 border border-gray-100 shadow-sm hover:shadow-md transition-shadow group">
+                      <div className="mb-6 group-hover:scale-110 transition-transform duration-300">{box.icon}</div>
+                      <h3 className="text-xl font-bold uppercase tracking-tighter text-[#091D39] mb-4">{box.title}</h3>
+                      <p className="text-gray-500 text-sm leading-relaxed">{box.description}</p>
+                    </div>
+                  ))}
                 </div>
 
                 <h2 className="text-3xl font-bold font-heading uppercase tracking-tighter mb-12 text-[#091D39]">Frentes de Atuação Técnica</h2>
@@ -72,30 +80,12 @@ export default function SocialSecurityLaw() {
                     <h4 className="text-xs font-bold uppercase tracking-[0.3em] text-[#CFAE70] mb-8">Aposentadorias e Pensões</h4>
                     <div className="grid sm:grid-cols-2 gap-y-4 gap-x-8">
                       {[
-                        "Aposentadoria por Tempo de Contribuição (Transição)",
-                        "Aposentadoria Especial (Agentes Nocivos)",
+                        "Aposentadoria por Tempo de Contribuição",
+                        "Aposentadoria Especial",
                         "Aposentadoria por Idade Urbana e Rural",
                         "Aposentadoria da Pessoa com Deficiência",
-                        "Pensão por Morte (Cálculo e Acumulação)",
+                        "Pensão por Morte",
                         "Auxílio-Doença e Invalidez"
-                      ].map((item, i) => (
-                        <div key={i} className="flex gap-4 items-center py-2 border-b border-gray-50 last:border-0">
-                          <CheckCircle2 size={16} className="text-[#CFAE70] shrink-0" />
-                          <span className="text-sm font-medium text-gray-700">{item}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="bg-white p-10 border border-gray-100 shadow-sm">
-                    <h4 className="text-xs font-bold uppercase tracking-[0.3em] text-[#CFAE70] mb-8">Gestão de Histórico</h4>
-                    <div className="grid sm:grid-cols-2 gap-y-4 gap-x-8">
-                      {[
-                        "Acerto de CNIS e Retificação de Vínculos",
-                        "Averbação de Tempo de Serviço Militar e Rural",
-                        "Conversão de Tempo Especial em Comum",
-                        "Revisão de Benefícios Já Concedidos",
-                        "BPC/LOAS (Idoso e Deficiente)"
                       ].map((item, i) => (
                         <div key={i} className="flex gap-4 items-center py-2 border-b border-gray-50 last:border-0">
                           <CheckCircle2 size={16} className="text-[#CFAE70] shrink-0" />
@@ -112,11 +102,15 @@ export default function SocialSecurityLaw() {
                   <div className="bg-[#0D0D0D] p-10 text-white border-l-8 border-[#CFAE70]">
                     <h3 className="text-2xl font-bold uppercase tracking-tighter mb-6 leading-tight">Análise Técnica</h3>
                     <p className="text-gray-400 text-sm mb-10 leading-relaxed">
-                      Atendimento especializado para verificação da regularidade de dados previdenciários e histórico contributivo.
+                      Atendimento especializado para verificação da regularidade de dados previdenciários.
                     </p>
-                    <div className="space-y-4">
-                      <a href="https://wa.me/5527999999999" target="_blank" className="flex items-center justify-center gap-3 w-full bg-[#25D366] text-white py-4 font-bold uppercase tracking-widest hover:bg-[#128C7E] transition-all"><MessageCircle size={20} /> WhatsApp</a>
-                      <a href="#footer" className="flex items-center justify-center gap-3 w-full bg-[#CFAE70] text-[#091D39] py-4 font-bold uppercase tracking-widest hover:bg-white transition-all shadow-lg shadow-[#CFAE70]/20">Falar com Advogado</a>
+                    <div className="flex flex-col gap-4">
+                      <a href="https://wa.me/5527999999999" target="_blank" className="flex items-center justify-center gap-3 w-full bg-[#25D366] text-white py-5 px-6 font-bold uppercase tracking-widest hover:bg-[#128C7E] transition-all shadow-lg">
+                        <MessageCircle size={20} /> WhatsApp
+                      </a>
+                      <a href="#footer" className="flex items-center justify-center gap-3 w-full bg-[#CFAE70] text-[#091D39] py-5 px-6 font-bold uppercase tracking-widest hover:bg-white transition-all shadow-lg">
+                        Falar com Advogado
+                      </a>
                     </div>
                   </div>
                 </div>

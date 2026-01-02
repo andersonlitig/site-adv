@@ -1,10 +1,23 @@
 import { motion } from "framer-motion";
-import { ArrowLeft, CheckCircle2, MessageCircle, Car, AlertTriangle, ShieldCheck, Map, FileWarning, Search, Zap, HelpCircle, ChevronRight } from "lucide-react";
+import { ArrowLeft, CheckCircle2, MessageCircle, Car, AlertTriangle, ShieldCheck, Map, FileWarning, Search, Zap, HelpCircle, ChevronRight, Scale } from "lucide-react";
 import { Link } from "wouter";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 export default function TrafficLaw() {
+  const highlightBoxes = [
+    {
+      title: "Lei Seca",
+      description: "Atuação técnica em casos de autuações do Art. 165 e 165-A do CTB, observando as formalidades exigidas pelos órgãos de trânsito.",
+      icon: <AlertTriangle className="text-[#CFAE70]" size={32} />
+    },
+    {
+      title: "Suspensão de CNH",
+      description: "Defesa em processos de suspensão por pontuação ou infrações específicas, visando a manutenção do direito de dirigir.",
+      icon: <Scale className="text-[#CFAE70]" size={32} />
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-[#E8E8E8] text-[#0D0D0D]">
       <Navbar />
@@ -31,7 +44,7 @@ export default function TrafficLaw() {
                 <span className="text-[#CFAE70]">de Condutores</span>
               </h1>
               <p className="text-xl text-gray-300 font-light leading-relaxed max-w-3xl">
-                Atuamos na defesa contra multas e processos de suspensão ou cassação da CNH. Nossa prática foca na estrita legalidade dos atos administrativos para a proteção do direito de dirigir.
+                Atuamos na defesa contra multas e processos de suspensão ou cassação da CNH. Nossa prática foca na estrita legalidade dos atos administrativos.
               </p>
             </div>
           </div>
@@ -45,24 +58,19 @@ export default function TrafficLaw() {
                   <h2 className="text-3xl font-bold font-heading uppercase tracking-tighter mb-8 text-[#091D39]">Regularidade Administrativa</h2>
                   <div className="prose prose-lg text-[#2C2C2C] font-light leading-relaxed max-w-none space-y-6">
                     <p>
-                      Muitas autuações apresentam <strong>vícios de legalidade</strong>. A análise técnica do auto de infração e do cumprimento dos protocolos vigentes é essencial para questionar penalidades administrativas irregulares e proteger o prontuário do condutor.
+                      Muitas autuações apresentam <strong>vícios de legalidade</strong>. A análise técnica do auto de infração é essencial para questionar penalidades administrativas irregulares.
                     </p>
                   </div>
                 </div>
 
                 <div className="grid sm:grid-cols-2 gap-8 mb-20">
-                  <div className="bg-white p-8 border-l-4 border-[#CFAE70] shadow-sm">
-                    <h3 className="text-xl font-bold uppercase tracking-tighter text-[#091D39] mb-4">Lei Seca</h3>
-                    <p className="text-gray-500 text-sm leading-relaxed">
-                      Atuação técnica em casos de autuações do Art. 165 e 165-A do CTB, observando as formalidades exigidas pelos órgãos de trânsito.
-                    </p>
-                  </div>
-                  <div className="bg-white p-8 border-l-4 border-[#CFAE70] shadow-sm">
-                    <h3 className="text-xl font-bold uppercase tracking-tighter text-[#091D39] mb-4">Suspensão de CNH</h3>
-                    <p className="text-gray-500 text-sm leading-relaxed">
-                      Defesa em processos de suspensão por pontuação ou infrações específicas, visando a manutenção do direito de dirigir.
-                    </p>
-                  </div>
+                  {highlightBoxes.map((box, idx) => (
+                    <div key={idx} className="bg-white p-10 border border-gray-100 shadow-sm hover:shadow-md transition-shadow group">
+                      <div className="mb-6 group-hover:scale-110 transition-transform duration-300">{box.icon}</div>
+                      <h3 className="text-xl font-bold uppercase tracking-tighter text-[#091D39] mb-4">{box.title}</h3>
+                      <p className="text-gray-500 text-sm leading-relaxed">{box.description}</p>
+                    </div>
+                  ))}
                 </div>
 
                 <h2 className="text-3xl font-bold font-heading uppercase tracking-tighter mb-12 text-[#091D39]">Frentes de Atuação Técnica</h2>
@@ -94,13 +102,17 @@ export default function TrafficLaw() {
               <div className="md:col-span-4">
                 <div className="sticky top-32 space-y-8">
                   <div className="bg-[#0D0D0D] p-10 text-white border-l-8 border-[#CFAE70]">
-                    <h3 className="text-2xl font-bold uppercase tracking-tighter mb-6 leading-tight">Análise de Prontuário</h3>
+                    <h3 className="text-2xl font-bold uppercase tracking-tighter mb-6 leading-tight">Suporte Técnico</h3>
                     <p className="text-gray-400 text-sm mb-10 leading-relaxed">
-                      Atendimento especializado para verificação da regularidade de notificações e processos administrativos de trânsito.
+                      Atendimento especializado para verificação da regularidade de notificações de trânsito.
                     </p>
-                    <div className="space-y-4">
-                      <a href="https://wa.me/5527999999999" target="_blank" className="flex items-center justify-center gap-3 w-full bg-[#25D366] text-white py-4 font-bold uppercase tracking-widest hover:bg-[#128C7E] transition-all"><MessageCircle size={20} /> WhatsApp</a>
-                      <a href="#footer" className="flex items-center justify-center gap-3 w-full bg-[#CFAE70] text-[#091D39] py-4 font-bold uppercase tracking-widest hover:bg-white transition-all shadow-lg shadow-[#CFAE70]/20">Falar com Advogado</a>
+                    <div className="flex flex-col gap-4">
+                      <a href="https://wa.me/5527999999999" target="_blank" className="flex items-center justify-center gap-3 w-full bg-[#25D366] text-white py-5 px-6 font-bold uppercase tracking-widest hover:bg-[#128C7E] transition-all shadow-lg">
+                        <MessageCircle size={20} /> WhatsApp
+                      </a>
+                      <a href="#footer" className="flex items-center justify-center gap-3 w-full bg-[#CFAE70] text-[#091D39] py-5 px-6 font-bold uppercase tracking-widest hover:bg-white transition-all shadow-lg">
+                        Falar com Advogado
+                      </a>
                     </div>
                   </div>
                 </div>

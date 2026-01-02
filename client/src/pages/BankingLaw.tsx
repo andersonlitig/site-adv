@@ -5,6 +5,19 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 export default function BankingLaw() {
+  const highlightBoxes = [
+    {
+      title: "Revisão de Juros",
+      description: "Análise técnica de encargos contratuais em financiamentos e créditos pessoais para verificação de conformidade.",
+      icon: <Gavel className="text-[#CFAE70]" size={32} />
+    },
+    {
+      title: "Segurança Digital",
+      description: "Atuação em casos de falhas na segurança bancária que resultam em prejuízos financeiros ao correntista.",
+      icon: <ShieldAlert className="text-[#CFAE70]" size={32} />
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-[#E8E8E8] text-[#0D0D0D]">
       <Navbar />
@@ -31,7 +44,7 @@ export default function BankingLaw() {
                 <span className="text-[#CFAE70]">Consumidor Bancário</span>
               </h1>
               <p className="text-xl text-gray-300 font-light leading-relaxed max-w-3xl">
-                Atuamos tecnicamente para questionar abusividades contratuais e falhas de segurança no sistema financeiro, buscando o reequilíbrio das relações bancárias.
+                Atuamos tecnicamente para questionar abusividades contratuais e falhas de segurança no sistema financeiro.
               </p>
             </div>
           </div>
@@ -45,24 +58,19 @@ export default function BankingLaw() {
                   <h2 className="text-3xl font-bold font-heading uppercase tracking-tighter mb-8 text-[#091D39]">Equilíbrio Contratual</h2>
                   <div className="prose prose-lg text-[#2C2C2C] font-light leading-relaxed max-w-none space-y-6">
                     <p>
-                      Contratos bancários de adesão podem conter <strong>tarifas e juros</strong> em desacordo com as médias de mercado. A análise técnica do contrato visa identificar cláusulas que gerem desvantagem excessiva ao consumidor ou falhas na prestação de serviço digital.
+                      Contratos bancários podem conter tarifas e juros em desacordo com as médias de mercado.
                     </p>
                   </div>
                 </div>
 
                 <div className="grid sm:grid-cols-2 gap-8 mb-20">
-                  <div className="bg-white p-8 border-l-4 border-[#CFAE70] shadow-sm">
-                    <h3 className="text-xl font-bold uppercase tracking-tighter text-[#091D39] mb-4">Revisão de Juros</h3>
-                    <p className="text-gray-500 text-sm leading-relaxed">
-                      Análise técnica de encargos contratuais em financiamentos e créditos pessoais para verificação de conformidade.
-                    </p>
-                  </div>
-                  <div className="bg-white p-8 border-l-4 border-[#CFAE70] shadow-sm">
-                    <h3 className="text-xl font-bold uppercase tracking-tighter text-[#091D39] mb-4">Segurança Digital</h3>
-                    <p className="text-gray-500 text-sm leading-relaxed">
-                      Atuação em casos de falhas na segurança bancária que resultam em prejuízos financeiros ao correntista.
-                    </p>
-                  </div>
+                  {highlightBoxes.map((box, idx) => (
+                    <div key={idx} className="bg-white p-10 border border-gray-100 shadow-sm hover:shadow-md transition-shadow group">
+                      <div className="mb-6 group-hover:scale-110 transition-transform duration-300">{box.icon}</div>
+                      <h3 className="text-xl font-bold uppercase tracking-tighter text-[#091D39] mb-4">{box.title}</h3>
+                      <p className="text-gray-500 text-sm leading-relaxed">{box.description}</p>
+                    </div>
+                  ))}
                 </div>
 
                 <h2 className="text-3xl font-bold font-heading uppercase tracking-tighter mb-12 text-[#091D39]">Frentes de Atuação Técnica</h2>
@@ -96,11 +104,15 @@ export default function BankingLaw() {
                   <div className="bg-[#0D0D0D] p-10 text-white border-l-8 border-[#CFAE70]">
                     <h3 className="text-2xl font-bold uppercase tracking-tighter mb-6 leading-tight">Análise Contratual</h3>
                     <p className="text-gray-400 text-sm mb-10 leading-relaxed">
-                      Atendimento especializado para verificação da conformidade de taxas e tarifas em contratos financeiros.
+                      Atendimento especializado para verificação da conformidade de taxas e tarifas financeiras.
                     </p>
-                    <div className="space-y-4">
-                      <a href="https://wa.me/5527999999999" target="_blank" className="flex items-center justify-center gap-3 w-full bg-[#25D366] text-white py-4 font-bold uppercase tracking-widest hover:bg-[#128C7E] transition-all"><MessageCircle size={20} /> WhatsApp</a>
-                      <a href="#footer" className="flex items-center justify-center gap-3 w-full bg-[#CFAE70] text-[#091D39] py-4 font-bold uppercase tracking-widest hover:bg-white transition-all shadow-lg shadow-[#CFAE70]/20">Falar com Advogado</a>
+                    <div className="flex flex-col gap-4">
+                      <a href="https://wa.me/5527999999999" target="_blank" className="flex items-center justify-center gap-3 w-full bg-[#25D366] text-white py-5 px-6 font-bold uppercase tracking-widest hover:bg-[#128C7E] transition-all shadow-lg">
+                        <MessageCircle size={20} /> WhatsApp
+                      </a>
+                      <a href="#footer" className="flex items-center justify-center gap-3 w-full bg-[#CFAE70] text-[#091D39] py-5 px-6 font-bold uppercase tracking-widest hover:bg-white transition-all shadow-lg">
+                        Falar com Advogado
+                      </a>
                     </div>
                   </div>
                 </div>

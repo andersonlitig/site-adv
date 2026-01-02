@@ -5,6 +5,19 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 export default function HealthLaw() {
+  const highlightBoxes = [
+    {
+      title: "Liminares de Urgência",
+      description: "Em situações de risco iminente, nossa estratégia foca na busca por medidas que garantam o início imediato do tratamento.",
+      icon: <Activity className="text-[#CFAE70]" size={32} />
+    },
+    {
+      title: "Análise do Rol da ANS",
+      description: "Dominamos as teses jurídicas sobre a natureza do Rol da ANS para questionar negativas fundamentadas em critérios administrativos.",
+      icon: <Scale className="text-[#CFAE70]" size={32} />
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-[#E8E8E8] text-[#0D0D0D]">
       <Navbar />
@@ -31,7 +44,7 @@ export default function HealthLaw() {
                 <span className="text-[#CFAE70]">Direito à Saúde</span>
               </h1>
               <p className="text-xl text-gray-300 font-light leading-relaxed max-w-3xl">
-                Atuamos na linha de frente para garantir o acesso a tratamentos, medicamentos e procedimentos essenciais. Nossa prática é pautada pelo rigor jurídico e pela urgência que a saúde demanda, assegurando que a conformidade técnica prevaleça.
+                Atuamos na linha de frente para garantir o acesso a tratamentos, medicamentos e procedimentos essenciais. Nossa prática é pautada pelo rigor jurídico e pela urgência que a saúde demanda.
               </p>
             </div>
           </div>
@@ -45,24 +58,19 @@ export default function HealthLaw() {
                   <h2 className="text-3xl font-bold font-heading uppercase tracking-tighter mb-8 text-[#091D39]">O Cenário das Negativas</h2>
                   <div className="prose prose-lg text-[#2C2C2C] font-light leading-relaxed max-w-none space-y-6">
                     <p>
-                      Muitas operadoras fundamentam suas negativas no <strong>"Rol da ANS"</strong>. Contudo, o entendimento consolidado é de que, havendo prescrição médica fundamentada e evidência científica, a cobertura deve ser avaliada sob o prisma da necessidade clínica do paciente.
+                      Muitas operadoras fundamentam suas negativas no <strong>"Rol da ANS"</strong>. Contudo, o entendimento consolidado é de que a cobertura deve ser avaliada sob o prisma da necessidade clínica do paciente.
                     </p>
                   </div>
                 </div>
 
                 <div className="grid sm:grid-cols-2 gap-8 mb-20">
-                  <div className="bg-white p-8 border-l-4 border-[#CFAE70] shadow-sm">
-                    <h3 className="text-xl font-bold uppercase tracking-tighter text-[#091D39] mb-4">Ações de Urgência</h3>
-                    <p className="text-gray-500 text-sm leading-relaxed">
-                      Em situações de risco iminente, nossa estratégia foca na busca por medidas que garantam o início imediato do tratamento, respeitando os prazos e urgências médicas.
-                    </p>
-                  </div>
-                  <div className="bg-white p-8 border-l-4 border-[#CFAE70] shadow-sm">
-                    <h3 className="text-xl font-bold uppercase tracking-tighter text-[#091D39] mb-4">Análise do Rol da ANS</h3>
-                    <p className="text-gray-500 text-sm leading-relaxed">
-                      Dominamos as teses jurídicas sobre a natureza do Rol da ANS para questionar negativas fundamentadas exclusivamente em critérios administrativos.
-                    </p>
-                  </div>
+                  {highlightBoxes.map((box, idx) => (
+                    <div key={idx} className="bg-white p-10 border border-gray-100 shadow-sm hover:shadow-md transition-shadow group">
+                      <div className="mb-6 group-hover:scale-110 transition-transform duration-300">{box.icon}</div>
+                      <h3 className="text-xl font-bold uppercase tracking-tighter text-[#091D39] mb-4">{box.title}</h3>
+                      <p className="text-gray-500 text-sm leading-relaxed">{box.description}</p>
+                    </div>
+                  ))}
                 </div>
 
                 <h2 className="text-3xl font-bold font-heading uppercase tracking-tighter mb-12 text-[#091D39]">Frentes de Atuação Técnica</h2>
@@ -88,23 +96,6 @@ export default function HealthLaw() {
                       ))}
                     </div>
                   </div>
-
-                  <div className="bg-white p-10 border border-gray-100 shadow-sm">
-                    <h4 className="text-xs font-bold uppercase tracking-[0.3em] text-[#CFAE70] mb-8">Medicamentos e Insumos</h4>
-                    <div className="grid sm:grid-cols-2 gap-y-4 gap-x-8">
-                      {[
-                        "Fármacos biológicos e imunoterápicos",
-                        "Medicamentos de alto custo oncológicos",
-                        "Tratamentos de doenças raras e genéticas",
-                        "Insumos para diabetes e bombas de insulina"
-                      ].map((item, i) => (
-                        <div key={i} className="flex gap-4 items-center py-2 border-b border-gray-50 last:border-0">
-                          <CheckCircle2 size={16} className="text-[#CFAE70] shrink-0" />
-                          <span className="text-sm font-medium text-gray-700">{item}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
                 </div>
               </div>
 
@@ -113,11 +104,15 @@ export default function HealthLaw() {
                   <div className="bg-[#0D0D0D] p-10 text-white border-l-8 border-[#CFAE70]">
                     <h3 className="text-2xl font-bold uppercase tracking-tighter mb-6 leading-tight">Atendimento Especializado</h3>
                     <p className="text-gray-400 text-sm mb-10 leading-relaxed">
-                      Atuação consultiva focada na defesa técnica dos direitos do paciente e na garantia do acesso à saúde integral.
+                      Atuação consultiva focada na defesa técnica dos direitos do paciente.
                     </p>
-                    <div className="space-y-4">
-                      <a href="https://wa.me/5527999999999" target="_blank" className="flex items-center justify-center gap-3 w-full bg-[#25D366] text-white py-4 font-bold uppercase tracking-widest hover:bg-[#128C7E] transition-all"><MessageCircle size={20} /> WhatsApp</a>
-                      <a href="#footer" className="flex items-center justify-center gap-3 w-full bg-[#CFAE70] text-[#091D39] py-4 font-bold uppercase tracking-widest hover:bg-white transition-all shadow-lg shadow-[#CFAE70]/20">Falar com Advogado</a>
+                    <div className="flex flex-col gap-4">
+                      <a href="https://wa.me/5527999999999" target="_blank" className="flex items-center justify-center gap-3 w-full bg-[#25D366] text-white py-5 px-6 font-bold uppercase tracking-widest hover:bg-[#128C7E] transition-all shadow-lg">
+                        <MessageCircle size={20} /> WhatsApp
+                      </a>
+                      <a href="#footer" className="flex items-center justify-center gap-3 w-full bg-[#CFAE70] text-[#091D39] py-5 px-6 font-bold uppercase tracking-widest hover:bg-white transition-all shadow-lg">
+                        Falar com Advogado
+                      </a>
                     </div>
                   </div>
                 </div>
