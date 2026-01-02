@@ -255,6 +255,30 @@ export default function Services() {
                             Saber Mais
                           </a>
                         </Link>
+                      ) : service.id === 6 ? (
+                        <Link href="/atuacao/direito-do-trabalho">
+                          <a className="block w-full text-center bg-[#CFAE70] text-[#091D39] py-3 text-xs font-bold uppercase tracking-widest hover:bg-white transition-colors">
+                            Saber Mais
+                          </a>
+                        </Link>
+                      ) : service.id === 7 ? (
+                        <Link href="/atuacao/familia">
+                          <a className="block w-full text-center bg-[#CFAE70] text-[#091D39] py-3 text-xs font-bold uppercase tracking-widest hover:bg-white transition-colors">
+                            Saber Mais
+                          </a>
+                        </Link>
+                      ) : service.id === 8 ? (
+                        <Link href="/atuacao/consumidor">
+                          <a className="block w-full text-center bg-[#CFAE70] text-[#091D39] py-3 text-xs font-bold uppercase tracking-widest hover:bg-white transition-colors">
+                            Saber Mais
+                          </a>
+                        </Link>
+                      ) : service.id === 9 ? (
+                        <Link href="/atuacao/responsabilidade-civil">
+                          <a className="block w-full text-center bg-[#CFAE70] text-[#091D39] py-3 text-xs font-bold uppercase tracking-widest hover:bg-white transition-colors">
+                            Saber Mais
+                          </a>
+                        </Link>
                       ) : (
                         <button className="w-full bg-[#CFAE70] text-[#091D39] py-3 text-xs font-bold uppercase tracking-widest hover:bg-white transition-colors">
                           Saber Mais
