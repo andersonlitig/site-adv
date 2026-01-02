@@ -245,7 +245,7 @@ export default function Services() {
             <h3 className="text-lg font-bold uppercase tracking-widest text-white text-center mb-2">Outras Áreas</h3>
             <p className="text-gray-400 text-xs text-center mb-6 px-4">Consulte nossa equipe sobre demandas específicas em outras áreas do Direito.</p>
             <a href="#footer" className="text-[#CFAE70] text-xs font-bold uppercase tracking-widest border-b border-[#CFAE70] pb-1 hover:text-white hover:border-white transition-all">
-              Consultar Especialista
+              Consultar Canais Oficiais
             </a>
           </motion.div>
         </div>
