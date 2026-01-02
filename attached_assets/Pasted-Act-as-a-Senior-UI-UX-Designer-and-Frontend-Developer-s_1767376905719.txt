@@ -1,0 +1,84 @@
+Act as a Senior UI/UX Designer and Frontend Developer specialized in high-end legal websites.
+
+Create a modern, minimalist, ONE-PAGE portfolio website for an individual lawyer named "Anderson Litig".
+
+---
+### 1. DESIGN REFERENCES & AESTHETIC
+- **Primary Inspiration:** https://www.fass.legal/
+- **Other References (Analyze for "boxy" layout and vibe):**
+  - https://www.demarest.com.br/
+  - https://locatelliadv.com.br/
+  - https://bblaw.adv.br/
+  - https://www.mattosfilho.com.br/
+  - https://hoffmann.adv.br/
+
+- **Style:** "BOXY" layout, "Swiss Style", Editorial, Grid-based structure, Brutalist-Light.
+- **Key Visual Characteristic:** STRICTLY SQUARE EDGES. No rounded corners anywhere (border-radius: 0px). Buttons, inputs, containers, and cards must be sharp rectangular boxes.
+- **Typography:** Sans-serif, clean, high readability (e.g., Inter, Manrope, or Helvetica Now). Large headings, distinct hierarchy.
+- **Vibe:** Sober, Authoritative, Institutional, yet Modern.
+
+### 2. COLOR PALETTE (Strict Adherence)
+- **Primary (Azul Petróleo):** #091D39
+- **Secondary (Aço Sólido):** #2C2C2C
+- **Accent (Ouro Imperial):** #CFAE70
+- **Neutral Dark (Noir Supremo):** #0D0D0D
+- **Neutral Light (Platina Pura):** #E8E8E8
+- **White:** #FFFFFF
+
+### 3. COMPLIANCE (Brazilian OAB Rules)
+- Informative content only. No mercantile language.
+- CTA Buttons: "Agendar Consulta", "Fale com o Advogado".
+
+### 4. PAGE STRUCTURE (One Page Scroll)
+
+**A. Header/Nav (Sticky & Transparent initially):**
+- Logo (Top Left): Text-based "ANDERSON LITIG | Advocacia" (Small, discreet).
+- Links: O Escritório, Áreas de Atuação, Diferenciais, Contato.
+
+**B. Hero Section (Video Background):**
+- **Background:** Fullscreen video background using this specific YouTube video: https://www.youtube.com/watch?v=q1tGIyQMdg8
+- **Technical Requirement for Video:**
+  - Must be embedded as an iframe background.
+  - Settings: Autoplay, Muted, Loop, Controls=0, Modestbranding=1, Playsinline.
+  - CSS: `pointer-events: none` (to prevent user interaction with the video), `object-fit: cover`, absolute positioning, z-index: -1.
+- **Overlay:** Dark Blue/Black overlay (Opacity 70%) ON TOP of the video to ensure text readability.
+- **Content (Centered Box - NO PERSONAL NAME HERE):**
+  - Headline (H1, White, Bold): "Soluções Jurídicas de Alta Performance para Todo o Brasil."
+  - Subheadline (H2, Light Gray): "Estratégia, técnica e inovação na defesa do seu Patrimônio, Saúde e Direitos."
+  - Call to Action: "Agendar Atendimento Online" (Sharp rectangle, Gold border).
+
+**C. Introduction (About):**
+- Title: "O Escritório"
+- Text: "Com base sólida e atuação digital em território nacional, oferecemos defesa técnica rigorosa combinada com uma abordagem humanizada para o cidadão (B2C)."
+
+**D. Services Section (The Core - "BOXY GRID"):**
+- Title: "Catálogo de Serviços"
+- **Layout:** A strict Grid of rectangular cards. When a user clicks a card, it expands (accordion style) to show details.
+- **Content:**
+  [Insert the full list of 14 areas and their bullet points provided below exactly as written in Portuguese]
+  1. Direito da Saúde (Defesa do Paciente)... [Include all sub-items]
+  2. Direito Previdenciário... [Include all sub-items]
+  3. Direito de Trânsito...
+  4. Direito do Passageiro (Aéreo)...
+  5. Direito Bancário...
+  6. Direito do Trabalho...
+  7. Direito da Família e Sucessões...
+  8. Direito do Consumidor...
+  9. Responsabilidade Civil...
+  10. Direito Imobiliário...
+  11. Direito Contratual...
+  12. Direito Criminal...
+  13. Direito Administrativo...
+  14. Direito Digital...
+  (Ensure all descriptions provided are present).
+
+**E. Footer/Contact:**
+- Minimalist boxy form.
+- WhatsApp Button (Floating).
+- **OAB Compliance:** "Anderson Litig - OAB/ES 40.152 - Serra/ES".
+- Copyright 2025.
+
+### 5. TECHNICAL INSTRUCTIONS
+- Use React, Tailwind CSS, and Framer Motion.
+- **Video Implementation:** Use a robust method (like `react-youtube` or a custom iframe wrapper) to ensure the YouTube background plays automatically without sound.
+- **Boxy Design:** All elements must be squares or rectangles. No round buttons.
