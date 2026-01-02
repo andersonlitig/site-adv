@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
-import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
