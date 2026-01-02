@@ -41,7 +41,7 @@ export default function HowWeAct() {
                 Como <br /> Atuamos
               </h2>
               <p className="text-[#2C2C2C] text-lg font-light leading-relaxed">
-                Nossa metodologia combina a <span className="font-bold text-[#091D39]">tradição jurídica</span> com a <span className="italic">inovação tecnológica</span>, garantindo uma defesa técnica de elite para o cidadão moderno.
+                Nossa metodologia combina o <span className="font-bold text-[#091D39]">conhecimento jurídico</span> com a <span className="italic">eficiência tecnológica</span>, garantindo uma atuação técnica especializada voltada à preservação de direitos.
               </p>
             </motion.div>
           </div>
