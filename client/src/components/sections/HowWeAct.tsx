@@ -20,8 +20,8 @@ export default function HowWeAct() {
     },
     {
       icon: <Shield size={24} />,
-      title: "Ética e Integridade",
-      description: "Compromisso inabalável com o Código de Ética da OAB na proteção de direitos fundamentais e patrimoniais."
+      title: "Rigor Ético",
+      description: "Atuação pautada pela transparência e absoluta observância às normas de conduta profissional."
     }
   ];
 
