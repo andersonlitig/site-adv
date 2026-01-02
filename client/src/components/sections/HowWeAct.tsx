@@ -77,14 +77,14 @@ export default function HowWeAct() {
               viewport={{ once: true }}
             >
               <div className="max-w-md">
-                <h4 className="text-xl font-bold uppercase tracking-widest mb-2">Informações Institucionais</h4>
-                <p className="text-gray-400 text-sm italic leading-relaxed">Conteúdo estritamente informativo, destinado a esclarecer a atuação técnica do escritório sob as normas do Código de Ética da OAB.</p>
+                <h4 className="text-xl font-bold uppercase tracking-widest mb-2">Atendimento Especializado</h4>
+                <p className="text-gray-400 text-sm italic leading-relaxed">Esclareça suas dúvidas sobre a atuação técnica do escritório e os procedimentos para o seu caso.</p>
               </div>
               <a 
                 href="#footer"
                 className="bg-[#CFAE70] text-[#091D39] px-10 py-4 font-bold uppercase tracking-widest hover:bg-white transition-all whitespace-nowrap"
               >
-                Canais de Atendimento
+                Falar com a Equipe
               </a>
             </motion.div>
           </div>
