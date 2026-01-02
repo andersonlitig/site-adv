@@ -6,12 +6,20 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import HealthLaw from "@/pages/HealthLaw";
+import SocialSecurityLaw from "@/pages/SocialSecurityLaw";
+import TrafficLaw from "@/pages/TrafficLaw";
+import PassengerLaw from "@/pages/PassengerLaw";
+import BankingLaw from "@/pages/BankingLaw";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/atuacao/direito-da-saude" component={HealthLaw} />
+      <Route path="/atuacao/previdenciario" component={SocialSecurityLaw} />
+      <Route path="/atuacao/transito" component={TrafficLaw} />
+      <Route path="/atuacao/passageiro" component={PassengerLaw} />
+      <Route path="/atuacao/bancario" component={BankingLaw} />
       <Route component={NotFound} />
     </Switch>
   );
