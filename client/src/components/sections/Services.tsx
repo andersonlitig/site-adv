@@ -8,6 +8,7 @@ const services = [
     id: 1,
     title: "Direito da Saúde",
     subtitle: "Defesa do Paciente",
+    path: "/atuacao/direito-da-saude",
     details: [
       "Negativas de tratamentos, cirurgias e medicamentos de alto custo",
       "Reajustes abusivos de mensalidade",
@@ -20,6 +21,7 @@ const services = [
     id: 2,
     title: "Direito Previdenciário",
     subtitle: "INSS e Regime Próprio",
+    path: "/atuacao/previdenciario",
     details: [
       "Aposentadorias (Idade, Tempo de Contribuição, Especial)",
       "Benefício de Prestação Continuada (BPC/LOAS)",
@@ -32,6 +34,7 @@ const services = [
     id: 3,
     title: "Direito de Trânsito",
     subtitle: "Defesa de Condutores",
+    path: "/atuacao/transito",
     details: [
       "Defesa em Lei Seca (Bafômetro)",
       "Suspensão e Cassação da CNH",
@@ -43,6 +46,7 @@ const services = [
     id: 4,
     title: "Direito do Passageiro",
     subtitle: "Problemas Aéreos",
+    path: "/atuacao/passageiro",
     details: [
       "Cancelamento e atraso de voo",
       "Extravio de bagagem",
@@ -54,6 +58,7 @@ const services = [
     id: 5,
     title: "Direito Bancário",
     subtitle: "Defesa contra Abusos",
+    path: "/atuacao/bancario",
     details: [
       "Juros abusivos em contratos",
       "Golpe do Pix e Fraudes bancárias",
@@ -65,6 +70,7 @@ const services = [
     id: 6,
     title: "Direito do Trabalho",
     subtitle: "Defesa do Empregado",
+    path: "/atuacao/direito-do-trabalho",
     details: [
       "Reversão de Justa Causa",
       "Reconhecimento de Vínculo Empregatício",
@@ -77,6 +83,7 @@ const services = [
     id: 7,
     title: "Direito da Família",
     subtitle: "Sucessões e Divórcios",
+    path: "/atuacao/familia",
     details: [
       "Divórcio e Dissolução de União Estável",
       "Pensão Alimentícia (Fixação, Revisão e Exoneração)",
@@ -89,6 +96,7 @@ const services = [
     id: 8,
     title: "Direito do Consumidor",
     subtitle: "Relações de Consumo",
+    path: "/atuacao/consumidor",
     details: [
       "Produtos com defeito",
       "Publicidade enganosa",
@@ -100,6 +108,7 @@ const services = [
     id: 9,
     title: "Responsabilidade Civil",
     subtitle: "Indenizações",
+    path: "/atuacao/responsabilidade-civil",
     details: [
       "Danos morais e materiais",
       "Danos estéticos",
@@ -111,54 +120,60 @@ const services = [
     id: 10,
     title: "Direito Imobiliário",
     subtitle: "Imóveis e Contratos",
+    path: "/atuacao/imobiliario",
     details: [
-      "Contratos de Compra e Venda",
-      "Atraso na entrega de imóvel na planta",
-      "Despejo e Cobrança de Aluguel",
-      "Usucapião"
+      "Due Diligence para Compra e Venda",
+      "Atraso na entrega de imóvel e Distratos",
+      "Ações de Despejo e Revisional",
+      "Usucapião e Regularização de Registros"
     ]
   },
   {
     id: 11,
     title: "Direito Contratual",
     subtitle: "Análise e Elaboração",
+    path: "/atuacao/contratual",
     details: [
-      "Elaboração de contratos seguros",
-      "Revisão de cláusulas contratuais",
+      "Elaboração de contratos personalizados",
+      "Revisão de cláusulas e riscos",
       "Distratos e Rescisões",
-      "Execução de contratos"
+      "Execução de contratos judiciais"
     ]
   },
   {
     id: 12,
     title: "Direito Criminal",
     subtitle: "Defesa Penal",
+    path: "/atuacao/criminal",
     details: [
       "Acompanhamento em Delegacia",
-      "Defesa em Processo Criminal",
-      "Audiência de Custódia",
-      "Habeas Corpus"
+      "Defesa em Inquéritos e Ações Penais",
+      "Audiência de Custódia e Liberdade",
+      "Habeas Corpus em todas as Instâncias"
     ]
   },
   {
     id: 13,
     title: "Direito Administrativo",
     subtitle: "Relação com o Estado",
+    path: "/atuacao/administrativo",
     details: [
-      "Concursos Públicos (Recursos e Mandado de Segurança)",
-      "Processo Administrativo Disciplinar (PAD)",
-      "Licitações e Contratos Administrativos"
+      "Recursos em Concursos Públicos",
+      "Defesa em PAD e Sindicâncias",
+      "Assessoria em Licitações",
+      "Ações de Improbidade Administrativa"
     ]
   },
   {
     id: 14,
     title: "Direito Digital",
     subtitle: "Internet e Tecnologia",
+    path: "/atuacao/digital",
     details: [
       "Recuperação de Contas em Redes Sociais",
-      "Crimes Virtuais",
-      "Marco Civil da Internet",
-      "LGPD (Lei Geral de Proteção de Dados)"
+      "Remoção de Conteúdo e Fake News",
+      "Indenização por Vazamento de Dados (LGPD)",
+      "Crimes Cibernéticos e Invasões"
     ]
   }
 ];
@@ -225,65 +240,11 @@ export default function Services() {
                       ))}
                     </ul>
                     <div className="mt-8">
-                      {service.id === 1 ? (
-                        <Link href="/atuacao/direito-da-saude">
-                          <a className="block w-full text-center bg-[#CFAE70] text-[#091D39] py-3 text-xs font-bold uppercase tracking-widest hover:bg-white transition-colors">
-                            Saber Mais
-                          </a>
-                        </Link>
-                      ) : service.id === 2 ? (
-                        <Link href="/atuacao/previdenciario">
-                          <a className="block w-full text-center bg-[#CFAE70] text-[#091D39] py-3 text-xs font-bold uppercase tracking-widest hover:bg-white transition-colors">
-                            Saber Mais
-                          </a>
-                        </Link>
-                      ) : service.id === 3 ? (
-                        <Link href="/atuacao/transito">
-                          <a className="block w-full text-center bg-[#CFAE70] text-[#091D39] py-3 text-xs font-bold uppercase tracking-widest hover:bg-white transition-colors">
-                            Saber Mais
-                          </a>
-                        </Link>
-                      ) : service.id === 4 ? (
-                        <Link href="/atuacao/passageiro">
-                          <a className="block w-full text-center bg-[#CFAE70] text-[#091D39] py-3 text-xs font-bold uppercase tracking-widest hover:bg-white transition-colors">
-                            Saber Mais
-                          </a>
-                        </Link>
-                      ) : service.id === 5 ? (
-                        <Link href="/atuacao/bancario">
-                          <a className="block w-full text-center bg-[#CFAE70] text-[#091D39] py-3 text-xs font-bold uppercase tracking-widest hover:bg-white transition-colors">
-                            Saber Mais
-                          </a>
-                        </Link>
-                      ) : service.id === 6 ? (
-                        <Link href="/atuacao/direito-do-trabalho">
-                          <a className="block w-full text-center bg-[#CFAE70] text-[#091D39] py-3 text-xs font-bold uppercase tracking-widest hover:bg-white transition-colors">
-                            Saber Mais
-                          </a>
-                        </Link>
-                      ) : service.id === 7 ? (
-                        <Link href="/atuacao/familia">
-                          <a className="block w-full text-center bg-[#CFAE70] text-[#091D39] py-3 text-xs font-bold uppercase tracking-widest hover:bg-white transition-colors">
-                            Saber Mais
-                          </a>
-                        </Link>
-                      ) : service.id === 8 ? (
-                        <Link href="/atuacao/consumidor">
-                          <a className="block w-full text-center bg-[#CFAE70] text-[#091D39] py-3 text-xs font-bold uppercase tracking-widest hover:bg-white transition-colors">
-                            Saber Mais
-                          </a>
-                        </Link>
-                      ) : service.id === 9 ? (
-                        <Link href="/atuacao/responsabilidade-civil">
-                          <a className="block w-full text-center bg-[#CFAE70] text-[#091D39] py-3 text-xs font-bold uppercase tracking-widest hover:bg-white transition-colors">
-                            Saber Mais
-                          </a>
-                        </Link>
-                      ) : (
-                        <button className="w-full bg-[#CFAE70] text-[#091D39] py-3 text-xs font-bold uppercase tracking-widest hover:bg-white transition-colors">
+                      <Link href={service.path}>
+                        <a className="block w-full text-center bg-[#CFAE70] text-[#091D39] py-3 text-xs font-bold uppercase tracking-widest hover:bg-white transition-colors">
                           Saber Mais
-                        </button>
-                      )}
+                        </a>
+                      </Link>
                     </div>
                   </motion.div>
                 )}
@@ -291,7 +252,6 @@ export default function Services() {
             </motion.div>
           ))}
           
-          {/* Outros Serviços Box */}
           <motion.div
             className="bg-[#091D39]/50 p-8 md:p-10 flex flex-col justify-center items-center border border-dashed border-[#CFAE70]/30 group hover:border-[#CFAE70] transition-all"
             initial={{ opacity: 0 }}

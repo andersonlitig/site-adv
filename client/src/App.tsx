@@ -14,6 +14,11 @@ import LaborLaw from "@/pages/LaborLaw";
 import FamilyLaw from "@/pages/FamilyLaw";
 import ConsumerLaw from "@/pages/ConsumerLaw";
 import CivilLiability from "@/pages/CivilLiability";
+import RealEstateLaw from "@/pages/RealEstateLaw";
+import ContractLaw from "@/pages/ContractLaw";
+import CriminalLaw from "@/pages/CriminalLaw";
+import AdministrativeLaw from "@/pages/AdministrativeLaw";
+import DigitalLaw from "@/pages/DigitalLaw";
 
 function Router() {
   return (
@@ -28,6 +33,11 @@ function Router() {
       <Route path="/atuacao/familia" component={FamilyLaw} />
       <Route path="/atuacao/consumidor" component={ConsumerLaw} />
       <Route path="/atuacao/responsabilidade-civil" component={CivilLiability} />
+      <Route path="/atuacao/imobiliario" component={RealEstateLaw} />
+      <Route path="/atuacao/contratual" component={ContractLaw} />
+      <Route path="/atuacao/criminal" component={CriminalLaw} />
+      <Route path="/atuacao/administrativo" component={AdministrativeLaw} />
+      <Route path="/atuacao/digital" component={DigitalLaw} />
       <Route component={NotFound} />
     </Switch>
   );
