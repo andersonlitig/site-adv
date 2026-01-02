@@ -173,7 +173,7 @@ export default function Services() {
     <section id="services" className="bg-[#2C2C2C] py-24 text-white">
       <div className="container mx-auto px-4 md:px-8 mb-16">
         <h2 className="text-4xl font-bold font-heading uppercase tracking-tighter text-white border-l-4 border-[#CFAE70] pl-6">
-          Catálogo de Serviços
+          Áreas de Atuação
         </h2>
       </div>
 
@@ -233,6 +233,21 @@ export default function Services() {
               </AnimatePresence>
             </motion.div>
           ))}
+          
+          {/* Outros Serviços Box */}
+          <motion.div
+            className="bg-[#091D39]/50 p-8 md:p-10 flex flex-col justify-center items-center border border-dashed border-[#CFAE70]/30 group hover:border-[#CFAE70] transition-all"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+          >
+            <Plus size={32} className="text-[#CFAE70] mb-4 opacity-50 group-hover:opacity-100 transition-opacity" />
+            <h3 className="text-lg font-bold uppercase tracking-widest text-white text-center mb-2">Outras Áreas</h3>
+            <p className="text-gray-400 text-xs text-center mb-6 px-4">Consulte nossa equipe sobre demandas específicas em outras áreas do Direito.</p>
+            <a href="#footer" className="text-[#CFAE70] text-xs font-bold uppercase tracking-widest border-b border-[#CFAE70] pb-1 hover:text-white hover:border-white transition-all">
+              Consultar Especialista
+            </a>
+          </motion.div>
         </div>
       </div>
     </section>

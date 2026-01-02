@@ -77,8 +77,8 @@ export default function HowWeAct() {
               viewport={{ once: true }}
             >
               <div className="max-w-md">
-                <h4 className="text-xl font-bold uppercase tracking-widest mb-2">Pronto para a sua defesa?</h4>
-                <p className="text-gray-400 text-sm italic">O tempo é um fator crítico em questões jurídicas. Não adie a proteção dos seus direitos.</p>
+                <h4 className="text-xl font-bold uppercase tracking-widest mb-2">Consultoria Especializada</h4>
+                <p className="text-gray-400 text-sm italic">Análise técnica e estratégica fundamentada para a melhor solução do seu caso.</p>
               </div>
               <a 
                 href="#footer"

@@ -49,7 +49,7 @@ export default function Hero() {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            Agendar Atendimento Online
+            Fale com o Advogado
           </motion.a>
         </motion.div>
       </div>
