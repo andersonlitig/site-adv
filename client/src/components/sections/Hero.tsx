@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-[#091D39]">
+    <section className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-[#091D39] pt-24">
       {/* Video Background */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute inset-0 bg-black/60 z-10" /> {/* Overlay */}

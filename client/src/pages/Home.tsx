@@ -4,6 +4,7 @@ import HowWeAct from "@/components/sections/HowWeAct";
 import Services from "@/components/sections/Services";
 import CTASection from "@/components/sections/CTASection";
 import Blog from "@/components/sections/Blog";
+import Contact from "@/components/sections/Contact";
 import Footer from "@/components/layout/Footer";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
         <Services />
         <CTASection />
         <Blog />
+        <Contact />
       </main>
       <Footer />
     </div>
