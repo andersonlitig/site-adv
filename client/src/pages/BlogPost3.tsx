@@ -1,9 +1,13 @@
-import { ChevronRight, Calendar, MessageCircle } from "lucide-react";
+import { ChevronRight, Calendar } from "lucide-react";
 import { Link } from "wouter";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import BlogCTA, { ShareButtons } from "@/components/blog/BlogElements";
 
 export default function BlogPost3() {
+  const title = "Juros Abusivos: Como identificar e revisar seu contrato";
+  const summary = "Descubra como a análise técnica de contratos bancários pode identificar taxas abusivas e reduzir significativamente o saldo devedor de financiamentos.";
+
   return (
     <div className="min-h-screen bg-[#E8E8E8] text-[#0D0D0D]">
       <Navbar />
@@ -33,9 +37,14 @@ export default function BlogPost3() {
                     Bancário
                   </div>
                 </div>
-                <h1 className="text-4xl md:text-6xl font-bold font-heading uppercase tracking-tighter mb-8 leading-tight text-[#091D39]">
-                  Juros Abusivos: Como identificar e revisar seu contrato
+                <h1 className="text-4xl md:text-6xl font-bold font-heading uppercase tracking-tighter mb-4 leading-tight text-[#091D39]">
+                  {title}
                 </h1>
+                <p className="text-xl text-gray-500 font-light leading-relaxed italic border-l-4 border-[#CFAE70] pl-6 mb-8">
+                  {summary}
+                </p>
+
+                <ShareButtons title={title} />
               </div>
 
               <div className="aspect-video mb-12 overflow-hidden bg-[#091D39]">
@@ -61,13 +70,11 @@ export default function BlogPost3() {
                 </ul>
               </div>
 
-              <div className="bg-[#0D0D0D] p-10 text-white border-l-8 border-[#CFAE70]">
-                <h3 className="text-2xl font-bold uppercase tracking-tighter mb-4">Sente-se prejudicado pelo banco?</h3>
-                <p className="text-gray-400 mb-8">Realizamos a perícia técnica do seu contrato para identificar abusividades e buscar o equilíbrio financeiro.</p>
-                <a href="https://wa.me/5527999999999" target="_blank" className="inline-flex items-center gap-3 bg-[#CFAE70] text-[#091D39] py-4 px-8 font-bold uppercase tracking-widest hover:bg-white transition-all">
-                  <MessageCircle size={20} /> Analisar Contrato
-                </a>
-              </div>
+              <BlogCTA 
+                title="Análise Técnica de Contratos"
+                description="Realizamos a perícia minuciosa do seu contrato para identificar cláusulas abusivas e buscar o equilíbrio financeiro da sua dívida."
+                buttonText="Analisar Meu Contrato"
+              />
             </div>
           </div>
         </article>

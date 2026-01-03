@@ -1,9 +1,13 @@
-import { ChevronRight, Calendar, User, Clock, MessageCircle } from "lucide-react";
+import { ChevronRight, Calendar } from "lucide-react";
 import { Link } from "wouter";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import BlogCTA, { ShareButtons } from "@/components/blog/BlogElements";
 
 export default function BlogPost1() {
+  const title = "Direito à Saúde: Como reverter negativas de planos de saúde";
+  const summary = "Saiba como agir diante de negativas de tratamentos, medicamentos de alto custo e cirurgias, garantindo seu acesso à saúde através de medidas jurídicas especializadas.";
+
   return (
     <div className="min-h-screen bg-[#E8E8E8] text-[#0D0D0D]">
       <Navbar />
@@ -33,9 +37,14 @@ export default function BlogPost1() {
                     Saúde
                   </div>
                 </div>
-                <h1 className="text-4xl md:text-6xl font-bold font-heading uppercase tracking-tighter mb-8 leading-tight text-[#091D39]">
-                  Direito à Saúde: Como reverter negativas de planos de saúde
+                <h1 className="text-4xl md:text-6xl font-bold font-heading uppercase tracking-tighter mb-4 leading-tight text-[#091D39]">
+                  {title}
                 </h1>
+                <p className="text-xl text-gray-500 font-light leading-relaxed italic border-l-4 border-[#CFAE70] pl-6 mb-8">
+                  {summary}
+                </p>
+                
+                <ShareButtons title={title} />
               </div>
 
               <div className="aspect-video mb-12 overflow-hidden bg-[#091D39]">
@@ -61,13 +70,11 @@ export default function BlogPost1() {
                 </ul>
               </div>
 
-              <div className="bg-[#0D0D0D] p-10 text-white border-l-8 border-[#CFAE70]">
-                <h3 className="text-2xl font-bold uppercase tracking-tighter mb-4">Teve um tratamento negado?</h3>
-                <p className="text-gray-400 mb-8">Nossa equipe é especialista em Direito da Saúde e pronta para atuar na defesa imediata dos seus direitos.</p>
-                <a href="https://wa.me/5527999999999" target="_blank" className="inline-flex items-center gap-3 bg-[#CFAE70] text-[#091D39] py-4 px-8 font-bold uppercase tracking-widest hover:bg-white transition-all">
-                  <MessageCircle size={20} /> Falar com Especialista
-                </a>
-              </div>
+              <BlogCTA 
+                title="Sua saúde não pode esperar"
+                description="Se você ou um familiar teve um tratamento negado, nossa equipe está pronta para atuar na defesa imediata dos seus direitos fundamentais."
+                buttonText="Consultar Especialista"
+              />
             </div>
           </div>
         </article>
