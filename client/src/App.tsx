@@ -19,6 +19,9 @@ import ContractLaw from "@/pages/ContractLaw";
 import CriminalLaw from "@/pages/CriminalLaw";
 import AdministrativeLaw from "@/pages/AdministrativeLaw";
 import DigitalLaw from "@/pages/DigitalLaw";
+import BlogPost1 from "@/pages/BlogPost1";
+import BlogPost2 from "@/pages/BlogPost2";
+import BlogPost3 from "@/pages/BlogPost3";
 
 function Router() {
   return (
@@ -38,6 +41,9 @@ function Router() {
       <Route path="/atuacao/criminal" component={CriminalLaw} />
       <Route path="/atuacao/administrativo" component={AdministrativeLaw} />
       <Route path="/atuacao/digital" component={DigitalLaw} />
+      <Route path="/blog/negativas-plano-de-saude" component={BlogPost1} />
+      <Route path="/blog/heranca-e-inventario" component={BlogPost2} />
+      <Route path="/blog/juros-abusivos" component={BlogPost3} />
       <Route component={NotFound} />
     </Switch>
   );

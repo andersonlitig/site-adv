@@ -22,21 +22,27 @@ export default function Navbar() {
   return (
     <motion.nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled ? "bg-[#091D39]/95 backdrop-blur-md py-4 shadow-xl" : "bg-transparent py-8"
+        isScrolled ? "bg-[#091D39]/95 backdrop-blur-md py-4 shadow-xl" : "bg-transparent py-10"
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
+      <div className="container mx-auto px-4 md:px-12 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/">
-          <a className="text-white font-heading font-bold text-xl tracking-tighter uppercase group">
-            <span className="group-hover:text-[#CFAE70] transition-colors duration-300 text-sm md:text-xl">ANDERSON LITIG</span>
-            <span className="text-[#CFAE70] mx-2 font-light">|</span>
-            <span className="font-light text-xs md:text-sm tracking-[0.3em] opacity-80">ADVOCACIA</span>
-          </a>
-        </Link>
+        <div className="flex flex-col md:flex-row md:items-center gap-1 md:gap-4">
+          <Link href="/">
+            <a className="text-white font-heading font-bold text-xl tracking-tighter uppercase group">
+              <span className="group-hover:text-[#CFAE70] transition-colors duration-300 text-sm md:text-xl">ANDERSON LITIG</span>
+              <span className="text-[#CFAE70] mx-2 font-light">|</span>
+              <span className="font-light text-xs md:text-sm tracking-[0.3em] opacity-80">ADVOCACIA</span>
+            </a>
+          </Link>
+          <div className="hidden lg:block w-[1px] h-8 bg-white/10 mx-2"></div>
+          <p className="hidden lg:block text-[10px] uppercase tracking-[0.2em] text-[#CFAE70] font-medium max-w-[200px] leading-tight">
+            Advocacia técnica com a atenção que o seu caso exige.
+          </p>
+        </div>
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-10">
