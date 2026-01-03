@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-[#091D39] pt-24">
+    <section className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-[#091D39] pt-40">
       {/* Video Background */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute inset-0 bg-black/60 z-10" /> {/* Overlay */}
@@ -32,9 +32,9 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="border border-white/20 bg-[#091D39]/40 backdrop-blur-sm p-8 md:p-16"
+          className="border border-white/20 bg-[#091D39]/40 backdrop-blur-sm p-8 md:p-16 mb-20"
         >
-          <h1 className="text-4xl md:text-7xl font-bold text-white leading-tight font-heading mb-8 tracking-tighter uppercase">
+          <h1 className="text-2xl md:text-4xl font-bold text-white leading-tight font-heading mb-8 tracking-tighter">
             Advocacia técnica com a atenção que o seu caso exige.
           </h1>
           <h2 className="text-lg md:text-xl text-gray-300 font-light mb-10 max-w-2xl mx-auto leading-relaxed">
