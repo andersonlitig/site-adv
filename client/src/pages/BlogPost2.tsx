@@ -70,11 +70,7 @@ export default function BlogPost2() {
                 </ul>
               </div>
 
-              <BlogCTA 
-                title="Planejamento e Sucessão"
-                description="Atuamos com discrição e rigor técnico para resolver questões de inventário e partilha de bens, protegendo o patrimônio e a harmonia familiar."
-                buttonText="Consultar Agora"
-              />
+              <BlogCTA />
             </div>
           </div>
         </article>

@@ -70,11 +70,7 @@ export default function BlogPost1() {
                 </ul>
               </div>
 
-              <BlogCTA 
-                title="Sua saúde não pode esperar"
-                description="Se você ou um familiar teve um tratamento negado, nossa equipe está pronta para atuar na defesa imediata dos seus direitos fundamentais."
-                buttonText="Consultar Especialista"
-              />
+              <BlogCTA />
             </div>
           </div>
         </article>

@@ -70,11 +70,7 @@ export default function BlogPost3() {
                 </ul>
               </div>
 
-              <BlogCTA 
-                title="Análise Técnica de Contratos"
-                description="Realizamos a perícia minuciosa do seu contrato para identificar cláusulas abusivas e buscar o equilíbrio financeiro da sua dívida."
-                buttonText="Analisar Meu Contrato"
-              />
+              <BlogCTA />
             </div>
           </div>
         </article>
