@@ -149,7 +149,7 @@ export default function HealthLaw() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="flex items-center gap-4 border-l-2 border-[#CFAE70] pl-6">
                 <ShieldCheck className="text-[#091D39]" size={24} />
-                <span className="text-[10px] font-bold uppercase tracking-widest text-[#091D39]">Foco em Direito Médico</span>
+                <span className="text-[10px] font-bold uppercase tracking-widest text-[#091D39]">Atuação com Transparência e Ética</span>
               </div>
               <div className="flex items-center gap-4 border-l-2 border-[#CFAE70] pl-6">
                 <Clock className="text-[#091D39]" size={24} />
@@ -275,37 +275,44 @@ export default function HealthLaw() {
           <div className="container mx-auto px-4 md:px-12">
             <div className="bg-white p-12 md:p-20 relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-2 bg-[#CFAE70]" />
-              <div className="relative z-10 grid lg:grid-cols-2 gap-16">
-                <div>
-                  <h2 className="text-[#091D39] text-3xl font-bold font-heading uppercase tracking-tighter mb-8">
-                    Direito Explicado
-                  </h2>
-                  <div className="space-y-12">
-                    <div>
-                      <h4 className="text-[#CFAE70] font-bold text-xs uppercase tracking-widest mb-4">A Mitigação do Rol da ANS (Lei 14.454/22)</h4>
-                      <p className="text-gray-600 text-lg leading-relaxed italic">
-                        "É fundamental que o paciente saiba: o Rol da ANS não é mais taxativo. Desde 2022, se o tratamento possui eficácia comprovada ou recomendações de órgãos renomados, a operadora é obrigada a cobrir, mesmo que o procedimento não conste na lista oficial."
-                      </p>
-                    </div>
-                    <div>
-                      <h4 className="text-[#CFAE70] font-bold text-xs uppercase tracking-widest mb-4">O Dever do Estado no ES</h4>
-                      <p className="text-gray-600 text-lg leading-relaxed italic">
-                        "Atuamos localmente para garantir que o Município e o Estado cumpram seu dever constitucional. Se o medicamento tem registro na ANVISA e a família não possui recursos, o Poder Público deve fornecer."
-                      </p>
-                    </div>
+              <div className="relative z-10">
+                <h2 className="text-[#091D39] text-3xl font-bold font-heading uppercase tracking-tighter mb-12">
+                  Direito Explicado
+                </h2>
+                <div className="grid lg:grid-cols-2 gap-16">
+                  <div>
+                    <h4 className="text-[#CFAE70] font-bold text-xs uppercase tracking-widest mb-4">A Mitigação do Rol da ANS (Lei 14.454/22)</h4>
+                    <p className="text-gray-600 text-lg leading-relaxed italic">
+                      "É fundamental que o paciente saiba: o Rol da ANS não é mais taxativo. Desde 2022, se o tratamento possui eficácia comprovada ou recomendações de órgãos renomados, a operadora é obrigada a cobrir, mesmo que o procedimento não conste na lista oficial."
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="text-[#CFAE70] font-bold text-xs uppercase tracking-widest mb-4">O Dever do Estado</h4>
+                    <p className="text-gray-600 text-lg leading-relaxed italic">
+                      "Atuamos para garantir que o Município e o Estado cumpram seu dever constitucional. Se o medicamento tem registro na ANVISA e a família não possui recursos, o Poder Público deve fornecer."
+                    </p>
                   </div>
                 </div>
-                <div className="bg-[#F8F9FA] p-10 border border-gray-100 flex flex-col justify-center">
-                  <h3 className="text-[#091D39] font-bold uppercase tracking-tighter mb-6">Perguntas frequentes (FAQ)</h3>
-                  <div className="space-y-6">
-                    {faqs.map((item, i) => (
-                      <div key={i} className="border-b border-gray-200 pb-4">
-                        <h5 className="text-[#091D39] font-bold text-xs mb-2 uppercase tracking-tight">{item.q}</h5>
-                        <p className="text-gray-500 text-xs leading-relaxed">{item.a}</p>
-                      </div>
-                    ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-24 bg-[#F8F9FA]">
+          <div className="container mx-auto px-4 md:px-12">
+            <div className="max-w-4xl mx-auto">
+              <h3 className="text-[#091D39] text-3xl font-bold font-heading uppercase tracking-tighter mb-12 text-center">Perguntas frequentes (FAQ)</h3>
+              <div className="grid gap-6">
+                {faqs.map((item, i) => (
+                  <div key={i} className="bg-white p-8 border border-gray-100 shadow-sm">
+                    <h5 className="text-[#091D39] font-bold text-sm mb-4 uppercase tracking-tight flex items-center gap-3">
+                      <div className="w-1.5 h-1.5 bg-[#CFAE70] rounded-full" />
+                      {item.q}
+                    </h5>
+                    <p className="text-gray-500 text-sm leading-relaxed pl-4.5 border-l border-gray-100">{item.a}</p>
                   </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
