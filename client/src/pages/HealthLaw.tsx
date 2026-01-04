@@ -121,7 +121,7 @@ export default function HealthLaw() {
                   <HeartPulse size={12} /> Direito à Saúde
                 </div>
                 <h1 className="text-4xl md:text-7xl font-bold text-white font-heading uppercase tracking-tighter mb-8 leading-[0.9]">
-                  Advocacia Especializada em <span className="text-[#CFAE70]">Direito à Saúde</span> e Defesa do Paciente
+                  Advocacia em <span className="text-[#CFAE70]">Direito à Saúde</span> e Defesa do Paciente
                 </h1>
                 <p className="text-xl text-gray-300 font-light mb-10 max-w-2xl leading-relaxed">
                   Defesa técnica e humanizada para garantir o acesso integral à saúde, seja contra operadoras privadas ou contra o Poder Público (SUS). Fundamentação jurídica sólida em busca da dignidade da pessoa humana.
@@ -131,7 +131,7 @@ export default function HealthLaw() {
                     href="#contact" 
                     className="bg-[#CFAE70] text-[#091D39] px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-white transition-all text-center"
                   >
-                    Agendar Consulta Especializada
+                    Falar com o Advogado
                   </a>
                   <div className="flex items-center gap-4 text-white/60">
                     <div className="w-12 h-[1px] bg-[#CFAE70]/50" />
@@ -149,7 +149,7 @@ export default function HealthLaw() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="flex items-center gap-4 border-l-2 border-[#CFAE70] pl-6">
                 <ShieldCheck className="text-[#091D39]" size={24} />
-                <span className="text-[10px] font-bold uppercase tracking-widest text-[#091D39]">Especialista em Direito Médico</span>
+                <span className="text-[10px] font-bold uppercase tracking-widest text-[#091D39]">Foco em Direito Médico</span>
               </div>
               <div className="flex items-center gap-4 border-l-2 border-[#CFAE70] pl-6">
                 <Clock className="text-[#091D39]" size={24} />
@@ -270,42 +270,6 @@ export default function HealthLaw() {
           </div>
         </section>
 
-        {/* Why Anderson Litig */}
-        <section className="py-24 bg-white overflow-hidden">
-          <div className="container mx-auto px-4 md:px-12">
-            <div className="text-center max-w-3xl mx-auto mb-20">
-              <h2 className="text-[#091D39] text-4xl font-bold font-heading uppercase tracking-tighter mb-4">
-                Diferenciais Anderson Litig
-              </h2>
-              <div className="w-24 h-1 bg-[#CFAE70] mx-auto" />
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-12">
-              <div className="p-10 border border-gray-100 bg-[#F8F9FA] relative group overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#CFAE70]/5 rounded-bl-full transition-all group-hover:scale-150" />
-                <h3 className="text-[#091D39] font-bold uppercase tracking-tighter mb-4 relative z-10">Conhecimento Multidisciplinar</h3>
-                <p className="text-gray-500 text-sm leading-relaxed relative z-10">
-                  Entendemos a linguagem médica para fundamentar melhor as petições jurídicas, unindo técnica legal à evidência científica.
-                </p>
-              </div>
-              <div className="p-10 border border-gray-100 bg-[#F8F9FA] relative group overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#CFAE70]/5 rounded-bl-full transition-all group-hover:scale-150" />
-                <h3 className="text-[#091D39] font-bold uppercase tracking-tighter mb-4 relative z-10">Atuação em Comissões OAB</h3>
-                <p className="text-gray-500 text-sm leading-relaxed relative z-10">
-                  Membro ativo de comissões de relevância, mantendo-se na vanguarda das decisões dos Tribunais Superiores (STJ e STF).
-                </p>
-              </div>
-              <div className="p-10 border border-gray-100 bg-[#F8F9FA] relative group overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#CFAE70]/5 rounded-bl-full transition-all group-hover:scale-150" />
-                <h3 className="text-[#091D39] font-bold uppercase tracking-tighter mb-4 relative z-10">Humanização do Atendimento</h3>
-                <p className="text-gray-500 text-sm leading-relaxed relative z-10">
-                  O paciente não é um número. Oferecemos um canal direto para tranquilizar a família durante o litígio jurídico.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Direito Explicado Block */}
         <section className="py-24 bg-[#091D39]">
           <div className="container mx-auto px-4 md:px-12">
@@ -332,7 +296,7 @@ export default function HealthLaw() {
                   </div>
                 </div>
                 <div className="bg-[#F8F9FA] p-10 border border-gray-100 flex flex-col justify-center">
-                  <h3 className="text-[#091D39] font-bold uppercase tracking-tighter mb-6">Filtro de Objeções (FAQ)</h3>
+                  <h3 className="text-[#091D39] font-bold uppercase tracking-tighter mb-6">Perguntas frequentes (FAQ)</h3>
                   <div className="space-y-6">
                     {faqs.map((item, i) => (
                       <div key={i} className="border-b border-gray-200 pb-4">
@@ -359,7 +323,7 @@ export default function HealthLaw() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-[#091D39] text-white px-10 py-5 font-bold uppercase tracking-widest hover:bg-[#CFAE70] hover:text-[#091D39] transition-all"
             >
-              <MessageCircle size={20} /> Consultar Especialista em Direito à Saúde
+              <MessageCircle size={20} /> Falar com o Advogado
             </a>
           </div>
         </section>
