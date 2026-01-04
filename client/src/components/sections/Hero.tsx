@@ -1,29 +1,17 @@
-import ReactPlayer from "react-player";
 import { motion } from "framer-motion";
+import heroImage from "@/assets/3em3-vitoria_15_1767549660783.jpg";
 
 export default function Hero() {
   return (
     <section className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-[#091D39] pt-40">
-      {/* Video Background */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute inset-0 bg-black/60 z-10" /> {/* Overlay */}
-        <div className="w-full h-full scale-[1.35]"> {/* Scale up to avoid black bars/controls showing */}
-          <ReactPlayer
-            url="https://www.youtube.com/watch?v=q1tGIyQMdg8"
-            playing
-            loop
-            muted
-            playsinline
-            width="100%"
-            height="100%"
-            config={{
-              youtube: {
-                playerVars: { showinfo: 0, controls: 0, modestbranding: 1, disablekb: 1 },
-              },
-            }}
-            style={{ pointerEvents: 'none' }}
-          />
-        </div>
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-[#091D39]/70 z-10" /> {/* Blue Overlay */}
+        <img 
+          src={heroImage} 
+          alt="Vitória, ES" 
+          className="w-full h-full object-cover"
+        />
       </div>
 
       {/* Content */}
