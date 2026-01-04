@@ -1,0 +1,81 @@
+🛡️ I. Direito Suplementar (Planos de Saúde)
+Foco na Lei 9.656/98 e no Código de Defesa do Consumidor.
+
+Oncologia e Terapias de Precisão
+
+Garantia de acesso a quimioterapias orais e intravenosas, imunoterapia e radioterapia (IGRT/IMRT).
+
+Combate à negativa de exames genéticos e de biópsia líquida essenciais para o direcionamento do tratamento oncológico.
+
+Neurodiversidade e Terapias Multidisciplinares (TEA)
+
+Ações para cobertura integral de métodos específicos como ABA (Applied Behavior Analysis), Denver e Bobath.
+
+Derrubada de limites de sessões de fonoaudiologia, terapia ocupacional e psicologia para pacientes com Transtorno do Espectro Autista.
+
+Cirurgias Complexas e Tecnológicas
+
+Liberação de cirurgias bariátricas e procedimentos de plástica reparadora pós-gastroplastia (ex-obeso).
+
+Acesso a cirurgias robóticas e procedimentos minimamente invasivos quando prescritos pelo assistente médico.
+
+OPME e Insumos Cirúrgicos
+
+Obtenção de Órteses, Próteses e Materiais Especiais (stents, marcapassos, próteses de quadril/coluna) negados sob justificativa de "fora do rol" ou "divergência de junta médica".
+
+Home Care e Internação Domiciliar
+
+Conversão de internação hospitalar em domiciliar com suporte de enfermagem (24h ou plantão), fisioterapia, fonoaudiologia e fornecimento de oxigenioterapia e dieta enteral.
+
+Saúde Mental e Dependência Química
+
+Garantia de internação psiquiátrica sem teto de dias e sem cobrança de coparticipação abusiva após o 30º dia de internação.
+
+Equilíbrio Contratual e Financeiro
+
+Revisão de reajustes anuais abusivos em planos coletivos.
+
+Anulação de reajustes por mudança de faixa etária (especialmente aos 59 anos) que inviabilizam a manutenção do contrato.
+
+Manutenção do plano de saúde para aposentados e demitidos (Arts. 30 e 31 da Lei 9.656/98).
+
+🏥 II. Direito Público (Sistema Único de Saúde - SUS)
+Foco na responsabilidade solidária dos entes federados (União, Estados e Municípios).
+
+Medicamentos de Alto Custo (Extra-RENAME)
+
+Ações para fornecimento de fármacos de última geração não listados no SUS, com base no Tema 106 do STJ.
+
+Tratamento para doenças raras e crônicas com evidência científica comprovada.
+
+Gestão de Vagas e Urgência Hospitalar
+
+Medidas judiciais para transferência imediata de pacientes da rede pública para leitos de UTI ou unidades especializadas.
+
+Custeio de rede privada pelo Estado em casos de inexistência de vagas no setor público.
+
+Cirurgias Eletivas e Filas de Espera
+
+Intervenção jurídica para agilizar cirurgias com tempo de espera desproporcional que agrava o quadro clínico do paciente (Cardiologia, Ortopedia, Oftalmologia).
+
+Insumos e Suplementação Alimentar
+
+Garantia de dietas especiais, fraldas geriátricas e aparelhos de suporte vital (CPAP/BiPAP) para pacientes hipossuficientes.
+
+⚖️ III. Responsabilidade Civil e Erro Médico
+Foco na reparação de danos decorrentes de falhas na prestação do serviço de saúde.
+
+Danos Decorrentes de Erro Médico e Hospitalar
+
+Indenização por negligência, imprudência ou imperícia em procedimentos cirúrgicos, diagnósticos tardios ou falhas em pronto-atendimento.
+
+Negativa de Atendimento em Emergência
+
+Responsabilização de hospitais e operadoras por recusa de atendimento em situações de risco de morte (caracterização de dano moral in re ipsa).
+
+💡 Conteúdo Informativo Estratégico (O "Plus" Institucional)
+Para reforçar a autoridade no layout boxy, adicione um bloco chamado "Direito Explicado":
+
+A Mitigação do Rol da ANS (Lei 14.454/22): > "É fundamental que o paciente saiba: o Rol da ANS não é mais taxativo. Desde 2022, se o tratamento possui eficácia comprovada ou recomendações de órgãos renomados, a operadora é obrigada a cobrir, mesmo que o procedimento não conste na lista oficial."
+
+O Dever do Estado em Serra e no Espírito Santo: "Atuamos localmente para garantir que o Município e o Estado cumpram seu dever constitucional. Se o medicamento tem registro na ANVISA e a família não possui recursos, o Poder Público deve fornecer."
