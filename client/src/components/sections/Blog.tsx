@@ -53,38 +53,42 @@ export default function Blog() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {blogPosts.map((post) => (
             <Link key={post.id} href={post.path}>
               <motion.article 
-                className="group cursor-pointer"
+                className="group cursor-pointer flex flex-col h-full bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-500"
                 whileHover={{ y: -10 }}
-                transition={{ duration: 0.3 }}
               >
-                <div className="relative aspect-video mb-6 overflow-hidden bg-gray-100">
+                <div className="relative aspect-video overflow-hidden bg-gray-100">
                   <img 
                     src={post.image} 
                     alt={post.title}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
                   />
-                </div>
-                <div className="flex flex-col gap-1 mb-3">
-                  <div className="flex items-center gap-2 text-gray-400 text-[10px] uppercase tracking-widest">
-                    <Calendar size={12} className="text-[#CFAE70]" />
-                    {post.date}
-                  </div>
-                  <div className="text-[#CFAE70] text-[10px] font-bold uppercase tracking-[0.2em]">
+                  <div className="absolute top-4 left-4 bg-[#091D39] text-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest">
                     {post.category}
                   </div>
                 </div>
-                <h3 className="text-xl font-bold text-[#091D39] mb-4 group-hover:text-[#CFAE70] transition-colors leading-snug">
-                  {post.title}
-                </h3>
-                <p className="text-gray-500 text-sm leading-relaxed mb-6 line-clamp-2">
-                  {post.excerpt}
-                </p>
-                <div className="flex items-center gap-2 text-[#091D39] font-bold text-xs uppercase tracking-widest">
-                  Ler Artigo <ArrowRight size={14} />
+                
+                <div className="p-8 flex flex-col flex-grow">
+                  <div className="flex items-center gap-2 text-gray-400 text-[10px] uppercase tracking-widest mb-4 font-bold">
+                    <Calendar size={12} className="text-[#CFAE70]" />
+                    {post.date}
+                  </div>
+                  
+                  <h3 className="text-xl font-bold text-[#091D39] mb-4 group-hover:text-[#CFAE70] transition-colors leading-tight font-heading uppercase tracking-tighter">
+                    {post.title}
+                  </h3>
+                  
+                  <p className="text-gray-500 text-sm leading-relaxed mb-8 line-clamp-3">
+                    {post.excerpt}
+                  </p>
+                  
+                  <div className="mt-auto pt-6 border-t border-gray-100 flex items-center justify-between group-hover:border-[#CFAE70]/20 transition-colors">
+                    <span className="text-[#091D39] font-bold text-xs uppercase tracking-widest">Ler Artigo</span>
+                    <ArrowRight size={18} className="text-[#CFAE70] group-hover:translate-x-2 transition-transform" />
+                  </div>
                 </div>
               </motion.article>
             </Link>
