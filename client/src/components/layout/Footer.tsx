@@ -1,5 +1,7 @@
 import { MessageCircle, Mail, MapPin, Phone, Instagram, Linkedin, Facebook } from "lucide-react";
 
+import logo from "@/assets/logo.png";
+
 export default function Footer() {
   return (
     <footer id="footer" className="bg-[#091D39] text-white pt-24 pb-12">
@@ -8,9 +10,11 @@ export default function Footer() {
           
           {/* Brand Info */}
           <div className="md:col-span-4">
-            <h2 className="text-2xl font-bold font-heading uppercase tracking-wider mb-6 border-l-4 border-[#CFAE70] pl-4">
-              Anderson Litig <br /> <span className="text-[#CFAE70]">Advocacia</span>
-            </h2>
+            <img 
+              src={logo} 
+              alt="Anderson Litig Advocacia" 
+              className="h-16 w-auto object-contain mb-8"
+            />
             <p className="text-gray-400 text-sm leading-relaxed mb-8 max-w-sm">
               Escritório de advocacia com atuação nacional, focado na excelência técnica e na defesa intransigente dos direitos do cidadão.
             </p>

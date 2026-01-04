@@ -3,6 +3,8 @@ import { Link } from "wouter";
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
+import logo from "@/assets/logo.png";
+
 export default function Navbar() {
   const { scrollY } = useScroll();
   const [isScrolled, setIsScrolled] = useState(false);
@@ -31,10 +33,12 @@ export default function Navbar() {
       <div className="container mx-auto px-4 md:px-12 flex items-center justify-between">
         {/* Logo */}
         <Link href="/">
-          <a className="text-white font-heading font-bold text-xl tracking-tighter uppercase group">
-            <span className="group-hover:text-[#CFAE70] transition-colors duration-300 text-sm md:text-xl">ANDERSON LITIG</span>
-            <span className="text-[#CFAE70] mx-2 font-light">|</span>
-            <span className="font-light text-xs md:text-sm tracking-[0.3em] opacity-80">ADVOCACIA</span>
+          <a className="flex items-center">
+            <img 
+              src={logo} 
+              alt="Anderson Litig Advocacia" 
+              className="h-10 md:h-16 w-auto object-contain"
+            />
           </a>
         </Link>
 
