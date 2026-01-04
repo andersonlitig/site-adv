@@ -79,16 +79,6 @@ export default function Contact() {
                 </div>
               </div>
               <div>
-                <label className="block text-[10px] uppercase tracking-[0.2em] font-bold text-gray-400 mb-2">Assunto</label>
-                <select className="w-full bg-gray-50 border border-gray-200 px-4 py-4 focus:border-[#CFAE70] outline-none transition-colors">
-                  <option>Selecione uma área de interesse</option>
-                  <option>Direito da Saúde</option>
-                  <option>Direito do Trabalho</option>
-                  <option>Direito da Família</option>
-                  <option>Outros Assuntos</option>
-                </select>
-              </div>
-              <div>
                 <label className="block text-[10px] uppercase tracking-[0.2em] font-bold text-gray-400 mb-2">Mensagem</label>
                 <textarea 
                   rows={4}
