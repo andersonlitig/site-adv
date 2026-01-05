@@ -136,10 +136,10 @@ export default function PassengerLaw() {
                   <Plane size={12} /> Direito do Passageiro Aéreo
                 </div>
                 <h1 className="text-4xl md:text-7xl font-bold text-white font-heading uppercase tracking-tighter mb-8 leading-[0.9]">
-                  Sua Viagem é um Contrato. <br /> <span className="text-[#CFAE70]">Exija a Reparação Integral.</span>
+                  Indenização por <br /> <span className="text-[#CFAE70]">Voo Cancelado ou Atrasado</span>
                 </h1>
                 <p className="text-xl text-gray-300 font-light mb-10 max-w-2xl leading-relaxed">
-                  Especialistas na reversão de abusividades aéreas. Atuamos com rigor técnico para transformar transtornos em justiça, garantindo indenizações por atrasos e falhas operacionais.
+                  Recupere seus direitos com suporte jurídico estratégico em casos de abusividades aéreas. Garantimos a aplicação da Resolução 400 da ANAC e do CDC para assegurar sua reparação integral.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6">
                   <a 
@@ -187,7 +187,7 @@ export default function PassengerLaw() {
                   <h2 className="text-[#091D39] text-3xl font-bold font-heading uppercase tracking-tighter mb-4 border-l-4 border-[#CFAE70] pl-6">
                     A Responsabilidade Civil no Transporte Aéreo
                   </h2>
-                  <p className="text-[#CFAE70] font-bold text-xs uppercase tracking-widest">Obrigação de Resultado</p>
+                  <p className="text-[#CFAE70] font-bold text-xs uppercase tracking-widest">Dever de Indenizar</p>
                 </div>
                 <div className="md:col-span-8 bg-[#F8F9FA] p-12 border-l-8 border-[#091D39]">
                   <p className="text-xl md:text-2xl text-[#091D39] font-light leading-relaxed italic">
