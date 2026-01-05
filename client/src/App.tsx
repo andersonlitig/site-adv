@@ -23,6 +23,7 @@ import BlogList from "@/pages/BlogList";
 import BlogPost1 from "@/pages/BlogPost1";
 import BlogPost2 from "@/pages/BlogPost2";
 import BlogPost3 from "@/pages/BlogPost3";
+import PartnerPage from "./pages/PartnerPage";
 
 function Router() {
   return (
@@ -42,6 +43,7 @@ function Router() {
       <Route path="/atuacao/criminal" component={CriminalLaw} />
       <Route path="/atuacao/administrativo" component={AdministrativeLaw} />
       <Route path="/atuacao/digital" component={DigitalLaw} />
+      <Route path="/seja-parceiro" component={PartnerPage} />
       <Route path="/blog" component={BlogList} />
       <Route path="/blog/negativas-plano-de-saude" component={BlogPost1} />
       <Route path="/blog/heranca-e-inventario" component={BlogPost2} />

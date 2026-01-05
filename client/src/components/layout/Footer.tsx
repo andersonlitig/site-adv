@@ -1,4 +1,5 @@
 import { MessageCircle, Mail, MapPin, Phone, Instagram, Linkedin, Facebook } from "lucide-react";
+import { Link } from "wouter";
 
 import logo from "@/assets/logo.png";
 
@@ -39,6 +40,7 @@ export default function Footer() {
               <li><a href="#how-we-act" className="text-sm text-gray-300 hover:text-white transition-colors">Como Atuamos</a></li>
               <li><a href="#services" className="text-sm text-gray-300 hover:text-white transition-colors">Catálogo de Serviços</a></li>
               <li><a href="#blog" className="text-sm text-gray-300 hover:text-white transition-colors">Conteúdo Jurídico</a></li>
+              <li><Link href="/seja-parceiro"><a className="text-sm text-gray-300 hover:text-white transition-colors font-bold text-[#CFAE70]">Seja um Parceiro</a></Link></li>
               <li><a href="#contact" className="text-sm text-gray-300 hover:text-white transition-colors">Contato</a></li>
             </ul>
           </div>
