@@ -28,10 +28,10 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
-      <Route path="/atuacao/direito-da-saude" component={HealthLaw} />
+      <Route path="/atuacao/saude" component={HealthLaw} />
       <Route path="/atuacao/previdenciario" component={SocialSecurityLaw} />
       <Route path="/atuacao/transito" component={TrafficLaw} />
-      <Route path="/atuacao/passageiro" component={PassengerLaw} />
+      <Route path="/atuacao/aereo" component={PassengerLaw} />
       <Route path="/atuacao/bancario" component={BankingLaw} />
       <Route path="/atuacao/direito-do-trabalho" component={LaborLaw} />
       <Route path="/atuacao/familia" component={FamilyLaw} />
