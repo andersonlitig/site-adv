@@ -15,7 +15,8 @@ import {
   Scale, 
   Briefcase,
   Search,
-  CheckCircle2
+  CheckCircle2,
+  AlertCircle
 } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -85,18 +86,25 @@ const serviceDetails = {
   ]
 };
 
+const assistanceTable = [
+  { time: "A partir de 1 hora", rights: "Facilidades de comunicação (internet, telefonemas)." },
+  { time: "A partir de 2 horas", rights: "Alimentação apropriada (voucher, lanche ou refeição)." },
+  { time: "A partir de 4 horas", rights: "Hospedagem (em caso de pernoite) e transporte de ida e volta." },
+  { time: "Superior a 4 horas", rights: "Direito a reacomodação, reembolso integral ou execução por outra modalidade." }
+];
+
 const faqs = [
   {
-    q: "Quanto tempo de atraso gera direito a indenização?",
-    a: "A justiça analisa o caso, mas atrasos superiores a 4 horas ou que causem perda de conexões e compromissos costumam ser passíveis de reparação, especialmente sem assistência adequada."
+    q: "A companhia aérea pode alegar 'reestruturação de malha' para não indenizar?",
+    a: "Não. Problemas operacionais e reestruturação de malha são riscos do negócio e não eximem a empresa da responsabilidade de transportar o passageiro no horário contratado."
   },
   {
-    q: "A companhia aérea pode alegar 'mau tempo' para não indenizar?",
-    a: "Condições climáticas são riscos da atividade. Embora possam justificar o atraso por segurança, não isentam a empresa do dever de prestar assistência material e reacomodar o passageiro."
+    q: "O que fazer se a minha bagagem não aparecer na esteira?",
+    a: "Você deve preencher imediatamente o RIB (Relatório de Irregularidade de Bagagem) no balcão da empresa antes de sair da sala de desembarque. Ele é a prova essencial do incidente."
   },
   {
-    q: "Tive minha bagagem extraviada. O que devo fazer primeiro?",
-    a: "É essencial preencher o RIB (Relatório de Irregularidade de Bagagem) ainda no aeroporto, no balcão da companhia. Esse documento é a prova principal do incidente."
+    q: "Posso processar por um voo que aconteceu há meses?",
+    a: "Sim. O prazo para voos nacionais é de até 5 anos. Para voos internacionais, o prazo é de 2 anos (Convenção de Montreal). Mesmo que o tempo tenha passado, o direito à reparação permanece."
   }
 ];
 
@@ -128,17 +136,17 @@ export default function PassengerLaw() {
                   <Plane size={12} /> Direito do Passageiro Aéreo
                 </div>
                 <h1 className="text-4xl md:text-7xl font-bold text-white font-heading uppercase tracking-tighter mb-8 leading-[0.9]">
-                  Defesa Estratégica e <span className="text-[#CFAE70]">Proteção Jurídica</span> ao Passageiro
+                  Sua Viagem é um Contrato. <br /> <span className="text-[#CFAE70]">Exija a Reparação Integral.</span>
                 </h1>
                 <p className="text-xl text-gray-300 font-light mb-10 max-w-2xl leading-relaxed">
-                  Sua viagem é um contrato de resultado. Atuamos com rigor técnico para transformar transtornos em justiça, garantindo reparação integral por falhas operacionais e abusividades.
+                  Especialistas na reversão de abusividades aéreas. Atuamos com rigor técnico para transformar transtornos em justiça, garantindo indenizações por atrasos e falhas operacionais.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6">
                   <a 
-                    href="#contact" 
+                    href="https://wa.me/5527999999999" 
                     className="bg-[#CFAE70] text-[#091D39] px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-white transition-all text-center"
                   >
-                    Relatar Incidente de Voo
+                    Analisar meu Caso de Voo Agora
                   </a>
                   <div className="flex items-center gap-4 text-white/60">
                     <div className="w-12 h-[1px] bg-[#CFAE70]/50" />
@@ -177,16 +185,48 @@ export default function PassengerLaw() {
               <div className="grid md:grid-cols-12 gap-16 items-center">
                 <div className="md:col-span-4">
                   <h2 className="text-[#091D39] text-3xl font-bold font-heading uppercase tracking-tighter mb-4 border-l-4 border-[#CFAE70] pl-6">
-                    A Auditoria do Contrato de Transporte
+                    A Responsabilidade Civil no Transporte Aéreo
                   </h2>
                   <p className="text-[#CFAE70] font-bold text-xs uppercase tracking-widest">Obrigação de Resultado</p>
                 </div>
                 <div className="md:col-span-8 bg-[#F8F9FA] p-12 border-l-8 border-[#091D39]">
                   <p className="text-xl md:text-2xl text-[#091D39] font-light leading-relaxed italic">
-                    "Ao adquirir uma passagem, você garante o direito de ser transportado com dignidade e pontualidade. Nossa prática realiza uma auditoria de legalidade sobre o incidente, identificando falhas na assistência material e danos morais presumidos (in re ipsa) que as empresas tentam minimizar."
+                    "Ao adquirir uma passagem, você não compra apenas um assento, mas a garantia de ser transportado com segurança e pontualidade. Quando a companhia falha, ela rompe um contrato de adesão. Nossa prática foca em identificar danos morais presumidos (in re ipsa) que as empresas tentam minimizar."
                   </p>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Assistance Table Section */}
+        <section className="py-24 bg-[#F8F9FA]">
+          <div className="container mx-auto px-4 md:px-12">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-[#091D39] text-3xl font-bold font-heading uppercase tracking-tighter mb-12 text-center">
+                Dever de Assistência Material (Resolução 400 ANAC)
+              </h2>
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse bg-white shadow-sm border border-gray-200">
+                  <thead>
+                    <tr className="bg-[#091D39] text-white">
+                      <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-widest">Tempo de Espera</th>
+                      <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-widest">Direitos do Passageiro</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-200">
+                    {assistanceTable.map((row, i) => (
+                      <tr key={i} className="hover:bg-gray-50 transition-colors">
+                        <td className="px-6 py-4 text-sm font-bold text-[#091D39] whitespace-nowrap">{row.time}</td>
+                        <td className="px-6 py-4 text-sm text-gray-600 leading-relaxed">{row.rights}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="mt-6 text-xs text-gray-400 italic text-center">
+                * O descumprimento de qualquer um desses deveres fortalece significativamente a ação de reparação por danos morais.
+              </p>
             </div>
           </div>
         </section>
@@ -199,7 +239,7 @@ export default function PassengerLaw() {
                 Pilares da Atuação Técnica Aérea
               </h2>
               <p className="text-gray-400 text-lg leading-relaxed font-light">
-                Utilizamos as normas da ANAC, o CDC e convenções internacionais para equilibrar a relação entre passageiro e companhia.
+                Utilizamos as normas da ANAC, o CDC e a Convenção de Montreal para equilibrar a relação entre passageiro e companhia.
               </p>
             </div>
 
@@ -269,9 +309,9 @@ export default function PassengerLaw() {
                     </p>
                   </div>
                   <div className="border-l-2 border-[#CFAE70] pl-6">
-                    <h4 className="font-bold text-[#091D39] uppercase tracking-tighter mb-2">Assistência Material</h4>
+                    <h4 className="font-bold text-[#091D39] uppercase tracking-tighter mb-2">Dano Temporal</h4>
                     <p className="text-gray-500 text-sm leading-relaxed">
-                      Após 4 horas de atraso, a companhia é obrigada a fornecer hospedagem (se pernoite) e transporte. O descumprimento fortalece a ação judicial.
+                      O pleito indenizatório focado no tempo de vida perdido pelo consumidor devido à má gestão da companhia aérea e descaso operacional.
                     </p>
                   </div>
                 </div>
@@ -281,42 +321,14 @@ export default function PassengerLaw() {
                   <Scale size={24} className="text-[#CFAE70]" /> Montreal vs. CDC
                 </h3>
                 <p className="text-gray-400 text-sm leading-relaxed mb-8">
-                  Nossa atuação técnica define qual norma é mais vantajosa em voos internacionais, garantindo a maior proteção possível ao passageiro e evitando a prescrição de direitos.
+                  Nossa atuação define qual norma é mais vantajosa em voos internacionais, garantindo a maior proteção possível ao passageiro e evitando a prescrição de direitos.
                 </p>
                 <a 
                   href="https://wa.me/5527999999999" 
                   className="inline-flex items-center gap-3 text-[#CFAE70] font-bold uppercase tracking-widest text-xs border-b border-[#CFAE70] pb-2 hover:text-white hover:border-white transition-all"
                 >
-                  Analisar meu Caso de Voo <ArrowRight size={16} />
+                  Consultar meus Direitos de Voo <ArrowRight size={16} />
                 </a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Direito Explicado Section */}
-        <section className="py-24 bg-[#091D39]">
-          <div className="container mx-auto px-4 md:px-12">
-            <div className="bg-white p-12 md:p-20 relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-full h-2 bg-[#CFAE70]" />
-              <div className="relative z-10">
-                <h2 className="text-[#091D39] text-3xl font-bold font-heading uppercase tracking-tighter mb-12">
-                  Fundamentação Técnica
-                </h2>
-                <div className="grid lg:grid-cols-2 gap-16">
-                  <div>
-                    <h4 className="text-[#CFAE70] font-bold text-xs uppercase tracking-widest mb-4">Resolução 400 da ANAC</h4>
-                    <p className="text-gray-600 text-lg leading-relaxed italic">
-                      "A norma estabelece condições gerais de transporte. O descumprimento dos deveres de informação e assistência gera responsabilidade objetiva da transportadora."
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="text-[#CFAE70] font-bold text-xs uppercase tracking-widest mb-4">Integridade de Bagagem</h4>
-                    <p className="text-gray-600 text-lg leading-relaxed italic">
-                      "O transportador responde pelos danos a bagagem despachada, desde o recebimento até a entrega ao passageiro. O RIB/PIR é a prova essencial do vício no serviço."
-                    </p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -346,8 +358,11 @@ export default function PassengerLaw() {
         <section className="py-24 bg-white text-center">
           <div className="container mx-auto px-4 md:px-12">
             <h2 className="text-[#091D39] text-4xl md:text-5xl font-bold font-heading uppercase tracking-tighter mb-8">
-              Seu transtorno de viagem <br /> <span className="text-[#CFAE70]">merece reparação integral</span>
+              Teve algum problema em seu voo? <br /> <span className="text-[#CFAE70]">Consulte agora seus direitos</span>
             </h2>
+            <p className="text-gray-500 mb-10 max-w-2xl mx-auto">
+              Se você sofreu com atrasos, cancelamentos ou problemas com bagagem, nossa equipe técnica está pronta para analisar seu caso sem compromisso.
+            </p>
             <a 
               href="https://wa.me/5527999999999" 
               target="_blank" 
