@@ -1,6 +1,24 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus, Minus, ArrowRight } from "lucide-react";
+import { 
+  Plus, 
+  Minus, 
+  ArrowRight, 
+  Stethoscope, 
+  History, 
+  Car, 
+  Plane, 
+  Landmark, 
+  Briefcase, 
+  Users, 
+  ShoppingBag, 
+  Scale, 
+  Home, 
+  FileText, 
+  ShieldAlert, 
+  Globe, 
+  Fingerprint 
+} from "lucide-react";
 import { Link } from "wouter";
 
 const services = [
@@ -9,6 +27,7 @@ const services = [
     title: "Direito da Saúde",
     subtitle: "Defesa do Paciente",
     path: "/atuacao/direito-da-saude",
+    icon: <Stethoscope size={24} />,
     details: [
       "Negativas de tratamentos, cirurgias e medicamentos de alto custo",
       "Reajustes abusivos de mensalidade",
@@ -22,6 +41,7 @@ const services = [
     title: "Direito Previdenciário",
     subtitle: "INSS e Regime Próprio",
     path: "/atuacao/previdenciario",
+    icon: <History size={24} />,
     details: [
       "Aposentadorias (Idade, Tempo de Contribuição, Especial)",
       "Benefício de Prestação Continuada (BPC/LOAS)",
@@ -35,6 +55,7 @@ const services = [
     title: "Direito de Trânsito",
     subtitle: "Defesa de Condutores",
     path: "/atuacao/transito",
+    icon: <Car size={24} />,
     details: [
       "Defesa em Lei Seca (Bafômetro)",
       "Suspensão e Cassação da CNH",
@@ -47,6 +68,7 @@ const services = [
     title: "Direito do Passageiro",
     subtitle: "Problemas Aéreos",
     path: "/atuacao/passageiro",
+    icon: <Plane size={24} />,
     details: [
       "Cancelamento e atraso de voo",
       "Extravio de bagagem",
@@ -59,6 +81,7 @@ const services = [
     title: "Direito Bancário",
     subtitle: "Defesa contra Abusos",
     path: "/atuacao/bancario",
+    icon: <Landmark size={24} />,
     details: [
       "Juros abusivos em contratos",
       "Golpe do Pix e Fraudes bancárias",
@@ -71,6 +94,7 @@ const services = [
     title: "Direito do Trabalho",
     subtitle: "Defesa do Empregado",
     path: "/atuacao/direito-do-trabalho",
+    icon: <Briefcase size={24} />,
     details: [
       "Reversão de Justa Causa",
       "Reconhecimento de Vínculo Empregatício",
@@ -84,6 +108,7 @@ const services = [
     title: "Direito da Família",
     subtitle: "Sucessões e Divórcios",
     path: "/atuacao/familia",
+    icon: <Users size={24} />,
     details: [
       "Divórcio e Dissolução de União Estável",
       "Pensão Alimentícia (Fixação, Revisão e Exoneração)",
@@ -97,6 +122,7 @@ const services = [
     title: "Direito do Consumidor",
     subtitle: "Relações de Consumo",
     path: "/atuacao/consumidor",
+    icon: <ShoppingBag size={24} />,
     details: [
       "Produtos com defeito",
       "Publicidade enganosa",
@@ -109,6 +135,7 @@ const services = [
     title: "Responsabilidade Civil",
     subtitle: "Indenizações",
     path: "/atuacao/responsabilidade-civil",
+    icon: <Scale size={24} />,
     details: [
       "Danos morais e materiais",
       "Danos estéticos",
@@ -121,6 +148,7 @@ const services = [
     title: "Direito Imobiliário",
     subtitle: "Imóveis e Contratos",
     path: "/atuacao/imobiliario",
+    icon: <Home size={24} />,
     details: [
       "Due Diligence para Compra e Venda",
       "Atraso na entrega de imóvel e Distratos",
@@ -133,6 +161,7 @@ const services = [
     title: "Direito Contratual",
     subtitle: "Análise e Elaboração",
     path: "/atuacao/contratual",
+    icon: <FileText size={24} />,
     details: [
       "Elaboração de contratos personalizados",
       "Revisão de cláusulas e riscos",
@@ -145,6 +174,7 @@ const services = [
     title: "Direito Criminal",
     subtitle: "Defesa Penal",
     path: "/atuacao/criminal",
+    icon: <ShieldAlert size={24} />,
     details: [
       "Acompanhamento em Delegacia",
       "Defesa em Inquéritos e Ações Penais",
@@ -157,6 +187,7 @@ const services = [
     title: "Direito Administrativo",
     subtitle: "Relação com o Estado",
     path: "/atuacao/administrativo",
+    icon: <Globe size={24} />,
     details: [
       "Recursos em Concursos Públicos",
       "Defesa em PAD e Sindicâncias",
@@ -169,6 +200,7 @@ const services = [
     title: "Direito Digital",
     subtitle: "Internet e Tecnologia",
     path: "/atuacao/digital",
+    icon: <Fingerprint size={24} />,
     details: [
       "Recuperação de Contas em Redes Sociais",
       "Remoção de Conteúdo e Fake News",
@@ -206,9 +238,9 @@ export default function Services() {
             >
               <div>
                 <div className="flex justify-between items-start mb-4">
-                  <span className="text-[#CFAE70] font-mono text-sm tracking-widest opacity-60">
-                    {String(service.id).padStart(2, '0')}
-                  </span>
+                  <div className="text-[#CFAE70] opacity-80 group-hover:opacity-100 transition-opacity">
+                    {service.icon}
+                  </div>
                   <div className="text-[#CFAE70]">
                     {expandedId === service.id ? <Minus size={20} /> : <Plus size={20} />}
                   </div>
