@@ -26,7 +26,7 @@ const services = [
     id: 1,
     title: "Direito da Saúde",
     subtitle: "Defesa do Paciente",
-    path: "/atuacao/direito-da-saude",
+    path: "/atuacao/saude",
     icon: <Stethoscope size={24} />,
     details: [
       "Negativas de tratamentos, cirurgias e medicamentos de alto custo",
@@ -67,7 +67,7 @@ const services = [
     id: 4,
     title: "Direito do Passageiro",
     subtitle: "Problemas Aéreos",
-    path: "/atuacao/passageiro",
+    path: "/atuacao/aereo",
     icon: <Plane size={24} />,
     details: [
       "Cancelamento e atraso de voo",
@@ -93,7 +93,7 @@ const services = [
     id: 6,
     title: "Direito do Trabalho",
     subtitle: "Defesa do Empregado",
-    path: "/atuacao/direito-do-trabalho",
+    path: "/atuacao/trabalhista",
     icon: <Briefcase size={24} />,
     details: [
       "Reversão de Justa Causa",
