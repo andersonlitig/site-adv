@@ -33,7 +33,7 @@ function Router() {
       <Route path="/atuacao/transito" component={TrafficLaw} />
       <Route path="/atuacao/aereo" component={PassengerLaw} />
       <Route path="/atuacao/bancario" component={BankingLaw} />
-      <Route path="/atuacao/direito-do-trabalho" component={LaborLaw} />
+      <Route path="/atuacao/trabalhista" component={LaborLaw} />
       <Route path="/atuacao/familia" component={FamilyLaw} />
       <Route path="/atuacao/consumidor" component={ConsumerLaw} />
       <Route path="/atuacao/responsabilidade-civil" component={CivilLiability} />
