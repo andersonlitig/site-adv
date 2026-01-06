@@ -191,38 +191,55 @@ export default function BankingLaw() {
         </section>
 
         {/* Superendividamento / Dignity Section */}
-        <section className="py-24 bg-[#F8F9FA] border-y border-gray-100">
+        <section className="py-24 bg-white overflow-hidden">
           <div className="container mx-auto px-4 md:px-12">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <div>
-                <h2 className="text-[#091D39] text-4xl font-bold font-heading uppercase tracking-tighter mb-6">
-                  Recuperação da <br /> <span className="text-[#CFAE70]">Dignidade Financeira</span>
-                </h2>
-                <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                  Utilizamos a Lei do Superendividamento para reorganizar seu patrimônio, garantir o mínimo existencial e cessar o ciclo de juros abusivos. Uma consultoria estratégica para retomar o controle da sua vida financeira.
-                </p>
-                <ul className="space-y-4 mb-10">
-                  {[
-                    "Proteção contra descontos abusivos em conta",
-                    "Repactuação de dívidas em bloco",
-                    "Defesa contra assédio de credores",
-                    "Preservação do patrimônio familiar"
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-center gap-3 text-sm font-bold text-[#091D39] uppercase tracking-tight">
-                      <ChevronRight className="text-[#CFAE70]" size={16} /> {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            <div className="grid lg:grid-cols-2 gap-24 items-center">
               <div className="relative">
-                <div className="aspect-video bg-[#091D39] flex items-center justify-center p-12 relative z-10">
-                   <div className="text-center">
-                      <Lock className="text-[#CFAE70] mx-auto mb-6" size={64} />
-                      <h3 className="text-white text-xl font-bold uppercase tracking-widest mb-4">Lei 14.181/2021</h3>
-                      <p className="text-gray-400 text-sm">O escudo legal contra a insolvência e o abuso de crédito.</p>
-                   </div>
+                <div className="relative z-10 border-[20px] border-[#F8F9FA] p-2">
+                  <img 
+                    src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2022&auto=format&fit=crop" 
+                    alt="Direito Bancário e Superendividamento" 
+                    className="w-full aspect-[4/5] object-cover filter grayscale hover:grayscale-0 transition-all duration-700"
+                  />
+                  <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-[#CFAE70]/10 -z-10 animate-pulse" />
                 </div>
-                <div className="absolute -bottom-6 -right-6 w-full h-full border-2 border-[#CFAE70] -z-0" />
+                
+                {/* Floating Badge */}
+                <div className="absolute -top-6 -left-6 bg-[#091D39] text-white p-8 shadow-2xl z-20 hidden md:block border-l-4 border-[#CFAE70]">
+                  <Lock className="text-[#CFAE70] mb-4" size={32} />
+                  <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-[#CFAE70] mb-2">Lei 14.181/2021</p>
+                  <h4 className="text-xl font-bold uppercase tracking-tighter leading-none">Proteção ao <br />Consumidor</h4>
+                </div>
+              </div>
+
+              <div>
+                <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#091D39]/5 border border-[#091D39]/10 text-[#091D39] text-[10px] font-bold uppercase tracking-widest mb-6">
+                  <ShieldCheck size={12} /> Defesa do Patrimônio Familiar
+                </div>
+                <h2 className="text-[#091D39] text-5xl md:text-6xl font-bold font-heading uppercase tracking-tighter mb-8 leading-[0.9]">
+                  Recuperação da <br /><span className="text-[#CFAE70]">Dignidade Financeira</span>
+                </h2>
+                <p className="text-gray-600 text-lg leading-relaxed mb-8 font-light">
+                  A Lei do Superendividamento é o instrumento jurídico definitivo para reorganizar seu patrimônio, garantir o mínimo existencial e cessar definitivamente o ciclo de juros abusivos que asfixia sua economia.
+                </p>
+
+                <div className="grid gap-6 mb-10">
+                  {[
+                    { title: "Mínimo Existencial", desc: "Preservação da renda necessária para a sobrevivência digna do cidadão." },
+                    { title: "Repactuação em Bloco", desc: "Plano de pagamento unificado com todos os credores sob supervisão judicial." },
+                    { title: "Cessação de Juros", desc: "Interrupção imediata de encargos abusivos e multas moratórias desproporcionais." }
+                  ].map((item, i) => (
+                    <div key={i} className="flex gap-4 p-6 bg-[#F8F9FA] border-l-4 border-[#091D39] group hover:bg-[#091D39] transition-all duration-500">
+                      <div className="text-[#CFAE70] shrink-0 group-hover:scale-110 transition-transform">
+                        <ChevronRight size={24} />
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-[#091D39] uppercase tracking-tight text-sm mb-1 group-hover:text-white transition-colors">{item.title}</h4>
+                        <p className="text-gray-500 text-xs group-hover:text-gray-300 transition-colors">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
