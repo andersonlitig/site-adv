@@ -75,13 +75,13 @@ export default function PartnerPage() {
               transition={{ duration: 0.8 }}
             >
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#CFAE70]/10 border border-[#CFAE70]/20 text-[#CFAE70] text-[10px] font-bold uppercase tracking-widest mb-6">
-                <Handshake size={12} /> Programa de Parcerias Jurídicas
+                <Handshake size={12} /> Ecossistema de Parcerias Jurídicas
               </div>
               <h1 className="text-4xl md:text-7xl font-bold text-white font-heading uppercase tracking-tighter mb-8 leading-[0.9]">
-                Vamos Trabalhar <br /> <span className="text-[#CFAE70]">Juntos em Parceria</span>
+                Uma Via de Mão Dupla <br /> <span className="text-[#CFAE70]">em Prol do Direito</span>
               </h1>
               <p className="text-xl text-gray-300 font-light mb-10 max-w-2xl mx-auto leading-relaxed">
-                Expanda o portfólio de soluções do seu escritório sem precisar dominar novas áreas. Juntos, oferecemos excelência técnica e resultados para seus clientes.
+                Nossa parceria é colaborativa: encaminhamos demandas para sua expertise ou recebemos casos em que podemos somar com nossa estrutura. Um modelo ganha-ganha para elevar o padrão da advocacia.
               </p>
             </motion.div>
           </div>
@@ -170,13 +170,7 @@ export default function PartnerPage() {
                   </div>
                   <div className="space-y-2">
                     <label className="text-[10px] font-bold uppercase tracking-widest text-gray-500">Área de Atuação Principal</label>
-                    <select className="w-full bg-white border border-gray-200 p-4 text-sm focus:border-[#CFAE70] outline-none transition-all">
-                      <option>Direito Cível</option>
-                      <option>Direito Previdenciário</option>
-                      <option>Direito Criminal</option>
-                      <option>Direito da Família</option>
-                      <option>Outros</option>
-                    </select>
+                    <input required type="text" placeholder="Ex: Direito Civil, Tributário, etc." className="w-full bg-white border border-gray-200 p-4 text-sm focus:border-[#CFAE70] outline-none transition-all" />
                   </div>
                   <div className="space-y-2">
                     <label className="text-[10px] font-bold uppercase tracking-widest text-gray-500">Mensagem / Proposta</label>
