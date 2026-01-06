@@ -78,10 +78,10 @@ export default function PartnerPage() {
                 <Handshake size={12} /> Ecossistema de Parcerias Jurídicas
               </div>
               <h1 className="text-4xl md:text-7xl font-bold text-white font-heading uppercase tracking-tighter mb-8 leading-[0.9]">
-                Uma Via de Mão Dupla <br /> <span className="text-[#CFAE70]">em Prol do Direito</span>
+                Sinergia Jurídica <br /> <span className="text-[#CFAE70]">em Alta Performance</span>
               </h1>
               <p className="text-xl text-gray-300 font-light mb-10 max-w-2xl mx-auto leading-relaxed">
-                Nossa parceria é colaborativa: encaminhamos demandas para sua expertise ou recebemos casos em que podemos somar com nossa estrutura. Um modelo ganha-ganha para elevar o padrão da advocacia.
+                Nossa parceria é estruturada na reciprocidade: podemos encaminhar demandas para sua expertise técnica ou receber casos em que nossa estrutura de alta performance pode somar resultados.
               </p>
             </motion.div>
           </div>
@@ -102,6 +102,35 @@ export default function PartnerPage() {
                   </p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Partnership Models */}
+        <section className="py-24 bg-white border-b border-gray-100">
+          <div className="container mx-auto px-4 md:px-12">
+            <div className="grid md:grid-cols-2 gap-16">
+              <div className="group p-12 bg-[#091D39] text-white transition-all duration-500 hover:translate-y-[-8px]">
+                <div className="w-16 h-16 bg-[#CFAE70] flex items-center justify-center mb-8">
+                  <ArrowRight size={32} className="text-[#091D39]" />
+                </div>
+                <h3 className="text-3xl font-bold uppercase tracking-tighter mb-6">Receba Demandas</h3>
+                <p className="text-gray-400 leading-relaxed mb-8">
+                  Podemos encaminhar casos específicos para sua área de expertise quando identificamos demandas que demandam sua especialidade técnica ou atuação regional diferenciada.
+                </p>
+                <div className="h-1 w-24 bg-[#CFAE70]" />
+              </div>
+
+              <div className="group p-12 bg-[#F8F9FA] border border-gray-200 transition-all duration-500 hover:translate-y-[-8px]">
+                <div className="w-16 h-16 bg-[#091D39] flex items-center justify-center mb-8">
+                  <UserCheck size={32} className="text-[#CFAE70]" />
+                </div>
+                <h3 className="text-3xl font-bold uppercase tracking-tighter text-[#091D39] mb-6">Envie Demandas</h3>
+                <p className="text-gray-500 leading-relaxed mb-8">
+                  Traga casos complexos de Direito à Saúde, Bancário ou Trabalho e utilize nossa estrutura de alta performance para garantir o melhor desfecho para seu cliente, com divisão clara de honorários.
+                </p>
+                <div className="h-1 w-24 bg-[#091D39]" />
+              </div>
             </div>
           </div>
         </section>
