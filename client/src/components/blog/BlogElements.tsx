@@ -1,6 +1,6 @@
-import { MessageCircle, Share2 } from "lucide-react";
+import { MessageCircle, Share2, Calendar } from "lucide-react";
 import { Link } from "wouter";
-import authorImg from "@/assets/images/anderson-litig.png";
+import authorImg from "@/assets/images/author.png";
 
 export default function BlogCTA() {
   return (
@@ -28,8 +28,8 @@ export default function BlogCTA() {
 
 export function AuthorBlock() {
   return (
-    <div className="py-12 border-t border-gray-100 flex flex-col md:flex-row gap-8 items-center md:items-start text-center md:text-left">
-      <div className="w-24 h-24 rounded-full bg-gray-100 overflow-hidden flex-shrink-0 grayscale">
+    <div className="py-12 flex flex-col md:flex-row gap-8 items-center md:items-start text-center md:text-left">
+      <div className="w-24 h-24 rounded-full bg-gray-100 overflow-hidden flex-shrink-0 shadow-sm border border-gray-100">
         <img 
           src={authorImg} 
           alt="Dr. Anderson Litig" 
@@ -42,17 +42,9 @@ export function AuthorBlock() {
         <div className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-4">
           Advogado
         </div>
-        <p className="text-gray-500 text-sm leading-relaxed max-w-2xl font-light mb-6">
+        <p className="text-gray-500 text-sm leading-relaxed max-w-2xl font-light">
           Especialista em Direito Processual e Estratégia Jurídica. Com uma trajetória marcada pela excelência no contencioso e na consultoria preventiva, dedica-se a construir soluções jurídicas inovadoras e seguras para casos de alta complexidade.
         </p>
-        <a 
-          href="https://wa.me/5527999999999" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-[#25D366] hover:text-[#128C7E] transition-colors text-xs font-bold uppercase tracking-widest"
-        >
-          <MessageCircle size={16} fill="currentColor" /> Contatar via WhatsApp
-        </a>
       </div>
     </div>
   );
@@ -83,22 +75,27 @@ const recommendedPosts = [
 ];
 
 export function RecommendedPosts({ currentId }: { currentId: number }) {
-  const posts = recommendedPosts.filter(p => p.id !== currentId).slice(0, 2);
+  const posts = recommendedPosts.filter(p => p.id !== currentId).slice(0, 4);
 
   return (
-    <div className="lg:pl-8 lg:border-l lg:border-gray-100">
-      <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#091D39] border-b border-gray-100 pb-4 mb-8">Artigos Recomendados</h4>
-      <div className="space-y-10">
+    <div className="lg:pl-8">
+      <h4 className="text-sm font-bold uppercase tracking-widest text-[#091D39] border-t-2 border-black pt-4 mb-8">Artigos Recomendados</h4>
+      <div className="space-y-6">
         {posts.map((post) => (
           <Link key={post.id} href={post.path}>
-            <a className="group block">
-              <div className="aspect-video overflow-hidden mb-4 bg-gray-100 grayscale group-hover:grayscale-0 transition-all duration-500 shadow-sm group-hover:shadow-md">
-                <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <a className="group flex gap-4 items-start">
+              <div className="w-20 h-20 overflow-hidden flex-shrink-0 bg-gray-100 shadow-sm border border-gray-100">
+                <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>
-              <span className="text-[9px] font-bold text-[#CFAE70] uppercase tracking-widest mb-2 block">{post.date}</span>
-              <h5 className="text-sm font-bold text-[#091D39] uppercase tracking-tighter leading-tight group-hover:text-[#CFAE70] transition-colors line-clamp-2">
-                {post.title}
-              </h5>
+              <div className="flex-1 min-w-0">
+                <h5 className="text-[13px] font-bold text-[#091D39] uppercase tracking-tighter leading-tight group-hover:text-[#CFAE70] transition-colors line-clamp-2 mb-1">
+                  {post.title}
+                </h5>
+                <div className="flex items-center gap-1.5 text-gray-400">
+                  <Calendar size={10} />
+                  <span className="text-[10px] font-medium uppercase tracking-wider">{post.date}</span>
+                </div>
+              </div>
             </a>
           </Link>
         ))}
