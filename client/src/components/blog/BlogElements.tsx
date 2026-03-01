@@ -1,24 +1,95 @@
-import { MessageCircle, Share2 } from "lucide-react";
+import { MessageCircle, Share2, User } from "lucide-react";
+import { Link } from "wouter";
 
 export default function BlogCTA() {
   return (
-    <div className="bg-[#0D0D0D] p-10 text-white border-l-8 border-[#CFAE70] my-16">
-      <h3 className="text-2xl font-bold uppercase tracking-tighter mb-4">Esclareça suas dúvidas</h3>
-      <p className="text-gray-400 mb-8 leading-relaxed italic">
-        O conteúdo acima possui caráter meramente informativo. Caso você tenha dúvidas sobre a aplicação da lei ao seu caso concreto ou precise de orientações técnicas específicas, nossa equipe jurídica está disponível para fornecer esclarecimentos fundamentados.
-      </p>
-      <div className="flex flex-col sm:flex-row gap-4 items-center">
+    <div className="bg-[#0D0D0D] p-8 text-white border-l-4 border-[#CFAE70] my-12 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <h3 className="text-xl font-bold uppercase tracking-tighter mb-1">Esclareça suas dúvidas</h3>
+        <p className="text-gray-400 text-sm italic">Fale agora com um advogado especializado.</p>
+      </div>
+      <div className="flex flex-col items-center md:items-end gap-2">
         <a 
           href="https://wa.me/5527999999999" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center gap-3 bg-[#CFAE70] text-[#091D39] py-4 px-8 font-bold uppercase tracking-widest hover:bg-white transition-all w-full sm:w-auto"
+          className="inline-flex items-center justify-center gap-3 bg-[#CFAE70] text-[#091D39] py-3 px-6 text-xs font-bold uppercase tracking-widest hover:bg-white transition-all w-full md:w-auto"
         >
-          <MessageCircle size={20} /> Solicitar Informação Técnica
+          <MessageCircle size={18} /> Falar com Advogado
         </a>
-        <div className="text-[9px] text-gray-500 uppercase tracking-widest leading-tight text-center sm:text-left">
-          Atividade consultiva em estrita conformidade <br /> com o Código de Ética e Disciplina da OAB.
-        </div>
+        <span className="text-[8px] text-gray-500 uppercase tracking-widest text-center md:text-right">
+          Atividade consultiva em conformidade com o Código de Ética da OAB.
+        </span>
+      </div>
+    </div>
+  );
+}
+
+export function AuthorBlock() {
+  return (
+    <div className="py-12 border-t border-gray-100 flex flex-col md:flex-row gap-8 items-center md:items-start text-center md:text-left">
+      <div className="w-24 h-24 rounded-full bg-gray-200 overflow-hidden flex-shrink-0 grayscale">
+        <img 
+          src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=2070&auto=format&fit=crop" 
+          alt="Autor" 
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <div>
+        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#CFAE70] mb-2 block">Escrito por</span>
+        <h4 className="text-xl font-bold text-[#091D39] uppercase tracking-tighter mb-2">Dr. Guilherme Rodrigues</h4>
+        <p className="text-gray-500 text-sm leading-relaxed max-w-2xl font-light">
+          Sócio-fundador especializado em Direito Civil e Processual Civil. Com ampla experiência em contencioso estratégico e consultoria jurídica preventiva, focado em soluções ágeis para casos complexos.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+const recommendedPosts = [
+  {
+    id: 1,
+    title: "Direito à Saúde: Como reverter negativas de planos de saúde",
+    date: "15 Mai 2024",
+    path: "/blog/negativas-plano-de-saude",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop"
+  },
+  {
+    id: 2,
+    title: "Herança e Inventário: O que você precisa saber hoje",
+    date: "10 Mai 2024",
+    path: "/blog/heranca-e-inventario",
+    image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800"
+  },
+  {
+    id: 3,
+    title: "Juros Abusivos: Como identificar e revisar seu contrato",
+    date: "05 Mai 2024",
+    path: "/blog/juros-abusivos",
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2011&auto=format&fit=crop"
+  }
+];
+
+export function RecommendedPosts({ currentId }: { currentId: number }) {
+  const posts = recommendedPosts.filter(p => p.id !== currentId).slice(0, 2);
+
+  return (
+    <div className="pt-16 border-t border-gray-100">
+      <h4 className="text-sm font-bold uppercase tracking-[0.3em] text-[#091D39] mb-8">Artigos Recomendados</h4>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {posts.map((post) => (
+          <Link key={post.id} href={post.path}>
+            <a className="group block">
+              <div className="aspect-video overflow-hidden mb-4 bg-gray-100 grayscale group-hover:grayscale-0 transition-all duration-500">
+                <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              </div>
+              <span className="text-[9px] font-bold text-[#CFAE70] uppercase tracking-widest mb-2 block">{post.date}</span>
+              <h5 className="text-lg font-bold text-[#091D39] uppercase tracking-tighter leading-tight group-hover:text-[#CFAE70] transition-colors line-clamp-2">
+                {post.title}
+              </h5>
+            </a>
+          </Link>
+        ))}
       </div>
     </div>
   );

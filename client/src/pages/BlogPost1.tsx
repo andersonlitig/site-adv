@@ -2,7 +2,7 @@ import { ChevronRight, Calendar } from "lucide-react";
 import { Link } from "wouter";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import BlogCTA, { ShareButtons } from "@/components/blog/BlogElements";
+import BlogCTA, { ShareButtons, AuthorBlock, RecommendedPosts } from "@/components/blog/BlogElements";
 
 export default function BlogPost1() {
   const title = "Direito à Saúde: Como reverter negativas de planos de saúde";
@@ -71,6 +71,8 @@ export default function BlogPost1() {
               </div>
 
               <BlogCTA />
+              <AuthorBlock />
+              <RecommendedPosts currentId={1} />
             </div>
           </div>
         </article>
