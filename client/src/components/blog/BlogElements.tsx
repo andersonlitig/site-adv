@@ -25,21 +25,29 @@ export default function BlogCTA() {
   );
 }
 
+import authorImg from "@/assets/images/anderson-litig.png";
+
 export function AuthorBlock() {
   return (
-    <div className="py-12 border-t border-gray-100 flex flex-col md:flex-row gap-8 items-center md:items-start text-center md:text-left">
-      <div className="w-24 h-24 rounded-full bg-gray-200 overflow-hidden flex-shrink-0 grayscale">
+    <div className="py-12 border-t border-gray-100 flex flex-col md:flex-row gap-10 items-center md:items-start text-center md:text-left group">
+      <div className="w-32 h-32 rounded-2xl bg-gray-100 overflow-hidden flex-shrink-0 shadow-2xl rotate-3 group-hover:rotate-0 transition-transform duration-500">
         <img 
-          src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=2070&auto=format&fit=crop" 
-          alt="Autor" 
+          src={authorImg} 
+          alt="Dr. Anderson Litig" 
           className="w-full h-full object-cover"
         />
       </div>
-      <div>
-        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#CFAE70] mb-2 block">Escrito por</span>
-        <h4 className="text-xl font-bold text-[#091D39] uppercase tracking-tighter mb-2">Dr. Guilherme Rodrigues</h4>
-        <p className="text-gray-500 text-sm leading-relaxed max-w-2xl font-light">
-          Sócio-fundador especializado em Direito Civil e Processual Civil. Com ampla experiência em contencioso estratégico e consultoria jurídica preventiva, focado em soluções ágeis para casos complexos.
+      <div className="flex-1">
+        <div className="flex items-center gap-3 mb-4 justify-center md:justify-start">
+          <div className="h-[1px] w-8 bg-[#CFAE70]"></div>
+          <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-[#CFAE70]">Escrito por</span>
+        </div>
+        <h4 className="text-3xl font-bold text-[#091D39] uppercase tracking-tighter mb-3 leading-none">Dr. Anderson Litig</h4>
+        <div className="inline-block px-3 py-1 bg-[#091D39] text-white text-[10px] font-bold uppercase tracking-widest mb-4">
+          Advogado
+        </div>
+        <p className="text-gray-500 text-base leading-relaxed max-w-2xl font-light">
+          Especialista em Direito Processual e Estratégia Jurídica. Com uma trajetória marcada pela excelência no contencioso e na consultoria preventiva, dedica-se a construir soluções jurídicas inovadoras e seguras para casos de alta complexidade.
         </p>
       </div>
     </div>
@@ -74,19 +82,34 @@ export function RecommendedPosts({ currentId }: { currentId: number }) {
   const posts = recommendedPosts.filter(p => p.id !== currentId).slice(0, 2);
 
   return (
-    <div className="pt-16 border-t border-gray-100">
-      <h4 className="text-sm font-bold uppercase tracking-[0.3em] text-[#091D39] mb-8">Artigos Recomendados</h4>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div className="pt-20 border-t border-gray-100">
+      <div className="flex items-center justify-between mb-12">
+        <h4 className="text-sm font-bold uppercase tracking-[0.4em] text-[#091D39]">Artigos Recomendados</h4>
+        <div className="h-[1px] flex-1 bg-gray-100 ml-8"></div>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         {posts.map((post) => (
           <Link key={post.id} href={post.path}>
-            <a className="group block">
-              <div className="aspect-video overflow-hidden mb-4 bg-gray-100 grayscale group-hover:grayscale-0 transition-all duration-500">
-                <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <a className="group block relative">
+              <div className="aspect-[16/10] overflow-hidden mb-6 bg-gray-100 relative">
+                <img 
+                  src={post.image} 
+                  alt={post.title} 
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" 
+                />
+                <div className="absolute inset-0 bg-[#091D39]/0 group-hover:bg-[#091D39]/10 transition-colors duration-500"></div>
               </div>
-              <span className="text-[9px] font-bold text-[#CFAE70] uppercase tracking-widest mb-2 block">{post.date}</span>
-              <h5 className="text-lg font-bold text-[#091D39] uppercase tracking-tighter leading-tight group-hover:text-[#CFAE70] transition-colors line-clamp-2">
-                {post.title}
-              </h5>
+              <div className="space-y-3">
+                <span className="inline-block text-[10px] font-bold text-[#CFAE70] uppercase tracking-widest border-b border-[#CFAE70]/30 pb-1">
+                  {post.date}
+                </span>
+                <h5 className="text-xl font-bold text-[#091D39] uppercase tracking-tighter leading-tight group-hover:text-[#CFAE70] transition-colors line-clamp-2">
+                  {post.title}
+                </h5>
+                <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-gray-400 group-hover:text-[#091D39] transition-colors">
+                  Ler Artigo <div className="h-[1px] w-4 bg-gray-300 group-hover:w-8 group-hover:bg-[#CFAE70] transition-all"></div>
+                </div>
+              </div>
             </a>
           </Link>
         ))}
