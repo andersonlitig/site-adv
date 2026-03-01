@@ -79,21 +79,21 @@ export function RecommendedPosts({ currentId }: { currentId: number }) {
 
   return (
     <div className="lg:pl-8">
-      <h4 className="text-sm font-bold uppercase tracking-widest text-[#091D39] border-t-2 border-black pt-4 mb-8">Artigos Recomendados</h4>
-      <div className="space-y-6">
+      <h4 className="text-sm font-bold uppercase tracking-widest text-[#091D39] border-t-2 border-black pt-5 mb-10">Artigos Recomendados</h4>
+      <div className="space-y-8">
         {posts.map((post) => (
           <Link key={post.id} href={post.path}>
-            <a className="group flex gap-4 items-start">
-              <div className="w-20 h-20 overflow-hidden flex-shrink-0 bg-gray-100 shadow-sm border border-gray-100">
-                <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <a className="group flex gap-5 items-center">
+              <div className="w-24 h-24 overflow-hidden flex-shrink-0 bg-gray-50 shadow-sm border border-gray-100 rounded-sm">
+                <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
               </div>
               <div className="flex-1 min-w-0">
-                <h5 className="text-[13px] font-bold text-[#091D39] uppercase tracking-tighter leading-tight group-hover:text-[#CFAE70] transition-colors line-clamp-2 mb-1">
+                <h5 className="text-[14px] font-bold text-[#091D39] uppercase tracking-tighter leading-snug group-hover:text-[#CFAE70] transition-colors line-clamp-2 mb-2">
                   {post.title}
                 </h5>
-                <div className="flex items-center gap-1.5 text-gray-400">
-                  <Calendar size={10} />
-                  <span className="text-[10px] font-medium uppercase tracking-wider">{post.date}</span>
+                <div className="flex items-center gap-2 text-gray-400">
+                  <Calendar size={12} className="text-[#CFAE70]/60" />
+                  <span className="text-[10px] font-semibold uppercase tracking-widest">{post.date}</span>
                 </div>
               </div>
             </a>
