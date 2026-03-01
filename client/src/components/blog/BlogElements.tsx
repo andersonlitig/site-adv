@@ -1,4 +1,4 @@
-import { MessageCircle, Share2, Calendar } from "lucide-react";
+import { MessageCircle, Share2, Calendar, ChevronRight } from "lucide-react";
 import { Link } from "wouter";
 import authorImg from "@/assets/images/author.png";
 
@@ -75,30 +75,53 @@ const recommendedPosts = [
 ];
 
 export function RecommendedPosts({ currentId }: { currentId: number }) {
-  const posts = recommendedPosts.filter(p => p.id !== currentId).slice(0, 4);
+  const posts = recommendedPosts.filter(p => p.id !== currentId).slice(0, 3);
 
   return (
-    <div className="lg:pl-8">
-      <h4 className="text-sm font-bold uppercase tracking-widest text-[#091D39] border-t-2 border-black pt-5 mb-10">Artigos Recomendados</h4>
-      <div className="space-y-8">
-        {posts.map((post) => (
-          <Link key={post.id} href={post.path}>
-            <a className="group flex gap-5 items-center">
-              <div className="w-24 h-24 overflow-hidden flex-shrink-0 bg-gray-50 shadow-sm border border-gray-100 rounded-sm">
-                <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <h5 className="text-[14px] font-bold text-[#091D39] uppercase tracking-tighter leading-snug group-hover:text-[#CFAE70] transition-colors line-clamp-2 mb-2">
-                  {post.title}
-                </h5>
-                <div className="flex items-center gap-2 text-gray-400">
-                  <Calendar size={12} className="text-[#CFAE70]/60" />
-                  <span className="text-[10px] font-semibold uppercase tracking-widest">{post.date}</span>
-                </div>
-              </div>
+    <div className="bg-[#e8e8e8] py-20 mt-12 w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+      <div className="container mx-auto px-4 max-w-5xl">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+          <div>
+            <span className="text-[10px] font-bold border-l-2 border-[#CFAE70] pl-3 uppercase tracking-[0.3em] text-[#CFAE70] mb-3 block">Sugestões de Leitura</span>
+            <h4 className="text-3xl md:text-4xl font-bold uppercase tracking-tighter text-[#091D39] leading-none">Artigos Recomendados</h4>
+          </div>
+          <Link href="/blog">
+            <a className="group flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-[#091D39] hover:text-[#CFAE70] transition-colors">
+              <span>Explorar todo o conteúdo</span>
+              <div className="w-8 h-px bg-[#091D39] group-hover:bg-[#CFAE70] group-hover:w-12 transition-all" />
             </a>
           </Link>
-        ))}
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {posts.map((post) => (
+            <Link key={post.id} href={post.path}>
+              <a className="group bg-white p-6 shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col h-full border border-gray-100 rounded-sm">
+                <div className="aspect-[16/10] overflow-hidden mb-6 relative rounded-sm">
+                  <img 
+                    src={post.image} 
+                    alt={post.title} 
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-out" 
+                  />
+                  <div className="absolute inset-0 bg-[#091D39]/0 group-hover:bg-[#091D39]/5 transition-colors duration-500" />
+                </div>
+                <div className="flex items-center gap-2 mb-4">
+                  <Calendar size={12} className="text-[#CFAE70]" />
+                  <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">{post.date}</span>
+                </div>
+                <h5 className="text-base font-bold text-[#091D39] uppercase tracking-tighter leading-tight group-hover:text-[#CFAE70] transition-colors line-clamp-3 mb-6 flex-1">
+                  {post.title}
+                </h5>
+                <div className="pt-6 border-t border-gray-50 flex items-center justify-between mt-auto">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-[#091D39]">Ler Artigo</span>
+                  <div className="w-10 h-10 rounded-full border border-gray-100 flex items-center justify-center group-hover:bg-[#CFAE70] group-hover:border-[#CFAE70] group-hover:text-[#091D39] transition-all duration-500">
+                    <ChevronRight size={14} />
+                  </div>
+                </div>
+              </a>
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ export default function BlogPost2() {
   const summary = "Entenda os prazos, custos e procedimentos essenciais para organizar a sucessão patrimonial com segurança e agilidade jurídica.";
 
   return (
-    <div className="min-h-screen bg-[#E8E8E8] text-[#0D0D0D]">
+    <div className="min-h-screen bg-white text-[#0D0D0D]">
       <Navbar />
       <main className="pt-32">
         <div className="bg-white border-b border-gray-200">
@@ -24,9 +24,9 @@ export default function BlogPost2() {
           </div>
         </div>
 
-        <article className="py-24">
+        <article className="py-24 bg-white">
           <div className="container mx-auto px-4 md:px-12">
-            <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-16">
+            <div className="max-w-4xl mx-auto">
               <div className="lg:flex-1 max-w-4xl">
                 <div className="mb-12">
                   <div className="flex flex-col gap-2 mb-6 text-sm font-bold uppercase tracking-widest text-[#CFAE70]">
@@ -74,12 +74,9 @@ export default function BlogPost2() {
                 <BlogCTA />
                 <AuthorBlock />
               </div>
+            <RecommendedPosts currentId={2} />
+              </div>
 
-              <aside className="w-full lg:w-80 flex-shrink-0">
-                <div className="sticky top-32">
-                  <RecommendedPosts currentId={2} />
-                </div>
-              </aside>
             </div>
           </div>
         </article>

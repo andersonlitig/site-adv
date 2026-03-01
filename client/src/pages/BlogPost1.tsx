@@ -9,7 +9,7 @@ export default function BlogPost1() {
   const summary = "Saiba como agir diante de negativas de tratamentos, medicamentos de alto custo e cirurgias, garantindo seu acesso à saúde através de medidas jurídicas especializadas.";
 
   return (
-    <div className="min-h-screen bg-[#E8E8E8] text-[#0D0D0D]">
+    <div className="min-h-screen bg-white text-[#0D0D0D]">
       <Navbar />
       <main className="pt-32">
         <div className="bg-white border-b border-gray-200">
@@ -24,66 +24,82 @@ export default function BlogPost1() {
           </div>
         </div>
 
-        <article className="py-24">
+        <article className="py-24 bg-white">
           <div className="container mx-auto px-4 md:px-12">
-            <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-16">
-              <div className="lg:flex-1 max-w-4xl">
-                <div className="mb-12">
-                  <div className="flex flex-col gap-2 mb-6 text-sm font-bold uppercase tracking-widest text-[#CFAE70]">
-                    <div className="flex items-center gap-2">
-                      <Calendar size={14} />
-                      <span>15 Mai 2024</span>
-                    </div>
-                    <div className="bg-[#091D39] text-white px-3 py-1 self-start">
-                      Saúde
-                    </div>
+            <div className="max-w-4xl mx-auto">
+              <div className="mb-12">
+                <div className="flex flex-col gap-2 mb-6 text-sm font-bold uppercase tracking-widest text-[#CFAE70]">
+                  <div className="flex items-center gap-2">
+                    <Calendar size={14} />
+                    <span>15 Mai 2024</span>
                   </div>
-                  <h1 className="text-4xl md:text-6xl font-bold font-heading uppercase tracking-tighter mb-4 leading-tight text-[#091D39]">
-                    {title}
-                  </h1>
-                  <p className="text-xl text-gray-500 font-light leading-relaxed italic border-l-4 border-[#CFAE70] pl-6 mb-8">
-                    {summary}
-                  </p>
-                  
-                  <ShareButtons title={title} />
+                  <div className="bg-[#091D39] text-white px-3 py-1 self-start">
+                    Saúde
+                  </div>
                 </div>
+                <h1 className="text-4xl md:text-6xl font-bold font-heading uppercase tracking-tighter mb-4 leading-tight text-[#091D39]">
+                  {title}
+                </h1>
+                <p className="text-xl text-gray-500 font-light leading-relaxed italic border-l-4 border-[#CFAE70] pl-6 mb-8">
+                  {summary}
+                </p>
+                
+                <ShareButtons title={title} />
+              </div>
 
-                <div className="aspect-video mb-12 overflow-hidden bg-[#091D39]">
-                  <img 
-                    src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop" 
-                    alt="Direito à Saúde" 
-                    className="w-full h-full object-cover opacity-80"
-                  />
-                </div>
+              <div className="aspect-video mb-12 overflow-hidden bg-[#091D39] rounded-sm shadow-lg">
+                <img 
+                  src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop" 
+                  alt="Direito à Saúde" 
+                  className="w-full h-full object-cover opacity-90"
+                />
+              </div>
 
-                <div className="prose prose-lg text-[#2C2C2C] font-light leading-relaxed max-w-none space-y-6 mb-16 border-b border-gray-100 pb-16">
-                  <p>
-                    As negativas de cobertura pelos planos de saúde têm se tornado cada vez mais comuns, atingindo pacientes em momentos de extrema vulnerabilidade. Seja pela recusa de medicamentos de alto custo, cirurgias complexas ou tratamentos especializados, o beneficiário muitas vezes se vê desamparado.
-                  </p>
-                  <p>
-                    O que muitos não sabem é que o <strong>Rol da ANS</strong> é considerado exemplificativo pela jurisprudência majoritária, o que significa que, se houver prescrição médica fundamentada, o plano não pode simplesmente negar o tratamento sob alegação de não estar na lista.
-                  </p>
-                  <h2 className="text-2xl font-bold uppercase tracking-tighter text-[#091D39] mt-12 mb-6">Passos para Reverter a Negativa</h2>
-                  <ul className="list-disc pl-6 space-y-4">
-                    <li><strong>Exija a negativa por escrito:</strong> É direito do consumidor receber o motivo da recusa formalmente.</li>
-                    <li><strong>Prescrição detalhada:</strong> O médico deve justificar a urgência e a necessidade específica do tratamento.</li>
-                    <li><strong>Liminares:</strong> Em casos de urgência, a justiça pode conceder decisões rápidas (liminares) em menos de 24h a 48h.</li>
+              <div className="prose prose-lg text-[#2C2C2C] font-light leading-relaxed max-w-none space-y-8 mb-16">
+                <p className="text-lg">
+                  As negativas de cobertura pelos planos de saúde têm se tornado cada vez mais comuns, atingindo pacientes em momentos de extrema vulnerabilidade. Seja pela recusa de medicamentos de alto custo, cirurgias complexas ou tratamentos especializados, o beneficiário muitas vezes se vê desamparado.
+                </p>
+                <p>
+                  O que muitos não sabem é que o <strong>Rol da ANS</strong> é considerado exemplificativo pela jurisprudência majoritária, o que significa que, se houver prescrição médica fundamentada, o plano não pode simplesmente negar o tratamento sob alegação de não estar na lista.
+                </p>
+
+                <div className="bg-gray-50 p-10 my-12 border-l-4 border-[#091D39] shadow-sm">
+                  <h3 className="text-xl font-bold uppercase tracking-tighter text-[#091D39] mb-6">Passos para Reverter a Negativa</h3>
+                  <ul className="list-none p-0 space-y-6">
+                    <li className="flex gap-4">
+                      <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#CFAE70] text-[#091D39] flex items-center justify-center font-bold text-sm">01</span>
+                      <p className="m-0"><strong>Exija a negativa por escrito:</strong> É direito do consumidor receber o motivo da recusa formalmente e de forma detalhada.</p>
+                    </li>
+                    <li className="flex gap-4">
+                      <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#CFAE70] text-[#091D39] flex items-center justify-center font-bold text-sm">02</span>
+                      <p className="m-0"><strong>Prescrição detalhada:</strong> O médico deve justificar a urgência, a necessidade específica do tratamento e os riscos da interrupção.</p>
+                    </li>
+                    <li className="flex gap-4">
+                      <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#CFAE70] text-[#091D39] flex items-center justify-center font-bold text-sm">03</span>
+                      <p className="m-0"><strong>Ação Judicial com Liminar:</strong> Em casos de urgência, a justiça pode conceder decisões rápidas para garantir o início imediato do tratamento.</p>
+                    </li>
                   </ul>
                 </div>
 
-                <BlogCTA />
-                <AuthorBlock />
+                <p>
+                  A jurisprudência brasileira tem sido amplamente favorável ao consumidor nesses casos, entendendo que o médico assistente é quem define a melhor terapêutica para o paciente, e não a operadora do plano de saúde.
+                </p>
               </div>
 
-              <aside className="w-full lg:w-80 flex-shrink-0">
-                <div className="sticky top-32">
-                  <RecommendedPosts currentId={1} />
-                </div>
-              </aside>
+              <BlogCTA />
+              <div className="border-t border-gray-100 pt-8">
+                <AuthorBlock />
+              </div>
+            <RecommendedPosts currentId={1} />
+              </div>
             </div>
           </div>
         </article>
+
+        <RecommendedPosts currentId={1} />
       </main>
+      <Footer />
+    </div>
       <Footer />
     </div>
   );
