@@ -32,15 +32,13 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 md:px-12 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/">
-          <a className="flex items-center">
+        <Link href="/" className="flex items-center cursor-pointer">
             <img 
               src={logo} 
               alt="Anderson Litig Advocacia" 
               className="h-10 md:h-16 w-auto object-contain"
             />
-          </a>
-        </Link>
+          </Link>
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-10">

@@ -15,7 +15,7 @@ export default function BlogPost2() {
         <div className="bg-white border-b border-gray-200">
           <div className="container mx-auto px-4 md:px-12 py-4">
             <nav className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gray-400">
-              <Link href="/"><a className="hover:text-[#091D39] transition-colors">Home</a></Link>
+              <Link href="/" className="hover:text-[#091D39] transition-colors">Home</Link>
               <ChevronRight size={12} />
               <span className="text-gray-400">Blog</span>
               <ChevronRight size={12} />
@@ -27,8 +27,7 @@ export default function BlogPost2() {
         <article className="py-24 bg-white">
           <div className="container mx-auto px-4 md:px-12">
             <div className="max-w-4xl mx-auto">
-              <div className="lg:flex-1 max-w-4xl">
-                <div className="mb-12">
+              <div className="mb-12">
                   <div className="flex flex-col gap-2 mb-6 text-sm font-bold uppercase tracking-widest text-[#CFAE70]">
                     <div className="flex items-center gap-2">
                       <Calendar size={14} />
@@ -71,15 +70,15 @@ export default function BlogPost2() {
                   </ul>
                 </div>
 
-                <BlogCTA />
+              <BlogCTA />
+              <div className="border-t border-gray-100 pt-8">
                 <AuthorBlock />
               </div>
-            <RecommendedPosts currentId={2} />
-              </div>
-
             </div>
           </div>
         </article>
+
+        <RecommendedPosts currentId={2} />
       </main>
       <Footer />
     </div>

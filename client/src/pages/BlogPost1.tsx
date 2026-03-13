@@ -15,7 +15,7 @@ export default function BlogPost1() {
         <div className="bg-white border-b border-gray-200">
           <div className="container mx-auto px-4 md:px-12 py-4">
             <nav className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gray-400">
-              <Link href="/"><a className="hover:text-[#091D39] transition-colors">Home</a></Link>
+              <Link href="/" className="hover:text-[#091D39] transition-colors">Home</Link>
               <ChevronRight size={12} />
               <span className="text-gray-400">Blog</span>
               <ChevronRight size={12} />
@@ -90,16 +90,12 @@ export default function BlogPost1() {
               <div className="border-t border-gray-100 pt-8">
                 <AuthorBlock />
               </div>
-            <RecommendedPosts currentId={1} />
-              </div>
             </div>
           </div>
         </article>
 
         <RecommendedPosts currentId={1} />
       </main>
-      <Footer />
-    </div>
       <Footer />
     </div>
   );

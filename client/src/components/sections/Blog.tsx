@@ -46,11 +46,9 @@ export default function Blog() {
               Artigos técnicos e informativos para auxiliar na defesa dos seus direitos.
             </p>
           </div>
-          <Link href="/blog">
-            <a className="border border-[#091D39] text-[#091D39] px-8 py-3 text-sm font-bold uppercase tracking-widest hover:bg-[#091D39] hover:text-white transition-all">
+          <Link href="/blog" className="border border-[#091D39] text-[#091D39] px-8 py-3 text-sm font-bold uppercase tracking-widest hover:bg-[#091D39] hover:text-white transition-all">
               Ver Todo o Blog
-            </a>
-          </Link>
+            </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">

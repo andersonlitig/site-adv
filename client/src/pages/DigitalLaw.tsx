@@ -25,7 +25,7 @@ export default function DigitalLaw() {
         <div className="bg-white border-b border-gray-200">
           <div className="container mx-auto px-4 md:px-8 py-4">
             <nav className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gray-400">
-              <Link href="/"><a className="hover:text-[#091D39] transition-colors">Home</a></Link>
+              <Link href="/" className="hover:text-[#091D39] transition-colors">Home</Link>
               <ChevronRight size={12} />
               <span className="text-gray-400">Áreas de Atuação</span>
               <ChevronRight size={12} />

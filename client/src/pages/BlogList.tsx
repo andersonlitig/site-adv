@@ -58,7 +58,7 @@ export default function BlogList() {
         {/* Breadcrumbs */}
         <div className="bg-white border-b border-gray-100">
           <div className="container mx-auto px-4 md:px-12 py-4 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gray-400">
-            <Link href="/"><a className="hover:text-[#091D39] transition-colors">Home</a></Link>
+            <Link href="/" className="hover:text-[#091D39] transition-colors">Home</Link>
             <ChevronRight size={12} />
             <span className="text-[#091D39]">Conteúdo Jurídico</span>
           </div>

@@ -272,11 +272,9 @@ export default function Services() {
                       ))}
                     </ul>
                     <div className="mt-8">
-                      <Link href={service.path}>
-                        <a className="block w-full text-center bg-[#CFAE70] text-[#091D39] py-3 text-xs font-bold uppercase tracking-widest hover:bg-white transition-colors">
+                      <Link href={service.path} className="block w-full text-center bg-[#CFAE70] text-[#091D39] py-3 text-xs font-bold uppercase tracking-widest hover:bg-white transition-colors">
                           Saber Mais
-                        </a>
-                      </Link>
+                        </Link>
                     </div>
                   </motion.div>
                 )}
