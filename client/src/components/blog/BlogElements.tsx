@@ -28,8 +28,8 @@ export default function BlogCTA() {
 
 export function AuthorBlock() {
   return (
-    <div className="py-12 flex flex-col md:flex-row gap-8 items-center md:items-start text-center md:text-left">
-      <div className="w-24 h-24 rounded-full bg-gray-100 overflow-hidden flex-shrink-0 shadow-sm border border-gray-100">
+    <div className="bg-gray-50 rounded-2xl p-8 md:p-10 flex flex-col md:flex-row gap-8 items-center md:items-start text-center md:text-left mb-8">
+      <div className="w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden flex-shrink-0 shadow-md border-4 border-white">
         <img 
           src={authorImg} 
           alt="Dr. Anderson Litig" 
@@ -37,13 +37,15 @@ export function AuthorBlock() {
         />
       </div>
       <div className="flex-1">
-        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#CFAE70] mb-2 block">Escrito por</span>
-        <h4 className="text-xl font-bold text-[#091D39] uppercase tracking-tighter mb-1">Dr. Anderson Litig</h4>
-        <div className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-4">
-          Advogado
+        <div className="inline-block bg-white px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] text-[#CFAE70] shadow-sm mb-4">
+          Sobre o Autor
         </div>
-        <p className="text-gray-500 text-sm leading-relaxed max-w-2xl font-light">
-          Especialista em Direito Processual e Estratégia Jurídica. Com uma trajetória marcada pela excelência no contencioso e na consultoria preventiva, dedica-se a construir soluções jurídicas inovadoras e seguras para casos de alta complexidade.
+        <h4 className="text-2xl font-bold text-[#091D39] mb-1">Dr. Anderson Litig</h4>
+        <div className="text-xs font-medium text-[#CFAE70] mb-4">
+          Especialista em Direito Processual e Estratégia Jurídica
+        </div>
+        <p className="text-gray-600 text-sm leading-relaxed font-light">
+          Com uma trajetória marcada pela excelência no contencioso e na consultoria preventiva, dedica-se a construir soluções jurídicas inovadoras e seguras para casos de alta complexidade.
         </p>
       </div>
     </div>
@@ -78,50 +80,34 @@ export function RecommendedPosts({ currentId }: { currentId: number }) {
   const posts = recommendedPosts.filter(p => p.id !== currentId).slice(0, 3);
 
   return (
-    <div className="bg-[#e8e8e8] py-20 mt-12 w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
-      <div className="container mx-auto px-4 max-w-5xl">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-          <div>
-            <span className="text-[10px] font-bold border-l-2 border-[#CFAE70] pl-3 uppercase tracking-[0.3em] text-[#CFAE70] mb-3 block">Sugestões de Leitura</span>
-            <h4 className="text-3xl md:text-4xl font-bold uppercase tracking-tighter text-[#091D39] leading-none">Artigos Recomendados</h4>
-          </div>
-          <Link href="/blog" className="group flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-[#091D39] hover:text-[#CFAE70] transition-colors">
-            <span>Explorar todo o conteúdo</span>
-            <div className="w-8 h-px bg-[#091D39] group-hover:bg-[#CFAE70] group-hover:w-12 transition-all" />
+    <div className="py-16 mt-16 border-t border-gray-100">
+      <div className="flex items-center justify-between mb-8">
+        <h4 className="text-2xl font-bold text-[#091D39]">Artigos Recomendados</h4>
+        <Link href="/blog" className="text-sm font-semibold text-[#CFAE70] hover:text-[#091D39] transition-colors">
+          Ver todos os artigos &rarr;
+        </Link>
+      </div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {posts.map((post) => (
+          <Link 
+            key={post.id} 
+            href={post.path}
+            className="group flex flex-col"
+          >
+            <div className="aspect-[16/10] overflow-hidden rounded-xl mb-4 bg-gray-100">
+              <img 
+                src={post.image} 
+                alt={post.title} 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" 
+              />
+            </div>
+            <div className="text-xs font-medium text-gray-400 mb-2">{post.date}</div>
+            <h5 className="text-lg font-bold text-[#091D39] leading-tight group-hover:text-[#CFAE70] transition-colors">
+              {post.title}
+            </h5>
           </Link>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {posts.map((post) => (
-            <Link 
-              key={post.id} 
-              href={post.path}
-              className="group bg-white p-6 shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col h-full border border-gray-100 rounded-sm"
-            >
-              <div className="aspect-[16/10] overflow-hidden mb-6 relative rounded-sm">
-                <img 
-                  src={post.image} 
-                  alt={post.title} 
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-out" 
-                />
-                <div className="absolute inset-0 bg-[#091D39]/0 group-hover:bg-[#091D39]/5 transition-colors duration-500" />
-              </div>
-              <div className="flex items-center gap-2 mb-4">
-                <Calendar size={12} className="text-[#CFAE70]" />
-                <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">{post.date}</span>
-              </div>
-              <h5 className="text-base font-bold text-[#091D39] uppercase tracking-tighter leading-tight group-hover:text-[#CFAE70] transition-colors line-clamp-3 mb-6 flex-1">
-                {post.title}
-              </h5>
-              <div className="pt-6 border-t border-gray-50 flex items-center justify-between mt-auto">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-[#091D39]">Ler Artigo</span>
-                <div className="w-10 h-10 rounded-full border border-gray-100 flex items-center justify-center group-hover:bg-[#CFAE70] group-hover:border-[#CFAE70] group-hover:text-[#091D39] transition-all duration-500">
-                  <ChevronRight size={14} />
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
+        ))}
       </div>
     </div>
   );
