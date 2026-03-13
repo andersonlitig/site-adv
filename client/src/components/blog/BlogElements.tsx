@@ -28,7 +28,7 @@ export default function BlogCTA() {
 
 export function AuthorBlock() {
   return (
-    <div className="bg-gray-50 rounded-2xl p-8 md:p-10 flex flex-col md:flex-row gap-8 items-center md:items-start text-center md:text-left mb-8">
+    <div className="bg-gray-50 rounded-2xl p-8 md:p-10 flex flex-col md:flex-row gap-8 items-center md:items-start text-center md:text-left">
       <div className="w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden flex-shrink-0 shadow-md border-4 border-white">
         <img 
           src={authorImg} 
@@ -80,34 +80,52 @@ export function RecommendedPosts({ currentId }: { currentId: number }) {
   const posts = recommendedPosts.filter(p => p.id !== currentId).slice(0, 3);
 
   return (
-    <div className="py-16 mt-16 border-t border-gray-100">
-      <div className="flex items-center justify-between mb-8">
-        <h4 className="text-2xl font-bold text-[#091D39]">Artigos Recomendados</h4>
-        <Link href="/blog" className="text-sm font-semibold text-[#CFAE70] hover:text-[#091D39] transition-colors">
-          Ver todos os artigos &rarr;
-        </Link>
-      </div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {posts.map((post) => (
-          <Link 
-            key={post.id} 
-            href={post.path}
-            className="group flex flex-col"
-          >
-            <div className="aspect-[16/10] overflow-hidden rounded-xl mb-4 bg-gray-100">
-              <img 
-                src={post.image} 
-                alt={post.title} 
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" 
-              />
+    <div className="bg-[#e8e8e8] py-16 w-full">
+      <div className="container mx-auto px-4 md:px-12">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+            <div>
+              <span className="text-[10px] font-bold border-l-2 border-[#CFAE70] pl-3 uppercase tracking-[0.3em] text-[#CFAE70] mb-3 block">Sugestões de Leitura</span>
+              <h4 className="text-3xl md:text-4xl font-bold uppercase tracking-tighter text-[#091D39] leading-none">Artigos Recomendados</h4>
             </div>
-            <div className="text-xs font-medium text-gray-400 mb-2">{post.date}</div>
-            <h5 className="text-lg font-bold text-[#091D39] leading-tight group-hover:text-[#CFAE70] transition-colors">
-              {post.title}
-            </h5>
-          </Link>
-        ))}
+            <Link href="/blog" className="group flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-[#091D39] hover:text-[#CFAE70] transition-colors">
+              <span>Explorar todo o conteúdo</span>
+              <div className="w-8 h-px bg-[#091D39] group-hover:bg-[#CFAE70] group-hover:w-12 transition-all" />
+            </Link>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {posts.map((post) => (
+              <Link 
+                key={post.id} 
+                href={post.path}
+                className="group bg-white p-5 shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col h-full border border-gray-100"
+              >
+                <div className="aspect-[16/10] overflow-hidden mb-5 relative">
+                  <img 
+                    src={post.image} 
+                    alt={post.title} 
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-out" 
+                  />
+                  <div className="absolute inset-0 bg-[#091D39]/0 group-hover:bg-[#091D39]/5 transition-colors duration-500" />
+                </div>
+                <div className="flex items-center gap-2 mb-3">
+                  <Calendar size={12} className="text-[#CFAE70]" />
+                  <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">{post.date}</span>
+                </div>
+                <h5 className="text-sm font-bold text-[#091D39] uppercase tracking-tighter leading-tight group-hover:text-[#CFAE70] transition-colors line-clamp-3 mb-5 flex-1">
+                  {post.title}
+                </h5>
+                <div className="pt-4 border-t border-gray-50 flex items-center justify-between mt-auto">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-[#091D39]">Ler Artigo</span>
+                  <div className="w-8 h-8 rounded-full border border-gray-100 flex items-center justify-center group-hover:bg-[#CFAE70] group-hover:border-[#CFAE70] group-hover:text-[#091D39] transition-all duration-500">
+                    <ChevronRight size={12} />
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
