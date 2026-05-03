@@ -9,7 +9,6 @@ export default function HomeV2() {
   return (
     <div className="font-sans text-[#2C2C2C] bg-white leading-relaxed overflow-x-hidden selection:bg-[#CFAE70] selection:text-[#091D39]">
       <WppFloat />
-      <AnnouncementBar />
       <HeaderV2 />
       <main>
         <HeroV2 />
@@ -136,10 +135,10 @@ function HeroV2() {
 
 function JornadaV2() {
   const cards = [
-    { num: "01", title: "Quero planejar minha aposentadoria", desc: "Ainda não me aposentei. Quero saber o melhor momento e como maximizar meu benefício." },
-    { num: "02", title: "Estou pronto para me aposentar", desc: "Tenho contribuições suficientes e quero dar entrada no benefício sem perder direitos." },
-    { num: "03", title: "Meu benefício foi negado", desc: "O INSS negou o pedido. Quero entender se a decisão está correta e como reverter." },
-    { num: "04", title: "Já me aposentei, mas tenho dúvidas", desc: "Quero revisar o valor do benefício ou cancelar descontos que não autorizei." }
+    { num: "01", title: "Quero planejar minha aposentadoria", desc: "Ainda não me aposentei. Quero saber o melhor momento e como maximizar meu benefício.", link: "/v2/planejamento" },
+    { num: "02", title: "Estou pronto para me aposentar", desc: "Tenho contribuições suficientes e quero dar entrada no benefício sem perder direitos.", link: "#" },
+    { num: "03", title: "Meu benefício foi negado", desc: "O INSS negou o pedido. Quero entender se a decisão está correta e como reverter.", link: "#" },
+    { num: "04", title: "Já me aposentei, mas tenho dúvidas", desc: "Quero revisar o valor do benefício ou cancelar descontos que não autorizei.", link: "#" }
   ];
 
   return (
@@ -157,21 +156,16 @@ function JornadaV2() {
         </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[1px] bg-[#E0E0DC] border border-[#E0E0DC] shadow-lg">
           {cards.map((c, i) => (
-            <motion.div 
-              key={i} 
-              className="bg-white p-8 cursor-pointer transition-all duration-500 hover:bg-[#091D39] border-t-4 border-transparent hover:border-[#CFAE70] group flex flex-col h-full"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-            >
-              <div className="text-[40px] font-bold text-[#E0E0DC] group-hover:text-white/10 transition-colors leading-none mb-6">{c.num}</div>
-              <h3 className="text-[16px] font-bold text-[#091D39] group-hover:text-white transition-colors mb-3 leading-[1.4]">{c.title}</h3>
-              <p className="text-[14px] text-[#767672] group-hover:text-white/70 transition-colors leading-[1.6] flex-grow">{c.desc}</p>
-              <div className="mt-6 flex items-center gap-2 text-[12px] font-bold uppercase tracking-wider text-[#CFAE70] opacity-0 group-hover:opacity-100 transition-opacity">
-                Acessar <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-              </div>
-            </motion.div>
+            <Link href={c.link} key={i}>
+              <a className="bg-white p-8 cursor-pointer transition-all duration-500 hover:bg-[#091D39] border-t-4 border-transparent hover:border-[#CFAE70] group flex flex-col h-full block no-underline">
+                <div className="text-[40px] font-bold text-[#E0E0DC] group-hover:text-white/10 transition-colors leading-none mb-6">{c.num}</div>
+                <h3 className="text-[16px] font-bold text-[#091D39] group-hover:text-white transition-colors mb-3 leading-[1.4]">{c.title}</h3>
+                <p className="text-[14px] text-[#767672] group-hover:text-white/70 transition-colors leading-[1.6] flex-grow">{c.desc}</p>
+                <div className="mt-6 flex items-center gap-2 text-[12px] font-bold uppercase tracking-wider text-[#CFAE70] opacity-0 group-hover:opacity-100 transition-opacity">
+                  Acessar <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                </div>
+              </a>
+            </Link>
           ))}
         </div>
       </div>

@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Planejamento Previdenciário | Anderson Litig — Advogado OAB/ES 40.152</title>
+<meta name="description" content="Descubra o melhor momento para se aposentar. Análise técnica do CNIS, estudo individualizado de modalidades e planejamento previdenciário com advogado especializado. OAB/ES 40.152.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --azul:#091D39;--azul-md:#0d2548;--ouro:#CFAE70;--ouro-dk:#8a6e30;
+  --aco:#2C2C2C;--noir:#0D0D0D;--cinza:#F4F4F2;--cinza2:#E0E0DC;
+  --cinza3:#767672;--branco:#FFFFFF;--f:'Inter',sans-serif;
+  --verde:#16a34a;
+}
+body{font-family:var(--f);font-size:16px;color:var(--aco);background:var(--branco);line-height:1.6;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+.container{max-width:1160px;margin:0 auto;padding:0 32px}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ouro);margin-bottom:10px;display:block}
+
+/* HEADER */
+header{background:var(--branco);border-bottom:1px solid var(--cinza2);position:sticky;top:0;z-index:100}
+.header-inner{display:grid;grid-template-columns:auto 1fr auto;align-items:center;height:64px;gap:32px}
+.logo-name{font-size:18px;font-weight:700;color:var(--azul);letter-spacing:-.02em}
+.logo-sub{font-size:10px;color:var(--cinza3);letter-spacing:.05em;text-transform:uppercase;display:block;margin-top:1px}
+nav{display:flex;justify-content:center}
+.nav-link{font-size:13px;color:var(--aco);padding:6px 13px;border-bottom:2px solid transparent;cursor:pointer;transition:color .15s}
+.nav-link:hover{color:var(--azul)}
+.nav-cta{background:var(--azul);color:var(--branco);font-family:var(--f);font-size:13px;font-weight:500;padding:10px 20px;border:none;cursor:pointer;display:flex;align-items:center;gap:8px}
+.nav-cta:hover{background:var(--azul-md)}
+
+/* BREADCRUMB */
+.breadcrumb{background:var(--cinza);border-bottom:1px solid var(--cinza2);padding:10px 0}
+.breadcrumb-inner{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--cinza3)}
+.breadcrumb a:hover{color:var(--azul)}
+.breadcrumb .atual{color:var(--azul);font-weight:500}
+.breadcrumb .sep{opacity:.5}
+
+/* HERO INTERNO */
+.hero-interno{background:var(--azul);padding:64px 0 60px;border-bottom:3px solid var(--ouro)}
+.hero-interno-grid{max-width:680px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(207,174,112,.12);border:1px solid rgba(207,174,112,.25);padding:6px 14px;margin-bottom:20px}
+.hero-badge span{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ouro)}
+.hero-interno h1{font-size:clamp(28px,3.5vw,44px);font-weight:700;color:var(--branco);letter-spacing:-.03em;line-height:1.1;margin-bottom:16px}
+.hero-interno h1 em{color:var(--ouro);font-style:normal;display:block}
+.hero-interno .lead{font-size:16px;color:rgba(255,255,255,.6);line-height:1.75;margin-bottom:32px;max-width:560px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn-pri{background:var(--ouro);color:var(--azul);font-family:var(--f);font-size:14px;font-weight:600;padding:13px 24px;border:none;cursor:pointer;display:flex;align-items:center;gap:8px;transition:background .18s}
+.btn-pri:hover{background:#dfc880}
+.btn-sec{background:transparent;color:var(--branco);font-family:var(--f);font-size:14px;padding:13px 24px;border:1px solid rgba(255,255,255,.3);cursor:pointer;transition:border-color .18s}
+.btn-sec:hover{border-color:rgba(255,255,255,.6)}
+
+/* ALERTA CNIS */
+.alerta-cnis{background:var(--noir);padding:40px 0;border-bottom:3px solid rgba(207,174,112,.25)}
+.alerta-inner{display:flex;align-items:center;gap:24px;max-width:860px}
+.alerta-icon{width:52px;height:52px;background:rgba(207,174,112,.12);border:1px solid rgba(207,174,112,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.alerta-icon svg{width:22px;height:22px;stroke:var(--ouro);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.alerta-texto p{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ouro);margin-bottom:6px}
+.alerta-texto h3{font-size:15px;font-weight:400;color:rgba(255,255,255,.7);line-height:1.65}
+.alerta-texto h3 strong{color:var(--branco);font-weight:600}
+
+/* O QUE VOCÊ VAI DESCOBRIR — seção plena */
+.respostas{background:var(--cinza);padding:56px 0;border-bottom:1px solid var(--cinza2)}
+.respostas-head{margin-bottom:32px}
+.respostas-head h2{font-size:clamp(24px,3vw,32px);font-weight:700;color:var(--azul);letter-spacing:-.02em;margin-top:8px;margin-bottom:8px}
+.respostas-head p{font-size:15px;color:var(--cinza3);max-width:500px}
+.respostas-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--cinza2);border:1px solid var(--cinza2)}
+.resposta-item{background:var(--branco);padding:26px 22px;display:flex;align-items:flex-start;gap:14px;border-top:3px solid transparent;transition:border-color .18s,background .18s}
+.resposta-item:hover{border-top-color:var(--ouro);background:var(--cinza)}
+.ri-icon{width:40px;height:40px;background:rgba(9,29,57,.06);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ri-icon svg{width:18px;height:18px;stroke:var(--azul);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.ri-text strong{display:block;font-size:14px;font-weight:600;color:var(--azul);margin-bottom:5px;line-height:1.3}
+.ri-text span{font-size:13px;color:var(--cinza3);line-height:1.5}
+
+/* POR QUE PLANEJAR — fundo branco, vem após cinza */
+.descobrir{padding:56px 0;background:var(--branco);border-bottom:1px solid var(--cinza2)}
+.descobrir h2{font-size:clamp(24px,3vw,32px);font-weight:700;color:var(--azul);letter-spacing:-.02em;line-height:1.15;margin-top:8px;margin-bottom:8px}
+.descobrir .sub{font-size:15px;color:var(--cinza3);margin-bottom:32px;max-width:560px}
+.descobrir-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--cinza2);border:1px solid var(--cinza2)}
+.descobrir-item{background:var(--cinza);padding:28px 26px;display:flex;align-items:flex-start;gap:18px;border-top:3px solid transparent;transition:background .18s,border-color .18s}
+.descobrir-item:hover{background:#e8e6e2;border-top-color:var(--ouro)}
+.di-num{font-size:28px;font-weight:700;color:var(--cinza2);line-height:1;flex-shrink:0;min-width:36px;margin-top:2px}
+.di-text h4{font-size:14px;font-weight:600;color:var(--azul);margin-bottom:6px}
+.di-text p{font-size:13px;color:var(--cinza3);line-height:1.65}
+
+/* PARA QUEM — azul escuro, contraste com branco acima */
+.para-quem{padding:56px 0;background:var(--azul);border-bottom:1px solid rgba(255,255,255,.08)}
+.para-quem .eyebrow{color:var(--ouro)}
+.para-quem h2{font-size:clamp(24px,3vw,32px);font-weight:700;color:var(--branco);letter-spacing:-.02em;margin-top:8px;margin-bottom:8px}
+.para-quem .sub{font-size:15px;color:rgba(255,255,255,.5);margin-bottom:32px;max-width:560px}
+.perfis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08)}
+.perfil-card{background:rgba(255,255,255,.04);padding:26px 24px;border-top:3px solid transparent;transition:background .18s,border-color .18s}
+.perfil-card:hover{background:rgba(255,255,255,.08);border-top-color:var(--ouro)}
+.perfil-icon{width:40px;height:40px;background:rgba(207,174,112,.12);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.perfil-icon svg{width:18px;height:18px;stroke:var(--ouro);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.perfil-card h3{font-size:14px;font-weight:600;color:var(--branco);margin-bottom:8px;line-height:1.35}
+.perfil-card p{font-size:13px;color:rgba(255,255,255,.5);line-height:1.6}
+
+/* COMO FUNCIONA — noir, separa do azul acima */
+.processo{padding:56px 0;background:var(--noir);border-bottom:1px solid rgba(255,255,255,.06)}
+.processo-head{margin-bottom:32px}
+.processo-head h2{font-size:clamp(24px,3vw,32px);font-weight:700;color:var(--branco);letter-spacing:-.02em;margin-bottom:8px}
+.processo-head .sub{font-size:15px;color:rgba(255,255,255,.5)}
+.etapas-v{display:flex;flex-direction:column;gap:0;border:1px solid rgba(255,255,255,.1)}
+.etapa-v{display:grid;grid-template-columns:56px 1fr;gap:0;border-bottom:1px solid rgba(255,255,255,.07);transition:background .18s}
+.etapa-v:last-child{border-bottom:none}
+.etapa-v:hover{background:rgba(255,255,255,.03)}
+.etapa-num-col{display:flex;align-items:flex-start;justify-content:center;padding-top:24px;border-right:1px solid rgba(255,255,255,.07);font-size:18px;font-weight:700;color:var(--ouro);opacity:.4}
+.etapa-content{padding:22px 28px}
+.etapa-content h4{font-size:15px;font-weight:600;color:var(--branco);margin-bottom:8px}
+.etapa-content p{font-size:13px;color:rgba(255,255,255,.5);line-height:1.65;margin-bottom:8px}
+.etapa-content p:last-child{margin-bottom:0}
+.etapa-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.etapa-tag{font-size:11px;color:rgba(255,255,255,.45);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);padding:3px 10px}
+
+/* CENÁRIOS / PROJEÇÃO */
+.cenarios{padding:56px 0;background:var(--cinza);border-bottom:1px solid var(--cinza2)}
+.cenarios h2{font-size:clamp(24px,3vw,32px);font-weight:700;color:var(--azul);letter-spacing:-.02em;margin-bottom:8px}
+.cenarios .sub{font-size:15px;color:var(--cinza3);margin-bottom:32px;max-width:560px}
+.cenarios-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--cinza2);border:1px solid var(--cinza2)}
+.cenario-card{background:var(--branco);padding:28px 24px}
+.cenario-card.destaque{background:var(--azul)}
+.cenario-label{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--cinza3);margin-bottom:14px;display:block}
+.cenario-card.destaque .cenario-label{color:var(--ouro)}
+.cenario-card h3{font-size:16px;font-weight:700;color:var(--azul);margin-bottom:10px;line-height:1.3}
+.cenario-card.destaque h3{color:var(--branco)}
+.cenario-card p{font-size:13px;color:var(--cinza3);line-height:1.6}
+.cenario-card.destaque p{color:rgba(255,255,255,.55)}
+.cenario-resultado{margin-top:16px;padding:12px 14px;background:var(--cinza);font-size:13px;color:var(--azul);font-weight:500}
+.cenario-card.destaque .cenario-resultado{background:rgba(207,174,112,.15);color:var(--ouro)}
+.destaque-badge{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--azul);background:var(--ouro);padding:3px 10px;margin-bottom:14px}
+
+/* DOCUMENTOS */
+.documentos{padding:56px 0;background:var(--branco);border-bottom:1px solid var(--cinza2)}
+.documentos h2{font-size:clamp(24px,3vw,32px);font-weight:700;color:var(--azul);letter-spacing:-.02em;margin-bottom:8px}
+.documentos .sub{font-size:15px;color:var(--cinza3);margin-bottom:32px;max-width:560px}
+.doc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--cinza2);border:1px solid var(--cinza2)}
+.doc-group{background:var(--branco);padding:24px 26px}
+.doc-group h4{font-size:12px;font-weight:600;color:var(--azul);text-transform:uppercase;letter-spacing:.07em;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--cinza2)}
+.doc-group ul{display:flex;flex-direction:column;gap:8px;list-style:none}
+.doc-group ul li{font-size:13px;color:var(--cinza3);display:flex;align-items:flex-start;gap:10px}
+.doc-group ul li::before{content:'';width:5px;height:5px;background:var(--ouro);border-radius:50%;flex-shrink:0;margin-top:7px}
+.doc-obs{background:var(--cinza);border:1px solid var(--cinza2);border-top:none;padding:14px 24px;font-size:13px;color:var(--cinza3)}
+.doc-obs strong{color:var(--azul)}
+
+/* FAQ */
+.faq{padding:56px 0;background:var(--cinza);border-bottom:1px solid var(--cinza2)}
+.faq h2{font-size:clamp(24px,3vw,32px);font-weight:700;color:var(--azul);letter-spacing:-.02em;margin-bottom:32px}
+.faq-list{display:flex;flex-direction:column;gap:1px;background:var(--cinza2);border:1px solid var(--cinza2)}
+.faq-item{background:var(--branco)}
+.faq-q{padding:18px 22px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:14px;font-weight:500;color:var(--azul);border-left:3px solid transparent;transition:background .15s,border-color .15s}
+.faq-q:hover,.faq-item.open .faq-q{background:var(--cinza);border-left-color:var(--ouro)}
+.faq-icon{font-size:18px;color:var(--ouro);flex-shrink:0;transition:transform .25s;line-height:1}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .32s ease;font-size:13px;color:var(--cinza3);line-height:1.7;padding:0 22px;border-left:3px solid var(--cinza2)}
+.faq-item.open .faq-a{max-height:300px;padding:0 22px 18px}
+
+/* CONTATO */
+.contato{padding:56px 0;background:var(--branco);border-bottom:1px solid var(--cinza2)}
+.contato-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--cinza2)}
+.contato-info{padding:48px 44px;background:var(--azul)}
+.contato-info h2{font-size:clamp(20px,2.5vw,26px);font-weight:700;color:var(--branco);letter-spacing:-.02em;margin-bottom:8px;padding-left:16px;border-left:4px solid var(--ouro)}
+.contato-info .sub{font-size:14px;color:rgba(255,255,255,.55);margin-bottom:32px;line-height:1.65;margin-top:12px}
+.contact-item{display:flex;align-items:flex-start;gap:14px;margin-bottom:20px}
+.contact-icon{width:40px;height:40px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid rgba(255,255,255,.1)}
+.contact-icon svg{width:16px;height:16px;stroke:var(--ouro);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.contact-text span{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);display:block;margin-bottom:2px}
+.contact-text strong{font-size:14px;font-weight:600;color:var(--branco)}
+.btn-wpp{background:#25D366;color:var(--branco);font-family:var(--f);font-size:14px;font-weight:600;padding:13px 24px;border:none;cursor:pointer;display:flex;align-items:center;gap:9px;transition:background .18s;margin-top:28px}
+.btn-wpp:hover{background:#1db957}
+.form-col{padding:48px 44px;background:var(--branco)}
+.form-col h3{font-size:18px;font-weight:700;color:var(--azul);margin-bottom:22px}
+.form-group{margin-bottom:13px}
+.form-label{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--cinza3);display:block;margin-bottom:5px}
+.form-input{width:100%;padding:11px 13px;border:1px solid var(--cinza2);background:var(--branco);font-family:var(--f);font-size:14px;color:var(--aco);outline:none;transition:border-color .18s}
+.form-input:focus{border-color:var(--azul)}
+textarea.form-input{resize:vertical;min-height:80px}
+select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23767672' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;cursor:pointer}
+.btn-submit{width:100%;background:var(--azul);color:var(--branco);font-family:var(--f);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:14px;border:none;cursor:pointer;transition:background .18s;margin-top:6px}
+.btn-submit:hover{background:var(--azul-md)}
+.form-disc{font-size:11px;color:var(--cinza3);margin-top:10px;line-height:1.5}
+
+/* FOOTER */
+footer{background:var(--noir)}
+.footer-main{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding:48px 0 40px;border-bottom:1px solid rgba(255,255,255,.08)}
+.footer-logo-name{font-size:18px;font-weight:700;color:var(--ouro);margin-bottom:4px}
+.footer-logo-sub{font-size:11px;color:rgba(255,255,255,.3);margin-bottom:12px}
+.footer-disc{font-size:12px;color:rgba(255,255,255,.28);line-height:1.75}
+.footer-col h4{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:14px}
+.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,.38);margin-bottom:9px;cursor:pointer;transition:color .15s}
+.footer-col a:hover{color:var(--ouro)}
+.footer-bottom{padding:16px 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:11px;color:rgba(255,255,255,.2)}
+
+/* WPP FLOAT */
+.wpp-float{position:fixed;bottom:28px;right:28px;z-index:999;background:#25D366;width:56px;height:56px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .18s}
+.wpp-float:hover{transform:scale(1.06)}
+.wpp-float svg{width:26px;height:26px;fill:var(--branco)}
+
+@media(max-width:1024px){
+  .descobrir-grid,.contato-grid{grid-template-columns:1fr}
+  .respostas-grid{grid-template-columns:1fr 1fr}
+  .perfis-grid,.cenarios-grid{grid-template-columns:1fr 1fr}
+  .doc-grid{grid-template-columns:1fr}
+  .footer-main{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  nav{display:none}
+  .respostas-grid{grid-template-columns:1fr}
+  .perfis-grid,.cenarios-grid{grid-template-columns:1fr}
+  .contato-info,.form-col{padding:32px 24px}
+  .alerta-inner{grid-template-columns:1fr}
+}
+
+/* CTA DO MEIO */
+.mid-cta{background:var(--azul);padding:48px 0;border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05)}
+.mid-cta-inner{display:grid;grid-template-columns:1fr auto;align-items:center;gap:40px}
+.mid-cta h3{font-size:clamp(20px,2.5vw,26px);font-weight:700;color:var(--branco);margin-bottom:8px;letter-spacing:-.01em}
+.mid-cta p{font-size:14px;color:rgba(255,255,255,.55)}
+.btn-wpp-mid{background:#25D366;color:var(--branco);font-family:var(--f);font-size:14px;font-weight:600;padding:14px 28px;border:none;cursor:pointer;display:flex;align-items:center;gap:10px;transition:background .18s;white-space:nowrap}
+.btn-wpp-mid:hover{background:#1db957}
+@media(max-width:1024px){.mid-cta-inner{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="wpp-float" onclick="window.open('https://wa.me/5527999999999','_blank')">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" style="text-decoration:none">
+        <div class="logo-name">Anderson Litig</div>
+        <span class="logo-sub">OAB/ES n&ordm; 40.152 &middot; Advocacia Previdenci&aacute;ria</span>
+      </a>
+      <nav>
+        <a class="nav-link" href="index.html">In&iacute;cio</a>
+        <a class="nav-link" href="index.html#servicos">Servi&ccedil;os</a>
+        <a class="nav-link" href="index.html#sobre">Sobre</a>
+        <a class="nav-link" href="index.html#faq">D&uacute;vidas</a>
+        <a class="nav-link" href="index.html#blog">Blog</a>
+        <a class="nav-link" href="#contato">Contato</a>
+      </nav>
+      <button class="nav-cta" onclick="window.open('https://wa.me/5527999999999','_blank')">
+        <svg width="14" height="14" fill="#25D366" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Falar pelo WhatsApp
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="container">
+    <div class="breadcrumb-inner">
+      <a href="index.html">In&iacute;cio</a>
+      <span class="sep">/</span>
+      <a href="index.html#servicos">Servi&ccedil;os</a>
+      <span class="sep">/</span>
+      <span class="atual">Planejamento Previdenci&aacute;rio</span>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero-interno">
+  <div class="container">
+    <div class="hero-interno-grid">
+      <div class="hero-badge"><span>Antes da Aposentadoria</span></div>
+      <h1>Planejamento estrat&eacute;gico:<br><em>estudo completo da sua vida previdenci&aacute;ria</em></h1>
+      <p class="lead">Saber o momento certo de se aposentar pode significar anos de diferença — e mais dinheiro no bolso todo mês. Sem achismo, sem simulação de site: uma análise real do seu caso.</p>
+      <div class="hero-actions">
+        <button class="btn-pri" onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">
+          <svg width="15" height="15" fill="#091D39" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Quero meu planejamento
+        </button>
+        <button class="btn-sec" onclick="document.getElementById('como-funciona').scrollIntoView({behavior:'smooth'})">Como funciona</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALERTA CNIS -->
+<div class="alerta-cnis">
+  <div class="container">
+    <div class="alerta-inner">
+      <div class="alerta-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+      </div>
+      <div class="alerta-texto">
+        <p>Aten&ccedil;&atilde;o importante</p>
+        <h3>Simular a aposentadoria no site do INSS <strong>n&atilde;o garante que voc&ecirc; receber&aacute; o valor exibido.</strong> A simula&ccedil;&atilde;o l&ecirc; o CNIS automaticamente e, na maioria dos casos, esse cadastro cont&eacute;m erros, lacunas ou omiss&otilde;es que reduzem o benef&iacute;cio sem que voc&ecirc; perceba.</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- O QUE VOCÊ VAI DESCOBRIR -->
+<section class="respostas">
+  <div class="container">
+    <div class="respostas-head">
+      <span class="eyebrow">O que voc&ecirc; vai descobrir</span>
+      <h2>Respostas concretas sobre<br>a sua aposentadoria</h2>
+      <p>Respondemos essas quatro perguntas para você — sem enrolação e sem juridiquês.</p>
+    </div>
+    <div class="respostas-grid">
+      <div class="resposta-item">
+        <div class="ri-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div class="ri-text"><strong>Quanto tempo de contribui&ccedil;&atilde;o voc&ecirc; tem</strong><span>Verificamos o CNIS completo, incluindo per&iacute;odos omitidos e n&atilde;o reconhecidos</span></div>
+      </div>
+      <div class="resposta-item">
+        <div class="ri-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+        <div class="ri-text"><strong>Quando voc&ecirc; poder&aacute; se aposentar</strong><span>Data estimada para cada modalidade dispon&iacute;vel no seu perfil</span></div>
+      </div>
+      <div class="resposta-item">
+        <div class="ri-icon"><svg viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+        <div class="ri-text"><strong>Com qual valor voc&ecirc; poder&aacute; se aposentar</strong><span>Estimativa do benef&iacute;cio em cada modalidade e compara&ccedil;&atilde;o de cen&aacute;rios</span></div>
+      </div>
+      <div class="resposta-item">
+        <div class="ri-icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+        <div class="ri-text"><strong>Quais pend&ecirc;ncias existem e como resolver</strong><span>Per&iacute;odos sem registro, lacunas no CNIS e erros que precisam ser corrigidos</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- O QUE VOCÊ VAI DESCOBRIR -->
+<section class="descobrir">
+  <div class="container">
+    <span class="eyebrow">Por que planejar</span>
+    <h2>O que um planejamento previdenci&aacute;rio revela</h2>
+    <p class="sub">Al&eacute;m de saber a data e o valor da aposentadoria, o estudo t&eacute;cnico identifica oportunidades e riscos que a maioria das pessoas desconhece.</p>
+    <div class="descobrir-grid">
+      <div class="descobrir-item">
+        <div class="di-num">01</div>
+        <div class="di-text">
+          <h4>Erros e lacunas no seu CNIS</h4>
+          <p>O registro do INSS sobre a sua vida de trabalho está errado em muitos casos. Tempo trabalhado que não aparece, datas erradas, valores incorretos — tudo isso pode estar reduzindo o seu benefício sem que você perceba.</p>
+        </div>
+      </div>
+      <div class="descobrir-item">
+        <div class="di-num">02</div>
+        <div class="di-text">
+          <h4>A modalidade mais vantajosa para o seu perfil</h4>
+          <p>Desde 2019, existem várias formas diferentes de se aposentar. Escolher a errada pode significar esperar anos a mais ou receber bem menos do que você tem direito. A análise encontra qual é a melhor para o seu perfil.</p>
+        </div>
+      </div>
+      <div class="descobrir-item">
+        <div class="di-num">03</div>
+        <div class="di-text">
+          <h4>Per&iacute;odos que o INSS n&atilde;o est&aacute; contando</h4>
+          <p>Tempo trabalhado sem carteira, no campo, como autônomo ou por conta própria muitas vezes não aparece nos registros do INSS — mas pode ser aproveitado. Muita gente deixa anos de trabalho de fora sem saber.</p>
+        </div>
+      </div>
+      <div class="descobrir-item">
+        <div class="di-num">04</div>
+        <div class="di-text">
+          <h4>Se voc&ecirc; tem direito &agrave; aposentadoria especial</h4>
+          <p>Quem trabalhou em lugares perigosos, com produtos químicos, barulho alto, calor extremo ou outros riscos pode ter direito a se aposentar mais cedo. Esse direito precisa ser identificado e comprovado antes de dar entrada.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUEM -->
+<section class="para-quem">
+  <div class="container">
+    <span class="eyebrow">Perfis atendidos</span>
+    <h2>Para quem &eacute; o planejamento previdenci&aacute;rio?</h2>
+    <p class="sub">O planejamento &eacute; recomendado para qualquer pessoa que contribui ou j&aacute; contribuiu para o INSS. Veja se voc&ecirc; se identifica.</p>
+    <div class="perfis-grid">
+      <div class="perfil-card">
+        <div class="perfil-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <h3>Est&aacute; pr&oacute;ximo da aposentadoria</h3>
+        <p>Falta pouco para você se aposentar. O planejamento mostra a data certa para dar entrada e evita que você perca dinheiro por agir antes ou depois da hora.</p>
+      </div>
+      <div class="perfil-card">
+        <div class="perfil-icon"><svg viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+        <h3>Tem per&iacute;odos sem registro</h3>
+        <p>Trabalhou sem carteira assinada, por conta própria ou na informalidade? Esse tempo pode contar — e o INSS muitas vezes não inclui automaticamente.</p>
+      </div>
+      <div class="perfil-card">
+        <div class="perfil-icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+        <h3>Trabalhou em condi&ccedil;&otilde;es especiais</h3>
+        <p>Trabalhou em ambiente perigoso, insalubre ou com risco à saúde? Isso pode dar direito a se aposentar mais cedo — mas precisa ser comprovado antes de dar entrada.</p>
+      </div>
+      <div class="perfil-card">
+        <div class="perfil-icon"><svg viewBox="0 0 24 24"><path d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+        <h3>Tem d&uacute;vidas sobre a Reforma</h3>
+        <p>A reforma de 2019 mudou muita coisa, mas quem já trabalhava antes disso pode ter condições melhores do que as regras atuais. Muita gente não sabe que tem esse direito.</p>
+      </div>
+      <div class="perfil-card">
+        <div class="perfil-icon"><svg viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg></div>
+        <h3>Trabalhou na zona rural</h3>
+        <p>Tempo trabalhado no campo pode ser aproveitado mesmo sem contribuições formais ao INSS. Quem trabalhou na cidade e na roça pode somar os dois períodos.</p>
+      </div>
+      <div class="perfil-card">
+        <div class="perfil-icon"><svg viewBox="0 0 24 24"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></div>
+        <h3>Quer maximizar o valor do benef&iacute;cio</h3>
+        <p>Mesmo quem já pode se aposentar pode ganhar mais esperando um pouco. O planejamento mostra se vale a pena esperar — e quanto a mais você vai receber todo mês se esperar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="processo" id="como-funciona">
+  <div class="container">
+    <div class="processo-head">
+      <span class="eyebrow" style="color:var(--ouro)">Processo</span>
+      <h2>Como funciona o planejamento</h2>
+      <p class="sub">Cinco etapas do primeiro contato at&eacute; o diagn&oacute;stico completo da sua aposentadoria.</p>
+    </div>
+    <div class="etapas-v">
+      <div class="etapa-v">
+        <div class="etapa-num-col">01</div>
+        <div class="etapa-content">
+          <h4>Você conta a sua história de trabalho</h4>
+          <p>Conversamos sobre tudo: onde você trabalhou, por quanto tempo, se foi com carteira ou sem, se trabalhou no campo, por conta própria ou em lugar perigoso. Não precisa ser especialista — só nos conte o que viveu.</p>
+          <div class="etapa-tags">
+            <span class="etapa-tag">V&iacute;nculos empregat&iacute;cios</span>
+            <span class="etapa-tag">Trabalho aut&ocirc;nomo</span>
+            <span class="etapa-tag">Atividade rural</span>
+            <span class="etapa-tag">Processos trabalhistas</span>
+          </div>
+        </div>
+      </div>
+      <div class="etapa-v">
+        <div class="etapa-num-col">02</div>
+        <div class="etapa-content">
+          <h4>A gente verifica tudo no registro do INSS</h4>
+          <p>Checamos cada período de trabalho nos registros do INSS. Identificamos o que está faltando, o que está errado e o que pode ser incluído para aumentar o seu benefício.</p>
+        </div>
+      </div>
+      <div class="etapa-v">
+        <div class="etapa-num-col">03</div>
+        <div class="etapa-content">
+          <h4>Fazemos as contas de todas as opções</h4>
+          <p>Calculamos quanto você receberia em cada forma de aposentadoria disponível para o seu caso. Comparamos as datas e os valores — e mostramos qual é a mais vantajosa para você.</p>
+          <div class="etapa-tags">
+            <span class="etapa-tag">Regras de transi&ccedil;&atilde;o</span>
+            <span class="etapa-tag">Regras definitivas</span>
+            <span class="etapa-tag">Aposentadoria especial</span>
+            <span class="etapa-tag">Aposentadoria rural</span>
+          </div>
+        </div>
+      </div>
+      <div class="etapa-v">
+        <div class="etapa-num-col">04</div>
+        <div class="etapa-content">
+          <h4>Você recebe a orientação em linguagem simples</h4>
+          <p>Explicamos tudo com clareza: qual é a melhor data para se aposentar, quanto você pode esperar receber e se tem alguma pendência a resolver antes de dar entrada. Sem enrolação, sem juridiquês.</p>
+        </div>
+      </div>
+      <div class="etapa-v">
+        <div class="etapa-num-col">05</div>
+        <div class="etapa-content">
+          <h4>Se quiser, cuidamos de tudo até o final</h4>
+          <p>Se optar por prosseguir com o pedido de aposentadoria, acompanhamos tudo junto ao INSS — da papelada até o benefício ser aprovado e o dinheiro começar a cair.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="mid-cta">
+  <div class="container">
+    <div class="mid-cta-inner">
+      <div>
+        <h3>Quer saber quando e como se aposentar?</h3>
+        <p>Entre em contato e analisamos o seu caso de forma simples e sem compromisso.</p>
+      </div>
+      <button class="btn-wpp-mid" onclick="window.open('https://wa.me/5527999999999?text=Ol%C3%A1%2C+gostaria+de+fazer+um+planejamento+previdenci%C3%A1rio','_blank')"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>Falar pelo WhatsApp</button>
+    </div>
+  </div>
+</section>
+<!-- CENÁRIOS -->
+<section class="cenarios">
+  <div class="container">
+    <span class="eyebrow">Exemplo pr&aacute;tico</span>
+    <h2>O planejamento pode fazer grande diferen&ccedil;a</h2>
+    <p class="sub">Veja como a escolha da data e da modalidade impacta o valor do benef&iacute;cio na pr&aacute;tica. Os valores s&atilde;o ilustrativos.</p>
+    <div class="cenarios-grid">
+      <div class="cenario-card">
+        <span class="cenario-label">Cen&aacute;rio A &mdash; Sem planejamento</span>
+        <h3>Entrada imediata pelo Meu INSS</h3>
+        <p>O segurado solicita a aposentadoria pela simula&ccedil;&atilde;o online sem verificar erros no CNIS, per&iacute;odos n&atilde;o reconhecidos ou modalidades alternativas.</p>
+        <div class="cenario-resultado">Resultado: benef&iacute;cio calculado com dados incompletos, frequentemente abaixo do valor correto.</div>
+      </div>
+      <div class="cenario-card destaque">
+        <span class="destaque-badge">Recomendado</span>
+        <span class="cenario-label">Cen&aacute;rio B &mdash; Com planejamento</span>
+        <h3>Estudo antes de dar entrada</h3>
+        <p>A an&aacute;lise identifica per&iacute;odos n&atilde;o reconhecidos, verifica a modalidade mais vantajosa e confirma se o CNIS est&aacute; correto antes do pedido.</p>
+        <div class="cenario-resultado">Resultado: benef&iacute;cio concedido com o maior valor poss&iacute;vel, sem erros e sem necessidade de revisão posterior.</div>
+      </div>
+      <div class="cenario-card">
+        <span class="cenario-label">Cen&aacute;rio C &mdash; Sem planejar a data</span>
+        <h3>Aposentar antes do momento ideal</h3>
+        <p>O segurado d&aacute; entrada por conta pr&oacute;pria sem saber que aguardar alguns meses resultaria em um valor significativamente maior pelo fator de c&aacute;lculo.</p>
+        <div class="cenario-resultado">Resultado: perda permanente de valor no benef&iacute;cio &mdash; imposs&iacute;vel de corrigir ap&oacute;s a concess&atilde;o.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOCUMENTOS -->
+<section class="documentos">
+  <div class="container">
+    <span class="eyebrow">Prepara&ccedil;&atilde;o</span>
+    <h2>Documentos geralmente necess&aacute;rios</h2>
+    <p class="sub">Para come&ccedil;ar o planejamento, &eacute; importante reunir os principais documentos. O advogado vai orientar o que &eacute; necess&aacute;rio em cada caso.</p>
+    <div class="doc-grid">
+      <div class="doc-group">
+        <h4>Documentos pessoais</h4>
+        <ul>
+          <li>RG e CPF</li>
+          <li>Certid&atilde;o de nascimento ou casamento</li>
+          <li>Comprovante de resid&ecirc;ncia atualizado</li>
+          <li>Extrato do CNIS (dispon&iacute;vel no Meu INSS)</li>
+          <li>Cart&atilde;o do PIS/PASEP</li>
+        </ul>
+      </div>
+      <div class="doc-group">
+        <h4>Documentos profissionais</h4>
+        <ul>
+          <li>Carteira de trabalho (CTPS) &mdash; todas as p&aacute;ginas preenchidas</li>
+          <li>Cartas de demiss&atilde;o e contratos de trabalho</li>
+          <li>Carn&ecirc;s de contribui&ccedil;&atilde;o aut&ocirc;noma (se houver)</li>
+          <li>Documentos de atividade rural (se houver)</li>
+          <li>PPP (atividade com condi&ccedil;&otilde;es especiais)</li>
+        </ul>
+      </div>
+      <div class="doc-group">
+        <h4>Documentos complementares</h4>
+        <ul>
+          <li>Laudos m&eacute;dicos (incapacidade ou condi&ccedil;&atilde;o especial)</li>
+          <li>Senten&ccedil;as ou acordos de processos trabalhistas</li>
+          <li>Declara&ccedil;&otilde;es de sindicato ou associa&ccedil;&atilde;o (rural)</li>
+          <li>Certid&atilde;o de tempo de servi&ccedil;o (servidores p&uacute;blicos)</li>
+        </ul>
+      </div>
+      <div class="doc-group">
+        <h4>Acesso digital recomendado</h4>
+        <ul>
+          <li>Cadastro no <strong>Meu INSS</strong> (gov.br)</li>
+          <li>Extrato previdenci&aacute;rio atualizado</li>
+          <li>Hist&oacute;rico de contribui&ccedil;&otilde;es do eSocial</li>
+          <li>Carta de concess&atilde;o (se j&aacute; for aposentado)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="doc-obs"><strong>Aten&ccedil;&atilde;o:</strong> n&atilde;o &eacute; necess&aacute;rio ter todos os documentos para iniciar o contato. O advogado orienta o que &eacute; indispens&aacute;vel para o seu caso.</div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="container">
+    <span class="eyebrow">D&uacute;vidas frequentes</span>
+    <h2>Perguntas sobre planejamento previdenci&aacute;rio</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">A simula&ccedil;&atilde;o do Meu INSS n&atilde;o &eacute; suficiente?<span class="faq-icon">+</span></div>
+        <div class="faq-a">N&atilde;o. A simula&ccedil;&atilde;o &eacute; uma leitura autom&aacute;tica do CNIS e depende de todos os dados estarem corretos e completos &mdash; o que raramente acontece. Ela n&atilde;o considera per&iacute;odos n&atilde;o registrados, atividade rural, condi&ccedil;&otilde;es especiais, erros de cadastro ou regras de transi&ccedil;&atilde;o. O valor exibido pode ser inferior ao que voc&ecirc; realmente tem direito.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Posso fazer o planejamento se ainda falta muito para me aposentar?<span class="faq-icon">+</span></div>
+        <div class="faq-a">Sim, e &eacute; ainda mais recomendado. Quem planeja com antecedência pode regularizar contribui&ccedil;&otilde;es em atraso, incluir per&iacute;odos n&atilde;o reconhecidos e definir a melhor estrat&eacute;gia para os pr&oacute;ximos anos. Isso impacta diretamente o valor final do benef&iacute;cio.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">O que s&atilde;o as regras de transi&ccedil;&atilde;o da Reforma da Previd&ecirc;ncia?<span class="faq-icon">+</span></div>
+        <div class="faq-a">S&atilde;o regras criadas pela EC 103/2019 para quem j&aacute; contribu&iacute;a antes de novembro de 2019. Em vez de exigir as novas idades m&iacute;nimas de imediato, a reforma criou um per&iacute;odo de transi&ccedil;&atilde;o com requisitos progressivos. Dependendo do seu tempo de contribui&ccedil;&atilde;o, pode ser poss&iacute;vel se aposentar com condi&ccedil;&otilde;es mais favor&aacute;veis do que as regras definitivas exigem.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Quem trabalhou sem carteira tem direito &agrave; aposentadoria?<span class="faq-icon">+</span></div>
+        <div class="faq-a">Pode ter. O per&iacute;odo trabalhado sem carteira pode ser reconhecido por meio de provas alternativas como contratos, testemunhos e documentos trabalhistas. J&aacute; o trabalho como aut&ocirc;nomo pode ser reconhecido se houver contribui&ccedil;&atilde;o como segurado facultativo ou individual. Cada caso exige an&aacute;lise individual.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Como sei se trabalhei em condi&ccedil;&otilde;es especiais?<span class="faq-icon">+</span></div>
+        <div class="faq-a">Atividades com exposi&ccedil;&atilde;o a ru&iacute;do acima de n&iacute;veis seguros, produtos qu&iacute;micos, calor excessivo, agentes biol&oacute;gicos, entre outros, podem caracterizar condi&ccedil;&atilde;o especial. O reconhecimento exige o PPP (Perfil Profissiogr&aacute;fico Previdenci&aacute;rio) emitido pelo empregador. A an&aacute;lise do hist&oacute;rico ocupacional &eacute; parte do planejamento.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">O atendimento pode ser feito de forma online?<span class="faq-icon">+</span></div>
+        <div class="faq-a">Sim. Todo o processo de planejamento pode ser realizado de forma digital &mdash; por WhatsApp, videochamada ou e-mail. O envio de documentos &eacute; feito por foto ou digitaliza&ccedil;&atilde;o. Atendo clientes em todo o Brasil sem necessidade de deslocamento.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="contato" id="contato">
+  <div class="container">
+    <span class="eyebrow">Contato</span>
+    <h2 style="font-size:clamp(22px,3vw,30px);font-weight:700;color:var(--azul);letter-spacing:-.02em;margin-bottom:32px">Inicie seu planejamento previdenci&aacute;rio</h2>
+    <div class="contato-grid">
+      <div class="contato-info">
+        <h2>Fale com o advogado</h2>
+        <p class="sub">Tire suas d&uacute;vidas e descubra qual a melhor estrat&eacute;gia para a sua aposentadoria. Atendimento direto e sem burocracia.</p>
+        <div class="contact-item">
+          <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg></div>
+          <div class="contact-text"><span>Telefone / WhatsApp</span><strong>+55 (27) 99999-9999</strong></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
+          <div class="contact-text"><span>E-mail</span><strong>contato@andersonlitig.adv.br</strong></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+          <div class="contact-text"><span>Atua&ccedil;&atilde;o</span><strong>Serra/ES &mdash; Atendimento Nacional 100% Digital</strong></div>
+        </div>
+        <button class="btn-wpp" onclick="window.open('https://wa.me/5527999999999?text=Ol%C3%A1%2C+gostaria+de+saber+mais+sobre+o+planejamento+previdenci%C3%A1rio','_blank')">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Iniciar conversa pelo WhatsApp
+        </button>
+      </div>
+      <div class="form-col">
+        <h3>Solicitar planejamento</h3>
+        <div class="form-group"><label class="form-label">Nome completo *</label><input class="form-input" type="text" placeholder="Digite seu nome"></div>
+        <div class="form-group"><label class="form-label">Telefone / WhatsApp *</label><input class="form-input" type="tel" placeholder="(00) 00000-0000"></div>
+        <div class="form-group"><label class="form-label">E-mail</label><input class="form-input" type="email" placeholder="Digite seu e-mail"></div>
+        <div class="form-group">
+          <label class="form-label">Qual &eacute; a sua situa&ccedil;&atilde;o atual? *</label>
+          <select class="form-input">
+            <option value="" disabled selected>Selecione</option>
+            <option>Ainda n&atilde;o me aposentei, quero planejar</option>
+            <option>Estou pr&oacute;ximo de me aposentar</option>
+            <option>Tenho d&uacute;vidas sobre qual modalidade escolher</option>
+            <option>Quero verificar se j&aacute; tenho direito</option>
+            <option>Quero regularizar per&iacute;odos n&atilde;o reconhecidos</option>
+            <option>Outro</option>
+          </select>
+        </div>
+        <div class="form-group"><label class="form-label">Mensagem</label><textarea class="form-input" placeholder="Descreva brevemente sua situa&ccedil;&atilde;o (tempo de trabalho, atividade, d&uacute;vidas...)"></textarea></div>
+        <button class="btn-submit">Solicitar planejamento</button>
+        <p class="form-disc">Em conformidade com o Provimento n&ordm; 205/2021 do CFOAB. As informa&ccedil;&otilde;es deste site t&ecirc;m car&aacute;ter informativo e n&atilde;o constituem consultoria jur&iacute;dica.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-main">
+      <div>
+        <div class="footer-logo-name">Anderson Litig</div>
+        <div class="footer-logo-sub">OAB/ES n&ordm; 40.152 &middot; Serra, Esp&iacute;rito Santo</div>
+        <div class="footer-disc">As informa&ccedil;&otilde;es contidas neste site t&ecirc;m car&aacute;ter exclusivamente informativo e n&atilde;o constituem consultoria jur&iacute;dica. Atua&ccedil;&atilde;o em conformidade com o Provimento n&ordm; 205/2021 do CFOAB.</div>
+      </div>
+      <div class="footer-col"><h4>Servi&ccedil;os</h4><a href="#">Aposentadorias</a><a href="#">Planejamento Previdenci&aacute;rio</a><a href="#">Revis&atilde;o de benef&iacute;cio</a><a href="#">Aux&iacute;lio por incapacidade</a><a href="#">BPC/LOAS</a><a href="#">Descontos indevidos</a></div>
+      <div class="footer-col"><h4>Institucional</h4><a href="index.html">Sobre o advogado</a><a href="#">Blog jur&iacute;dico</a><a href="#">Pol&iacute;tica de privacidade</a><a href="#contato">Contato</a></div>
+      <div class="footer-col"><h4>Contato</h4><a href="https://wa.me/5527999999999">WhatsApp</a><a href="mailto:contato@andersonlitig.adv.br">E-mail</a><a href="#">Instagram</a></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2025 Anderson Litig &mdash; Advocacia e Consultoria Jur&iacute;dica</span><span>OAB/ES 40.152 &middot; Provimento 205/2021 CFOAB</span></div>
+  </div>
+</footer>
+
+<script>
+function toggleFaq(el) {
+  const item = el.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>
