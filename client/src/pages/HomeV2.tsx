@@ -58,29 +58,25 @@ function HeaderV2() {
   });
 
   return (
-    <header className={`sticky top-0 z-[100] transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg py-2' : 'bg-white py-4 border-b border-[#E0E0DC]'}`}>
+    <header className={`sticky top-0 z-[100] transition-all duration-300 bg-[#091D39] py-3 shadow-lg`}>
       <div className="max-w-[1160px] mx-auto px-4 md:px-8">
         <div className="grid grid-cols-[auto_1fr_auto] items-center gap-8">
           <Link href="/" className="no-underline group flex items-center gap-4">
-            <img src={logo} alt="Anderson Litig" className="h-10 md:h-12 w-auto object-contain" />
-            <div className="hidden lg:block">
-              <div className="text-lg font-bold text-[#091D39] tracking-tight leading-none">Anderson Litig</div>
-              <span className="text-[10px] font-bold text-[#767672] tracking-[0.1em] uppercase block mt-1">OAB/ES nº 40.152</span>
-            </div>
+            <img src={logo} alt="Anderson Litig" className="h-10 md:h-12 w-auto object-contain brightness-0 invert" />
           </Link>
           <nav className="hidden lg:flex gap-1 justify-center">
-            <a className="text-[12px] uppercase tracking-wider font-bold text-[#091D39] px-4 py-2 border-b-2 border-[#CFAE70] cursor-pointer transition-colors" href="#">Início</a>
-            <a className="text-[12px] uppercase tracking-wider font-medium text-[#767672] px-4 py-2 border-b-2 border-transparent hover:text-[#091D39] hover:border-[#CFAE70]/30 transition-colors" href="#servicos">Serviços</a>
-            <a className="text-[12px] uppercase tracking-wider font-medium text-[#767672] px-4 py-2 border-b-2 border-transparent hover:text-[#091D39] hover:border-[#CFAE70]/30 transition-colors" href="#sobre">Sobre</a>
-            <a className="text-[12px] uppercase tracking-wider font-medium text-[#767672] px-4 py-2 border-b-2 border-transparent hover:text-[#091D39] hover:border-[#CFAE70]/30 transition-colors" href="#faq">Dúvidas</a>
-            <a className="text-[12px] uppercase tracking-wider font-medium text-[#767672] px-4 py-2 border-b-2 border-transparent hover:text-[#091D39] hover:border-[#CFAE70]/30 transition-colors" href="#blog">Blog</a>
-            <a className="text-[12px] uppercase tracking-wider font-medium text-[#767672] px-4 py-2 border-b-2 border-transparent hover:text-[#091D39] hover:border-[#CFAE70]/30 transition-colors" href="#contato">Contato</a>
+            <a className="text-[12px] uppercase tracking-wider font-bold text-white px-4 py-2 border-b-2 border-[#CFAE70] cursor-pointer transition-colors" href="#">Início</a>
+            <a className="text-[12px] uppercase tracking-wider font-medium text-white/70 px-4 py-2 border-b-2 border-transparent hover:text-white hover:border-[#CFAE70]/50 transition-colors" href="#servicos">Serviços</a>
+            <a className="text-[12px] uppercase tracking-wider font-medium text-white/70 px-4 py-2 border-b-2 border-transparent hover:text-white hover:border-[#CFAE70]/50 transition-colors" href="#sobre">Sobre</a>
+            <a className="text-[12px] uppercase tracking-wider font-medium text-white/70 px-4 py-2 border-b-2 border-transparent hover:text-white hover:border-[#CFAE70]/50 transition-colors" href="#faq">Dúvidas</a>
+            <a className="text-[12px] uppercase tracking-wider font-medium text-white/70 px-4 py-2 border-b-2 border-transparent hover:text-white hover:border-[#CFAE70]/50 transition-colors" href="#blog">Blog</a>
+            <a className="text-[12px] uppercase tracking-wider font-medium text-white/70 px-4 py-2 border-b-2 border-transparent hover:text-white hover:border-[#CFAE70]/50 transition-colors" href="#contato">Contato</a>
           </nav>
           <button 
-            className="bg-[#091D39] text-white text-[12px] uppercase tracking-widest font-bold px-6 py-3 flex items-center gap-2 hover:bg-[#CFAE70] hover:text-[#091D39] transition-all duration-300"
+            className="bg-[#CFAE70] text-[#091D39] text-[12px] uppercase tracking-widest font-bold px-6 py-3 flex items-center gap-2 hover:bg-white transition-all duration-300"
             onClick={() => window.open('https://wa.me/5527999999999','_blank')}
           >
-            <Phone size={14} className={isScrolled ? "" : "text-[#25D366]"} />
+            <Phone size={14} />
             <span className="hidden sm:inline">Falar pelo WhatsApp</span>
             <span className="sm:hidden">WhatsApp</span>
           </button>
@@ -188,7 +184,7 @@ function ServicesV2() {
     { icon: <History size={20} />, title: "Aposentadorias", desc: "Por idade, tempo de contribuição, especial, rural e por deficiência. Analisamos o seu CNIS e identificamos a modalidade mais vantajosa para o seu caso." },
     { icon: <Target size={20} />, title: "Planejamento Previdenciário", desc: "Quer saber o melhor momento para se aposentar? Fazemos um estudo técnico individualizado do seu CNIS para garantir a melhor aposentadoria possível." },
     { icon: <Scale size={20} />, title: "Revisão de Benefício", desc: "Já é aposentado e acha que o valor está baixo demais? Analisamos o cálculo do seu benefício e verificamos se há algo a corrigir." },
-    { icon: <Users size={20} />, title: "Aposentadoria por Deficiência (PcD)", desc: "Pessoa com deficiência tem direito a se aposentar com menos tempo de contribuição. Quanto mais grave a deficiência, menor o tempo exigido. Acompanhamos todo o processo." },
+    { icon: <Users size={20} />, title: "Salário-Maternidade", desc: "Empregadas, autônomas, MEIs e trabalhadoras rurais têm direito ao salário-maternidade pelo INSS. Muitas perdem esse benefício por não saber que têm direito ou por erro no pedido." },
     { icon: <ShieldAlert size={20} />, title: "Benefícios por Incapacidade", desc: "Auxílio por Incapacidade Temporária e Aposentadoria por Incapacidade Permanente. Não consegue mais trabalhar por questões de saúde? Garanta o suporte financeiro que você merece." },
     { icon: <Briefcase size={20} />, title: "Auxílio-Acidente", desc: "Sofreu um acidente ou doença ocupacional que reduziu sua capacidade de trabalho? Você pode receber o auxílio-acidente enquanto ainda trabalha." },
     { icon: <Globe size={20} />, title: "BPC/LOAS", desc: "Idoso acima de 65 anos ou pessoa com deficiência em situação de vulnerabilidade? Ajudamos você a conquistar o Benefício de Prestação Continuada mesmo sem ter contribuído ao INSS." },
