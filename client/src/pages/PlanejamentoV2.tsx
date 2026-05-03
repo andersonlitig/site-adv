@@ -20,7 +20,6 @@ export default function PlanejamentoV2() {
         <ComoFunciona />
         <CTAMeio />
         <Cenarios />
-        <Documentos />
         <FAQPlanejamento />
         <ContatoPlanejamento />
       </main>
@@ -435,76 +434,31 @@ function Cenarios() {
   );
 }
 
-function Documentos() {
-  return (
-    <section className="py-[80px] md:py-[100px] bg-white border-b border-[#E0E0DC]">
-      <div className="max-w-[1160px] mx-auto px-4 md:px-8">
-        <motion.div 
-          className="mb-12 text-center md:text-left"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#CFAE70] mb-3 block">Preparação</span>
-          <h2 className="text-[clamp(28px,3.5vw,40px)] font-bold text-[#091D39] tracking-[-0.02em] leading-[1.15] font-heading">Documentos geralmente necessários</h2>
-          <p className="text-[16px] text-[#767672] mt-4 max-w-[600px] font-light mx-auto md:mx-0">
-            Para começar o planejamento, é importante reunir os principais documentos. O advogado vai orientar o que é necessário em cada caso.
-          </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-[1px] bg-[#E0E0DC] border border-[#E0E0DC] mb-[1px]">
-          <div className="bg-white p-8">
-            <h4 className="text-[12px] font-bold text-[#091D39] uppercase tracking-[0.07em] mb-4 pb-3 border-b border-[#E0E0DC]">Documentos pessoais</h4>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-3 text-[14px] text-[#767672] font-light"><span className="w-1.5 h-1.5 bg-[#CFAE70] rounded-full mt-1.5 shrink-0" /> RG e CPF</li>
-              <li className="flex items-start gap-3 text-[14px] text-[#767672] font-light"><span className="w-1.5 h-1.5 bg-[#CFAE70] rounded-full mt-1.5 shrink-0" /> Certidão de nascimento ou casamento</li>
-              <li className="flex items-start gap-3 text-[14px] text-[#767672] font-light"><span className="w-1.5 h-1.5 bg-[#CFAE70] rounded-full mt-1.5 shrink-0" /> Comprovante de residência atualizado</li>
-              <li className="flex items-start gap-3 text-[14px] text-[#767672] font-light"><span className="w-1.5 h-1.5 bg-[#CFAE70] rounded-full mt-1.5 shrink-0" /> Extrato do CNIS (disponível no Meu INSS)</li>
-              <li className="flex items-start gap-3 text-[14px] text-[#767672] font-light"><span className="w-1.5 h-1.5 bg-[#CFAE70] rounded-full mt-1.5 shrink-0" /> Cartão do PIS/PASEP</li>
-            </ul>
-          </div>
-          
-          <div className="bg-white p-8">
-            <h4 className="text-[12px] font-bold text-[#091D39] uppercase tracking-[0.07em] mb-4 pb-3 border-b border-[#E0E0DC]">Documentos profissionais</h4>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-3 text-[14px] text-[#767672] font-light"><span className="w-1.5 h-1.5 bg-[#CFAE70] rounded-full mt-1.5 shrink-0" /> Carteira de trabalho (CTPS) — todas as páginas preenchidas</li>
-              <li className="flex items-start gap-3 text-[14px] text-[#767672] font-light"><span className="w-1.5 h-1.5 bg-[#CFAE70] rounded-full mt-1.5 shrink-0" /> Cartas de demissão e contratos de trabalho</li>
-              <li className="flex items-start gap-3 text-[14px] text-[#767672] font-light"><span className="w-1.5 h-1.5 bg-[#CFAE70] rounded-full mt-1.5 shrink-0" /> Carnês de contribuição autônoma (se houver)</li>
-              <li className="flex items-start gap-3 text-[14px] text-[#767672] font-light"><span className="w-1.5 h-1.5 bg-[#CFAE70] rounded-full mt-1.5 shrink-0" /> Documentos de atividade rural (se houver)</li>
-              <li className="flex items-start gap-3 text-[14px] text-[#767672] font-light"><span className="w-1.5 h-1.5 bg-[#CFAE70] rounded-full mt-1.5 shrink-0" /> PPP (atividade com condições especiais)</li>
-            </ul>
-          </div>
-          
-          <div className="bg-white p-8">
-            <h4 className="text-[12px] font-bold text-[#091D39] uppercase tracking-[0.07em] mb-4 pb-3 border-b border-[#E0E0DC]">Documentos complementares</h4>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-3 text-[14px] text-[#767672] font-light"><span className="w-1.5 h-1.5 bg-[#CFAE70] rounded-full mt-1.5 shrink-0" /> Laudos médicos (incapacidade ou condição especial)</li>
-              <li className="flex items-start gap-3 text-[14px] text-[#767672] font-light"><span className="w-1.5 h-1.5 bg-[#CFAE70] rounded-full mt-1.5 shrink-0" /> Sentenças ou acordos de processos trabalhistas</li>
-              <li className="flex items-start gap-3 text-[14px] text-[#767672] font-light"><span className="w-1.5 h-1.5 bg-[#CFAE70] rounded-full mt-1.5 shrink-0" /> Declarações de sindicato ou associação (rural)</li>
-              <li className="flex items-start gap-3 text-[14px] text-[#767672] font-light"><span className="w-1.5 h-1.5 bg-[#CFAE70] rounded-full mt-1.5 shrink-0" /> Certidão de tempo de serviço (servidores públicos)</li>
-            </ul>
-          </div>
-          
-          <div className="bg-white p-8">
-            <h4 className="text-[12px] font-bold text-[#091D39] uppercase tracking-[0.07em] mb-4 pb-3 border-b border-[#E0E0DC]">Acesso digital recomendado</h4>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-3 text-[14px] text-[#767672] font-light"><span className="w-1.5 h-1.5 bg-[#CFAE70] rounded-full mt-1.5 shrink-0" /> Cadastro no <strong className="text-[#091D39] font-semibold ml-1">Meu INSS</strong> (gov.br)</li>
-              <li className="flex items-start gap-3 text-[14px] text-[#767672] font-light"><span className="w-1.5 h-1.5 bg-[#CFAE70] rounded-full mt-1.5 shrink-0" /> Extrato previdenciário atualizado</li>
-              <li className="flex items-start gap-3 text-[14px] text-[#767672] font-light"><span className="w-1.5 h-1.5 bg-[#CFAE70] rounded-full mt-1.5 shrink-0" /> Histórico de contribuições do eSocial</li>
-              <li className="flex items-start gap-3 text-[14px] text-[#767672] font-light"><span className="w-1.5 h-1.5 bg-[#CFAE70] rounded-full mt-1.5 shrink-0" /> Carta de concessão (se já for aposentado)</li>
-            </ul>
-          </div>
-        </div>
-        <div className="bg-[#F4F4F2] border border-[#E0E0DC] p-4 text-[14px] text-[#767672] font-light">
-          <strong className="text-[#091D39]">Atenção:</strong> não é necessário ter todos os documentos para iniciar o contato. O advogado orienta o que é indispensável para o seu caso.
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function FAQPlanejamento() {
   const faqs = [
+    { q: "Quais documentos são necessários?", a: (
+      <div className="space-y-4">
+        <p>Para começar o planejamento, é importante reunir os principais documentos. O advogado vai orientar o que é indispensável para o seu caso. Não é necessário ter todos para iniciar o contato.</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+          <div>
+            <strong className="text-[#091D39] block mb-2">Pessoais e Acesso</strong>
+            <ul className="space-y-1">
+              <li>• RG, CPF e Comprovante de residência</li>
+              <li>• Certidão de nascimento ou casamento</li>
+              <li>• Cadastro no Meu INSS (gov.br)</li>
+            </ul>
+          </div>
+          <div>
+            <strong className="text-[#091D39] block mb-2">Profissionais</strong>
+            <ul className="space-y-1">
+              <li>• Carteira de trabalho (CTPS) completas</li>
+              <li>• Carnês de contribuição autônoma</li>
+              <li>• PPP (condições especiais) e Laudos médicos</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    ) },
     { q: "A simulação do Meu INSS não é suficiente?", a: "Não. A simulação é uma leitura automática do CNIS e depende de todos os dados estarem corretos e completos — o que raramente acontece. Ela não considera períodos não registrados, atividade rural, condições especiais, erros de cadastro ou regras de transição. O valor exibido pode ser inferior ao que você realmente tem direito." },
     { q: "Posso fazer o planejamento se ainda falta muito para me aposentar?", a: "Sim, e é ainda mais recomendado. Quem planeja com antecedência pode regularizar contribuições em atraso, incluir períodos não reconhecidos e definir a melhor estratégia para os próximos anos. Isso impacta diretamente o valor final do benefício." },
     { q: "O que são as regras de transição da Reforma da Previdência?", a: "São regras criadas pela EC 103/2019 para quem já contribuía antes de novembro de 2019. Em vez de exigir as novas idades mínimas de imediato, a reforma criou um período de transição com requisitos progressivos. Dependendo do seu tempo de contribuição, pode ser possível se aposentar com condições mais favoráveis do que as regras definitivas exigem." },
@@ -516,7 +470,7 @@ function FAQPlanejamento() {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
 
   return (
-    <section className="py-[80px] md:py-[100px] bg-[#F4F4F2] border-b border-[#E0E0DC]">
+    <section className="py-[80px] md:py-[100px] bg-white border-b border-[#E0E0DC]">
       <div className="max-w-[800px] mx-auto px-4 md:px-8">
         <motion.div 
           className="mb-12 text-center"
@@ -567,7 +521,7 @@ function FAQPlanejamento() {
 
 function ContatoPlanejamento() {
   return (
-    <section id="contato" className="py-[80px] md:py-[100px] bg-white border-b border-[#E0E0DC]">
+    <section id="contato" className="py-[80px] md:py-[100px] bg-[#F4F4F2] border-b border-[#E0E0DC]">
       <div className="max-w-[1160px] mx-auto px-4 md:px-8">
         <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#CFAE70] mb-3 block">Contato</span>
         <h2 className="text-[clamp(28px,3vw,36px)] font-bold text-[#091D39] tracking-[-0.02em] mb-8 font-heading">Inicie seu planejamento previdenciário</h2>
