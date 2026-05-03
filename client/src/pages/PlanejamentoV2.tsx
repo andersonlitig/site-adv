@@ -316,7 +316,7 @@ function ComoFunciona() {
 
   return (
     <section id="como-funciona" className="py-[80px] md:py-[100px] bg-[#0D0D0D] border-b border-white/5">
-      <div className="max-w-[800px] mx-auto px-4 md:px-8">
+      <div className="max-w-[1160px] mx-auto px-4 md:px-8">
         <motion.div 
           className="mb-12 text-center md:text-left"
           initial={{ opacity: 0, y: 20 }}
@@ -471,9 +471,9 @@ function FAQPlanejamento() {
 
   return (
     <section className="py-[80px] md:py-[100px] bg-white border-b border-[#E0E0DC]">
-      <div className="max-w-[800px] mx-auto px-4 md:px-8">
+      <div className="max-w-[1160px] mx-auto px-4 md:px-8">
         <motion.div 
-          className="mb-12 text-center"
+          className="mb-12 text-center md:text-left"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
