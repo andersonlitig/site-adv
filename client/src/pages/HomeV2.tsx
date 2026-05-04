@@ -136,7 +136,7 @@ function HeroV2() {
 function JornadaV2() {
   const cards = [
     { num: "01", title: "Quero planejar minha aposentadoria", desc: "Ainda não me aposentei. Quero saber o melhor momento e como maximizar meu benefício.", link: "/v2/planejamento" },
-    { num: "02", title: "Estou pronto para me aposentar", desc: "Tenho contribuições suficientes e quero dar entrada no benefício sem perder direitos.", link: "#" },
+    { num: "02", title: "Estou pronto para me aposentar", desc: "Tenho contribuições suficientes e quero dar entrada no benefício sem perder direitos.", link: "/v2/aposentar" },
     { num: "03", title: "Meu benefício foi negado", desc: "O INSS negou o pedido. Quero entender se a decisão está correta e como reverter.", link: "#" },
     { num: "04", title: "Já me aposentei, mas tenho dúvidas", desc: "Quero revisar o valor do benefício ou cancelar descontos que não autorizei.", link: "#" }
   ];
@@ -175,8 +175,8 @@ function JornadaV2() {
 
 function ServicesV2() {
   const services = [
-    { icon: <History size={20} />, title: "Aposentadorias", desc: "Por idade, tempo de contribuição, especial, rural e por deficiência. Analisamos o seu CNIS e identificamos a modalidade mais vantajosa para o seu caso." },
-    { icon: <Target size={20} />, title: "Planejamento Previdenciário", desc: "Quer saber o melhor momento para se aposentar? Fazemos um estudo técnico individualizado do seu CNIS para garantir a melhor aposentadoria possível." },
+    { icon: <History size={20} />, title: "Aposentadorias", desc: "Por idade, tempo de contribuição, especial, rural e por deficiência. Analisamos o seu CNIS e identificamos a modalidade mais vantajosa para o seu caso.", link: "/v2/aposentar" },
+    { icon: <Target size={20} />, title: "Planejamento Previdenciário", desc: "Quer saber o melhor momento para se aposentar? Fazemos um estudo técnico individualizado do seu CNIS para garantir a melhor aposentadoria possível.", link: "/v2/planejamento" },
     { icon: <Scale size={20} />, title: "Revisão de Benefício", desc: "Já é aposentado e acha que o valor está baixo demais? Analisamos o cálculo do seu benefício e verificamos se há algo a corrigir." },
     { icon: <Users size={20} />, title: "Salário-Maternidade", desc: "Empregadas, autônomas, MEIs e trabalhadoras rurais têm direito ao salário-maternidade pelo INSS. Muitas perdem esse benefício por não saber que têm direito ou por erro no pedido." },
     { icon: <ShieldAlert size={20} />, title: "Benefícios por Incapacidade", desc: "Auxílio por Incapacidade Temporária e Aposentadoria por Incapacidade Permanente. Não consegue mais trabalhar por questões de saúde? Garanta o suporte financeiro que você merece." },
@@ -202,23 +202,38 @@ function ServicesV2() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-[#E0E0DC] border border-[#E0E0DC] shadow-sm">
           {services.map((s, i) => (
-            <motion.div 
-              key={i} 
-              className="bg-white p-8 flex flex-col border-t-4 border-transparent hover:border-[#CFAE70] hover:bg-[#F4F4F2] transition-colors cursor-pointer group"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
-            >
-              <div className="w-12 h-12 flex items-center justify-center bg-[#091D39]/5 text-[#091D39] group-hover:bg-[#091D39] group-hover:text-[#CFAE70] transition-colors mb-6 shrink-0 rounded">
-                {s.icon}
-              </div>
-              <h3 className="text-[16px] font-bold text-[#091D39] mb-3 leading-[1.3]">{s.title}</h3>
-              <p className="text-[14px] text-[#767672] leading-[1.6] flex-1 font-light">{s.desc}</p>
-              <div className="inline-flex items-center gap-2 mt-6 text-[11px] uppercase tracking-widest font-bold text-[#767672] group-hover:text-[#091D39] transition-colors">
-                Saiba mais <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-              </div>
-            </motion.div>
+            s.link ? (
+              <Link href={s.link} key={i}>
+                <a className="bg-white p-8 flex flex-col border-t-4 border-transparent hover:border-[#CFAE70] hover:bg-[#F4F4F2] transition-colors cursor-pointer group no-underline h-full block">
+                  <div className="w-12 h-12 flex items-center justify-center bg-[#091D39]/5 text-[#091D39] group-hover:bg-[#091D39] group-hover:text-[#CFAE70] transition-colors mb-6 shrink-0 rounded">
+                    {s.icon}
+                  </div>
+                  <h3 className="text-[16px] font-bold text-[#091D39] mb-3 leading-[1.3]">{s.title}</h3>
+                  <p className="text-[14px] text-[#767672] leading-[1.6] flex-1 font-light">{s.desc}</p>
+                  <div className="inline-flex items-center gap-2 mt-6 text-[11px] uppercase tracking-widest font-bold text-[#767672] group-hover:text-[#091D39] transition-colors">
+                    Saiba mais <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </a>
+              </Link>
+            ) : (
+              <motion.div 
+                key={i} 
+                className="bg-white p-8 flex flex-col border-t-4 border-transparent hover:border-[#CFAE70] hover:bg-[#F4F4F2] transition-colors cursor-pointer group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
+              >
+                <div className="w-12 h-12 flex items-center justify-center bg-[#091D39]/5 text-[#091D39] group-hover:bg-[#091D39] group-hover:text-[#CFAE70] transition-colors mb-6 shrink-0 rounded">
+                  {s.icon}
+                </div>
+                <h3 className="text-[16px] font-bold text-[#091D39] mb-3 leading-[1.3]">{s.title}</h3>
+                <p className="text-[14px] text-[#767672] leading-[1.6] flex-1 font-light">{s.desc}</p>
+                <div className="inline-flex items-center gap-2 mt-6 text-[11px] uppercase tracking-widest font-bold text-[#767672] group-hover:text-[#091D39] transition-colors">
+                  Saiba mais <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                </div>
+              </motion.div>
+            )
           ))}
         </div>
 

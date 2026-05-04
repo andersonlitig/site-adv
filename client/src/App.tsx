@@ -26,6 +26,7 @@ import BlogPost3 from "@/pages/BlogPost3";
 import PartnerPage from "./pages/PartnerPage";
 import HomeV2 from "@/pages/HomeV2";
 import PlanejamentoV2 from "@/pages/PlanejamentoV2";
+import AposentarV2 from "@/pages/AposentarV2";
 
 function Router() {
   return (
@@ -33,6 +34,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/v2" component={HomeV2} />
       <Route path="/v2/planejamento" component={PlanejamentoV2} />
+      <Route path="/v2/aposentar" component={AposentarV2} />
       <Route path="/atuacao/saude" component={HealthLaw} />
       <Route path="/atuacao/previdenciario" component={SocialSecurityLaw} />
       <Route path="/atuacao/transito" component={TrafficLaw} />
