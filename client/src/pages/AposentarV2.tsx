@@ -17,6 +17,7 @@ export default function AposentarV2() {
         <VantagensAdvogado />
         <TiposAposentadoria />
         <CTAMeio />
+        <AntesDarEntrada />
         <ComoFunciona />
         <FAQAposentar />
         <ContatoAposentar />
@@ -285,16 +286,16 @@ function CTAMeio() {
   );
 }
 
-function ComoFunciona() {
-  const etapas = [
-    { n: "01", t: "Você conta sua história de trabalho", d: "Conversamos sobre onde e como você trabalhou ao longo da vida — com carteira, sem carteira, na roça, como autônomo. Não precisa ser especialista: só nos conte o que viveu." },
-    { n: "02", t: "A gente analisa tudo e faz as contas", d: "Verificamos seus registros no INSS, identificamos o que pode estar faltando e calculamos qual forma de aposentadoria vai te render o maior valor mensal possível." },
-    { n: "03", t: "Você recebe uma orientação clara", d: "Explicamos o resultado sem complicar: qual é a melhor opção para o seu caso, quanto você pode esperar receber e o que precisa ser feito antes de dar entrada." },
-    { n: "04", t: "Damos entrada e acompanhamos até o final", d: "Cuidamos de toda a papelada e ficamos de olho no processo até o INSS aprovar. Se aparecer qualquer problema, resolvemos imediatamente." }
+function AntesDarEntrada() {
+  const verificacoes = [
+    { n: "01", t: "Checar se todos os períodos de trabalho estão registrados", d: "O INSS pode estar ignorando tempo que você trabalhou — sem carteira, como autônomo, no campo ou em regime diferente. Cada período reconhecido pode aumentar o valor final. A conferência do histórico completo é o primeiro passo." },
+    { n: "02", t: "Calcular qual modalidade resulta no maior valor", d: "Para o mesmo perfil de segurado, diferentes formas de aposentadoria podem resultar em valores mensais bem diferentes. A comparação entre as opções disponíveis é feita com base na legislação vigente e no seu histórico específico." },
+    { n: "03", t: "Verificar se você trabalhou em condições especiais", d: "Se em algum momento da sua vida você trabalhou exposto a riscos à saúde, isso pode mudar completamente a forma mais vantajosa de se aposentar. Esse direito some depois que o benefício é concedido sem considerá-lo." },
+    { n: "04", t: "Confirmar se a data escolhida é a ideal", d: "A data de entrada no pedido de aposentadoria afeta o valor. Em alguns casos, esperar um pouco mais ou antecipar a data pode aumentar o benefício mensal de forma permanente. Essa análise é feita caso a caso." }
   ];
 
   return (
-    <section id="como-funciona" className="py-[80px] md:py-[100px] bg-[#0D0D0D] border-b border-white/5">
+    <section className="py-[80px] md:py-[100px] bg-[#0D0D0D] border-b border-[#CFAE70]/20">
       <div className="max-w-[1160px] mx-auto px-4 md:px-8">
         <motion.div 
           className="mb-12 text-center md:text-left"
@@ -302,15 +303,15 @@ function ComoFunciona() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#CFAE70] mb-3 block">Como funciona</span>
-          <h2 className="text-[clamp(28px,3.5vw,40px)] font-bold text-white tracking-[-0.02em] leading-[1.15] font-heading">O que acontece depois que você entra em contato</h2>
+          <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#CFAE70] mb-3 block">Antes de dar entrada</span>
+          <h2 className="text-[clamp(28px,3.5vw,40px)] font-bold text-white tracking-[-0.02em] leading-[1.15] font-heading">Estas verificações precisam<br className="hidden md:block"/>ser feitas antes do pedido</h2>
           <p className="text-[16px] text-white/50 mt-4 max-w-[600px] font-light mx-auto md:mx-0">
-            Quatro passos simples, do primeiro contato até o benefício aprovado.
+            São detalhes que parecem pequenos mas fazem grande diferença no valor final — e que não têm como corrigir depois que o benefício for concedido.
           </p>
         </motion.div>
 
         <div className="flex flex-col border border-white/10">
-          {etapas.map((e, i) => (
+          {verificacoes.map((v, i) => (
             <motion.div 
               key={i} 
               className="flex border-b border-white/10 last:border-0 hover:bg-white/5 transition-colors"
@@ -320,12 +321,57 @@ function ComoFunciona() {
               transition={{ delay: i * 0.1 }}
             >
               <div className="w-[60px] md:w-[80px] border-r border-white/10 flex items-start justify-center shrink-0 pt-8">
-                <span className="text-[20px] font-bold text-[#CFAE70] font-heading opacity-50">{e.n}</span>
+                <span className="text-[20px] font-bold text-[#CFAE70] font-heading opacity-50">{v.n}</span>
               </div>
               <div className="p-6 md:p-8">
-                <h4 className="text-[16px] font-bold text-white mb-2">{e.t}</h4>
-                <p className="text-[14px] text-white/50 leading-[1.65] font-light">{e.d}</p>
+                <h4 className="text-[16px] font-bold text-white mb-2">{v.t}</h4>
+                <p className="text-[14px] text-white/50 leading-[1.65] font-light">{v.d}</p>
               </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ComoFunciona() {
+  const etapas = [
+    { n: "Etapa 01", t: "Você conta a sua história de trabalho", d: "Onde trabalhou, por quanto tempo, se foi com carteira ou sem, se passou pelo campo, por conta própria ou em lugar perigoso. Não precisa saber o que isso significa juridicamente — só nos contar o que viveu. A gente faz a interpretação técnica." },
+    { n: "Etapa 02", t: "Analisamos o seu histórico e calculamos as opções", d: "Verificamos seus registros no INSS, identificamos o que pode estar faltando e calculamos o valor estimado do benefício em cada modalidade disponível para o seu perfil. Você recebe uma visão clara do que é possível." },
+    { n: "Etapa 03", t: "Você recebe uma orientação clara sobre o que fazer", d: "Qual é a melhor opção, quanto você pode esperar receber, se tem alguma pendência a resolver antes de dar entrada e qual é o prazo ideal. Tudo explicado sem enrolação e sem juridiquês." },
+    { n: "Etapa 04", t: "Damos entrada e acompanhamos até o final", d: "Cuidamos de toda a papelada e ficamos de olho no processo junto ao INSS. Se aparecer qualquer exigência ou problema no caminho, resolvemos. Você fica tranquilo até o benefício ser aprovado." }
+  ];
+
+  return (
+    <section id="como-funciona" className="py-[80px] md:py-[100px] bg-[#F4F4F2] border-b border-[#E0E0DC]">
+      <div className="max-w-[1160px] mx-auto px-4 md:px-8">
+        <motion.div 
+          className="mb-12 text-center md:text-left"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#CFAE70] mb-3 block">Passo a passo</span>
+          <h2 className="text-[clamp(28px,3.5vw,40px)] font-bold text-[#091D39] tracking-[-0.02em] leading-[1.15] font-heading">O que acontece depois que<br className="hidden md:block"/>você entra em contato</h2>
+          <p className="text-[16px] text-[#767672] mt-4 max-w-[600px] font-light mx-auto md:mx-0">
+            Quatro etapas simples, da análise até o benefício aprovado.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-[1px] bg-[#E0E0DC] border border-[#E0E0DC]">
+          {etapas.map((e, i) => (
+            <motion.div 
+              key={i} 
+              className="bg-white p-8 border-t-4 border-transparent hover:border-[#CFAE70] hover:bg-[#F4F4F2] transition-colors duration-300"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+            >
+              <span className="text-[11px] font-bold tracking-[0.15em] uppercase text-[#CFAE70] mb-3 block">{e.n}</span>
+              <h3 className="text-[16px] font-bold text-[#091D39] mb-3 leading-[1.4]">{e.t}</h3>
+              <p className="text-[14px] text-[#767672] leading-[1.65] font-light">{e.d}</p>
             </motion.div>
           ))}
         </div>
@@ -336,11 +382,12 @@ function ComoFunciona() {
 
 function FAQAposentar() {
   const faqs = [
-    { q: "Posso dar entrada na aposentadoria sozinho, sem advogado?", a: "Sim, você pode. Mas sem análise técnica, o INSS não vai te avisar se existe uma forma melhor de aposentar ou se o valor poderia ser maior. Muita gente só descobre anos depois que recebeu menos do que tinha direito — e nessa hora é muito difícil corrigir." },
-    { q: "Quanto tempo o INSS demora para responder?", a: "O INSS tem até 90 dias para dar uma resposta. Na prática, pedidos bem feitos e com documentação completa costumam ser resolvidos mais rápido. Quando há pendências ou documentação faltando, o prazo começa do zero." },
-    { q: "Trabalhei muito tempo sem carteira assinada. Perdi esse período?", a: "Não necessariamente. Em muitos casos, é possível incluir períodos sem registro formal usando outros documentos como contratos, recibos, declarações de empregadores ou testemunhos. Cada situação é diferente, por isso a análise individual é tão importante." },
-    { q: "Preciso ir pessoalmente a algum lugar?", a: "Não. Todo o acompanhamento é feito de forma digital — por WhatsApp, vídeo ou e-mail. Você envia os documentos por foto ou PDF. Atendo clientes em todo o Brasil." },
-    { q: "E se o INSS negar mesmo assim?", a: "Há dois caminhos: recurso administrativo (sem precisar ir à Justiça) ou ação judicial. Em muitos casos de negativa, a decisão pode ser revertida. O importante é agir dentro dos prazos." }
+    { q: "Posso me aposentar e continuar trabalhando?", a: "Depende da modalidade. Quem se aposenta por idade pode continuar trabalhando e até acumular os dois rendimentos. Quem se aposenta por incapacidade permanente, não. Na aposentadoria por tempo de contribuição, é possível trabalhar, mas precisa verificar o caso específico — principalmente se houver cargo público envolvido." },
+    { q: "Trabalhei anos sem carteira assinada. Esse tempo pode contar?", a: "Em muitos casos, sim. Período sem registro formal pode ser reconhecido pelo INSS com outros documentos — contratos, recibos, declarações de ex-empregadores, holerites, fotos, testemunhos. O caminho depende do tipo de trabalho e dos documentos disponíveis. Cada situação é analisada individualmente." },
+    { q: "A reforma de 2019 me prejudicou?", a: "Não necessariamente. A reforma criou regras de transição para quem já contribuía antes de novembro de 2019. Dependendo do seu histórico, essas regras podem ser mais favoráveis do que as definitivas — permitindo se aposentar com menos idade ou por um sistema de pontos progressivos. Isso precisa ser verificado caso a caso." },
+    { q: "Quanto tempo o INSS demora para dar uma resposta?", a: "O prazo legal é de até 90 dias para análise do pedido. Na prática, pedidos bem documentados e sem pendências costumam ser resolvidos em menos tempo. Quando há exigência ou documentação faltando, o prazo recomeça. O acompanhamento jurídico garante que as pendências sejam resolvidas rapidamente." },
+    { q: "E se o INSS negar depois de tudo isso?", a: "Há dois caminhos: recurso administrativo (sem precisar ir à Justiça, dentro de 30 dias da negativa) ou ação judicial, quando o recurso não resolve. A negativa não é o fim. Em muitos casos, ela acontece por erro do próprio INSS no processamento dos dados — e pode ser revertida." },
+    { q: "Preciso ir pessoalmente a algum lugar?", a: "Não. Todo o atendimento é feito de forma digital — por WhatsApp, vídeo ou e-mail. Os documentos são enviados por foto ou PDF. Atendo clientes em todo o Brasil sem necessidade de deslocamento." }
   ];
 
   const [openIdx, setOpenIdx] = useState<number | null>(0);
@@ -468,13 +515,13 @@ function ContatoAposentar() {
                 <div className="relative">
                   <select className="w-full p-3 border border-[#E0E0DC] bg-white font-sans text-[14px] text-[#091D39] outline-none transition-all focus:border-[#091D39] appearance-none pr-10 cursor-pointer">
                     <option value="" disabled selected>Selecione</option>
-                    <option>Já tenho a idade e os anos trabalhados</option>
-                    <option>Não sei se já tenho direito</option>
-                    <option>Quero saber qual tipo se aplica a mim</option>
-                    <option>Trabalhei na roça / zona rural</option>
+                    <option>Não sei qual tipo de aposentadoria tenho direito</option>
+                    <option>Quero saber se já posso me aposentar</option>
+                    <option>Quero calcular qual opção garante o maior valor</option>
                     <option>Trabalhei em lugar perigoso ou insalubre</option>
+                    <option>Trabalhei na zona rural</option>
                     <option>Tenho deficiência</option>
-                    <option>O INSS negou meu pedido</option>
+                    <option>Já atingi os requisitos e quero dar entrada</option>
                     <option>Outro</option>
                   </select>
                   <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 text-[#767672] pointer-events-none" size={16} />
