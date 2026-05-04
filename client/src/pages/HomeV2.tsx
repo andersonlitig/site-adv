@@ -137,7 +137,7 @@ function JornadaV2() {
   const cards = [
     { num: "01", title: "Quero planejar minha aposentadoria", desc: "Ainda não me aposentei. Quero saber o melhor momento e como maximizar meu benefício.", link: "/v2/planejamento" },
     { num: "02", title: "Estou pronto para me aposentar", desc: "Tenho contribuições suficientes e quero dar entrada no benefício sem perder direitos.", link: "/v2/aposentar" },
-    { num: "03", title: "Meu benefício foi negado", desc: "O INSS negou o pedido. Quero entender se a decisão está correta e como reverter.", link: "#" },
+    { num: "03", title: "Meu benefício foi negado", desc: "O INSS negou o pedido. Quero entender se a decisão está correta e como reverter.", link: "/v2/negado" },
     { num: "04", title: "Já me aposentei, mas tenho dúvidas", desc: "Quero revisar o valor do benefício ou cancelar descontos que não autorizei.", link: "#" }
   ];
 

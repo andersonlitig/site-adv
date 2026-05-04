@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Benefício Negado pelo INSS — O que fazer | Anderson Litig OAB/ES 40.152</title>
+<meta name="description" content="O INSS negou sua aposentadoria ou auxílio? Entenda por que isso acontece, quais são os caminhos possíveis e como agir dentro do prazo. OAB/ES 40.152.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== BASE ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --azul:#091D39;--azul-md:#0d2548;--ouro:#CFAE70;--ouro-dk:#8a6e30;
+  --aco:#2C2C2C;--noir:#0D0D0D;--cinza:#F4F4F2;--cinza2:#E0E0DC;
+  --cinza3:#767672;--branco:#FFFFFF;--f:'Inter',sans-serif;
+}
+body{font-family:var(--f);font-size:16px;color:var(--aco);background:var(--branco);line-height:1.6;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+.container{max-width:1160px;margin:0 auto;padding:0 32px}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ouro);margin-bottom:10px;display:block}
+.section-head{margin-bottom:36px}
+.section-head h2{font-size:clamp(24px,3vw,32px);font-weight:700;color:var(--azul);letter-spacing:-.02em;margin-top:8px;margin-bottom:8px}
+.section-head h2.claro{color:var(--branco)}
+.section-head p{font-size:15px;color:var(--cinza3);max-width:560px}
+.section-head p.claro{color:rgba(255,255,255,.5)}
+
+/* HEADER */
+header{background:var(--branco);border-bottom:1px solid var(--cinza2);position:sticky;top:0;z-index:100}
+.header-inner{display:grid;grid-template-columns:auto 1fr auto;align-items:center;height:64px;gap:32px}
+.logo-name{font-size:18px;font-weight:700;color:var(--azul);letter-spacing:-.02em}
+.logo-sub{font-size:10px;color:var(--cinza3);letter-spacing:.05em;text-transform:uppercase;display:block;margin-top:1px}
+nav{display:flex;justify-content:center}
+.nav-link{font-size:13px;color:var(--aco);padding:6px 13px;border-bottom:2px solid transparent;cursor:pointer;transition:color .15s}
+.nav-link:hover,.nav-link.ativo{color:var(--azul);font-weight:500}
+.nav-link.ativo{border-bottom-color:var(--ouro)}
+.nav-cta{background:var(--azul);color:var(--branco);font-family:var(--f);font-size:13px;font-weight:500;padding:10px 20px;border:none;cursor:pointer;display:flex;align-items:center;gap:8px}
+.nav-cta:hover{background:var(--azul-md)}
+
+/* BREADCRUMB */
+.breadcrumb{background:var(--cinza);border-bottom:1px solid var(--cinza2);padding:10px 0}
+.breadcrumb-inner{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--cinza3)}
+.breadcrumb a:hover{color:var(--azul)}
+.breadcrumb .atual{color:var(--azul);font-weight:500}
+.breadcrumb .sep{opacity:.5}
+
+/* HERO */
+.hero-interno{background:var(--azul);padding:64px 0 60px;border-bottom:3px solid var(--ouro)}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(207,174,112,.12);border:1px solid rgba(207,174,112,.25);padding:6px 14px;margin-bottom:20px}
+.hero-badge span{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ouro)}
+.hero-interno h1{font-size:clamp(28px,3.5vw,44px);font-weight:700;color:var(--branco);letter-spacing:-.03em;line-height:1.1;margin-bottom:16px;max-width:680px}
+.hero-interno h1 em{color:var(--ouro);font-style:normal;display:block}
+.hero-interno .lead{font-size:16px;color:rgba(255,255,255,.6);line-height:1.75;margin-bottom:32px;max-width:580px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+
+/* BOTÕES */
+.btn-pri{background:var(--ouro);color:var(--azul);font-family:var(--f);font-size:14px;font-weight:600;padding:13px 24px;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:background .18s}
+.btn-pri:hover{background:#dfc880}
+.btn-sec{background:transparent;color:var(--branco);font-family:var(--f);font-size:14px;padding:13px 24px;border:1px solid rgba(255,255,255,.3);cursor:pointer;transition:border-color .18s}
+.btn-sec:hover{border-color:rgba(255,255,255,.6)}
+.btn-azul{background:var(--azul);color:var(--branco);font-family:var(--f);font-size:14px;font-weight:500;padding:13px 24px;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:background .18s}
+.btn-azul:hover{background:var(--azul-md)}
+.btn-wpp{background:#25D366;color:var(--branco);font-family:var(--f);font-size:14px;font-weight:600;padding:13px 24px;border:none;cursor:pointer;display:flex;align-items:center;gap:9px;transition:background .18s;margin-top:28px}
+.btn-wpp:hover{background:#1db957}
+
+/* CTA DO MEIO — MID-PAGE */
+.mid-cta{background:var(--azul);padding:48px 0;border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05)}
+.mid-cta-inner{display:grid;grid-template-columns:1fr auto;align-items:center;gap:40px}
+.mid-cta h3{font-size:clamp(20px,2.5vw,26px);font-weight:700;color:var(--branco);margin-bottom:8px;letter-spacing:-.01em}
+.mid-cta p{font-size:14px;color:rgba(255,255,255,.55)}
+.btn-wpp-mid{background:#25D366;color:var(--branco);font-family:var(--f);font-size:14px;font-weight:600;padding:14px 28px;border:none;cursor:pointer;display:flex;align-items:center;gap:10px;transition:background .18s;white-space:nowrap}
+.btn-wpp-mid:hover{background:#1db957}
+
+/* ALERTA */
+.alerta-cnis{background:var(--noir);padding:36px 0;border-bottom:3px solid rgba(207,174,112,.25)}
+.alerta-inner{display:flex;align-items:center;gap:24px;max-width:860px}
+.alerta-icon{width:52px;height:52px;background:rgba(207,174,112,.12);border:1px solid rgba(207,174,112,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.alerta-icon svg,.alerta-prazo-icon svg{stroke:var(--ouro);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.alerta-icon svg{width:22px;height:22px}
+.alerta-texto p{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ouro);margin-bottom:6px}
+.alerta-texto h3{font-size:15px;font-weight:400;color:rgba(255,255,255,.7);line-height:1.65}
+.alerta-texto h3 strong{color:var(--branco);font-weight:600}
+/* alerta de prazo (vermelho) */
+.alerta-prazo{background:var(--noir);padding:32px 0;border-bottom:3px solid rgba(220,38,38,.35)}
+.alerta-prazo-inner{display:flex;align-items:center;gap:24px;max-width:860px}
+.alerta-prazo-icon{width:52px;height:52px;background:rgba(220,38,38,.12);border:1px solid rgba(220,38,38,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.alerta-prazo-icon svg{width:22px;height:22px;stroke:#fca5a5;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.alerta-prazo-text p{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#fca5a5;margin-bottom:6px}
+.alerta-prazo-text h3{font-size:15px;font-weight:400;color:rgba(255,255,255,.7);line-height:1.65}
+.alerta-prazo-text h3 strong{color:var(--branco);font-weight:600}
+
+/* BARRA "O QUE VOCÊ VAI DESCOBRIR / O QUE FAZEMOS" */
+.respostas{background:var(--cinza);padding:56px 0;border-bottom:1px solid var(--cinza2)}
+.respostas-head{margin-bottom:32px}
+.respostas-head h2{font-size:clamp(24px,3vw,32px);font-weight:700;color:var(--azul);letter-spacing:-.02em;margin-top:8px;margin-bottom:8px}
+.respostas-head p{font-size:15px;color:var(--cinza3);max-width:500px}
+.respostas-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--cinza2);border:1px solid var(--cinza2)}
+.resposta-item{background:var(--branco);padding:26px 22px;display:flex;align-items:flex-start;gap:14px;border-top:3px solid transparent;transition:border-color .18s,background .18s}
+.resposta-item:hover{border-top-color:var(--ouro);background:var(--cinza)}
+.ri-icon{width:40px;height:40px;background:rgba(9,29,57,.06);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ri-icon svg{width:18px;height:18px;stroke:var(--azul);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.ri-text strong{display:block;font-size:14px;font-weight:600;color:var(--azul);margin-bottom:5px;line-height:1.3}
+.ri-text span{font-size:13px;color:var(--cinza3);line-height:1.5}
+
+/* CARDS GENÉRICOS (motivos, modalidades, etc.) */
+.cards-section{padding:56px 0;background:var(--branco);border-bottom:1px solid var(--cinza2)}
+.cards-section.bg-cinza{background:var(--cinza)}
+.cards-section.bg-azul{background:var(--azul);border-bottom:1px solid rgba(255,255,255,.08)}
+.cards-section.bg-noir{background:var(--noir);border-bottom:1px solid rgba(255,255,255,.06)}
+.card-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--cinza2);border:1px solid var(--cinza2)}
+.card-grid-3.escuro{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.08)}
+.card-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--cinza2);border:1px solid var(--cinza2)}
+.card-item{background:var(--branco);padding:26px 24px;border-top:3px solid transparent;transition:background .18s,border-color .18s}
+.card-item:hover{background:var(--cinza);border-top-color:var(--ouro)}
+.card-item.bg-cinza-fill{background:var(--cinza)}
+.card-item.bg-cinza-fill:hover{background:#e8e6e2}
+.card-item.destaque-azul{background:var(--azul)}
+.card-item.destaque-azul:hover{background:var(--azul-md);border-top-color:var(--ouro)}
+.card-item.escuro-fill{background:rgba(255,255,255,.04)}
+.card-item.escuro-fill:hover{background:rgba(255,255,255,.08);border-top-color:var(--ouro)}
+.card-icon{width:40px;height:40px;background:rgba(9,29,57,.06);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.card-icon svg{width:18px;height:18px;stroke:var(--azul);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.card-icon.ouro-bg{background:rgba(207,174,112,.12)}
+.card-icon.ouro-bg svg{stroke:var(--ouro)}
+.card-label{font-size:11px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--cinza3);margin-bottom:10px;display:block}
+.card-label.ouro{color:var(--ouro)}
+.card-item h3{font-size:15px;font-weight:600;color:var(--azul);margin-bottom:8px;line-height:1.3}
+.card-item h3.claro{color:var(--branco)}
+.card-item p{font-size:13px;color:var(--cinza3);line-height:1.65}
+.card-item p.claro{color:rgba(255,255,255,.5)}
+.card-badge{display:inline-block;margin-top:12px;font-size:10px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--ouro-dk);background:rgba(207,174,112,.1);padding:3px 9px;border:1px solid rgba(207,174,112,.25)}
+.card-req{margin-top:12px;padding:10px 14px;background:rgba(255,255,255,.06);font-size:12px;color:rgba(255,255,255,.5)}
+.card-req.claro-fill{background:rgba(255,255,255,.6);color:var(--azul)}
+.card-detail{margin-top:12px;font-size:12px;color:var(--cinza3);display:flex;align-items:center;gap:8px}
+.card-detail::before{content:'';width:5px;height:5px;background:var(--ouro);border-radius:50%;flex-shrink:0}
+.card-detail.claro{color:rgba(255,255,255,.4)}
+
+/* ETAPAS VERTICAIS */
+.etapas-v{display:flex;flex-direction:column;border:1px solid rgba(255,255,255,.08)}
+.etapa-v{display:grid;grid-template-columns:56px 1fr;border-bottom:1px solid rgba(255,255,255,.06);transition:background .18s}
+.etapa-v:last-child{border-bottom:none}
+.etapa-v:hover{background:rgba(255,255,255,.02)}
+.etapa-num-col{display:flex;align-items:flex-start;justify-content:center;padding-top:24px;border-right:1px solid rgba(255,255,255,.06);font-size:18px;font-weight:700;color:var(--ouro);opacity:.4}
+.etapa-content{padding:22px 28px}
+.etapa-content h4{font-size:15px;font-weight:600;color:var(--branco);margin-bottom:8px}
+.etapa-content p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.65}
+.etapa-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.etapa-tag{font-size:11px;color:rgba(255,255,255,.38);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);padding:3px 10px}
+
+/* DOC GRID */
+.doc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--cinza2);border:1px solid var(--cinza2)}
+.doc-group{background:var(--branco);padding:24px 26px}
+.doc-group h4{font-size:12px;font-weight:600;color:var(--azul);text-transform:uppercase;letter-spacing:.07em;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--cinza2)}
+.doc-group ul{display:flex;flex-direction:column;gap:8px;list-style:none}
+.doc-group ul li{font-size:13px;color:var(--cinza3);display:flex;align-items:flex-start;gap:10px}
+.doc-group ul li::before{content:'';width:5px;height:5px;background:var(--ouro);border-radius:50%;flex-shrink:0;margin-top:7px}
+.doc-obs{background:var(--branco);border:1px solid var(--cinza2);border-top:none;padding:14px 24px;font-size:13px;color:var(--cinza3)}
+.doc-obs strong{color:var(--azul)}
+
+/* FAQ */
+.faq-section{padding:56px 0;background:var(--branco);border-bottom:1px solid var(--cinza2)}
+.faq-section.bg-cinza{background:var(--cinza)}
+.faq-list{display:flex;flex-direction:column;gap:1px;background:var(--cinza2);border:1px solid var(--cinza2)}
+.faq-item{background:var(--branco)}
+.faq-q{padding:18px 22px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:14px;font-weight:500;color:var(--azul);border-left:3px solid transparent;transition:background .15s,border-color .15s}
+.faq-q:hover,.faq-item.open .faq-q{background:var(--cinza);border-left-color:var(--ouro)}
+.faq-icon{font-size:18px;color:var(--ouro);flex-shrink:0;transition:transform .25s;line-height:1}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .32s ease;font-size:13px;color:var(--cinza3);line-height:1.7;padding:0 22px;border-left:3px solid var(--cinza2)}
+.faq-item.open .faq-a{max-height:300px;padding:0 22px 18px}
+
+/* CONTATO */
+.contato-section{padding:56px 0;background:var(--cinza);border-bottom:1px solid var(--cinza2)}
+.contato-grid{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--cinza2)}
+.contato-info{padding:40px;background:var(--azul)}
+.contato-info h3{font-size:clamp(18px,2vw,22px);font-weight:700;color:var(--branco);margin-bottom:8px;padding-left:16px;border-left:4px solid var(--ouro)}
+.contato-info .sub{font-size:14px;color:rgba(255,255,255,.5);margin-bottom:32px;line-height:1.65;margin-top:12px}
+.contact-item{display:flex;align-items:flex-start;gap:14px;margin-bottom:20px}
+.contact-icon{width:40px;height:40px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid rgba(255,255,255,.1)}
+.contact-icon svg{width:16px;height:16px;stroke:var(--ouro);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.contact-text span{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);display:block;margin-bottom:2px}
+.contact-text strong{font-size:14px;font-weight:600;color:var(--branco)}
+.form-col{padding:40px;background:var(--branco)}
+.form-col h3{font-size:18px;font-weight:700;color:var(--azul);margin-bottom:22px}
+.form-group{margin-bottom:13px}
+.form-label{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--cinza3);display:block;margin-bottom:5px}
+.form-input{width:100%;padding:11px 13px;border:1px solid var(--cinza2);background:var(--branco);font-family:var(--f);font-size:14px;color:var(--aco);outline:none;transition:border-color .18s}
+.form-input:focus{border-color:var(--azul)}
+textarea.form-input{resize:vertical;min-height:80px}
+select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23767672' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;cursor:pointer}
+.btn-submit{width:100%;background:var(--azul);color:var(--branco);font-family:var(--f);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:14px;border:none;cursor:pointer;transition:background .18s;margin-top:6px}
+.btn-submit:hover{background:var(--azul-md)}
+.form-disc{font-size:11px;color:var(--cinza3);margin-top:10px;line-height:1.5}
+
+/* FOOTER */
+footer{background:var(--noir)}
+.footer-main{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding:48px 0 40px;border-bottom:1px solid rgba(255,255,255,.08)}
+.footer-logo-name{font-size:18px;font-weight:700;color:var(--ouro);margin-bottom:4px}
+.footer-logo-sub{font-size:11px;color:rgba(255,255,255,.3);margin-bottom:12px}
+.footer-disc{font-size:12px;color:rgba(255,255,255,.28);line-height:1.75}
+.footer-col h4{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:14px}
+.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,.38);margin-bottom:9px;cursor:pointer;transition:color .15s}
+.footer-col a:hover{color:var(--ouro)}
+.footer-bottom{padding:16px 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:11px;color:rgba(255,255,255,.2)}
+.wpp-float{position:fixed;bottom:28px;right:28px;z-index:999;background:#25D366;width:56px;height:56px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .18s}
+.wpp-float:hover{transform:scale(1.06)}
+.wpp-float svg{width:26px;height:26px;fill:var(--branco)}
+
+@media(max-width:1024px){
+  .card-grid-3,.respostas-grid{grid-template-columns:1fr 1fr}
+  .contato-grid,.doc-grid{grid-template-columns:1fr}
+  .footer-main{grid-template-columns:1fr 1fr}
+  .mid-cta-inner{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  nav{display:none}
+  .card-grid-3,.respostas-grid{grid-template-columns:1fr}
+  .contato-info,.form-col{padding:28px 24px}
+  .alerta-inner,.alerta-prazo-inner{flex-direction:column;gap:14px}
+}
+</style>
+</head>
+<body>
+<div class="wpp-float" onclick="window.open('https://wa.me/5527999999999','_blank')"><svg width="26" height="26" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></div>
+<header>
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" style="text-decoration:none">
+        <div class="logo-name">Anderson Litig</div>
+        <span class="logo-sub">OAB/ES nº 40.152 · Advocacia Previdenciária</span>
+      </a>
+      <nav>
+        <a class="nav-link" href="index.html">Início</a>
+        <a class="nav-link" href="index.html#servicos">Serviços</a>
+        <a class="nav-link" href="index.html#sobre">Sobre</a>
+        <a class="nav-link" href="index.html#faq">Dúvidas</a>
+        <a class="nav-link" href="index.html#blog">Blog</a>
+        <a class="nav-link" href="#contato">Contato</a>
+      </nav>
+      <button class="nav-cta" onclick="window.open('https://wa.me/5527999999999','_blank')"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg> Falar pelo WhatsApp</button>
+    </div>
+  </div>
+</header>
+<div class="breadcrumb">
+  <div class="container">
+    <div class="breadcrumb-inner">
+      <a href="index.html">Início</a><span class="sep">/</span>
+      <a href="index.html#servicos">Serviços</a><span class="sep">/</span>
+      <span class="atual">Meu benefício foi negado</span>
+    </div>
+  </div>
+</div>
+<!-- HERO -->
+<section class="hero-interno">
+  <div class="container">
+    <div class="hero-badge"><span>Benefício Negado pelo INSS</span></div>
+    <h1>O INSS negou.<br><em>Mas a maioria das negativas pode ser revertida.</em></h1>
+    <p class="lead">Receber uma carta de indeferimento é frustrante — mas não é, na maioria dos casos, o fim da história. O que vai definir o resultado é entender por que negaram, qual é o caminho certo e agir dentro dos prazos.</p>
+    <div class="hero-actions">
+      <button class="btn-pri" onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})"><svg width="15" height="15" fill="#091D39" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg> Quero entender o que fazer</button>
+      <button class="btn-sec" onclick="document.getElementById('caminhos').scrollIntoView({behavior:'smooth'}))">Ver os caminhos possíveis</button>
+    </div>
+  </div>
+</section>
+
+<!-- ALERTA PRAZO -->
+<div class="alerta-prazo">
+  <div class="container">
+    <div class="alerta-prazo-inner">
+      <div class="alerta-prazo-icon"><svg viewBox="0 0 24 24" style="width:#fca5a5px;height:22px;stroke:22;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+      <div class="alerta-prazo-text">
+        <p>Atenção: prazo importante</p>
+        <h3>Você tem <strong>apenas 30 dias a partir da carta de negativa</strong> para entrar com recurso sem precisar ir à Justiça. Depois disso, a via administrativa fecha — e o caminho fica mais longo e mais caro.</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- POR QUE NEGARAM -->
+<section class="respostas">
+  <div class="container">
+    <div class="respostas-head">
+      <span class="eyebrow">Por que o INSS nega</span>
+      <h2>Negativa não significa<br>falta de direito</h2>
+      <p>A maioria das negativas tem causas identificáveis — e muitas vezes são causas que podem ser resolvidas. Entender o motivo é o primeiro passo.</p>
+    </div>
+    <div class="respostas-grid">
+      <div class="resposta-item">
+        <div class="ri-icon"><svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:var(--azul);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg></div>
+        <div class="ri-text"><strong>Erro nos registros do INSS</strong><span>O INSS tem dados desatualizados, incompletos ou incorretos sobre o seu histórico — e negou com base nisso, não na realidade do que você trabalhou</span></div>
+      </div>
+      <div class="resposta-item">
+        <div class="ri-icon"><svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:var(--azul);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+        <div class="ri-text"><strong>Documentação incompleta</strong><span>Faltou algum papel, ou os documentos não foram apresentados do jeito que o INSS exige — e uma exigência virou uma negativa</span></div>
+      </div>
+      <div class="resposta-item">
+        <div class="ri-icon"><svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:var(--azul);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></div>
+        <div class="ri-text"><strong>Perícia médica desfavorável</strong><span>Em benefícios por doença, a consulta médica do INSS é rápida e pode não refletir a sua real condição. Laudos complementares podem mudar esse resultado</span></div>
+      </div>
+      <div class="resposta-item">
+        <div class="ri-icon"><svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:var(--azul);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1"/></svg></div>
+        <div class="ri-text"><strong>Período de trabalho não reconhecido</strong><span>Tempo trabalhado sem carteira, na informalidade ou como autônomo que não está registrado no INSS — mas que pode ser comprovado</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAMINHOS -->
+<section class="cards-section" id="caminhos">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">O que fazer agora</span>
+      <h2>Três caminhos para contestar<br>a decisão do INSS</h2>
+      <p>A escolha depende do tempo passado desde a negativa e do que causou o indeferimento. Analisamos o seu caso e indicamos qual é o mais adequado.</p>
+    </div>
+    <div class="card-grid-3">
+      <div class="card-item bg-cinza-fill">
+        <span class="card-label">Caminho 01 · Mais rápido</span>
+        <h3>Recurso no próprio INSS</h3>
+        <p>Você apresenta novos documentos e argumentos para que o INSS reveja a decisão — sem precisar ir à Justiça. É o caminho mais acessível e mais rápido quando o prazo ainda está aberto. O pedido tramita no Conselho de Recursos da Previdência Social.</p>
+        <div class="card-detail">Prazo: até 30 dias após a carta de negativa</div>
+        <div class="card-detail">Sem custas judiciais</div>
+      </div>
+      <div class="card-item destaque-azul">
+        <span class="card-label ouro">Caminho 02 · Mais utilizado</span>
+        <h3 class="claro">Ação na Justiça Federal</h3>
+        <p class="claro">Quando o prazo do recurso já passou ou quando o recurso administrativo também foi negado, o caminho é a Justiça. Em casos urgentes, é possível pedir que o benefício comece a ser pago antes do processo terminar — enquanto ele ainda tramita.</p>
+        <div class="card-req">Prazo: até 5 anos após a negativa</div>
+      </div>
+      <div class="card-item bg-cinza-fill">
+        <span class="card-label">Caminho 03 · Em alguns casos</span>
+        <h3>Novo pedido com documentação completa</h3>
+        <p>Às vezes, quando a situação mudou ou quando surgiram documentos que faltavam, é mais vantajoso fazer um novo pedido do que recorrer da negativa anterior. A análise do caso define se esse é o caminho mais eficaz.</p>
+        <div class="card-detail">Indicado quando há documentação nova</div>
+        <div class="card-detail">Analisamos qual opção é mais eficaz</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="mid-cta">
+  <div class="container">
+    <div class="mid-cta-inner">
+      <div><h3>Recebeu a carta de negativa recentemente?</h3><p>O prazo de 30 dias corre rápido. Fale agora — analisamos o caso e definimos o melhor caminho.</p></div>
+      <button class="btn-wpp-mid" onclick="window.open('https://wa.me/5527999999999?text=Ol%C3%A1%2C+tive+um+benef%C3%ADcio+negado+e+quero+entender+o+que+fazer','_blank')"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg> Falar agora pelo WhatsApp</button>
+    </div>
+  </div>
+</section>
+<!-- QUAL BENEFÍCIO FOI NEGADO -->
+<section class="cards-section bg-azul">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" style="color:var(--ouro)">Para qual benefício</span>
+      <h2 class="claro">Atuamos na reversão de<br>qualquer tipo de negativa</h2>
+      <p class="claro">Cada tipo de benefício tem suas causas mais comuns de negativa. Veja se o seu se encaixa.</p>
+    </div>
+    <div class="card-grid-3 escuro">
+      <div class="card-item escuro-fill">
+        <div class="card-icon ouro-bg"><svg viewBox="0 0 24 24" style="width:var(--ouro)px;height:18px;stroke:var(--azul);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg></div>
+        <h3 class="claro">Aposentadoria negada</h3>
+        <p class="claro">Por idade, tempo de trabalho, atividade perigosa ou por problema de saúde permanente. As causas mais comuns são erro nos registros do INSS e documentação incompleta — ambas reversíveis.</p>
+      </div>
+      <div class="card-item escuro-fill">
+        <div class="card-icon ouro-bg"><svg viewBox="0 0 24 24" style="width:var(--ouro)px;height:18px;stroke:var(--azul);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></div>
+        <h3 class="claro">Auxílio por doença negado</h3>
+        <p class="claro">O médico do INSS disse que você está apto mesmo estando afastado. Com laudos complementares e uma perícia bem fundamentada, é possível reverter essa decisão administrativa ou judicialmente.</p>
+      </div>
+      <div class="card-item escuro-fill">
+        <div class="card-icon ouro-bg"><svg viewBox="0 0 24 24" style="width:var(--ouro)px;height:18px;stroke:var(--azul);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+        <h3 class="claro">BPC/LOAS negado</h3>
+        <p class="claro">Benefício para idosos e pessoas com deficiência em situação de vulnerabilidade. A negativa geralmente acontece por comprovação insuficiente da condição de saúde ou da situação econômica — e pode ser revertida com a documentação adequada.</p>
+      </div>
+      <div class="card-item escuro-fill">
+        <div class="card-icon ouro-bg"><svg viewBox="0 0 24 24" style="width:var(--ouro)px;height:18px;stroke:var(--azul);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+        <h3 class="claro">Aposentadoria por atividade perigosa negada</h3>
+        <p class="claro">O INSS não reconheceu as condições do ambiente de trabalho. A comprovação precisa ser feita com documentos específicos — e muitas vezes exige ajuda técnica para ser aceita.</p>
+      </div>
+      <div class="card-item escuro-fill">
+        <div class="card-icon ouro-bg"><svg viewBox="0 0 24 24" style="width:var(--ouro)px;height:18px;stroke:var(--azul);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg></div>
+        <h3 class="claro">Aposentadoria rural negada</h3>
+        <p class="claro">O INSS não aceitou as provas do trabalho no campo. Existem vários documentos alternativos que podem resolver — declarações, notas fiscais, fotos, registros de sindicato e testemunhos.</p>
+      </div>
+      <div class="card-item escuro-fill">
+        <div class="card-icon ouro-bg"><svg viewBox="0 0 24 24" style="width:var(--ouro)px;height:18px;stroke:var(--azul);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+        <h3 class="claro">Pensão por morte negada</h3>
+        <p class="claro">O INSS não reconheceu o vínculo de dependência ou a qualidade de segurado do falecido. Com a documentação correta e argumentação adequada, é possível reverter.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="cards-section bg-noir" id="como-funciona">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" style="color:var(--ouro)">O que fazemos</span>
+      <h2 class="claro">Do diagnóstico da negativa<br>até a reversão do benefício</h2>
+      <p class="claro">Cinco etapas explicadas de forma simples.</p>
+    </div>
+    <div class="etapas-v">
+      <div class="etapa-v"><div class="etapa-num-col">01</div><div class="etapa-content">
+        <h4>Lemos a carta de negativa e entendemos o motivo real</h4>
+        <p>O motivo que o INSS escreve na carta nem sempre é o problema real. Analisamos o processo completo para identificar exatamente o que levou à negativa — e se ele pode ser contestado.</p>
+      </div></div>
+      <div class="etapa-v"><div class="etapa-num-col">02</div><div class="etapa-content">
+        <h4>Definimos qual é o caminho mais eficaz para o seu caso</h4>
+        <p>Recurso administrativo, novo pedido ou ação judicial — a escolha depende do tempo passado, da causa da negativa e dos documentos disponíveis. Explicamos as vantagens e os prazos de cada opção com clareza.</p>
+      </div></div>
+      <div class="etapa-v"><div class="etapa-num-col">03</div><div class="etapa-content">
+        <h4>Reunimos as provas e construímos o argumento</h4>
+        <p>Orientamos a coleta de documentos, solicitamos laudos complementares quando necessário e elaboramos a argumentação técnica para demonstrar que o direito existe — com base na legislação e no histórico específico do caso.</p>
+      </div></div>
+      <div class="etapa-v"><div class="etapa-num-col">04</div><div class="etapa-content">
+        <h4>Protocolamos o recurso ou abrimos a ação</h4>
+        <p>Fazemos o protocolo do recurso administrativo ou da ação judicial dentro dos prazos. Em casos urgentes — especialmente em benefícios por incapacidade — pedimos que o pagamento comece antes do processo terminar.</p>
+      </div></div>
+      <div class="etapa-v"><div class="etapa-num-col">05</div><div class="etapa-content">
+        <h4>Acompanhamos até a concessão definitiva</h4>
+        <p>Respondemos a todas as exigências do INSS ou da Justiça e mantemos você informado em cada etapa. Ficamos com o caso até o benefício ser concedido de forma definitiva.</p>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRAZOS -->
+<section class="cards-section bg-cinza">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Prazos que você precisa conhecer</span>
+      <h2>Três datas que vão definir<br>as suas opções</h2>
+      <p>Quanto mais cedo você agir, mais caminhos estão disponíveis — e maior o valor retroativo que pode ser recuperado.</p>
+    </div>
+    <div class="card-grid-3">
+      <div class="card-item bg-cinza-fill" style="border-top:3px solid var(--vermelho,#dc2626)">
+        <div style="font-size:36px;font-weight:700;color:#dc2626;opacity:.7;line-height:1;margin-bottom:10px">30 dias</div>
+        <h3>Para recurso sem ir à Justiça</h3>
+        <p>A partir da data em que você tomou ciência da negativa. Depois disso, a via administrativa fecha e o caminho passa a ser exclusivamente judicial — mais longo e mais complexo.</p>
+        <div class="card-detail">Conta da data na carta, não do protocolo</div>
+      </div>
+      <div class="card-item bg-cinza-fill">
+        <div style="font-size:36px;font-weight:700;color:var(--azul);opacity:.5;line-height:1;margin-bottom:10px">90 dias</div>
+        <h3>Prazo do INSS para analisar</h3>
+        <p>O INSS tem 90 dias para dar uma resposta ao pedido. Se esse prazo passar sem resposta, é possível ingressar com ação judicial por omissão — sem precisar esperar a negativa formal.</p>
+        <div class="card-detail">Silêncio do INSS também pode ser questionado</div>
+      </div>
+      <div class="card-item bg-cinza-fill">
+        <div style="font-size:36px;font-weight:700;color:var(--azul);opacity:.5;line-height:1;margin-bottom:10px">5 anos</div>
+        <h3>Para ação judicial</h3>
+        <p>O prazo prescricional para entrar na Justiça é de 5 anos a partir da negativa. Mas cada mês que passa sem agir é um mês de retroativo perdido — quando a ação for ganha, só recebe desde o pedido.</p>
+        <div class="card-detail">Não espere — cada mês conta</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Dúvidas comuns</span>
+      <h2>O que as pessoas mais perguntam<br>depois de receber a negativa</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Se o INSS negou, significa que não tenho direito mesmo?<span class="faq-icon">+</span></div>
+      <div class="faq-a">Não, necessariamente. Uma boa parte das negativas acontece por erro no processamento dos dados, documentação incompleta ou perícia inadequada — não por falta de direito. Em muitos casos, a decisão pode ser revertida quando o processo é feito do jeito certo.</div></div>
+
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">O prazo de 30 dias já passou. Ainda tem o que fazer?<span class="faq-icon">+</span></div>
+      <div class="faq-a">Sim. Você ainda pode entrar com ação judicial — o prazo para isso é de 5 anos a partir da negativa. Em alguns casos, dependendo das circunstâncias, também pode ser estratégico fazer um novo pedido administrativo. O importante é não deixar passar os 5 anos sem agir.</div></div>
+
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Vou receber os meses que deixei de receber durante o processo?<span class="faq-icon">+</span></div>
+      <div class="faq-a">Quando o processo tem resultado favorável, o INSS é condenado a pagar os valores retroativos desde a data do seu pedido original — com correção monetária. Isso pode representar um valor significativo, dependendo de quanto tempo durou o processo. Por isso o pedido precisa ser feito o mais cedo possível.</div></div>
+
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Quanto tempo leva um processo judicial previdenciário?<span class="faq-icon">+</span></div>
+      <div class="faq-a">Varia bastante. Nos Juizados Especiais Federais, onde a maioria dos casos previdenciários tramita, o processo costuma ser mais rápido — alguns meses a um ou dois anos. Em casos urgentes, é possível pedir que o pagamento comece antes de o processo terminar, por meio de uma decisão liminar.</div></div>
+
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Posso ser atendido sem ir pessoalmente a nenhum lugar?<span class="faq-icon">+</span></div>
+      <div class="faq-a">Sim. Todo o atendimento é feito de forma digital — por WhatsApp, vídeo ou e-mail. A carta de negativa e os documentos são enviados por foto ou PDF. Atendo clientes em todo o Brasil.</div></div>
+    </div>
+  </div>
+</section>
+<section class="contato-section" id="contato">
+  <div class="container">
+    <div class="section-head" style="margin-bottom:32px">
+      <span class="eyebrow">Contato</span>
+      <h2>Não deixe a negativa<br>ser a última palavra.</h2>
+    </div>
+    <div class="contato-grid">
+      <div class="contato-info">
+        <h3>Fale com o advogado</h3>
+        <p class="sub">Envie a carta de negativa e descreva o que aconteceu. Análise inicial gratuita.</p>
+        <div class="contact-item">
+          <div class="contact-icon"><svg viewBox="0 0 24 24" style="width:var(--ouro)px;height:18px;stroke:var(--azul);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg></div>
+          <div class="contact-text"><span>Telefone / WhatsApp</span><strong>+55 (27) 99999-9999</strong></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><svg viewBox="0 0 24 24" style="width:var(--ouro)px;height:18px;stroke:var(--azul);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
+          <div class="contact-text"><span>E-mail</span><strong>contato@andersonlitig.adv.br</strong></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><svg viewBox="0 0 24 24" style="width:var(--ouro)px;height:18px;stroke:var(--azul);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+          <div class="contact-text"><span>Atuação</span><strong>Serra/ES — Atendimento Nacional 100% Digital</strong></div>
+        </div>
+        <button class="btn-wpp" onclick="window.open('https://wa.me/5527999999999?text=Ol%C3%A1%2C+tive+um+benef%C3%ADcio+negado+pelo+INSS','_blank')"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg> Falar pelo WhatsApp agora</button>
+      </div>
+      <div class="form-col">
+        <h3>Envie uma mensagem</h3>
+        <div class="form-group"><label class="form-label">Nome completo *</label><input class="form-input" type="text" placeholder="Digite seu nome"></div>
+        <div class="form-group"><label class="form-label">Telefone / WhatsApp *</label><input class="form-input" type="tel" placeholder="(00) 00000-0000"></div>
+        <div class="form-group"><label class="form-label">E-mail</label><input class="form-input" type="email" placeholder="Digite seu e-mail"></div>
+        <div class="form-group"><label class="form-label">Qual é a sua situação? *</label><select class="form-input"><option value="" disabled selected>Selecione</option><option>Aposentadoria negada</option><option>Auxílio por doença negado</option><option>BPC/LOAS negado</option><option>Aposentadoria por atividade perigosa negada</option><option>Aposentadoria rural negada</option><option>Pensão por morte negada</option><option>Outro benefício negado</option></select></div>
+        <div class="form-group"><label class="form-label">Em que fase você está?</label><select class="form-input"><option value="" disabled selected>Selecione</option><option>Recebi a carta há menos de 30 dias</option><option>Recebi há mais de 30 dias</option><option>Já entrei com recurso — foi negado de novo</option><option>Já tenho processo judicial em andamento</option><option>Não sei em que fase estou</option></select></div>
+        <div class="form-group"><label class="form-label">Mensagem</label><textarea class="form-input" placeholder="Descreva brevemente o que aconteceu e qual benefício foi negado..."></textarea></div>
+        <button class="btn-submit">Enviar mensagem</button>
+        <p class="form-disc">Em conformidade com o Provimento nº 205/2021 do CFOAB. As informações deste site têm caráter informativo e não constituem consultoria jurídica.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="container">
+    <div class="footer-main">
+      <div>
+        <div class="footer-logo-name">Anderson Litig</div>
+        <div class="footer-logo-sub">OAB/ES nº 40.152 · Serra, Espírito Santo</div>
+        <div class="footer-disc">As informações contidas neste site têm caráter exclusivamente informativo e não constituem consultoria jurídica. Atuação em conformidade com o Provimento nº 205/2021 do CFOAB.</div>
+      </div>
+      <div class="footer-col"><h4>Serviços</h4>
+        <a href="aposentadorias.html">Aposentadorias</a>
+        <a href="planejamento-previdenciario.html">Planejamento Previdenciário</a>
+        <a href="revisao-beneficio.html">Revisão de Benefício</a>
+        <a href="beneficio-negado.html">Benefício Negado</a>
+        <a href="ja-sou-aposentado.html">Já sou aposentado</a>
+        <a href="salario-maternidade.html">Salário-Maternidade</a>
+      </div>
+      <div class="footer-col"><h4>Institucional</h4>
+        <a href="index.html">Sobre o advogado</a>
+        <a href="#">Blog jurídico</a>
+        <a href="#">Política de privacidade</a>
+        <a href="#contato">Contato</a>
+      </div>
+      <div class="footer-col"><h4>Contato</h4>
+        <a href="https://wa.me/5527999999999">WhatsApp</a>
+        <a href="mailto:contato@andersonlitig.adv.br">E-mail</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Anderson Litig — Advocacia e Consultoria Jurídica</span>
+      <span>OAB/ES 40.152 · Provimento 205/2021 CFOAB</span>
+    </div>
+  </div>
+</footer>
+<script>
+function toggleFaq(el){
+  const item=el.closest('.faq-item');
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+  if(!isOpen) item.classList.add('open');
+}
+</script>
+</body></html>
