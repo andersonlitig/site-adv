@@ -138,7 +138,7 @@ function JornadaV2() {
     { num: "01", title: "Quero planejar minha aposentadoria", desc: "Ainda não me aposentei. Quero saber o melhor momento e como maximizar meu benefício.", link: "/v2/planejamento" },
     { num: "02", title: "Estou pronto para me aposentar", desc: "Tenho contribuições suficientes e quero dar entrada no benefício sem perder direitos.", link: "/v2/aposentar" },
     { num: "03", title: "Meu benefício foi negado", desc: "O INSS negou o pedido. Quero entender se a decisão está correta e como reverter.", link: "/v2/negado" },
-    { num: "04", title: "Já me aposentei, mas tenho dúvidas", desc: "Quero revisar o valor do benefício ou cancelar descontos que não autorizei.", link: "#" }
+    { num: "04", title: "Já me aposentei, mas tenho dúvidas", desc: "Quero revisar o valor do benefício ou cancelar descontos que não autorizei.", link: "/v2/ja-aposentado" }
   ];
 
   return (
@@ -177,12 +177,12 @@ function ServicesV2() {
   const services = [
     { icon: <Award size={20} />, title: "Aposentadorias", desc: "Por idade, tempo de contribuição, especial, rural e por deficiência. Analisamos o seu CNIS e identificamos a modalidade mais vantajosa para o seu caso.", link: "/v2/aposentar" },
     { icon: <Calculator size={20} />, title: "Planejamento Previdenciário", desc: "Quer saber o melhor momento para se aposentar? Fazemos um estudo técnico individualizado do seu CNIS para garantir a melhor aposentadoria possível.", link: "/v2/planejamento" },
-    { icon: <RefreshCw size={20} />, title: "Revisão de Benefício", desc: "Já é aposentado e acha que o valor está baixo demais? Analisamos o cálculo do seu benefício e verificamos se há algo a corrigir." },
+    { icon: <RefreshCw size={20} />, title: "Revisão de Benefício", desc: "Já é aposentado e acha que o valor está baixo demais? Analisamos o cálculo do seu benefício e verificamos se há algo a corrigir.", link: "/v2/ja-aposentado#revisao" },
     { icon: <Baby size={20} />, title: "Salário-Maternidade", desc: "Empregadas, autônomas, MEIs e trabalhadoras rurais têm direito ao salário-maternidade pelo INSS. Muitas perdem esse benefício por não saber que têm direito ou por erro no pedido." },
     { icon: <Stethoscope size={20} />, title: "Benefícios por Incapacidade", desc: "Auxílio por Incapacidade Temporária e Aposentadoria por Incapacidade Permanente. Não consegue mais trabalhar por questões de saúde? Garanta o suporte financeiro que você merece." },
     { icon: <Bandage size={20} />, title: "Auxílio-Acidente", desc: "Sofreu um acidente ou doença ocupacional que reduziu sua capacidade de trabalho? Você pode receber o auxílio-acidente enquanto ainda trabalha." },
     { icon: <HeartHandshake size={20} />, title: "BPC/LOAS", desc: "Idoso acima de 65 anos ou pessoa com deficiência em situação de vulnerabilidade? Ajudamos você a conquistar o Benefício de Prestação Continuada mesmo sem ter contribuído ao INSS." },
-    { icon: <ReceiptText size={20} />, title: "Descontos Indevidos (RMC e RCC)", desc: "Desconto não autorizado no seu benefício INSS? Atuamos no cancelamento de empréstimos consignados e cobranças abusivas, com direito à restituição dos valores." },
+    { icon: <ReceiptText size={20} />, title: "Descontos Indevidos (RMC e RCC)", desc: "Desconto não autorizado no seu benefício INSS? Atuamos no cancelamento de empréstimos consignados e cobranças abusivas, com direito à restituição dos valores.", link: "/v2/ja-aposentado#descontos" },
     { icon: <HandHeart size={20} />, title: "Pensão por Morte", desc: "Assessoria completa para os dependentes do segurado falecido garantirem o benefício a que têm direito junto ao INSS, com agilidade e atenção em um momento difícil." }
   ];
 
