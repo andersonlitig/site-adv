@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Já Sou Aposentado e Tenho Dúvidas | Anderson Litig — OAB/ES 40.152</title>
+<meta name="description" content="Aposentado recebendo menos do que deveria? Descontos não autorizados no benefício? Revisão de aposentadoria e cancelamento de RMC, RCC, consignado e descontos associativos. OAB/ES 40.152.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== BASE ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --azul:#091D39;--azul-md:#0d2548;--ouro:#CFAE70;--ouro-dk:#8a6e30;
+  --aco:#2C2C2C;--noir:#0D0D0D;--cinza:#F4F4F2;--cinza2:#E0E0DC;
+  --cinza3:#767672;--branco:#FFFFFF;--f:'Inter',sans-serif;
+}
+body{font-family:var(--f);font-size:16px;color:var(--aco);background:var(--branco);line-height:1.6;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+.container{max-width:1160px;margin:0 auto;padding:0 32px}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ouro);margin-bottom:10px;display:block}
+.section-head{margin-bottom:36px}
+.section-head h2{font-size:clamp(24px,3vw,32px);font-weight:700;color:var(--azul);letter-spacing:-.02em;margin-top:8px;margin-bottom:8px}
+.section-head h2.claro{color:var(--branco)}
+.section-head p{font-size:15px;color:var(--cinza3);max-width:560px}
+.section-head p.claro{color:rgba(255,255,255,.5)}
+
+/* HEADER */
+header{background:var(--branco);border-bottom:1px solid var(--cinza2);position:sticky;top:0;z-index:100}
+.header-inner{display:grid;grid-template-columns:auto 1fr auto;align-items:center;height:64px;gap:32px}
+.logo-name{font-size:18px;font-weight:700;color:var(--azul);letter-spacing:-.02em}
+.logo-sub{font-size:10px;color:var(--cinza3);letter-spacing:.05em;text-transform:uppercase;display:block;margin-top:1px}
+nav{display:flex;justify-content:center}
+.nav-link{font-size:13px;color:var(--aco);padding:6px 13px;border-bottom:2px solid transparent;cursor:pointer;transition:color .15s}
+.nav-link:hover,.nav-link.ativo{color:var(--azul);font-weight:500}
+.nav-link.ativo{border-bottom-color:var(--ouro)}
+.nav-cta{background:var(--azul);color:var(--branco);font-family:var(--f);font-size:13px;font-weight:500;padding:10px 20px;border:none;cursor:pointer;display:flex;align-items:center;gap:8px}
+.nav-cta:hover{background:var(--azul-md)}
+
+/* BREADCRUMB */
+.breadcrumb{background:var(--cinza);border-bottom:1px solid var(--cinza2);padding:10px 0}
+.breadcrumb-inner{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--cinza3)}
+.breadcrumb a:hover{color:var(--azul)}
+.breadcrumb .atual{color:var(--azul);font-weight:500}
+.breadcrumb .sep{opacity:.5}
+
+/* HERO */
+.hero-interno{background:var(--azul);padding:64px 0 60px;border-bottom:3px solid var(--ouro)}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(207,174,112,.12);border:1px solid rgba(207,174,112,.25);padding:6px 14px;margin-bottom:20px}
+.hero-badge span{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ouro)}
+.hero-interno h1{font-size:clamp(28px,3.5vw,44px);font-weight:700;color:var(--branco);letter-spacing:-.03em;line-height:1.1;margin-bottom:16px;max-width:680px}
+.hero-interno h1 em{color:var(--ouro);font-style:normal;display:block}
+.hero-interno .lead{font-size:16px;color:rgba(255,255,255,.6);line-height:1.75;margin-bottom:32px;max-width:580px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+
+/* BOTÕES */
+.btn-pri{background:var(--ouro);color:var(--azul);font-family:var(--f);font-size:14px;font-weight:600;padding:13px 24px;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:background .18s}
+.btn-pri:hover{background:#dfc880}
+.btn-sec{background:transparent;color:var(--branco);font-family:var(--f);font-size:14px;padding:13px 24px;border:1px solid rgba(255,255,255,.3);cursor:pointer;transition:border-color .18s}
+.btn-sec:hover{border-color:rgba(255,255,255,.6)}
+.btn-azul{background:var(--azul);color:var(--branco);font-family:var(--f);font-size:14px;font-weight:500;padding:13px 24px;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:background .18s}
+.btn-azul:hover{background:var(--azul-md)}
+.btn-wpp{background:#25D366;color:var(--branco);font-family:var(--f);font-size:14px;font-weight:600;padding:13px 24px;border:none;cursor:pointer;display:flex;align-items:center;gap:9px;transition:background .18s;margin-top:28px}
+.btn-wpp:hover{background:#1db957}
+
+/* CTA DO MEIO — MID-PAGE */
+.mid-cta{background:var(--azul);padding:48px 0;border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05)}
+.mid-cta-inner{display:grid;grid-template-columns:1fr auto;align-items:center;gap:40px}
+.mid-cta h3{font-size:clamp(20px,2.5vw,26px);font-weight:700;color:var(--branco);margin-bottom:8px;letter-spacing:-.01em}
+.mid-cta p{font-size:14px;color:rgba(255,255,255,.55)}
+.btn-wpp-mid{background:#25D366;color:var(--branco);font-family:var(--f);font-size:14px;font-weight:600;padding:14px 28px;border:none;cursor:pointer;display:flex;align-items:center;gap:10px;transition:background .18s;white-space:nowrap}
+.btn-wpp-mid:hover{background:#1db957}
+
+/* ALERTA */
+.alerta-cnis{background:var(--noir);padding:36px 0;border-bottom:3px solid rgba(207,174,112,.25)}
+.alerta-inner{display:flex;align-items:center;gap:24px;max-width:860px}
+.alerta-icon{width:52px;height:52px;background:rgba(207,174,112,.12);border:1px solid rgba(207,174,112,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.alerta-icon svg,.alerta-prazo-icon svg{stroke:var(--ouro);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.alerta-icon svg{width:22px;height:22px}
+.alerta-texto p{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ouro);margin-bottom:6px}
+.alerta-texto h3{font-size:15px;font-weight:400;color:rgba(255,255,255,.7);line-height:1.65}
+.alerta-texto h3 strong{color:var(--branco);font-weight:600}
+/* alerta de prazo (vermelho) */
+.alerta-prazo{background:var(--noir);padding:32px 0;border-bottom:3px solid rgba(220,38,38,.35)}
+.alerta-prazo-inner{display:flex;align-items:center;gap:24px;max-width:860px}
+.alerta-prazo-icon{width:52px;height:52px;background:rgba(220,38,38,.12);border:1px solid rgba(220,38,38,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.alerta-prazo-icon svg{width:22px;height:22px;stroke:#fca5a5;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.alerta-prazo-text p{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#fca5a5;margin-bottom:6px}
+.alerta-prazo-text h3{font-size:15px;font-weight:400;color:rgba(255,255,255,.7);line-height:1.65}
+.alerta-prazo-text h3 strong{color:var(--branco);font-weight:600}
+
+/* BARRA "O QUE VOCÊ VAI DESCOBRIR / O QUE FAZEMOS" */
+.respostas{background:var(--cinza);padding:56px 0;border-bottom:1px solid var(--cinza2)}
+.respostas-head{margin-bottom:32px}
+.respostas-head h2{font-size:clamp(24px,3vw,32px);font-weight:700;color:var(--azul);letter-spacing:-.02em;margin-top:8px;margin-bottom:8px}
+.respostas-head p{font-size:15px;color:var(--cinza3);max-width:500px}
+.respostas-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--cinza2);border:1px solid var(--cinza2)}
+.resposta-item{background:var(--branco);padding:26px 22px;display:flex;align-items:flex-start;gap:14px;border-top:3px solid transparent;transition:border-color .18s,background .18s}
+.resposta-item:hover{border-top-color:var(--ouro);background:var(--cinza)}
+.ri-icon{width:40px;height:40px;background:rgba(9,29,57,.06);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ri-icon svg{width:18px;height:18px;stroke:var(--azul);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.ri-text strong{display:block;font-size:14px;font-weight:600;color:var(--azul);margin-bottom:5px;line-height:1.3}
+.ri-text span{font-size:13px;color:var(--cinza3);line-height:1.5}
+
+/* CARDS GENÉRICOS (motivos, modalidades, etc.) */
+.cards-section{padding:56px 0;background:var(--branco);border-bottom:1px solid var(--cinza2)}
+.cards-section.bg-cinza{background:var(--cinza)}
+.cards-section.bg-azul{background:var(--azul);border-bottom:1px solid rgba(255,255,255,.08)}
+.cards-section.bg-noir{background:var(--noir);border-bottom:1px solid rgba(255,255,255,.06)}
+.card-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--cinza2);border:1px solid var(--cinza2)}
+.card-grid-3.escuro{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.08)}
+.card-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--cinza2);border:1px solid var(--cinza2)}
+.card-item{background:var(--branco);padding:26px 24px;border-top:3px solid transparent;transition:background .18s,border-color .18s}
+.card-item:hover{background:var(--cinza);border-top-color:var(--ouro)}
+.card-item.bg-cinza-fill{background:var(--cinza)}
+.card-item.bg-cinza-fill:hover{background:#e8e6e2}
+.card-item.destaque-azul{background:var(--azul)}
+.card-item.destaque-azul:hover{background:var(--azul-md);border-top-color:var(--ouro)}
+.card-item.escuro-fill{background:rgba(255,255,255,.04)}
+.card-item.escuro-fill:hover{background:rgba(255,255,255,.08);border-top-color:var(--ouro)}
+.card-icon{width:40px;height:40px;background:rgba(9,29,57,.06);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.card-icon svg{width:18px;height:18px;stroke:var(--azul);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.card-icon.ouro-bg{background:rgba(207,174,112,.12)}
+.card-icon.ouro-bg svg{stroke:var(--ouro)}
+.card-label{font-size:11px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--cinza3);margin-bottom:10px;display:block}
+.card-label.ouro{color:var(--ouro)}
+.card-item h3{font-size:15px;font-weight:600;color:var(--azul);margin-bottom:8px;line-height:1.3}
+.card-item h3.claro{color:var(--branco)}
+.card-item p{font-size:13px;color:var(--cinza3);line-height:1.65}
+.card-item p.claro{color:rgba(255,255,255,.5)}
+.card-badge{display:inline-block;margin-top:12px;font-size:10px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--ouro-dk);background:rgba(207,174,112,.1);padding:3px 9px;border:1px solid rgba(207,174,112,.25)}
+.card-req{margin-top:12px;padding:10px 14px;background:rgba(255,255,255,.06);font-size:12px;color:rgba(255,255,255,.5)}
+.card-req.claro-fill{background:rgba(255,255,255,.6);color:var(--azul)}
+.card-detail{margin-top:12px;font-size:12px;color:var(--cinza3);display:flex;align-items:center;gap:8px}
+.card-detail::before{content:'';width:5px;height:5px;background:var(--ouro);border-radius:50%;flex-shrink:0}
+.card-detail.claro{color:rgba(255,255,255,.4)}
+
+/* ETAPAS VERTICAIS */
+.etapas-v{display:flex;flex-direction:column;border:1px solid rgba(255,255,255,.08)}
+.etapa-v{display:grid;grid-template-columns:56px 1fr;border-bottom:1px solid rgba(255,255,255,.06);transition:background .18s}
+.etapa-v:last-child{border-bottom:none}
+.etapa-v:hover{background:rgba(255,255,255,.02)}
+.etapa-num-col{display:flex;align-items:flex-start;justify-content:center;padding-top:24px;border-right:1px solid rgba(255,255,255,.06);font-size:18px;font-weight:700;color:var(--ouro);opacity:.4}
+.etapa-content{padding:22px 28px}
+.etapa-content h4{font-size:15px;font-weight:600;color:var(--branco);margin-bottom:8px}
+.etapa-content p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.65}
+.etapa-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.etapa-tag{font-size:11px;color:rgba(255,255,255,.38);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);padding:3px 10px}
+
+/* DOC GRID */
+.doc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--cinza2);border:1px solid var(--cinza2)}
+.doc-group{background:var(--branco);padding:24px 26px}
+.doc-group h4{font-size:12px;font-weight:600;color:var(--azul);text-transform:uppercase;letter-spacing:.07em;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--cinza2)}
+.doc-group ul{display:flex;flex-direction:column;gap:8px;list-style:none}
+.doc-group ul li{font-size:13px;color:var(--cinza3);display:flex;align-items:flex-start;gap:10px}
+.doc-group ul li::before{content:'';width:5px;height:5px;background:var(--ouro);border-radius:50%;flex-shrink:0;margin-top:7px}
+.doc-obs{background:var(--branco);border:1px solid var(--cinza2);border-top:none;padding:14px 24px;font-size:13px;color:var(--cinza3)}
+.doc-obs strong{color:var(--azul)}
+
+/* FAQ */
+.faq-section{padding:56px 0;background:var(--branco);border-bottom:1px solid var(--cinza2)}
+.faq-section.bg-cinza{background:var(--cinza)}
+.faq-list{display:flex;flex-direction:column;gap:1px;background:var(--cinza2);border:1px solid var(--cinza2)}
+.faq-item{background:var(--branco)}
+.faq-q{padding:18px 22px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:14px;font-weight:500;color:var(--azul);border-left:3px solid transparent;transition:background .15s,border-color .15s}
+.faq-q:hover,.faq-item.open .faq-q{background:var(--cinza);border-left-color:var(--ouro)}
+.faq-icon{font-size:18px;color:var(--ouro);flex-shrink:0;transition:transform .25s;line-height:1}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .32s ease;font-size:13px;color:var(--cinza3);line-height:1.7;padding:0 22px;border-left:3px solid var(--cinza2)}
+.faq-item.open .faq-a{max-height:300px;padding:0 22px 18px}
+
+/* CONTATO */
+.contato-section{padding:56px 0;background:var(--cinza);border-bottom:1px solid var(--cinza2)}
+.contato-grid{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--cinza2)}
+.contato-info{padding:40px;background:var(--azul)}
+.contato-info h3{font-size:clamp(18px,2vw,22px);font-weight:700;color:var(--branco);margin-bottom:8px;padding-left:16px;border-left:4px solid var(--ouro)}
+.contato-info .sub{font-size:14px;color:rgba(255,255,255,.5);margin-bottom:32px;line-height:1.65;margin-top:12px}
+.contact-item{display:flex;align-items:flex-start;gap:14px;margin-bottom:20px}
+.contact-icon{width:40px;height:40px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid rgba(255,255,255,.1)}
+.contact-icon svg{width:16px;height:16px;stroke:var(--ouro);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.contact-text span{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);display:block;margin-bottom:2px}
+.contact-text strong{font-size:14px;font-weight:600;color:var(--branco)}
+.form-col{padding:40px;background:var(--branco)}
+.form-col h3{font-size:18px;font-weight:700;color:var(--azul);margin-bottom:22px}
+.form-group{margin-bottom:13px}
+.form-label{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--cinza3);display:block;margin-bottom:5px}
+.form-input{width:100%;padding:11px 13px;border:1px solid var(--cinza2);background:var(--branco);font-family:var(--f);font-size:14px;color:var(--aco);outline:none;transition:border-color .18s}
+.form-input:focus{border-color:var(--azul)}
+textarea.form-input{resize:vertical;min-height:80px}
+select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23767672' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;cursor:pointer}
+.btn-submit{width:100%;background:var(--azul);color:var(--branco);font-family:var(--f);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:14px;border:none;cursor:pointer;transition:background .18s;margin-top:6px}
+.btn-submit:hover{background:var(--azul-md)}
+.form-disc{font-size:11px;color:var(--cinza3);margin-top:10px;line-height:1.5}
+
+/* FOOTER */
+footer{background:var(--noir)}
+.footer-main{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding:48px 0 40px;border-bottom:1px solid rgba(255,255,255,.08)}
+.footer-logo-name{font-size:18px;font-weight:700;color:var(--ouro);margin-bottom:4px}
+.footer-logo-sub{font-size:11px;color:rgba(255,255,255,.3);margin-bottom:12px}
+.footer-disc{font-size:12px;color:rgba(255,255,255,.28);line-height:1.75}
+.footer-col h4{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:14px}
+.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,.38);margin-bottom:9px;cursor:pointer;transition:color .15s}
+.footer-col a:hover{color:var(--ouro)}
+.footer-bottom{padding:16px 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:11px;color:rgba(255,255,255,.2)}
+.wpp-float{position:fixed;bottom:28px;right:28px;z-index:999;background:#25D366;width:56px;height:56px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .18s}
+.wpp-float:hover{transform:scale(1.06)}
+.wpp-float svg{width:26px;height:26px;fill:var(--branco)}
+
+@media(max-width:1024px){
+  .card-grid-3,.respostas-grid{grid-template-columns:1fr 1fr}
+  .contato-grid,.doc-grid{grid-template-columns:1fr}
+  .footer-main{grid-template-columns:1fr 1fr}
+  .mid-cta-inner{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  nav{display:none}
+  .card-grid-3,.respostas-grid{grid-template-columns:1fr}
+  .contato-info,.form-col{padding:28px 24px}
+  .alerta-inner,.alerta-prazo-inner{flex-direction:column;gap:14px}
+}
+</style>
+</head>
+<body>
+<div class="wpp-float" onclick="window.open('https://wa.me/5527999999999','_blank')"><svg width="26" height="26" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></div>
+<header>
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" style="text-decoration:none">
+        <div class="logo-name">Anderson Litig</div>
+        <span class="logo-sub">OAB/ES nº 40.152 · Advocacia Previdenciária</span>
+      </a>
+      <nav>
+        <a class="nav-link" href="index.html">Início</a>
+        <a class="nav-link" href="index.html#servicos">Serviços</a>
+        <a class="nav-link" href="index.html#sobre">Sobre</a>
+        <a class="nav-link" href="index.html#faq">Dúvidas</a>
+        <a class="nav-link" href="index.html#blog">Blog</a>
+        <a class="nav-link" href="#contato">Contato</a>
+      </nav>
+      <button class="nav-cta" onclick="window.open('https://wa.me/5527999999999','_blank')"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg> Falar pelo WhatsApp</button>
+    </div>
+  </div>
+</header>
+<div class="breadcrumb">
+  <div class="container">
+    <div class="breadcrumb-inner">
+      <a href="index.html">Início</a><span class="sep">/</span>
+      <a href="index.html#servicos">Serviços</a><span class="sep">/</span>
+      <span class="atual">Já sou aposentado e tenho dúvidas</span>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero-interno">
+  <div class="container">
+    <div class="hero-badge"><span>Para quem já é aposentado</span></div>
+    <h1>Já recebe a aposentadoria —<br><em>mas algo não parece estar certo?</em></h1>
+    <p class="lead">Desconto que você não autorizou. Valor que parece baixo demais. Cobrança de associação que nunca pediu. Ou simplesmente a dúvida: "será que o INSS calculou certo?" Essas perguntas têm resposta — e muitas vezes a resposta é: não, não está correto.</p>
+    <div class="hero-actions">
+      <button class="btn-pri" onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})"><svg width="15" height="15" fill="#091D39" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg> Quero entender o meu caso</button>
+      <button class="btn-sec" onclick="document.getElementById('situacoes').scrollIntoView({behavior:'smooth'}))">Ver as situações mais comuns</button>
+    </div>
+  </div>
+</section>
+
+<!-- ALERTA -->
+<div class="alerta-cnis">
+  <div class="container">
+    <div class="alerta-inner">
+      <div class="alerta-icon"><svg viewBox="0 0 24 24" style="width:var(--ouro)px;height:22px;stroke:22;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg></div>
+      <div class="alerta-texto">
+        <p>O INSS erra mais do que parece</p>
+        <h3>Erros no cálculo da aposentadoria são mais comuns do que a maioria das pessoas imagina. <strong>Quem não pede revisão continua recebendo menos para sempre</strong> — o INSS não corrige por conta própria. E os valores pagos a menos nos meses anteriores podem ser recuperados.</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DUAS SITUAÇÕES -->
+<section class="respostas" id="situacoes">
+  <div class="container">
+    <div class="respostas-head">
+      <span class="eyebrow">Você se identifica?</span>
+      <h2>Dois problemas diferentes —<br>mas ambos têm solução</h2>
+      <p>A maioria dos aposentados que chegam até nós enfrenta uma dessas duas situações. Às vezes, as duas ao mesmo tempo.</p>
+    </div>
+    <div class="respostas-grid" style="grid-template-columns:1fr 1fr">
+      <div class="resposta-item" style="flex-direction:column;gap:16px;padding:32px 28px">
+        <div style="display:flex;align-items:center;gap:12px">
+          <div class="ri-icon"><svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:var(--azul);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+          <strong style="font-size:16px;color:var(--azul)">"Acho que recebo menos do que deveria"</strong>
+        </div>
+        <p style="font-size:14px;color:var(--cinza3);line-height:1.7">O valor sempre pareceu baixo. Ou você soube que o INSS pode ter errado no cálculo — por não incluir algum período de trabalho, por usar salários errados ou por não reconhecer que você trabalhou em condições perigosas. Isso é <strong style="color:var(--azul)">revisão de benefício</strong>.</p>
+        <button class="btn-azul" onclick="document.getElementById('revisao').scrollIntoView({behavior:'smooth'})">Ver revisão de benefício ↓</button>
+      </div>
+      <div class="resposta-item" style="flex-direction:column;gap:16px;padding:32px 28px">
+        <div style="display:flex;align-items:center;gap:12px">
+          <div class="ri-icon"><svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:var(--azul);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg></div>
+          <strong style="font-size:16px;color:var(--azul)">"Tem um desconto que não reconheço"</strong>
+        </div>
+        <p style="font-size:14px;color:var(--cinza3);line-height:1.7">Aparece todo mês um valor descontado do seu benefício — de empréstimo, associação, seguro ou cartão que você não pediu ou não consegue cancelar. Isso é <strong style="color:var(--azul)">desconto indevido</strong> — e você tem direito a cancelar e, em muitos casos, receber de volta o que foi descontado.</p>
+        <button class="btn-azul" onclick="document.getElementById('descontos').scrollIntoView({behavior:'smooth'})">Ver descontos indevidos ↓</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVISÃO DE BENEFÍCIO -->
+<section class="cards-section" id="revisao">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Revisão de benefício</span>
+      <h2>O INSS pode ter errado<br>no cálculo da sua aposentadoria</h2>
+      <p>Existem vários tipos de erro que o INSS comete — e cada um pode ser corrigido de uma forma diferente. Veja os mais comuns:</p>
+    </div>
+    <div class="card-grid-3">
+
+      <div class="card-item bg-cinza-fill">
+        <div class="card-icon"><svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:var(--azul);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg></div>
+        <h3>Erro no cálculo dos salários</h3>
+        <p>O INSS pode ter usado salários errados ou deixado de incluir contribuições que você fez. Cada salário ignorado ou reduzido diminui o valor médio que serve de base para calcular o seu benefício — e essa diferença se acumula mês a mês.</p>
+        <div class="card-detail">Erro mais comum em benefícios antigos</div>
+      </div>
+
+      <div class="card-item bg-cinza-fill">
+        <div class="card-icon"><svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:var(--azul);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+        <h3>Trabalho perigoso não reconhecido</h3>
+        <p>Quem trabalhou em condições perigosas — barulho alto, produtos químicos, calor extremo — pode ter direito a uma conversão que aumenta o tempo de contribuição contado. Se o INSS não reconheceu, o cálculo fica menor do que deveria.</p>
+        <div class="card-detail">Aumenta o tempo de contribuição reconhecido</div>
+      </div>
+
+      <div class="card-item bg-cinza-fill">
+        <div class="card-icon"><svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:var(--azul);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></div>
+        <h3>Revisão do teto</h3>
+        <p>Alguns aposentados tiveram o benefício limitado pelo teto do INSS na época da concessão. Com a mudança dos tetos ao longo dos anos, pode ser possível revisar o cálculo para incluir aqueles salários que foram cortados.</p>
+        <div class="card-detail">Válido para quem tinha salários acima do teto</div>
+      </div>
+
+      <div class="card-item bg-cinza-fill">
+        <div class="card-icon"><svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:var(--azul);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg></div>
+        <h3>Reflexo de processo trabalhista</h3>
+        <p>Quem ganhou uma reclamação trabalhista — com reconhecimento de horas extras, diferenças salariais ou vínculo empregatício — pode ter direito a incluir esses valores no cálculo da aposentadoria, mesmo depois de aposentado.</p>
+        <div class="card-detail">Exige análise do processo trabalhista</div>
+      </div>
+
+      <div class="card-item bg-cinza-fill">
+        <div class="card-icon"><svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:var(--azul);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
+        <h3>Atividades simultâneas não consideradas</h3>
+        <p>Quem trabalhou em dois empregos ao mesmo tempo — com contribuições para os dois — pode ter direito a que as duas contribuições sejam consideradas no cálculo. O INSS às vezes não faz isso corretamente.</p>
+        <div class="card-detail">Comum em quem tinha dois vínculos empregatícios</div>
+      </div>
+
+      <div class="card-item bg-cinza-fill">
+        <div class="card-icon"><svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:var(--azul);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+        <h3>Benefício abaixo do salário mínimo</h3>
+        <p>Nenhum benefício previdenciário pode ser menor que o salário mínimo vigente. Se o seu benefício está abaixo — seja por erro de cálculo ou por defasagem — isso é um direito que pode e deve ser corrigido de imediato.</p>
+        <div class="card-detail">Correção imediata, sem prazo decadencial</div>
+      </div>
+
+    </div>
+
+    <!-- destaque prazo -->
+    <div style="background:var(--azul);margin-top:1px;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+      <div>
+        <p style="font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ouro);margin-bottom:4px">Prazo importante</p>
+        <p style="font-size:15px;color:rgba(255,255,255,.8);line-height:1.5">Em geral, você tem <strong style="color:var(--branco)">10 anos</strong> a partir da concessão do benefício para pedir a revisão. Depois disso, o direito decai. Mas quanto antes o pedido for feito, mais meses de retroativo podem ser recuperados.</p>
+      </div>
+      <button class="btn-pri" onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Analisar meu benefício</button>
+    </div>
+  </div>
+</section>
+
+<!-- DESCONTOS INDEVIDOS -->
+<section class="cards-section bg-cinza" id="descontos">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Descontos indevidos</span>
+      <h2>Tem algo sendo descontado<br>do seu benefício sem autorização?</h2>
+      <p>Esse tipo de abuso é muito mais frequente do que deveria. Veja os tipos mais comuns — e saiba que todos podem ser cancelados.</p>
+    </div>
+    <div class="card-grid-3">
+
+      <div class="card-item">
+        <div class="card-icon"><svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:var(--azul);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg></div>
+        <h3>RMC — Reserva de Margem Consignável</h3>
+        <p>Uma reserva que libera parte do seu benefício para uso com crédito consignado. Muitas vezes é ativada por empresas sem que o aposentado tenha realmente autorizado — ou o aposentado não entendeu o que estava assinando.</p>
+        <div class="card-detail">Cancelamento pode ser feito a qualquer momento</div>
+      </div>
+
+      <div class="card-item">
+        <div class="card-icon"><svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:var(--azul);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg></div>
+        <h3>RCC — Reserva de Cartão de Crédito</h3>
+        <p>Parecida com a RMC, mas vinculada a um cartão de crédito consignado. Muitos aposentados não sabem que têm um cartão ativo — mas o desconto aparece todo mês no benefício.</p>
+        <div class="card-detail">Cancelamento pode incluir devolução dos valores</div>
+      </div>
+
+      <div class="card-item">
+        <div class="card-icon"><svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:var(--azul);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg></div>
+        <h3>Empréstimo consignado não autorizado</h3>
+        <p>Empréstimos contratados no nome do aposentado sem consentimento real — por fraude, pressão de vendedores ou assinatura de documento sem entender o que era. O desconto aparece todo mês, mas o dinheiro foi para outro lugar.</p>
+        <div class="card-detail">Possibilidade de cancelamento e devolução em dobro</div>
+      </div>
+
+      <div class="card-item">
+        <div class="card-icon"><svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:var(--azul);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+        <h3>Desconto de associação ou sindicato</h3>
+        <p>Cobranças mensais de associações que o aposentado nunca pediu para participar. Muito comum em beneficiários que recebem ligações de "representantes" e acabam concordando sem entender o que estão autorizando.</p>
+        <div class="card-detail">Cancelamento pode ser feito via INSS ou na Justiça</div>
+      </div>
+
+      <div class="card-item">
+        <div class="card-icon"><svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:var(--azul);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+        <h3>Plano de saúde ou seguro não pedido</h3>
+        <p>Planos contratados por telefone, em agências bancárias ou durante a explicação de outro produto. O desconto aparece no benefício, mas o aposentado não tem clareza sobre o que está pagando ou se realmente quis contratar.</p>
+        <div class="card-detail">Direito ao cancelamento e à restituição</div>
+      </div>
+
+      <div class="card-item">
+        <div class="card-icon"><svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:var(--azul);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg></div>
+        <h3>Desconto que você não consegue identificar</h3>
+        <p>Às vezes aparece um valor descontado todo mês e o aposentado simplesmente não sabe de onde vem. Se você não reconhece um desconto, isso já é motivo suficiente para investigar e, se necessário, cancelar.</p>
+        <div class="card-detail">Qualquer desconto não reconhecido merece análise</div>
+      </div>
+
+    </div>
+
+    <div style="background:var(--azul);margin-top:1px;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+      <div>
+        <p style="font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ouro);margin-bottom:4px">Você sabia?</p>
+        <p style="font-size:15px;color:rgba(255,255,255,.8);line-height:1.5">Descontos não autorizados são prática abusiva pelo Código de Defesa do Consumidor. Em muitos casos, você tem direito à <strong style="color:var(--branco)">devolução em dobro</strong> dos valores pagos indevidamente — além do cancelamento imediato.</p>
+      </div>
+      <button class="btn-pri" onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Quero cancelar os descontos</button>
+    </div>
+  </div>
+</section>
+
+<!-- CTA MEIO -->
+<section class="mid-cta">
+  <div class="container">
+    <div class="mid-cta-inner">
+      <div>
+        <h3>Tem dúvida se o seu caso se encaixa em alguma dessas situações?</h3>
+        <p>Mande o extrato do seu benefício ou descreva o que está acontecendo. Analisamos e te explicamos em linguagem simples.</p>
+      </div>
+      <button class="btn-wpp-mid" onclick="window.open('https://wa.me/5527999999999?text=Ol%C3%A1%2C+sou+aposentado+e+tenho+d%C3%BAvidas+sobre+meu+benef%C3%ADcio','_blank')"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg> Falar pelo WhatsApp</button>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="cards-section bg-noir">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" style="color:var(--ouro)">Como funciona</span>
+      <h2 class="claro">O que fazemos pelo seu caso</h2>
+      <p class="claro">Do diagnóstico até a solução — em etapas simples.</p>
+    </div>
+    <div class="etapas-v">
+      <div class="etapa-v"><div class="etapa-num-col">01</div><div class="etapa-content">
+        <h4>Você nos mostra o que está acontecendo</h4>
+        <p>Envia o extrato do benefício, conta quais descontos aparecem, quando se aposentou e o que te deixa com dúvida sobre o valor. Não precisa entender de lei — só nos mostrar o que você está vendo.</p>
+      </div></div>
+      <div class="etapa-v"><div class="etapa-num-col">02</div><div class="etapa-content">
+        <h4>Identificamos o problema e verificamos se há algo a corrigir</h4>
+        <p>Analisamos os descontos que aparecem no seu benefício, verificamos a origem de cada um e checamos se o valor da sua aposentadoria corresponde ao que o seu histórico de trabalho deveria gerar. Explicamos tudo com clareza.</p>
+      </div></div>
+      <div class="etapa-v"><div class="etapa-num-col">03</div><div class="etapa-content">
+        <h4>Definimos o melhor caminho para resolver</h4>
+        <p>Cancelamento administrativo direto no INSS, notificação às empresas responsáveis pelos descontos ou ação judicial — escolhemos o caminho mais rápido e eficaz para cada situação. Às vezes a solução é simples e rápida; outras vezes exige um processo judicial.</p>
+      </div></div>
+      <div class="etapa-v"><div class="etapa-num-col">04</div><div class="etapa-content">
+        <h4>Agimos para cancelar os descontos ou corrigir o valor</h4>
+        <p>Protocolamos tudo e acompanhamos o processo. Quando há descontos pagos indevidamente, incluímos o pedido de devolução. Quando há erro no cálculo, pedimos a correção com os retroativos desde a data do pedido.</p>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- OUTROS DIREITOS -->
+<section class="cards-section bg-cinza">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Mais direitos para aposentados</span>
+      <h2>Outros benefícios que aposentados<br>frequentemente desconhecem</h2>
+      <p>Além da revisão e dos descontos, existem outros direitos que muitos aposentados têm e não sabem.</p>
+    </div>
+    <div class="card-grid-3">
+      <div class="card-item">
+        <div class="card-icon"><svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:var(--azul);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+        <h3>Isenção de Imposto de Renda</h3>
+        <p>Aposentados com doenças graves têm direito à isenção de IR sobre o benefício. A lista inclui cardiopatia, câncer, Parkinson, doenças renais, HIV e outras condições — mesmo que a doença tenha surgido depois da aposentadoria.</p>
+      </div>
+      <div class="card-item">
+        <div class="card-icon"><svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:var(--azul);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></div>
+        <h3>Auxílio por nova incapacidade</h3>
+        <p>Em certos casos, aposentados que ficam temporariamente incapacitados por uma doença diferente da que motivou a aposentadoria podem ter direito a um auxílio adicional do INSS enquanto estiverem impedidos de trabalhar.</p>
+      </div>
+      <div class="card-item">
+        <div class="card-icon"><svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:var(--azul);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+        <h3>Pensão por morte para dependentes</h3>
+        <p>Quando um aposentado falece, cônjuge, filhos e outros dependentes comprovados têm direito à pensão por morte. Esse benefício precisa ser solicitado — não é automático — e tem prazo para ser pedido.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Dúvidas comuns</span>
+      <h2>O que os aposentados<br>mais perguntam</h2>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Como faço para cancelar um desconto que não autorizei?<span class="faq-icon">+</span></div>
+      <div class="faq-a">O primeiro caminho é pela Central 135 do INSS ou pelo portal Meu INSS, pedindo o cancelamento direto. Se a empresa não atender ou demorar, a via judicial garante o resultado — e muitas vezes inclui a devolução dos valores descontados indevidamente, em dobro, por se tratar de cobrança abusiva.</div></div>
+
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Posso receber de volta o dinheiro descontado sem minha autorização?<span class="faq-icon">+</span></div>
+      <div class="faq-a">Em muitos casos, sim. O Código de Defesa do Consumidor prevê devolução em dobro quando há cobrança indevida. Isso se aplica a descontos de associações, planos não pedidos e empréstimos contratados de forma irregular. A análise do caso define o que é possível recuperar.</div></div>
+
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Qual o prazo para pedir a revisão da aposentadoria?<span class="faq-icon">+</span></div>
+      <div class="faq-a">Em geral, o prazo é de 10 anos a partir da data em que o benefício foi concedido. Depois disso, o direito à revisão decai. Alguns tipos específicos de correção — como benefício abaixo do salário mínimo — não têm prazo. Quanto antes o pedido for feito, mais meses de valores retroativos podem ser recuperados.</div></div>
+
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">A revisão pode diminuir o valor que recebo?<span class="faq-icon">+</span></div>
+      <div class="faq-a">A revisão que pedimos é sempre em favor do aposentado — buscando corrigir erros que resultaram em um valor menor do que o correto. O INSS pode fazer revisões por conta própria (o chamado pente-fino), mas esse é um processo separado, que acontece independentemente de um pedido de revisão judicial.</div></div>
+
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Meu benefício foi suspenso sem aviso. O que faço?<span class="faq-icon">+</span></div>
+      <div class="faq-a">A suspensão pode acontecer por falta de prova de vida, suspeita de irregularidade ou descumprimento de alguma exigência do INSS. Em todos os casos, o bloqueio pode ser revertido. O importante é agir rapidamente — cada mês sem pagamento é um prejuízo que pode não ser totalmente recuperado.</div></div>
+
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Preciso ir pessoalmente a algum lugar?<span class="faq-icon">+</span></div>
+      <div class="faq-a">Não. Todo o atendimento é feito de forma digital — por WhatsApp, vídeo ou e-mail. O extrato do benefício e os documentos são enviados por foto. Atendo clientes em todo o Brasil sem necessidade de deslocamento.</div></div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="contato-section" id="contato">
+  <div class="container">
+    <div class="section-head" style="margin-bottom:32px">
+      <span class="eyebrow">Contato</span>
+      <h2>Algo não está certo<br>no seu benefício?</h2>
+    </div>
+    <div class="contato-grid">
+      <div class="contato-info">
+        <h3>Fale com o advogado</h3>
+        <p class="sub">Mande o extrato do benefício ou descreva o que está acontecendo. Análise inicial sem compromisso. Atendimento em todo o Brasil.</p>
+        <div class="contact-item">
+          <div class="contact-icon"><svg viewBox="0 0 24 24" style="width:var(--ouro)px;height:18px;stroke:var(--azul);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg></div>
+          <div class="contact-text"><span>Telefone / WhatsApp</span><strong>+55 (27) 99999-9999</strong></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><svg viewBox="0 0 24 24" style="width:var(--ouro)px;height:18px;stroke:var(--azul);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
+          <div class="contact-text"><span>E-mail</span><strong>contato@andersonlitig.adv.br</strong></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><svg viewBox="0 0 24 24" style="width:var(--ouro)px;height:18px;stroke:var(--azul);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+          <div class="contact-text"><span>Atuação</span><strong>Serra/ES — Atendimento Nacional 100% Digital</strong></div>
+        </div>
+        <button class="btn-wpp" onclick="window.open('https://wa.me/5527999999999?text=Ol%C3%A1%2C+sou+aposentado+e+tenho+d%C3%BAvidas+sobre+meu+benef%C3%ADcio+do+INSS','_blank')"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg> Falar pelo WhatsApp agora</button>
+      </div>
+      <div class="form-col">
+        <h3>Envie uma mensagem</h3>
+        <div class="form-group"><label class="form-label">Nome completo *</label><input class="form-input" type="text" placeholder="Digite seu nome"></div>
+        <div class="form-group"><label class="form-label">Telefone / WhatsApp *</label><input class="form-input" type="tel" placeholder="(00) 00000-0000"></div>
+        <div class="form-group"><label class="form-label">E-mail</label><input class="form-input" type="email" placeholder="Digite seu e-mail"></div>
+        <div class="form-group">
+          <label class="form-label">Qual é a sua situação? *</label>
+          <select class="form-input">
+            <option value="" disabled selected>Selecione</option>
+            <option>Acho que recebo menos do que deveria</option>
+            <option>Tem desconto que não reconheço no benefício</option>
+            <option>Quero cancelar empréstimo consignado</option>
+            <option>Quero cancelar desconto de associação ou sindicato</option>
+            <option>Trabalhei em local perigoso e não foi reconhecido</option>
+            <option>Tive processo trabalhista que pode afetar o cálculo</option>
+            <option>Meu benefício foi suspenso ou bloqueado</option>
+            <option>Quero saber sobre isenção de Imposto de Renda</option>
+            <option>Outra dúvida</option>
+          </select>
+        </div>
+        <div class="form-group"><label class="form-label">Mensagem</label><textarea class="form-input" placeholder="Descreva o que está acontecendo com o seu benefício..."></textarea></div>
+        <button class="btn-submit">Enviar mensagem</button>
+        <p class="form-disc">Em conformidade com o Provimento nº 205/2021 do CFOAB. As informações deste site têm caráter informativo e não constituem consultoria jurídica.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-main">
+      <div>
+        <div class="footer-logo-name">Anderson Litig</div>
+        <div class="footer-logo-sub">OAB/ES nº 40.152 · Serra, Espírito Santo</div>
+        <div class="footer-disc">As informações contidas neste site têm caráter exclusivamente informativo e não constituem consultoria jurídica. Atuação em conformidade com o Provimento nº 205/2021 do CFOAB.</div>
+      </div>
+      <div class="footer-col"><h4>Serviços</h4>
+        <a href="aposentadorias.html">Aposentadorias</a>
+        <a href="planejamento-previdenciario.html">Planejamento Previdenciário</a>
+        <a href="revisao-beneficio.html">Revisão de Benefício</a>
+        <a href="beneficio-negado.html">Benefício Negado</a>
+        <a href="salario-maternidade.html">Salário-Maternidade</a>
+        <a href="#">BPC/LOAS</a>
+      </div>
+      <div class="footer-col"><h4>Institucional</h4>
+        <a href="index.html">Sobre o advogado</a>
+        <a href="#">Blog jurídico</a>
+        <a href="#">Política de privacidade</a>
+        <a href="#contato">Contato</a>
+      </div>
+      <div class="footer-col"><h4>Contato</h4>
+        <a href="https://wa.me/5527999999999">WhatsApp</a>
+        <a href="mailto:contato@andersonlitig.adv.br">E-mail</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Anderson Litig — Advocacia e Consultoria Jurídica</span>
+      <span>OAB/ES 40.152 · Provimento 205/2021 CFOAB</span>
+    </div>
+  </div>
+</footer>
+<script>
+function toggleFaq(el){
+  const item=el.closest('.faq-item');
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+  if(!isOpen) item.classList.add('open');
+}
+</script>
+</body></html>
