@@ -33,8 +33,8 @@ import JaAposentadoV2 from "@/pages/JaAposentadoV2";
 function Router() {
   return (
     <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/v2" component={HomeV2} />
+      <Route path="/v1" component={Home} />
+      <Route path="/" component={HomeV2} />
       <Route path="/v2/planejamento" component={PlanejamentoV2} />
       <Route path="/v2/aposentar" component={AposentarV2} />
       <Route path="/v2/negado" component={BeneficioNegadoV2} />
