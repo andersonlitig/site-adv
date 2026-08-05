@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-motion";
-import { ArrowRight, Phone, Mail, MapPin, Send, Calendar, Target, Globe, Users, Shield, FileText, Briefcase, Landmark, ShieldAlert, Scale, ChevronDown, Plus, Minus, History, CalendarCheck, Compass, SearchCheck, Baby, Stethoscope, Bandage, HeartHandshake, FileWarning, FileCheck, Calculator, FileSearch, Award, RefreshCw, ReceiptText, HandHeart } from "lucide-react";
+import { ArrowRight, Phone, Mail, MapPin, Send, Calendar, Target, Globe, Users, Shield, FileText, Briefcase, Landmark, ShieldAlert, Scale, ChevronDown, Plus, Minus, History, CalendarCheck, Compass, SearchCheck, Baby, Stethoscope, Bandage, HeartHandshake, FileWarning, FileCheck, Calculator, FileSearch, Award, RefreshCw, ReceiptText, HandHeart, ChevronLeft, ChevronRight } from "lucide-react";
 import logo from "@/assets/logo.png";
 import heroImage from "@/assets/3em3-vitoria_15_1767549660783.jpg";
+import andersonPhoto from "@/assets/anderson-litig.png";
 
 export default function HomeV2() {
   return (
@@ -176,7 +177,7 @@ function TriagemInterativaV2() {
   const [problema, setProblema] = useState('');
   const [status, setStatus] = useState('');
   const [nome, setNome] = useState('');
-  const [cidade, setCidade] = useState('');
+  const [whatsapp, setWhatsapp] = useState('');
 
   const problemas = [
     { id: 'planejamento', label: 'Planejar minha aposentadoria', sub: 'Quero saber o melhor momento e valor', icon: <Target size={20} />, link: '/v2/planejamento' },
@@ -209,7 +210,7 @@ function TriagemInterativaV2() {
   };
 
   const handleWhatsApp = () => {
-    const msg = `Olá! Vim pelo site e gostaria de uma análise do meu caso.\n\n*Assunto:* ${problemaObj?.label || ''}\n*Situação atual:* ${statusObj?.label || ''}\n*Nome:* ${nome}\n*Cidade:* ${cidade}\n\nAguardo o retorno. Obrigado!`;
+    const msg = `Olá! Vim pelo site e gostaria de uma análise do meu caso.\n\n*Assunto:* ${problemaObj?.label || ''}\n*Situação atual:* ${statusObj?.label || ''}\n*Nome:* ${nome}\n*WhatsApp para retorno:* ${whatsapp}\n\nAguardo o contato. Obrigado!`;
     window.open(`https://wa.me/5527999999999?text=${encodeURIComponent(msg)}`, '_blank');
   };
 
@@ -371,20 +372,20 @@ function TriagemInterativaV2() {
                   />
                 </div>
                 <div>
-                  <label className="block text-[11px] font-bold tracking-[0.1em] uppercase text-white/50 mb-2">Cidade / Estado</label>
+                  <label className="block text-[11px] font-bold tracking-[0.1em] uppercase text-white/50 mb-2">Seu WhatsApp</label>
                   <input
-                    type="text"
-                    value={cidade}
-                    onChange={e => setCidade(e.target.value)}
+                    type="tel"
+                    value={whatsapp}
+                    onChange={e => setWhatsapp(e.target.value)}
                     className="w-full bg-white/5 border border-white/15 focus:border-[#CFAE70] focus:bg-white/10 text-white text-[15px] px-4 py-3.5 outline-none transition-all placeholder:text-white/20 font-light"
-                    placeholder="Ex: Vitória / ES"
+                    placeholder="(27) 99999-9999"
                   />
                 </div>
               </div>
 
               <button
                 onClick={handleWhatsApp}
-                disabled={!nome.trim() || !cidade.trim()}
+                disabled={!nome.trim() || !whatsapp.trim()}
                 className="w-full bg-[#25D366] text-white font-bold text-[14px] tracking-[0.1em] uppercase px-8 py-4 flex items-center justify-center gap-3 hover:bg-[#1db957] transition-all shadow-[0_0_30px_rgba(37,211,102,0.25)] hover:shadow-[0_0_40px_rgba(37,211,102,0.4)] disabled:opacity-40 disabled:cursor-not-allowed disabled:shadow-none"
               >
                 <svg viewBox="0 0 24 24" className="w-5 h-5 fill-white shrink-0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
@@ -545,11 +546,11 @@ function AboutV2() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <div className="min-h-[400px] lg:min-h-[550px] overflow-hidden bg-gray-200 relative">
+          <div className="min-h-[400px] lg:min-h-[550px] overflow-hidden bg-[#091D39] relative">
             <img 
-              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop" 
-              alt="Anderson Litig" 
-              className="absolute inset-0 w-full h-full object-cover object-top"
+              src={andersonPhoto}
+              alt="Anderson Litig — Advogado Previdenciário em Serra/ES" 
+              className="absolute inset-0 w-full h-full object-cover object-center"
             />
           </div>
           <div className="p-8 md:p-[64px_56px] flex flex-col justify-center bg-white relative">
@@ -587,55 +588,143 @@ function AboutV2() {
   );
 }
 
+function StarRating({ count }: { count: number }) {
+  return (
+    <div className="flex gap-0.5">
+      {Array.from({ length: count }).map((_, i) => (
+        <svg key={i} className="w-4 h-4 fill-[#CFAE70]" viewBox="0 0 20 20">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+      ))}
+    </div>
+  );
+}
+
 function TestimonialsV2() {
   const testimonials = [
     { name: "Maria L.", city: "Vitória, ES", text: "Tentei dar entrada na aposentadoria sozinha e o INSS negou. O Dr. Anderson analisou tudo e em poucos meses conseguimos reverter na via administrativa. Atendimento rápido e muito claro em cada etapa.", stars: 5 },
     { name: "João C.", city: "Serra, ES", text: "Estava com desconto de consignado que eu nunca autorizei. Fui orientado a cancelar e recuperar os valores cobrados indevidamente. Nunca pensei que fosse possível sem precisar ir a lugar nenhum.", stars: 5 },
     { name: "Ana R.", city: "São Paulo, SP", text: "Atendimento 100% pelo WhatsApp e videochamada. Moro em São Paulo e não precisei me deslocar. A análise do meu CNIS mostrou que eu tinha direito a uma aposentadoria especial que nem sabia que existia.", stars: 5 },
     { name: "Carlos M.", city: "Guarapari, ES", text: "O INSS negou meu auxílio-doença alegando que eu não cumpria carência. O Dr. Anderson identificou os períodos que eles tinham desconsiderado e a decisão foi revertida. Muito obrigado.", stars: 5 },
+    { name: "Rosângela F.", city: "Vila Velha, ES", text: "Minha aposentadoria rural foi negada duas vezes. Com o auxílio do Dr. Anderson juntamos os documentos certos e foi aprovada judicialmente. Recomendo de olhos fechados.", stars: 5 },
+    { name: "Antônio B.", city: "Cachoeiro de Itapemirim, ES", text: "Fui orientado sobre o planejamento da minha aposentadoria especial por atividade insalubre. Com a análise técnica, descobri que podia me aposentar dois anos antes do que imaginava.", stars: 5 },
+  ];
+
+  const [current, setCurrent] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const total = testimonials.length;
+
+  const go = (idx: number) => setCurrent((idx + total) % total);
+  const prev = () => { go(current - 1); resetTimer(); };
+  const next = () => { go(current + 1); resetTimer(); };
+
+  const resetTimer = () => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
+    if (!paused) startTimer();
+  };
+
+  const startTimer = () => {
+    intervalRef.current = setInterval(() => setCurrent(c => (c + 1) % total), 5000);
+  };
+
+  useEffect(() => {
+    if (!paused) startTimer();
+    return () => { if (intervalRef.current) clearInterval(intervalRef.current); };
+  }, [paused]);
+
+  // Show 2 cards on desktop, 1 on mobile
+  const visible = [
+    testimonials[current % total],
+    testimonials[(current + 1) % total],
   ];
 
   return (
-    <section className="py-[80px] md:py-[100px] bg-[#F4F4F2] border-b border-[#E0E0DC]">
-      <div className="max-w-[1160px] mx-auto px-4 md:px-8">
-        <motion.div
-          className="mb-12 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#CFAE70] mb-3 block">Depoimentos</span>
-          <h2 className="text-[clamp(28px,3.5vw,40px)] font-bold text-[#091D39] tracking-[-0.02em] leading-[1.15] font-heading">O que dizem nossos clientes</h2>
-          <p className="text-[16px] text-[#767672] mt-4 max-w-[520px] font-light mx-auto">Casos reais. Resultados reais. Histórias de quem teve os seus direitos respeitados.</p>
-        </motion.div>
+    <section className="py-[80px] md:py-[100px] bg-[#091D39] border-b border-white/10 relative overflow-hidden">
+      {/* Ambient */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute bottom-0 right-0 w-[500px] h-[300px] bg-[#CFAE70]/5 rounded-full blur-3xl" />
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {testimonials.map((t, i) => (
-            <motion.div
-              key={i}
-              className="bg-white border border-[#E0E0DC] p-8 flex flex-col gap-4 hover:border-[#CFAE70] hover:shadow-lg transition-all duration-300"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
+      <div className="max-w-[1160px] mx-auto px-4 md:px-8 relative z-10">
+        {/* Header row */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#CFAE70] mb-3 block">O que dizem nossos clientes</span>
+            <h2 className="text-[clamp(28px,3.5vw,40px)] font-bold text-white tracking-[-0.02em] leading-[1.15] font-heading">Resultados reais.<br className="hidden md:block"/>Histórias reais.</h2>
+          </motion.div>
+
+          {/* Navigation arrows */}
+          <div className="flex items-center gap-3">
+            <button
+              onClick={prev}
+              className="w-11 h-11 border border-white/20 flex items-center justify-center text-white hover:bg-[#CFAE70] hover:border-[#CFAE70] hover:text-[#091D39] transition-all duration-200"
+              aria-label="Anterior"
             >
-              <div className="flex gap-0.5">
-                {Array.from({ length: t.stars }).map((_, s) => (
-                  <svg key={s} className="w-4 h-4 fill-[#CFAE70]" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                ))}
-              </div>
-              <p className="text-[15px] text-[#4A4A48] leading-[1.75] font-light flex-1 italic">"{t.text}"</p>
-              <div className="flex items-center gap-3 pt-4 border-t border-[#E0E0DC]">
-                <div className="w-10 h-10 bg-[#091D39] rounded-full flex items-center justify-center shrink-0">
-                  <span className="text-[13px] font-bold text-[#CFAE70]">{t.name.charAt(0)}</span>
+              <ChevronLeft size={18} />
+            </button>
+            <div className="flex gap-1.5">
+              {testimonials.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => { go(i); resetTimer(); }}
+                  className={`h-1.5 rounded-full transition-all duration-300 ${i === current ? 'w-6 bg-[#CFAE70]' : 'w-1.5 bg-white/20 hover:bg-white/40'}`}
+                  aria-label={`Depoimento ${i + 1}`}
+                />
+              ))}
+            </div>
+            <button
+              onClick={next}
+              className="w-11 h-11 border border-white/20 flex items-center justify-center text-white hover:bg-[#CFAE70] hover:border-[#CFAE70] hover:text-[#091D39] transition-all duration-200"
+              aria-label="Próximo"
+            >
+              <ChevronRight size={18} />
+            </button>
+          </div>
+        </div>
+
+        {/* Cards */}
+        <div
+          className="overflow-hidden border border-white/10"
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
+        >
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={current}
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -40 }}
+              transition={{ duration: 0.35 }}
+              className="grid grid-cols-1 md:grid-cols-2 gap-[1px] bg-white/10"
+            >
+              {visible.map((t, idx) => (
+                <div
+                  key={idx}
+                  className={`bg-[#0B2347] p-8 md:p-10 flex flex-col gap-6 ${idx === 1 ? 'hidden md:flex' : ''}`}
+                >
+                  <StarRating count={t.stars} />
+                  <p className="text-[16px] text-white/80 leading-[1.8] font-light italic flex-1">
+                    "{t.text}"
+                  </p>
+                  <div className="flex items-center gap-4 pt-5 border-t border-white/10">
+                    <div className="w-11 h-11 bg-[#CFAE70]/20 border border-[#CFAE70]/30 rounded-full flex items-center justify-center shrink-0">
+                      <span className="text-[14px] font-bold text-[#CFAE70]">{t.name.charAt(0)}</span>
+                    </div>
+                    <div>
+                      <span className="block text-[14px] font-bold text-white">{t.name}</span>
+                      <span className="block text-[12px] text-white/40 font-light">{t.city}</span>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <span className="block text-[14px] font-bold text-[#091D39]">{t.name}</span>
-                  <span className="block text-[12px] text-[#767672] font-light">{t.city}</span>
-                </div>
-              </div>
+              ))}
             </motion.div>
-          ))}
+          </AnimatePresence>
         </div>
       </div>
     </section>
