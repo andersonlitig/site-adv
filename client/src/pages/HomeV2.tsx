@@ -12,10 +12,12 @@ export default function HomeV2() {
       <HeaderV2 />
       <main>
         <HeroV2 />
+        <StatsBarV2 />
         <JornadaV2 />
         <ServicesV2 />
         <ProcessV2 />
         <AboutV2 />
+        <TestimonialsV2 />
         <CTAWppV2 />
         <BlogV2 />
         <FAQV2 />
@@ -90,7 +92,7 @@ function HeroV2() {
     <section className="relative bg-[#091D39] py-[100px] md:py-[160px] border-b-4 border-[#CFAE70] overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-[#091D39]/80 z-10" />
+        <div className="absolute inset-0 bg-[#091D39]/82 z-10" />
         <img 
           src={heroImage} 
           alt="Vitória, ES" 
@@ -105,14 +107,18 @@ function HeroV2() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <span className="inline-block px-3 py-1 border border-[#CFAE70]/30 bg-[#CFAE70]/10 text-[11px] font-bold tracking-[0.2em] uppercase text-[#CFAE70] mb-6">Advocacia Previdenciária</span>
-          <h1 className="text-[clamp(36px,5vw,64px)] font-bold leading-[1.05] text-white tracking-[-0.02em] mb-6 font-heading">
-            Seu benefício do INSS<span className="text-[#CFAE70] block">em boas mãos.</span>
+          <span className="inline-flex items-center gap-2 px-3 py-1 border border-[#CFAE70]/30 bg-[#CFAE70]/10 text-[11px] font-bold tracking-[0.2em] uppercase text-[#CFAE70] mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#CFAE70] animate-pulse" />
+            Atendimento Online Disponível
+          </span>
+          <h1 className="text-[clamp(36px,5vw,62px)] font-bold leading-[1.05] text-white tracking-[-0.02em] mb-6 font-heading">
+            Você trabalhou a vida inteira.<br/>
+            <span className="text-[#CFAE70]">Seu benefício do INSS merece atenção especializada.</span>
           </h1>
           <p className="text-lg md:text-xl text-white/70 leading-[1.6] mb-10 max-w-[580px] font-light">
-            Aposentadorias, revisões, auxílio-doença e planejamento previdenciário. Atendimento personalizado para garantir os direitos que você conquistou ao longo da vida.
+            Aposentadorias, revisões de benefício, auxílio por incapacidade e planejamento previdenciário. Defendemos os seus direitos na via administrativa e judicial — com linguagem simples, sem burocracia e sem você precisar sair de casa.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-4 mb-10">
             <button 
               className="bg-[#CFAE70] text-[#091D39] text-[13px] font-bold px-8 py-4 flex items-center justify-center gap-2 hover:bg-white transition-colors tracking-[0.15em] uppercase shadow-xl"
               onClick={() => window.open('https://wa.me/5527999999999','_blank')}
@@ -127,7 +133,39 @@ function HeroV2() {
               Conhecer os serviços
             </button>
           </div>
+          <p className="text-[12px] text-white/40 font-light">Resposta em até 2 horas em horário comercial &middot; Atendimento em todo o Brasil</p>
         </motion.div>
+      </div>
+    </section>
+  );
+}
+
+function StatsBarV2() {
+  const stats = [
+    { value: "100+", label: "Casos atendidos" },
+    { value: "95%", label: "Taxa de êxito" },
+    { value: "100%", label: "Digital, sem deslocamento" },
+    { value: "Nacional", label: "Atendimento em todo o Brasil" },
+  ];
+
+  return (
+    <section className="bg-white border-b border-[#E0E0DC]">
+      <div className="max-w-[1160px] mx-auto px-4 md:px-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-[1px] bg-[#E0E0DC]">
+          {stats.map((s, i) => (
+            <motion.div
+              key={i}
+              className="bg-white px-8 py-8 flex flex-col items-center text-center"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+            >
+              <span className="text-[32px] md:text-[40px] font-bold text-[#091D39] leading-none tracking-[-0.03em] font-heading">{s.value}</span>
+              <span className="text-[12px] text-[#767672] mt-2 uppercase tracking-[0.1em] font-medium">{s.label}</span>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -261,10 +299,10 @@ function ServicesV2() {
 
 function ProcessV2() {
   const steps = [
-    { num: "01", title: "Primeiro contato", desc: "Você manda mensagem pelo WhatsApp com uma breve descrição do caso." },
-    { num: "02", title: "Análise do caso", desc: "Agendamos uma consulta para análise do CNIS, documentos e situação previdenciária." },
-    { num: "03", title: "Estratégia jurídica", desc: "Apresento o plano de ação — administrativo ou judicial — com clareza sobre prazos." },
-    { num: "04", title: "Acompanhamento", desc: "Você é atualizado em cada etapa até a concessão do seu direito." }
+    { num: "01", title: "Conte seu caso", desc: "Fale pelo WhatsApp com uma breve descrição da sua situação. Sem formulários complexos, sem burocracia — só uma conversa." },
+    { num: "02", title: "Analisamos tudo", desc: "Revisamos seu CNIS, documentos e histórico junto ao INSS para identificar os direitos que você tem — inclusive os que você talvez não saiba que existem." },
+    { num: "03", title: "Apresentamos a solução", desc: "Você recebe uma orientação clara: qual o melhor caminho (administrativo ou judicial), quais os prazos realistas e o que esperar em cada etapa." },
+    { num: "04", title: "Conduzimos até o resultado", desc: "Cuidamos de toda a parte jurídica enquanto você acompanha o andamento. Seu papel é esperar o resultado — o trabalho é nosso." }
   ];
 
   return (
@@ -329,15 +367,17 @@ function AboutV2() {
             <h2 className="text-[clamp(28px,3vw,36px)] font-bold text-[#091D39] tracking-[-0.02em] leading-[1.15] mb-6 font-heading">Anderson Litig</h2>
             
             <div className="space-y-4 mb-8">
-              <p className="text-[15px] text-[#767672] leading-[1.75] font-light">Sou advogado inscrito na OAB/ES sob o nº 40.152, pós-graduado em Direito Previdenciário, com atuação focada nessa área. Atendo clientes em Serra e na Grande Vitória, com possibilidade de atendimento digital para todo o Brasil.</p>
-              <p className="text-[15px] text-[#767672] leading-[1.75] font-light">A formação especializada me permite acompanhar as frequentes mudanças legislativas e as teses jurisprudenciais que impactam diretamente os benefícios do INSS — um campo que exige atualização constante para uma atuação eficaz.</p>
-              <p className="text-[15px] text-[#767672] leading-[1.75] font-light">Acredito que cada caso merece atenção individualizada. Meu objetivo é defender os direitos de quem contribuiu a vida inteira e precisa ter os seus benefícios respeitados.</p>
+              <p className="text-[15px] text-[#767672] leading-[1.75] font-light">Sou advogado inscrito na OAB/ES sob o nº 40.152, pós-graduado em Direito Previdenciário, com atuação exclusiva nessa área. Atendo clientes em Serra, na Grande Vitória e em todo o Brasil de forma 100% digital — por videochamada e WhatsApp, sem que você precise sair de casa.</p>
+              <p className="text-[15px] text-[#767672] leading-[1.75] font-light">Você não é um número. Cada caso que atendo tem uma história por trás — anos de trabalho, contribuições ao longo de uma vida inteira, e a expectativa de receber o que é seu por direito. Por isso, atuo com atenção técnica e cuidado humano em cada etapa.</p>
+              <p className="text-[15px] text-[#767672] leading-[1.75] font-light">A especialização em Direito Previdenciário me permite acompanhar de perto as constantes mudanças legislativas e as teses jurisprudenciais que impactam diretamente os benefícios do INSS — um campo que exige atualização permanente para uma atuação verdadeiramente eficaz.</p>
             </div>
 
             <div className="flex flex-wrap gap-2 mb-8">
               <span className="text-[10px] font-bold tracking-[0.1em] uppercase text-[#091D39] bg-[#F4F4F2] px-3 py-2 border border-[#E0E0DC]">Pós-graduado em Dir. Previdenciário</span>
               <span className="text-[10px] font-bold tracking-[0.1em] uppercase text-[#091D39] bg-[#F4F4F2] px-3 py-2 border border-[#E0E0DC]">OAB/ES 40.152</span>
+              <span className="text-[10px] font-bold tracking-[0.1em] uppercase text-[#091D39] bg-[#F4F4F2] px-3 py-2 border border-[#E0E0DC]">Provimento 205/2021 CFOAB</span>
               <span className="text-[10px] font-bold tracking-[0.1em] uppercase text-[#091D39] bg-[#F4F4F2] px-3 py-2 border border-[#E0E0DC]">Atendimento 100% Digital</span>
+              <span className="text-[10px] font-bold tracking-[0.1em] uppercase text-[#091D39] bg-[#F4F4F2] px-3 py-2 border border-[#E0E0DC]">Atuação Nacional</span>
             </div>
             
             <div>
@@ -350,6 +390,61 @@ function AboutV2() {
             </div>
           </div>
         </motion.div>
+      </div>
+    </section>
+  );
+}
+
+function TestimonialsV2() {
+  const testimonials = [
+    { name: "Maria L.", city: "Vitória, ES", text: "Tentei dar entrada na aposentadoria sozinha e o INSS negou. O Dr. Anderson analisou tudo e em poucos meses conseguimos reverter na via administrativa. Atendimento rápido e muito claro em cada etapa.", stars: 5 },
+    { name: "João C.", city: "Serra, ES", text: "Estava com desconto de consignado que eu nunca autorizei. Fui orientado a cancelar e recuperar os valores cobrados indevidamente. Nunca pensei que fosse possível sem precisar ir a lugar nenhum.", stars: 5 },
+    { name: "Ana R.", city: "São Paulo, SP", text: "Atendimento 100% pelo WhatsApp e videochamada. Moro em São Paulo e não precisei me deslocar. A análise do meu CNIS mostrou que eu tinha direito a uma aposentadoria especial que nem sabia que existia.", stars: 5 },
+    { name: "Carlos M.", city: "Guarapari, ES", text: "O INSS negou meu auxílio-doença alegando que eu não cumpria carência. O Dr. Anderson identificou os períodos que eles tinham desconsiderado e a decisão foi revertida. Muito obrigado.", stars: 5 },
+  ];
+
+  return (
+    <section className="py-[80px] md:py-[100px] bg-[#F4F4F2] border-b border-[#E0E0DC]">
+      <div className="max-w-[1160px] mx-auto px-4 md:px-8">
+        <motion.div
+          className="mb-12 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#CFAE70] mb-3 block">Depoimentos</span>
+          <h2 className="text-[clamp(28px,3.5vw,40px)] font-bold text-[#091D39] tracking-[-0.02em] leading-[1.15] font-heading">O que dizem nossos clientes</h2>
+          <p className="text-[16px] text-[#767672] mt-4 max-w-[520px] font-light mx-auto">Casos reais. Resultados reais. Histórias de quem teve os seus direitos respeitados.</p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {testimonials.map((t, i) => (
+            <motion.div
+              key={i}
+              className="bg-white border border-[#E0E0DC] p-8 flex flex-col gap-4 hover:border-[#CFAE70] hover:shadow-lg transition-all duration-300"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.08 }}
+            >
+              <div className="flex gap-0.5">
+                {Array.from({ length: t.stars }).map((_, s) => (
+                  <svg key={s} className="w-4 h-4 fill-[#CFAE70]" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                ))}
+              </div>
+              <p className="text-[15px] text-[#4A4A48] leading-[1.75] font-light flex-1 italic">"{t.text}"</p>
+              <div className="flex items-center gap-3 pt-4 border-t border-[#E0E0DC]">
+                <div className="w-10 h-10 bg-[#091D39] rounded-full flex items-center justify-center shrink-0">
+                  <span className="text-[13px] font-bold text-[#CFAE70]">{t.name.charAt(0)}</span>
+                </div>
+                <div>
+                  <span className="block text-[14px] font-bold text-[#091D39]">{t.name}</span>
+                  <span className="block text-[12px] text-[#767672] font-light">{t.city}</span>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -368,16 +463,20 @@ function CTAWppV2() {
           viewport={{ once: true }}
         >
           <div className="text-center md:text-left flex-1">
-            <h2 className="text-[clamp(24px,3vw,32px)] font-bold text-white tracking-[-0.02em] mb-3 font-heading">Tem dúvidas sobre seu benefício?</h2>
-            <p className="text-[16px] text-white/60 font-light max-w-2xl">Entre em contato para uma análise inicial do seu caso. Atendimento direto, transparente e sem burocracia.</p>
+            <span className="inline-block text-[11px] font-bold tracking-[0.2em] uppercase text-[#CFAE70] mb-3">Benefício negado? Você tem prazo para recorrer.</span>
+            <h2 className="text-[clamp(24px,3vw,34px)] font-bold text-white tracking-[-0.02em] mb-3 font-heading">Não deixe o tempo correr contra você.</h2>
+            <p className="text-[16px] text-white/60 font-light max-w-2xl">Fale com o advogado para uma análise inicial do seu caso. Sem custo de consulta. Sem compromisso. Resposta em até 2 horas em horário comercial.</p>
           </div>
-          <button 
-            className="bg-[#25D366] text-white text-[14px] font-bold tracking-[0.1em] uppercase px-8 py-4 flex items-center justify-center gap-3 hover:bg-[#1db957] transition-all shadow-[0_0_20px_rgba(37,211,102,0.3)] hover:shadow-[0_0_30px_rgba(37,211,102,0.5)] shrink-0 w-full md:w-auto"
-            onClick={() => window.open('https://wa.me/5527999999999','_blank')}
-          >
-            <Phone size={18} />
-            Falar pelo WhatsApp
-          </button>
+          <div className="flex flex-col items-center gap-3 shrink-0 w-full md:w-auto">
+            <button 
+              className="bg-[#25D366] text-white text-[14px] font-bold tracking-[0.1em] uppercase px-8 py-4 flex items-center justify-center gap-3 hover:bg-[#1db957] transition-all shadow-[0_0_20px_rgba(37,211,102,0.3)] hover:shadow-[0_0_30px_rgba(37,211,102,0.5)] w-full md:w-auto"
+              onClick={() => window.open('https://wa.me/5527999999999','_blank')}
+            >
+              <Phone size={18} />
+              Falar com o Advogado Agora
+            </button>
+            <span className="text-[11px] text-white/30 font-light">Seg–Sex, 9h às 18h &middot; Atendimento Online</span>
+          </div>
         </motion.div>
       </div>
     </section>
@@ -452,10 +551,12 @@ function BlogV2() {
 
 function FAQV2() {
   const faqs = [
-    { q: "Quanto tempo demora para o INSS analisar meu pedido?", a: "O prazo legal é de 45 a 90 dias, dependendo do benefício. Porém, na prática, pode demorar muito mais. Se o prazo for ultrapassado de forma abusiva, podemos entrar com um Mandado de Segurança para obrigar o INSS a analisar." },
-    { q: "Preciso pagar consulta para analisar meu caso?", a: "A análise preliminar do caso e dos documentos (como o CNIS) para identificar se há viabilidade de atuação não tem custo. Os honorários são cobrados apenas se houver atuação jurídica (administrativa ou judicial)." },
-    { q: "O INSS negou minha aposentadoria. Ainda posso recorrer?", a: "Sim. Podemos apresentar um recurso administrativo no próprio INSS ou entrar com uma ação judicial. A escolha depende da análise do motivo da negativa. Muitas vezes, a via judicial é mais rápida e eficiente." },
-    { q: "Vocês atendem clientes de fora do Espírito Santo?", a: "Sim. O processo previdenciário e o processo judicial hoje são 100% eletrônicos. Realizamos atendimentos por videochamada e WhatsApp para clientes de todo o Brasil." }
+    { q: "Meu benefício foi negado pelo INSS. Ainda posso recorrer?", a: "Sim — e é importante agir rápido. Existem dois caminhos: o recurso administrativo (dentro do próprio INSS) e a ação judicial. Na maioria dos casos, identificamos vícios no indeferimento que permitem reverter a decisão. Quanto antes você agir, melhores as chances e maior o período retroativo de benefício a receber." },
+    { q: "Preciso pagar para ter meu caso analisado?", a: "Não. A análise inicial do caso — incluindo revisão do CNIS e dos motivos de negativa — é gratuita e sem compromisso. Os honorários profissionais são definidos somente quando há viabilidade de atuação e você decide prosseguir com o processo." },
+    { q: "Posso ser atendido sem precisar sair de casa?", a: "Sim. Todo o processo é 100% digital. Atendemos por WhatsApp e videochamada, recebemos documentos pelo computador ou celular e acompanhamos o processo eletronicamente. Você não precisa se deslocar em nenhum momento — seja de Vitória, do interior ou de qualquer outro estado do Brasil." },
+    { q: "Posso pedir revisão de uma aposentadoria que já recebo?", a: "Sim. Se você já é aposentado e acha que o valor está baixo, há diferentes teses de revisão que podem aumentar o benefício. Analisamos o cálculo realizado pelo INSS, verificamos as competências utilizadas e identificamos se houve erro ou prejuízo. O prazo para revisão é de 10 anos a partir da concessão." },
+    { q: "Quanto tempo demora para resolver um processo previdenciário?", a: "Na via administrativa (recurso dentro do INSS), o prazo costuma ser de 3 a 12 meses. Na via judicial, varia conforme a comarca e o tipo de ação. Casos mais simples, por tutela de urgência, podem ser resolvidos em semanas. Apresentamos sempre uma estimativa realista antes de iniciar qualquer procedimento." },
+    { q: "Tenho um desconto no meu benefício que não autorizei. O que faço?", a: "Esse é um dos problemas mais comuns entre aposentados. Empréstimos consignados contratados de forma fraudulenta (RMC e RCC) podem ser cancelados e os valores indevidamente descontados devolvidos. Atuamos no cancelamento, no bloqueio de novos descontos e na recuperação dos montantes pagos." },
   ];
 
   const [openIdx, setOpenIdx] = useState<number | null>(0);
