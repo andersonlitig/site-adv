@@ -19,8 +19,8 @@ export default function HomeV2() {
         <ProcessV2 />
         <AboutV2 />
         <TestimonialsV2 />
-        <CTAWppV2 />
         <BlogV2 />
+        <CTAWppV2 />
         <FAQV2 />
         <ContactV2 />
       </main>
@@ -116,9 +116,18 @@ function HeroV2() {
             Você trabalhou a vida inteira.<br/>
             <span className="text-[#CFAE70]">Seu benefício do INSS merece atenção especializada.</span>
           </h1>
-          <p className="text-lg md:text-xl text-white/70 leading-[1.6] mb-10 max-w-[580px] font-light">
-            Aposentadorias, revisões de benefício, auxílio por incapacidade e planejamento previdenciário. Defendemos os seus direitos na via administrativa e judicial — com linguagem simples, sem burocracia e sem você precisar sair de casa.
-          </p>
+          <ul className="mb-10 flex flex-col gap-3">
+            {[
+              "Aposentadorias, revisões e planejamento previdenciário",
+              "Benefício negado? Recurso administrativo e ação judicial",
+              "Atendimento 100% digital — sem você sair de casa",
+            ].map((item, i) => (
+              <li key={i} className="flex items-center gap-3 text-[15px] md:text-[16px] text-white/75 font-light">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#CFAE70] shrink-0" />
+                {item}
+              </li>
+            ))}
+          </ul>
           <div className="flex flex-col sm:flex-row gap-4 mb-10">
             <button 
               className="bg-[#CFAE70] text-[#091D39] text-[13px] font-bold px-8 py-4 flex items-center justify-center gap-2 hover:bg-white transition-colors tracking-[0.15em] uppercase shadow-xl"
@@ -144,7 +153,7 @@ function HeroV2() {
 function StatsBarV2() {
   const stats = [
     { value: "100+", label: "Casos atendidos" },
-    { value: "95%", label: "Taxa de êxito" },
+    { value: "Especialista", label: "Direito Previdenciário" },
     { value: "100%", label: "Digital, sem deslocamento" },
     { value: "Nacional", label: "Atendimento em todo o Brasil" },
   ];
@@ -733,30 +742,32 @@ function TestimonialsV2() {
 
 function CTAWppV2() {
   return (
-    <section className="py-20 bg-[#091D39] relative overflow-hidden">
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=2000&auto=format&fit=crop')] opacity-5 bg-cover bg-center mix-blend-overlay" />
-      
+    <section className="py-[72px] md:py-[90px] bg-[#CFAE70] relative overflow-hidden">
+      {/* Subtle texture overlay */}
+      <div className="absolute inset-0 opacity-[0.06] pointer-events-none"
+        style={{ backgroundImage: 'repeating-linear-gradient(45deg, #091D39 0, #091D39 1px, transparent 0, transparent 50%)', backgroundSize: '12px 12px' }} />
+
       <div className="relative z-10 max-w-[1160px] mx-auto px-4 md:px-8">
-        <motion.div 
-          className="flex flex-col md:flex-row items-center justify-between gap-10 bg-[#091D39]/40 backdrop-blur-md border border-white/10 p-8 md:p-12 shadow-2xl"
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+        <motion.div
+          className="flex flex-col md:flex-row items-center justify-between gap-10"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
           <div className="text-center md:text-left flex-1">
-            <span className="inline-block text-[11px] font-bold tracking-[0.2em] uppercase text-[#CFAE70] mb-3">Benefício negado? Você tem prazo para recorrer.</span>
-            <h2 className="text-[clamp(24px,3vw,34px)] font-bold text-white tracking-[-0.02em] mb-3 font-heading">Não deixe o tempo correr contra você.</h2>
-            <p className="text-[16px] text-white/60 font-light max-w-2xl">Fale com o advogado para uma análise inicial do seu caso. Sem custo de consulta. Sem compromisso. Resposta em até 2 horas em horário comercial.</p>
+            <span className="inline-block text-[11px] font-bold tracking-[0.2em] uppercase text-[#091D39]/60 mb-3">Análise inicial gratuita · Sem compromisso</span>
+            <h2 className="text-[clamp(26px,3.5vw,38px)] font-bold text-[#091D39] tracking-[-0.02em] mb-3 font-heading leading-[1.1]">Não deixe o tempo correr<br className="hidden md:block" /> contra você.</h2>
+            <p className="text-[16px] text-[#091D39]/70 font-light max-w-xl">Benefício negado? Valor baixo? Desconto indevido? Fale agora com o advogado e entenda seus direitos em minutos.</p>
           </div>
           <div className="flex flex-col items-center gap-3 shrink-0 w-full md:w-auto">
-            <button 
-              className="bg-[#25D366] text-white text-[14px] font-bold tracking-[0.1em] uppercase px-8 py-4 flex items-center justify-center gap-3 hover:bg-[#1db957] transition-all shadow-[0_0_20px_rgba(37,211,102,0.3)] hover:shadow-[0_0_30px_rgba(37,211,102,0.5)] w-full md:w-auto"
+            <button
+              className="bg-[#091D39] text-white text-[14px] font-bold tracking-[0.1em] uppercase px-10 py-4 flex items-center justify-center gap-3 hover:bg-[#0B2347] transition-all shadow-[0_8px_32px_rgba(9,29,57,0.25)] hover:shadow-[0_12px_40px_rgba(9,29,57,0.35)] w-full md:w-auto"
               onClick={() => window.open('https://wa.me/5527999999999','_blank')}
             >
-              <Phone size={18} />
+              <svg viewBox="0 0 24 24" className="w-5 h-5 fill-white shrink-0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
               Falar com o Advogado Agora
             </button>
-            <span className="text-[11px] text-white/30 font-light">Seg–Sex, 9h às 18h &middot; Atendimento Online</span>
+            <span className="text-[11px] text-[#091D39]/50 font-light">Seg–Sex, 9h às 18h · Resposta em até 2 horas</span>
           </div>
         </motion.div>
       </div>
