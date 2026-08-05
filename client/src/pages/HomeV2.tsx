@@ -110,24 +110,15 @@ function HeroV2() {
         >
           <span className="inline-flex items-center gap-2 px-3 py-1 border border-[#CFAE70]/30 bg-[#CFAE70]/10 text-[11px] font-bold tracking-[0.2em] uppercase text-[#CFAE70] mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-[#CFAE70] animate-pulse" />
-            Atendimento Online Disponível
+            Direito Previdenciário
           </span>
-          <h1 className="text-[clamp(36px,5vw,62px)] font-bold leading-[1.05] text-white tracking-[-0.02em] mb-6 font-heading">
-            Você trabalhou a vida inteira.<br/>
-            <span className="text-[#CFAE70]">Seu benefício do INSS merece atenção especializada.</span>
+          <h1 className="text-[clamp(36px,5vw,64px)] font-bold leading-[1.05] text-white tracking-[-0.02em] mb-6 font-heading">
+            Seu benefício do INSS<br/>
+            <span className="text-[#CFAE70]">em boas mãos.</span>
           </h1>
-          <ul className="mb-10 flex flex-col gap-3">
-            {[
-              "Aposentadorias, revisões e planejamento previdenciário",
-              "Benefício negado? Recurso administrativo e ação judicial",
-              "Atendimento 100% digital — sem você sair de casa",
-            ].map((item, i) => (
-              <li key={i} className="flex items-center gap-3 text-[15px] md:text-[16px] text-white/75 font-light">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#CFAE70] shrink-0" />
-                {item}
-              </li>
-            ))}
-          </ul>
+          <p className="text-[17px] md:text-[18px] text-white/65 leading-[1.65] mb-10 max-w-[520px] font-light">
+            Aposentadorias, revisões, auxílio-doença e planejamento previdenciário. Atendimento personalizado para garantir os direitos que você conquistou ao longo da vida.
+          </p>
           <div className="flex flex-col sm:flex-row gap-4 mb-10">
             <button 
               className="bg-[#CFAE70] text-[#091D39] text-[13px] font-bold px-8 py-4 flex items-center justify-center gap-2 hover:bg-white transition-colors tracking-[0.15em] uppercase shadow-xl"
@@ -153,9 +144,9 @@ function HeroV2() {
 function StatsBarV2() {
   const stats = [
     { value: "100+", label: "Casos atendidos" },
-    { value: "Especialista", label: "Direito Previdenciário" },
     { value: "100%", label: "Digital, sem deslocamento" },
     { value: "Nacional", label: "Atendimento em todo o Brasil" },
+    { value: "Especialista", label: "Direito Previdenciário" },
   ];
 
   return (
@@ -643,11 +634,7 @@ function TestimonialsV2() {
     return () => { if (intervalRef.current) clearInterval(intervalRef.current); };
   }, [paused]);
 
-  // Show 2 cards on desktop, 1 on mobile
-  const visible = [
-    testimonials[current % total],
-    testimonials[(current + 1) % total],
-  ];
+  const visible = testimonials[current % total];
 
   return (
     <section className="py-[80px] md:py-[100px] bg-[#091D39] border-b border-white/10 relative overflow-hidden">
@@ -697,7 +684,7 @@ function TestimonialsV2() {
           </div>
         </div>
 
-        {/* Cards */}
+        {/* Card */}
         <div
           className="overflow-hidden border border-white/10"
           onMouseEnter={() => setPaused(true)}
@@ -710,28 +697,21 @@ function TestimonialsV2() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -40 }}
               transition={{ duration: 0.35 }}
-              className="grid grid-cols-1 md:grid-cols-2 gap-[1px] bg-white/10"
+              className="bg-[#0B2347] p-10 md:p-14 flex flex-col gap-8 max-w-[780px] mx-auto"
             >
-              {visible.map((t, idx) => (
-                <div
-                  key={idx}
-                  className={`bg-[#0B2347] p-8 md:p-10 flex flex-col gap-6 ${idx === 1 ? 'hidden md:flex' : ''}`}
-                >
-                  <StarRating count={t.stars} />
-                  <p className="text-[16px] text-white/80 leading-[1.8] font-light italic flex-1">
-                    "{t.text}"
-                  </p>
-                  <div className="flex items-center gap-4 pt-5 border-t border-white/10">
-                    <div className="w-11 h-11 bg-[#CFAE70]/20 border border-[#CFAE70]/30 rounded-full flex items-center justify-center shrink-0">
-                      <span className="text-[14px] font-bold text-[#CFAE70]">{t.name.charAt(0)}</span>
-                    </div>
-                    <div>
-                      <span className="block text-[14px] font-bold text-white">{t.name}</span>
-                      <span className="block text-[12px] text-white/40 font-light">{t.city}</span>
-                    </div>
-                  </div>
+              <StarRating count={visible.stars} />
+              <p className="text-[18px] md:text-[20px] text-white/85 leading-[1.75] font-light italic">
+                "{visible.text}"
+              </p>
+              <div className="flex items-center gap-4 pt-6 border-t border-white/10">
+                <div className="w-12 h-12 bg-[#CFAE70]/20 border border-[#CFAE70]/30 rounded-full flex items-center justify-center shrink-0">
+                  <span className="text-[15px] font-bold text-[#CFAE70]">{visible.name.charAt(0)}</span>
                 </div>
-              ))}
+                <div>
+                  <span className="block text-[15px] font-bold text-white">{visible.name}</span>
+                  <span className="block text-[13px] text-white/40 font-light">{visible.city}</span>
+                </div>
+              </div>
             </motion.div>
           </AnimatePresence>
         </div>
