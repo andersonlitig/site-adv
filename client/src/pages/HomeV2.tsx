@@ -13,14 +13,13 @@ export default function HomeV2() {
       <HeaderV2 />
       <main>
         <HeroV2 />
-        <StatsBarV2 />
+        <ComoFuncionaV2 />
         <TriagemInterativaV2 />
         <ServicesV2 />
-        <ProcessV2 />
+        <CTAWppV2 />
         <AboutV2 />
         <TestimonialsV2 />
         <BlogV2 />
-        <CTAWppV2 />
         <FAQV2 />
         <ContactV2 />
       </main>
@@ -164,6 +163,64 @@ function StatsBarV2() {
             >
               <span className="text-[32px] md:text-[40px] font-bold text-[#091D39] leading-none tracking-[-0.03em] font-heading">{s.value}</span>
               <span className="text-[12px] text-[#767672] mt-2 uppercase tracking-[0.1em] font-medium">{s.label}</span>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ComoFuncionaV2() {
+  const steps = [
+    { num: "01", title: "Conte seu caso", desc: "Fale pelo WhatsApp com uma breve descrição da sua situação. Sem formulários complexos, sem burocracia." },
+    { num: "02", title: "Analisamos tudo", desc: "Revisamos seu CNIS, documentos e histórico junto ao INSS para identificar todos os direitos que você tem." },
+    { num: "03", title: "Apresentamos a solução", desc: "Você recebe orientação clara: o melhor caminho, os prazos realistas e o que esperar em cada etapa." },
+    { num: "04", title: "Conduzimos até o resultado", desc: "Cuidamos de toda a parte jurídica enquanto você acompanha o andamento. O trabalho é nosso." },
+  ];
+
+  return (
+    <section className="py-[80px] md:py-[100px] bg-white border-b border-[#E0E0DC]">
+      <div className="max-w-[1160px] mx-auto px-4 md:px-8">
+        {/* Intro */}
+        <motion.div
+          className="grid grid-cols-1 lg:grid-cols-[1fr_auto] items-end gap-8 mb-14"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <div>
+            <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#CFAE70] mb-3 block">Como trabalhamos</span>
+            <h2 className="text-[clamp(28px,3.5vw,40px)] font-bold text-[#091D39] tracking-[-0.02em] leading-[1.15] font-heading">
+              Atendimento especializado,<br className="hidden md:block" /> do início ao resultado.
+            </h2>
+            <p className="text-[16px] text-[#767672] mt-4 max-w-[520px] font-light">
+              Atuamos exclusivamente em Direito Previdenciário, com dedicação técnica e atenção humana em cada caso — administrativo ou judicial, do primeiro contato à decisão final.
+            </p>
+          </div>
+          <button
+            className="hidden lg:flex items-center gap-2 text-[12px] font-bold tracking-widest uppercase text-[#091D39] px-6 py-3 border border-[#091D39] hover:bg-[#091D39] hover:text-white transition-all shrink-0"
+            onClick={() => window.open('https://wa.me/5527999999999','_blank')}
+          >
+            Falar pelo WhatsApp <ArrowRight size={14} />
+          </button>
+        </motion.div>
+
+        {/* Steps */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[1px] bg-[#E0E0DC] border border-[#E0E0DC]">
+          {steps.map((s, i) => (
+            <motion.div
+              key={i}
+              className="bg-white p-8 flex flex-col hover:bg-[#F4F4F2] transition-colors group"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.08 }}
+            >
+              <span className="text-[42px] font-bold text-[#091D39]/8 leading-none mb-5 font-heading select-none">{s.num}</span>
+              <div className="w-8 h-[2px] bg-[#CFAE70] mb-5" />
+              <h4 className="text-[15px] font-bold text-[#091D39] mb-3 leading-[1.3]">{s.title}</h4>
+              <p className="text-[13px] text-[#767672] leading-[1.65] font-light flex-1">{s.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -560,16 +617,13 @@ function AboutV2() {
             <h2 className="text-[clamp(28px,3vw,36px)] font-bold text-[#091D39] tracking-[-0.02em] leading-[1.15] mb-6 font-heading">Anderson Litig</h2>
             
             <div className="space-y-4 mb-8">
-              <p className="text-[15px] text-[#767672] leading-[1.75] font-light">Sou advogado inscrito na OAB/ES sob o nº 40.152, pós-graduado em Direito Previdenciário, com atuação exclusiva nessa área. Atendo clientes em Serra, na Grande Vitória e em todo o Brasil de forma 100% digital — por videochamada e WhatsApp, sem que você precise sair de casa.</p>
-              <p className="text-[15px] text-[#767672] leading-[1.75] font-light">Você não é um número. Cada caso que atendo tem uma história por trás — anos de trabalho, contribuições ao longo de uma vida inteira, e a expectativa de receber o que é seu por direito. Por isso, atuo com atenção técnica e cuidado humano em cada etapa.</p>
-              <p className="text-[15px] text-[#767672] leading-[1.75] font-light">A especialização em Direito Previdenciário me permite acompanhar de perto as constantes mudanças legislativas e as teses jurisprudenciais que impactam diretamente os benefícios do INSS — um campo que exige atualização permanente para uma atuação verdadeiramente eficaz.</p>
+              <p className="text-[15px] text-[#767672] leading-[1.75] font-light">Advogado com atuação exclusiva em Direito Previdenciário, membro da Comissão de Direito Previdenciário da OAB/ES e pós-graduado na área. Atendo em todo o Brasil de forma 100% digital — por WhatsApp e videochamada, sem que você precise sair de casa.</p>
+              <p className="text-[15px] text-[#767672] leading-[1.75] font-light">Cada caso tem uma história por trás — anos de trabalho e a expectativa de receber o que é seu por direito. Por isso, atuo com atenção técnica e cuidado humano em cada etapa, do primeiro contato até o resultado.</p>
             </div>
 
             <div className="flex flex-wrap gap-2 mb-8">
               <span className="text-[10px] font-bold tracking-[0.1em] uppercase text-[#091D39] bg-[#F4F4F2] px-3 py-2 border border-[#E0E0DC]">Pós-graduado em Dir. Previdenciário</span>
-              <span className="text-[10px] font-bold tracking-[0.1em] uppercase text-[#091D39] bg-[#F4F4F2] px-3 py-2 border border-[#E0E0DC]">OAB/ES 40.152</span>
-              <span className="text-[10px] font-bold tracking-[0.1em] uppercase text-[#091D39] bg-[#F4F4F2] px-3 py-2 border border-[#E0E0DC]">Provimento 205/2021 CFOAB</span>
-              <span className="text-[10px] font-bold tracking-[0.1em] uppercase text-[#091D39] bg-[#F4F4F2] px-3 py-2 border border-[#E0E0DC]">Atendimento 100% Digital</span>
+              <span className="text-[10px] font-bold tracking-[0.1em] uppercase text-[#091D39] bg-[#F4F4F2] px-3 py-2 border border-[#E0E0DC]">Membro da Comissão de Dir. Previdenciário</span>
               <span className="text-[10px] font-bold tracking-[0.1em] uppercase text-[#091D39] bg-[#F4F4F2] px-3 py-2 border border-[#E0E0DC]">Atuação Nacional</span>
             </div>
             
