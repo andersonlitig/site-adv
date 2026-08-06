@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-motion";
 import { ArrowRight, Phone, Mail, MapPin, Send, Calendar, Target, Globe, Users, Shield, FileText, Briefcase, Landmark, ShieldAlert, Scale, ChevronDown, Plus, Minus, History, CalendarCheck, Compass, SearchCheck, Baby, Stethoscope, Bandage, HeartHandshake, FileWarning, FileCheck, Calculator, FileSearch, Award, RefreshCw, ReceiptText, HandHeart, ChevronLeft, ChevronRight } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logoWhite from "@/assets/logo-white.png";
+import logoDark from "@/assets/logo-dark.png";
 import heroImage from "@/assets/3em3-vitoria_15_1767549660783.jpg";
 import andersonPhoto from "@/assets/anderson-litig.png";
 
@@ -63,7 +64,7 @@ function HeaderV2() {
       <div className="max-w-[1160px] mx-auto px-4 md:px-8">
         <div className="grid grid-cols-[auto_1fr_auto] items-center gap-8">
           <Link href="/" className="no-underline group flex items-center gap-4">
-            <img src={logo} alt="Anderson Litig" className="h-10 md:h-12 w-auto object-contain brightness-0 invert" />
+            <img src={logoWhite} alt="Anderson Litig" className="h-10 md:h-12 w-auto object-contain" />
           </Link>
           <nav className="hidden lg:flex gap-1 justify-center">
             <a className="text-[12px] uppercase tracking-wider font-bold text-white px-4 py-2 border-b-2 border-[#CFAE70] cursor-pointer transition-colors" href="#">Início</a>
@@ -184,26 +185,20 @@ function ComoFuncionaV2() {
       <div className="max-w-[1160px] mx-auto px-4 md:px-8">
         {/* Intro */}
         <motion.div
-          className="grid grid-cols-1 lg:grid-cols-[1fr_auto] items-end gap-8 mb-14"
+          className="mb-14"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <div>
-            <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#CFAE70] mb-3 block">Como trabalhamos</span>
+          <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#CFAE70] mb-3 block">Como funciona</span>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <h2 className="text-[clamp(28px,3.5vw,40px)] font-bold text-[#091D39] tracking-[-0.02em] leading-[1.15] font-heading">
-              Atendimento especializado,<br className="hidden md:block" /> do início ao resultado.
+              Do contato ao resultado —<br className="hidden md:block" /> simples, direto e 100% digital.
             </h2>
-            <p className="text-[16px] text-[#767672] mt-4 max-w-[520px] font-light">
-              Atuamos exclusivamente em Direito Previdenciário, com dedicação técnica e atenção humana em cada caso — administrativo ou judicial, do primeiro contato à decisão final.
+            <p className="text-[15px] text-[#767672] max-w-[400px] font-light leading-[1.65] shrink-0 md:text-right">
+              Sem deslocamento, sem burocracia.<br/>Você cuida da sua vida enquanto cuidamos do seu caso.
             </p>
           </div>
-          <button
-            className="hidden lg:flex items-center gap-2 text-[12px] font-bold tracking-widest uppercase text-[#091D39] px-6 py-3 border border-[#091D39] hover:bg-[#091D39] hover:text-white transition-all shrink-0"
-            onClick={() => window.open('https://wa.me/5527999999999','_blank')}
-          >
-            Falar pelo WhatsApp <ArrowRight size={14} />
-          </button>
         </motion.div>
 
         {/* Steps */}
@@ -1028,7 +1023,7 @@ function FooterV2() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1.5fr] gap-12 py-16 border-b border-white/10">
           <div>
             <Link href="/" className="inline-block mb-4">
-              <img src={logo} alt="Anderson Litig" className="h-12 w-auto brightness-0 invert opacity-90" />
+              <img src={logoWhite} alt="Anderson Litig" className="h-12 w-auto opacity-90" />
             </Link>
             <div className="text-[12px] font-bold tracking-widest uppercase text-[#CFAE70] mb-4">OAB/ES nº 40.152</div>
             <p className="text-[14px] text-white/50 leading-[1.75] max-w-[320px] font-light">Atendimento jurídico previdenciário especializado com atuação administrativa e judicial. Protegendo seus direitos frente ao INSS com ética e transparência.</p>
