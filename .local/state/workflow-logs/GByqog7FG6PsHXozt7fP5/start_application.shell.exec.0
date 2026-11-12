@@ -1,0 +1,35 @@
+
+> rest-express@1.0.0 dev:client
+> vite dev --port 5000
+
+[1G[0K
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J
+  [32m[1mVITE[22m v7.1.12[39m  [2mready in [0m[1m331[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5000[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://172.24.0.2:[1m5000[22m/[39m
+[2m[32m  ➜[39m[22m[2m  press [22m[1mh + enter[22m[2m to show help[22m
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[RUNTIME_ERROR]{"type":"runtime-error","timestamp":1777867877649,"name":"Error","message":"Calculator is not defined","stack":"    at RevisaoBeneficio /home/runner/workspace/client/src/pages/JaAposentadoV2.tsx:192:14\n\n\n\n\n\n\n\n\n","loc":{"line":192,"column":14,"file":"/home/runner/workspace/client/src/pages/JaAposentadoV2.tsx"},"frame":"190|  function RevisaoBeneficio() {\n191|    const cards = [\n192|      { icon: <Calculator />, title: \"Erro no cálculo dos salários\", desc: \"O INSS pode ter usado salários errados ou deixado de incluir contribuições que você fez. Cada salário ignorado ou reduzido diminui o valor médio que serve de base para calcular o seu benefício — e essa diferença se acumula mês a mês.\", detail: \"Erro mais comum em benefícios antigos\" },\n   |               ^\n193|      { icon: <ShieldAlert />, title: \"Trabalho perigoso não reconhecido\", desc: \"Quem trabalhou em condições perigosas — barulho alto, produtos químicos, calor extremo — pode ter direito a uma conversão que aumenta o tempo de contribuição contado. Se o INSS não reconheceu, o cálculo fica menor do que deveria.\", detail: \"Aumenta o tempo de contribuição reconhecido\" },\n194|      { icon: <Search />, title: \"Revisão do teto\", desc: \"Alguns aposentados tiveram o benefício limitado pelo teto do INSS na época da concessão. Com a mudança dos tetos ao longo dos anos, pode ser possível revisar o cálculo para incluir aqueles salários que foram cortados.\", detail: \"Válido para quem tinha salários acima do teto\" },"}

@@ -25,19 +25,26 @@ import BlogPost2 from "@/pages/BlogPost2";
 import BlogPost3 from "@/pages/BlogPost3";
 import PartnerPage from "./pages/PartnerPage";
 import HomeV2 from "@/pages/HomeV2";
+import BeneficioNegadoV2 from "@/pages/BeneficioNegadoV2";
+import IncapacidadeV2 from "@/pages/IncapacidadeV2";
+import RevisaoV2 from "@/pages/RevisaoV2";
+import SalarioMaternidadeV2 from "@/pages/SalarioMaternidadeV2";
+import JaAposentadoV2 from "@/pages/JaAposentadoV2";
 import PlanejamentoV2 from "@/pages/PlanejamentoV2";
 import AposentarV2 from "@/pages/AposentarV2";
-import BeneficioNegadoV2 from "@/pages/BeneficioNegadoV2";
-import JaAposentadoV2 from "@/pages/JaAposentadoV2";
+import HomeV2_Backup from "@/pages/HomeV2_Backup";
 
 function Router() {
   return (
     <Switch>
-      <Route path="/v1" component={Home} />
       <Route path="/" component={HomeV2} />
-      <Route path="/v2/planejamento" component={PlanejamentoV2} />
-      <Route path="/v2/aposentar" component={AposentarV2} />
-      <Route path="/v2/negado" component={BeneficioNegadoV2} />
+      <Route path="/backup" component={HomeV2_Backup} />
+      <Route path="/salario-maternidade" component={SalarioMaternidadeV2} />
+      <Route path="/planejamento" component={PlanejamentoV2} />
+      <Route path="/aposentadorias" component={AposentarV2} />
+      <Route path="/beneficio-negado" component={BeneficioNegadoV2} />
+      <Route path="/beneficios-por-incapacidade" component={IncapacidadeV2} />
+      <Route path="/revisao-de-aposentadoria" component={RevisaoV2} />
       <Route path="/v2/ja-aposentado" component={JaAposentadoV2} />
       <Route path="/atuacao/saude" component={HealthLaw} />
       <Route path="/atuacao/previdenciario" component={SocialSecurityLaw} />

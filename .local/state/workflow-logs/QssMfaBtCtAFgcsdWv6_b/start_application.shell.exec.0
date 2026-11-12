@@ -1,0 +1,131 @@
+
+> rest-express@1.0.0 dev:client
+> vite dev --port 5000
+
+[1G[0K
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J
+  [32m[1mVITE[22m v7.1.12[39m  [2mready in [0m[1m368[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5000[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://172.24.0.2:[1m5000[22m/[39m
+[2m[32m  ➜[39m[22m[2m  press [22m[1mh + enter[22m[2m to show help[22m
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m3:51:06 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/PlanejamentoV2.tsx, /src/index.css[22m
+[RUNTIME_ERROR]{"type":"runtime-error","timestamp":1777866745462,"name":"Error","message":"Stethoscope is not defined","stack":"    at MotivosComuns /home/runner/workspace/client/src/pages/BeneficioNegadoV2.tsx:164:14\n\n\n\n\n\n\n\n\n","loc":{"line":164,"column":14,"file":"/home/runner/workspace/client/src/pages/BeneficioNegadoV2.tsx"},"frame":"162|      { icon: <FileSearch size={20} />, title: \"Falta de documento\", desc: \"O motivo número um de negativas. O INSS considera o documento ilegível, incompleto ou não aceita as provas apresentadas para comprovar vínculo de emprego.\" },\n163|      { icon: <Clock size={20} />, title: \"Erro de contagem de tempo\", desc: \"O sistema do INSS frequentemente desconsidera períodos trabalhados que constam em carteira mas não aparecem no CNIS ou ignora averbações.\" },\n164|      { icon: <Stethoscope size={20} />, title: \"Perícia desfavorável\", desc: \"Aposentadorias por invalidez e auxílios-doença negados por médicos que não avaliam profundamente a incapacidade, mesmo com exames particulares provando a doença.\" },\n   |               ^\n165|      { icon: <Briefcase size={20} />, title: \"Aposentadoria por atividade perigosa negada\", desc: \"O INSS não reconheceu as condições do ambiente de trabalho. A comprovação precisa ser feita com documentos específicos — e muitas vezes exige ajuda técnica para ser aceita.\" },\n166|      { icon: <Globe size={20} />, title: \"Aposentadoria rural negada\", desc: \"O INSS não aceitou as provas do trabalho no campo. Existem vários documentos alternativos que podem resolver — declarações, notas fiscais, fotos, registros de sindicato e testemunhos.\" },"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m3:54:14 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/App.tsx, /src/index.css[22m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m3:54:14 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/HomeV2.tsx, /src/index.css[22m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m3:54:14 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/HomeV2.tsx, /src/index.css[22m [33m(x2)[39m

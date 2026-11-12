@@ -17,6 +17,7 @@ export default function HomeV2() {
         <ComoFuncionaV2 />
         <TriagemInterativaV2 />
         <ServicesV2 />
+        <GuiasProfissoesV2 />
         <CTAWppV2 />
         <AboutV2 />
         <TestimonialsV2 />
@@ -35,7 +36,7 @@ function WppFloat() {
   return (
     <div 
       className="fixed bottom-7 right-7 z-[999] bg-[#25D366] w-14 h-14 flex items-center justify-center cursor-pointer shadow-lg shadow-[#25D366]/30 transition-all duration-300 hover:bg-[#1db957] hover:scale-110 rounded-full"
-      onClick={() => window.open('https://wa.me/5527999999999','_blank')}
+      onClick={() => window.open('https://wa.me/5527992942888','_blank')}
       title="Falar pelo WhatsApp"
     >
       <svg viewBox="0 0 24 24" className="w-6 h-6 fill-white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
@@ -76,7 +77,7 @@ function HeaderV2() {
           </nav>
           <button 
             className="bg-[#CFAE70] text-[#091D39] text-[12px] uppercase tracking-widest font-bold px-6 py-3 flex items-center gap-2 hover:bg-white transition-all duration-300"
-            onClick={() => window.open('https://wa.me/5527999999999','_blank')}
+            onClick={() => window.open('https://wa.me/5527992942888','_blank')}
           >
             <Phone size={14} />
             <span className="hidden sm:inline">Falar pelo WhatsApp</span>
@@ -90,7 +91,7 @@ function HeaderV2() {
 
 function HeroV2() {
   return (
-    <section className="relative bg-[#091D39] py-[100px] md:py-[160px] border-b-4 border-[#CFAE70] overflow-hidden">
+    <section className="relative bg-[#091D39] min-h-[80vh] pt-[120px] pb-[80px] md:pt-[160px] md:pb-[120px] border-b-4 border-[#CFAE70] overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-[#091D39]/82 z-10" />
@@ -113,16 +114,16 @@ function HeroV2() {
             Direito Previdenciário
           </span>
           <h1 className="text-[clamp(36px,5vw,64px)] font-bold leading-[1.05] text-white tracking-[-0.02em] mb-6 font-heading">
-            Seu benefício do INSS<br/>
-            <span className="text-[#CFAE70]">em boas mãos.</span>
+            Advogado Previdenciário<br/>
+            <span className="text-[#CFAE70]">Especialista em INSS.</span>
           </h1>
-          <p className="text-[17px] md:text-[18px] text-white/65 leading-[1.65] mb-10 max-w-[520px] font-light">
-            Aposentadorias, revisões, auxílio-doença e planejamento previdenciário. Atendimento personalizado para garantir os direitos que você conquistou ao longo da vida.
+          <p className="text-lg md:text-xl text-white/70 leading-[1.6] mb-10 max-w-[580px] font-light">
+            Atendimento 100% digital para todo o Brasil. Lutamos pelo seu direito contra o INSS com agilidade e transparência, para que você conquiste seu benefício sem burocracia e sem dor de cabeça.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mb-10">
             <button 
               className="bg-[#CFAE70] text-[#091D39] text-[13px] font-bold px-8 py-4 flex items-center justify-center gap-2 hover:bg-white transition-colors tracking-[0.15em] uppercase shadow-xl"
-              onClick={() => window.open('https://wa.me/5527999999999','_blank')}
+              onClick={() => window.open('https://wa.me/5527992942888','_blank')}
             >
               <Phone size={16} />
               Falar pelo WhatsApp
@@ -173,52 +174,62 @@ function StatsBarV2() {
 }
 
 function ComoFuncionaV2() {
-  const steps = [
-    { num: "01", title: "Conte seu caso", desc: "Fale pelo WhatsApp com uma breve descrição da sua situação. Sem formulários complexos, sem burocracia." },
-    { num: "02", title: "Analisamos tudo", desc: "Revisamos seu CNIS, documentos e histórico junto ao INSS para identificar todos os direitos que você tem." },
-    { num: "03", title: "Apresentamos a solução", desc: "Você recebe orientação clara: o melhor caminho, os prazos realistas e o que esperar em cada etapa." },
-    { num: "04", title: "Conduzimos até o resultado", desc: "Cuidamos de toda a parte jurídica enquanto você acompanha o andamento. O trabalho é nosso." },
-  ];
-
   return (
     <section className="py-[80px] md:py-[100px] bg-white border-b border-[#E0E0DC]">
       <div className="max-w-[1160px] mx-auto px-4 md:px-8">
-        {/* Intro */}
+
         <motion.div
-          className="mb-14"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#CFAE70] mb-3 block">Como funciona</span>
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-            <h2 className="text-[clamp(28px,3.5vw,40px)] font-bold text-[#091D39] tracking-[-0.02em] leading-[1.15] font-heading">
-              Do contato ao resultado —<br className="hidden md:block" /> simples, direto e 100% digital.
-            </h2>
-            <p className="text-[15px] text-[#767672] max-w-[400px] font-light leading-[1.65] shrink-0 md:text-right">
-              Sem deslocamento, sem burocracia.<br/>Você cuida da sua vida enquanto cuidamos do seu caso.
-            </p>
+          <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#CFAE70] mb-4 block">Sobre o Escritório</span>
+
+          {/* Big heading */}
+          <h2 className="text-[clamp(28px,4vw,48px)] font-bold text-[#091D39] tracking-[-0.02em] leading-[1.1] mb-12 max-w-[820px] font-heading">
+            Atuação previdenciária com análise técnica, atenção individual e estratégia.
+          </h2>
+
+          {/* Two cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-[1px] bg-[#E0E0DC] border border-[#E0E0DC] shadow-sm">
+
+            {/* Left: credentials */}
+            <div className="bg-[#F4F4F2] p-8 md:p-10">
+              <h3 className="text-[clamp(18px,2vw,24px)] font-bold text-[#091D39] leading-[1.25] mb-3 font-heading">Anderson Litig</h3>
+              <p className="text-[14px] text-[#CFAE70] font-semibold leading-[1.7] mb-5">Advogado Previdenciário · OAB/ES nº 40.152</p>
+              <ul className="space-y-3">
+                {[
+                  "Pós-graduado em Direito Previdenciário",
+                  "Membro da Comissão de Direito Previdenciário da OAB Serra/ES",
+                  "Atendimento em todo o Brasil · 100% digital",
+                  "RGPS e RPPS · Cada caso analisado individualmente"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-[14px] text-[#767672] font-light">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#CFAE70] mt-[6px] shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Right: positioning */}
+            <div className="bg-white p-8 md:p-10">
+              <h3 className="text-[clamp(18px,2vw,24px)] font-bold text-[#091D39] leading-[1.25] mb-5 font-heading">
+                Decisão previdenciária séria não começa com protocolo.
+              </h3>
+              <p className="text-[14px] text-[#CFAE70] font-semibold leading-[1.7] mb-4">
+                Começa com análise técnica individualizada.
+              </p>
+              <p className="text-[14px] text-[#767672] leading-[1.7] font-light mb-3">
+                O objetivo não é apenas requerer, mas definir o melhor caminho antes de qualquer movimento — administrativo ou judicial.
+              </p>
+              <p className="text-[14px] text-[#767672] leading-[1.7] font-light">
+                Cada cliente é atendido com leitura técnica do histórico contributivo e do cenário jurídico aplicável ao seu caso.
+              </p>
+            </div>
+
           </div>
         </motion.div>
-
-        {/* Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[1px] bg-[#E0E0DC] border border-[#E0E0DC]">
-          {steps.map((s, i) => (
-            <motion.div
-              key={i}
-              className="bg-white p-8 flex flex-col hover:bg-[#F4F4F2] transition-colors group"
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
-            >
-              <span className="text-[42px] font-bold text-[#091D39]/8 leading-none mb-5 font-heading select-none">{s.num}</span>
-              <div className="w-8 h-[2px] bg-[#CFAE70] mb-5" />
-              <h4 className="text-[15px] font-bold text-[#091D39] mb-3 leading-[1.3]">{s.title}</h4>
-              <p className="text-[13px] text-[#767672] leading-[1.65] font-light flex-1">{s.desc}</p>
-            </motion.div>
-          ))}
-        </div>
       </div>
     </section>
   );
@@ -232,21 +243,62 @@ function TriagemInterativaV2() {
   const [whatsapp, setWhatsapp] = useState('');
 
   const problemas = [
-    { id: 'planejamento', label: 'Planejar minha aposentadoria', sub: 'Quero saber o melhor momento e valor', icon: <Target size={20} />, link: '/v2/planejamento' },
-    { id: 'aposentar', label: 'Dar entrada na aposentadoria', sub: 'Tenho contribuições e quero me aposentar', icon: <CalendarCheck size={20} />, link: '/v2/aposentar' },
-    { id: 'negado', label: 'Meu benefício foi negado', sub: 'O INSS recusou meu pedido', icon: <ShieldAlert size={20} />, link: '/v2/negado' },
-    { id: 'revisao', label: 'Revisar o valor do meu benefício', sub: 'Acho que estou recebendo menos do que deveria', icon: <RefreshCw size={20} />, link: '/v2/ja-aposentado#revisao' },
-    { id: 'desconto', label: 'Desconto não autorizado no INSS', sub: 'Cobrança indevida no meu benefício', icon: <ReceiptText size={20} />, link: '/v2/ja-aposentado#descontos' },
+    { id: 'planejamento', label: 'Planejar minha aposentadoria', sub: 'Quero saber o melhor momento e valor', icon: <Target size={20} />, link: '/planejamento' },
+    { id: 'aposentar', label: 'Dar entrada na aposentadoria', sub: 'Tenho contribuições e quero me aposentar', icon: <CalendarCheck size={20} />, link: '/aposentadorias' },
+    { id: 'negado', label: 'Meu benefício foi negado', sub: 'O INSS recusou meu pedido', icon: <ShieldAlert size={20} />, link: '/beneficio-negado' },
+    { id: 'revisao', label: 'Revisar o valor do meu benefício', sub: 'Acho que estou recebendo menos do que deveria', icon: <RefreshCw size={20} />, link: '/revisao-de-aposentadoria' },
+    { id: 'desconto', label: 'Desconto não autorizado no INSS', sub: 'Cobrança indevida no meu benefício', icon: <ReceiptText size={20} />, link: '/#contato' },
     { id: 'incapacidade', label: 'Afastamento por problema de saúde', sub: 'Auxílio-doença ou aposentadoria por invalidez', icon: <Stethoscope size={20} />, link: '#servicos' },
   ];
 
-  const statusOptions = [
-    { id: 'nunca', label: 'Nunca dei entrada em nada', sub: 'Ainda não comecei o processo' },
-    { id: 'aguardando', label: 'Aguardando resposta do INSS', sub: 'Já protocolei o pedido' },
-    { id: 'negativa', label: 'Recebi uma negativa recentemente', sub: 'O INSS indeferiu meu pedido' },
-    { id: 'beneficiario', label: 'Já sou beneficiário', sub: 'Recebo aposentadoria, pensão ou auxílio' },
-    { id: 'suspenso', label: 'Meu benefício foi suspenso', sub: 'O pagamento parou sem explicação' },
-  ];
+  const getStatusOptions = (problemaId: string) => {
+    switch(problemaId) {
+      case 'planejamento':
+        return [
+          { id: 'ainda_trabalhando', label: 'Ainda estou trabalhando e contribuindo', sub: 'Quero saber quando e com quanto me aposento' },
+          { id: 'parei_contribuir', label: 'Parei de contribuir há um tempo', sub: 'Quero saber se já tenho direito ou o que falta' },
+          { id: 'duvida_regra', label: 'Tenho dúvida sobre qual regra é melhor', sub: 'Atingi os requisitos mas não sei qual pedir' },
+        ];
+      case 'aposentar':
+        return [
+          { id: 'nunca', label: 'Nunca dei entrada em nada', sub: 'Ainda não comecei o processo' },
+          { id: 'aguardando', label: 'Aguardando resposta do INSS', sub: 'Já protocolei e está em análise' },
+          { id: 'negado_antes', label: 'Já tentei antes e foi negado', sub: 'Quero tentar novamente da forma certa' },
+        ];
+      case 'negado':
+        return [
+          { id: 'recentemente', label: 'Foi negado nos últimos 30 dias', sub: 'Ainda está no prazo de recurso' },
+          { id: 'mais_tempo', label: 'Faz mais de 30 dias que foi negado', sub: 'Preciso saber se posso entrar com ação' },
+          { id: 'nao_entendi', label: 'Não entendi o motivo da negativa', sub: 'O INSS alegou falta de tempo ou documento' },
+        ];
+      case 'revisao':
+        return [
+          { id: 'pouco_tempo', label: 'Me aposentei há menos de 10 anos', sub: 'Ainda no prazo para pedir revisão' },
+          { id: 'muito_tempo', label: 'Me aposentei há mais de 10 anos', sub: 'Recebo há muito tempo' },
+          { id: 'erro_calculo', label: 'Acho que não contaram algum período', sub: 'Tempo rural, insalubridade ou sem carteira' },
+        ];
+      case 'desconto':
+        return [
+          { id: 'emprestimo', label: 'Empréstimo que não solicitei', sub: 'Estão descontando parcelas indevidas' },
+          { id: 'sindicato', label: 'Mensalidade de associação/sindicato', sub: 'Desconto de entidade que não conheço' },
+          { id: 'nao_sei', label: 'Não sei a origem do desconto', sub: 'Só vi que o valor diminuiu no extrato' },
+        ];
+      case 'incapacidade':
+        return [
+          { id: 'doente_agora', label: 'Estou doente/afastado agora', sub: 'Preciso pedir o auxílio-doença' },
+          { id: 'pericia_negada', label: 'Fiz a perícia e foi negada', sub: 'O perito disse que estou apto' },
+          { id: 'agravou', label: 'Minha situação agravou muito', sub: 'Acho que tenho direito a aposentadoria por invalidez' },
+        ];
+      default:
+        return [
+          { id: 'nunca', label: 'Nunca dei entrada em nada', sub: 'Ainda não comecei o processo' },
+          { id: 'aguardando', label: 'Aguardando resposta do INSS', sub: 'Já protocolei o pedido' },
+          { id: 'negativa', label: 'Recebi uma negativa recentemente', sub: 'O INSS indeferiu meu pedido' },
+        ];
+    }
+  };
+
+  const statusOptions = getStatusOptions(problema);
 
   const problemaObj = problemas.find(p => p.id === problema);
   const statusObj = statusOptions.find(s => s.id === status);
@@ -263,7 +315,7 @@ function TriagemInterativaV2() {
 
   const handleWhatsApp = () => {
     const msg = `Olá! Vim pelo site e gostaria de uma análise do meu caso.\n\n*Assunto:* ${problemaObj?.label || ''}\n*Situação atual:* ${statusObj?.label || ''}\n*Nome:* ${nome}\n*WhatsApp para retorno:* ${whatsapp}\n\nAguardo o contato. Obrigado!`;
-    window.open(`https://wa.me/5527999999999?text=${encodeURIComponent(msg)}`, '_blank');
+    window.open(`https://wa.me/5527992942888?text=${encodeURIComponent(msg)}`, '_blank');
   };
 
   const steps = ['Problema', 'Situação', 'Contato'];
@@ -430,7 +482,7 @@ function TriagemInterativaV2() {
                     value={whatsapp}
                     onChange={e => setWhatsapp(e.target.value)}
                     className="w-full bg-white/5 border border-white/15 focus:border-[#CFAE70] focus:bg-white/10 text-white text-[15px] px-4 py-3.5 outline-none transition-all placeholder:text-white/20 font-light"
-                    placeholder="(27) 99999-9999"
+                    placeholder="(27) 99294-2888"
                   />
                 </div>
               </div>
@@ -458,15 +510,15 @@ function TriagemInterativaV2() {
 
 function ServicesV2() {
   const services = [
-    { icon: <Award size={20} />, title: "Aposentadorias", desc: "Por idade, tempo de contribuição, especial, rural e por deficiência. Analisamos o seu CNIS e identificamos a modalidade mais vantajosa para o seu caso.", link: "/v2/aposentar" },
-    { icon: <Calculator size={20} />, title: "Planejamento Previdenciário", desc: "Quer saber o melhor momento para se aposentar? Fazemos um estudo técnico individualizado do seu CNIS para garantir a melhor aposentadoria possível.", link: "/v2/planejamento" },
-    { icon: <RefreshCw size={20} />, title: "Revisão de Benefício", desc: "Já é aposentado e acha que o valor está baixo demais? Analisamos o cálculo do seu benefício e verificamos se há algo a corrigir.", link: "/v2/ja-aposentado#revisao" },
-    { icon: <Baby size={20} />, title: "Salário-Maternidade", desc: "Empregadas, autônomas, MEIs e trabalhadoras rurais têm direito ao salário-maternidade pelo INSS. Muitas perdem esse benefício por não saber que têm direito ou por erro no pedido." },
-    { icon: <Stethoscope size={20} />, title: "Benefícios por Incapacidade", desc: "Auxílio por Incapacidade Temporária e Aposentadoria por Incapacidade Permanente. Não consegue mais trabalhar por questões de saúde? Garanta o suporte financeiro que você merece." },
-    { icon: <Bandage size={20} />, title: "Auxílio-Acidente", desc: "Sofreu um acidente ou doença ocupacional que reduziu sua capacidade de trabalho? Você pode receber o auxílio-acidente enquanto ainda trabalha." },
-    { icon: <HeartHandshake size={20} />, title: "BPC/LOAS", desc: "Idoso acima de 65 anos ou pessoa com deficiência em situação de vulnerabilidade? Ajudamos você a conquistar o Benefício de Prestação Continuada mesmo sem ter contribuído ao INSS." },
-    { icon: <ReceiptText size={20} />, title: "Descontos Indevidos (RMC e RCC)", desc: "Desconto não autorizado no seu benefício INSS? Atuamos no cancelamento de empréstimos consignados e cobranças abusivas, com direito à restituição dos valores.", link: "/v2/ja-aposentado#descontos" },
-    { icon: <HandHeart size={20} />, title: "Pensão por Morte", desc: "Assessoria completa para os dependentes do segurado falecido garantirem o benefício a que têm direito junto ao INSS, com agilidade e atenção em um momento difícil." }
+    { icon: <Award size={20} />, title: "Aposentadorias", desc: "Por idade, tempo de contribuição, especial, rural e por deficiência. Analisamos o seu CNIS e identificamos a modalidade mais vantajosa para o seu caso.", link: "/aposentadorias" },
+    { icon: <Calculator size={20} />, title: "Planejamento Previdenciário", desc: "Quer saber o melhor momento para se aposentar? Fazemos um estudo técnico individualizado do seu CNIS para garantir a melhor aposentadoria possível.", link: "/planejamento" },
+    { icon: <ShieldAlert size={20} />, title: "Benefícios Negados", desc: "O INSS negou seu pedido? Atuamos com firmeza para reverter negativas injustas de Aposentadorias, Auxílios, BPC e Salário-Maternidade na Justiça.", link: "/beneficio-negado" },
+    { icon: <Stethoscope size={20} />, title: "Auxílio-Doença e Invalidez", desc: "O INSS cortou seu benefício ou o perito negou? Entramos com recurso para garantir que a sua incapacidade seja reconhecida por um médico especialista." },
+    { icon: <RefreshCw size={20} />, title: "Revisão de Benefício", desc: "Já é aposentado e acha que o valor está baixo demais? Analisamos o cálculo do seu benefício e verificamos se há algo a corrigir.", link: "/revisao-de-aposentadoria" },
+    { icon: <HeartHandshake size={20} />, title: "BPC / LOAS", desc: "Para idosos acima de 65 anos ou pessoas com deficiência. Você pode ter direito a 1 salário mínimo por mês, mesmo se nunca pagou o INSS." },
+    { icon: <HandHeart size={20} />, title: "Pensão por Morte", desc: "Assessoria completa para os dependentes do segurado falecido garantirem o benefício a que têm direito junto ao INSS, com agilidade e atenção." },
+    { icon: <Baby size={20} />, title: "Salário-Maternidade", desc: "Empregadas, autônomas, MEIs e trabalhadoras rurais têm direito ao salário-maternidade pelo INSS. Muitas perdem esse benefício por falta de orientação.", link: "/salario-maternidade" },
+    { icon: <Bandage size={20} />, title: "Auxílio-Acidente", desc: "Sofreu um acidente ou doença ocupacional que reduziu sua capacidade de trabalho? Você pode receber o auxílio-acidente enquanto ainda trabalha." }
   ];
 
   return (
@@ -532,11 +584,55 @@ function ServicesV2() {
           </div>
           <button 
             className="bg-[#CFAE70] text-[#091D39] text-[13px] font-bold px-8 py-4 flex items-center justify-center gap-2 whitespace-nowrap hover:bg-white transition-colors shrink-0 uppercase tracking-[0.1em]"
-            onClick={() => window.open('https://wa.me/5527999999999','_blank')}
+            onClick={() => window.open('https://wa.me/5527992942888','_blank')}
           >
             Falar pelo WhatsApp
           </button>
         </motion.div>
+      </div>
+    </section>
+  );
+}
+
+function GuiasProfissoesV2() {
+  return (
+    <section id="como-funciona" className="py-[80px] md:py-[100px] bg-[#F4F4F2] border-b border-[#E0E0DC]">
+      <div className="max-w-[1160px] mx-auto px-4 md:px-8">
+        <motion.div
+          className="mb-12 text-center md:text-left"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#CFAE70] mb-3 block">Como Funciona</span>
+          <h2 className="text-[clamp(28px,3.5vw,40px)] font-bold text-[#091D39] tracking-[-0.02em] leading-[1.15] font-heading">
+            Do contato ao resultado —<br className="hidden md:block" />simples, direto e 100% digital.
+          </h2>
+          <p className="text-[16px] text-[#767672] mt-4 max-w-[520px] font-light">
+            Sem deslocamento, sem burocracia.<br />Você cuida da sua vida enquanto cuidamos do seu caso.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-[1px] bg-[#E0E0DC] border border-[#E0E0DC] shadow-sm">
+          {[
+            { num: "01", title: "Conte seu caso", desc: "Fale pelo WhatsApp com uma breve descrição da sua situação. Sem formulários complexos, sem burocracia — só uma conversa." },
+            { num: "02", title: "Analisamos tudo", desc: "Revisamos seu CNIS, documentos e histórico junto ao INSS para identificar os direitos que você tem — inclusive os que talvez não saiba que existem." },
+            { num: "03", title: "Cuidamos de tudo", desc: "Você decide se quer seguir. Nós conduzimos todo o processo jurídico enquanto você acompanha o andamento. Seu papel é esperar o resultado — o trabalho é nosso." }
+          ].map((s, i) => (
+            <motion.div
+              key={i}
+              className="bg-white p-8 md:p-10 hover:bg-[#091D39] transition-colors duration-500 group"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+            >
+              <div className="text-[48px] font-bold text-[#CFAE70] opacity-25 leading-none mb-6 font-heading group-hover:opacity-40">{s.num}</div>
+              <h3 className="text-[17px] font-bold text-[#091D39] mb-3 group-hover:text-white">{s.title}</h3>
+              <p className="text-[14px] text-[#767672] leading-[1.65] font-light group-hover:text-white/70">{s.desc}</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -601,7 +697,7 @@ function AboutV2() {
           <div className="min-h-[400px] lg:min-h-[550px] overflow-hidden bg-[#091D39] relative">
             <img 
               src={andersonPhoto}
-              alt="Anderson Litig — Advogado Previdenciário em Serra/ES" 
+              alt="Anderson Litig — Advogado Previdenciário" 
               className="absolute inset-0 w-full h-full object-cover object-center"
             />
           </div>
@@ -656,10 +752,9 @@ function TestimonialsV2() {
     { name: "Ana R.", city: "São Paulo, SP", text: "Atendimento 100% pelo WhatsApp e videochamada. Moro em São Paulo e não precisei me deslocar. A análise do meu CNIS mostrou que eu tinha direito a uma aposentadoria especial que nem sabia que existia.", stars: 5 },
     { name: "Carlos M.", city: "Guarapari, ES", text: "O INSS negou meu auxílio-doença alegando que eu não cumpria carência. O Dr. Anderson identificou os períodos que eles tinham desconsiderado e a decisão foi revertida. Muito obrigado.", stars: 5 },
     { name: "Rosângela F.", city: "Vila Velha, ES", text: "Minha aposentadoria rural foi negada duas vezes. Com o auxílio do Dr. Anderson juntamos os documentos certos e foi aprovada judicialmente. Recomendo de olhos fechados.", stars: 5 },
-    { name: "Antônio B.", city: "Cachoeiro de Itapemirim, ES", text: "Fui orientado sobre o planejamento da minha aposentadoria especial por atividade insalubre. Com a análise técnica, descobri que podia me aposentar dois anos antes do que imaginava.", stars: 5 },
   ];
 
-  const pages = 3; // 3 páginas × 2 depoimentos = 6 total
+  const pages = testimonials.length; // 5 pages
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -682,8 +777,7 @@ function TestimonialsV2() {
     return () => { if (intervalRef.current) clearInterval(intervalRef.current); };
   }, [paused]);
 
-  const page = current % pages;
-  const pair = [testimonials[page * 2], testimonials[page * 2 + 1]];
+  const t = testimonials[current];
 
   return (
     <section className="py-[80px] md:py-[100px] bg-[#091D39] border-b border-white/10 relative overflow-hidden">
@@ -725,9 +819,9 @@ function TestimonialsV2() {
           </div>
         </div>
 
-        {/* Cards — 2 por slide */}
+        {/* Cards — 1 por slide */}
         <div
-          className="overflow-hidden border border-white/10"
+          className="overflow-hidden border border-white/10 max-w-[900px] mx-auto"
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
         >
@@ -738,25 +832,23 @@ function TestimonialsV2() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -40 }}
               transition={{ duration: 0.35 }}
-              className="grid grid-cols-1 md:grid-cols-2 gap-[1px] bg-white/10"
+              className="bg-white/10"
             >
-              {pair.map((t, idx) => (
-                <div key={idx} className="bg-[#0B2347] p-8 md:p-10 flex flex-col gap-6">
-                  <StarRating count={t.stars} />
-                  <p className="text-[16px] text-white/80 leading-[1.8] font-light italic flex-1">
-                    "{t.text}"
-                  </p>
-                  <div className="flex items-center gap-4 pt-5 border-t border-white/10">
-                    <div className="w-11 h-11 bg-[#CFAE70]/20 border border-[#CFAE70]/30 rounded-full flex items-center justify-center shrink-0">
-                      <span className="text-[14px] font-bold text-[#CFAE70]">{t.name.charAt(0)}</span>
-                    </div>
-                    <div>
-                      <span className="block text-[14px] font-bold text-white">{t.name}</span>
-                      <span className="block text-[12px] text-white/40 font-light">{t.city}</span>
-                    </div>
+              <div className="bg-[#0B2347] p-8 md:p-12 flex flex-col gap-6 min-h-[320px]">
+                <StarRating count={t.stars} />
+                <p className="text-[18px] md:text-[20px] text-white/80 leading-[1.8] font-light italic flex-1">
+                  "{t.text}"
+                </p>
+                <div className="flex items-center gap-4 pt-6 border-t border-white/10">
+                  <div className="w-12 h-12 bg-[#CFAE70]/20 border border-[#CFAE70]/30 rounded-full flex items-center justify-center shrink-0">
+                    <span className="text-[15px] font-bold text-[#CFAE70]">{t.name.charAt(0)}</span>
+                  </div>
+                  <div>
+                    <span className="block text-[15px] font-bold text-white">{t.name}</span>
+                    <span className="block text-[13px] text-white/40 font-light">{t.city}</span>
                   </div>
                 </div>
-              ))}
+              </div>
             </motion.div>
           </AnimatePresence>
         </div>
@@ -787,7 +879,7 @@ function CTAWppV2() {
           <div className="flex flex-col items-center gap-3 shrink-0 w-full md:w-auto">
             <button
               className="bg-[#25D366] text-white text-[14px] font-bold tracking-[0.1em] uppercase px-10 py-4 flex items-center justify-center gap-3 hover:bg-[#1db957] transition-all shadow-[0_0_24px_rgba(37,211,102,0.25)] hover:shadow-[0_0_36px_rgba(37,211,102,0.4)] w-full md:w-auto"
-              onClick={() => window.open('https://wa.me/5527999999999','_blank')}
+              onClick={() => window.open('https://wa.me/5527992942888','_blank')}
             >
               <svg viewBox="0 0 24 24" className="w-5 h-5 fill-white shrink-0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
               Falar com o Advogado Agora
@@ -880,9 +972,9 @@ function FAQV2() {
 
   return (
     <section id="faq" className="py-[80px] md:py-[100px] bg-[#F4F4F2] border-b border-[#E0E0DC]">
-      <div className="max-w-[800px] mx-auto px-4 md:px-8">
+      <div className="max-w-[1160px] mx-auto px-4 md:px-8">
         <motion.div 
-          className="mb-12 text-center"
+          className="mb-12 text-center md:text-left"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -891,23 +983,19 @@ function FAQV2() {
           <h2 className="text-[clamp(28px,3.5vw,40px)] font-bold text-[#091D39] tracking-[-0.02em] leading-[1.15] font-heading">Dúvidas comuns</h2>
         </motion.div>
         
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-[1px] bg-[#E0E0DC] border border-[#E0E0DC]">
           {faqs.map((f, i) => (
-            <motion.div 
+            <div 
               key={i} 
-              className={`bg-white border ${openIdx === i ? 'border-[#CFAE70] shadow-md' : 'border-[#E0E0DC]'} transition-all duration-300`}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
+              className={`bg-white transition-all duration-300`}
             >
               <div 
-                className="p-6 md:p-8 cursor-pointer flex items-center justify-between gap-4"
+                className={`p-6 cursor-pointer flex items-center justify-between gap-4 border-l-4 ${openIdx === i ? 'border-[#CFAE70] bg-[#F4F4F2]' : 'border-transparent hover:bg-[#F4F4F2]'}`}
                 onClick={() => setOpenIdx(openIdx === i ? null : i)}
               >
-                <span className={`text-[16px] font-bold transition-colors ${openIdx === i ? 'text-[#CFAE70]' : 'text-[#091D39]'}`}>{f.q}</span>
-                <span className={`w-8 h-8 flex items-center justify-center rounded-full shrink-0 transition-colors ${openIdx === i ? 'bg-[#CFAE70] text-white' : 'bg-[#F4F4F2] text-[#091D39]'}`}>
-                  {openIdx === i ? <Minus size={16} /> : <Plus size={16} />}
+                <span className={`text-[15px] font-bold transition-colors text-[#091D39]`}>{f.q}</span>
+                <span className={`w-8 h-8 flex items-center justify-center shrink-0 transition-colors text-[#CFAE70] transform ${openIdx === i ? 'rotate-45' : 'rotate-0'}`}>
+                  <Plus size={20} />
                 </span>
               </div>
               <AnimatePresence>
@@ -916,15 +1004,15 @@ function FAQV2() {
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    className="overflow-hidden"
+                    className="overflow-hidden bg-[#F4F4F2]"
                   >
-                    <div className="px-6 md:px-8 pb-8 pt-0 text-[15px] text-[#767672] leading-[1.7] font-light border-t border-[#F4F4F2] mt-2 pt-6">
+                    <div className="px-6 pb-6 pt-0 text-[14px] text-[#767672] leading-[1.7] font-light border-l-4 border-[#E0E0DC] ml-[-4px]">
                       {f.a}
                     </div>
                   </motion.div>
                 )}
               </AnimatePresence>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
@@ -934,81 +1022,97 @@ function FAQV2() {
 
 function ContactV2() {
   return (
-    <section id="contato" className="py-[80px] md:py-[120px] bg-white border-b border-[#E0E0DC]">
+    <section id="contato" className="py-[80px] md:py-[120px] bg-[#091D39] border-b border-white/10">
       <div className="max-w-[1160px] mx-auto px-4 md:px-8">
+        <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#CFAE70] mb-3 block">Contato</span>
+        <h2 className="text-[clamp(28px,3.5vw,40px)] font-bold text-white tracking-[-0.02em] leading-[1.15] font-heading mb-12">
+          Dê o primeiro passo para<br className="hidden md:block"/>a proteção do seu direito
+        </h2>
+        
         <motion.div 
-          className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] border border-[#E0E0DC] shadow-xl items-stretch"
+          className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] border border-white/10 shadow-2xl items-stretch"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <div className="p-8 md:p-[64px_48px] bg-[#091D39] relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=2000&auto=format&fit=crop')] opacity-5 bg-cover bg-center mix-blend-overlay" />
+          <div className="p-8 md:p-[48px_44px] bg-white/5 relative overflow-hidden flex flex-col justify-center">
+            <h2 className="text-[clamp(22px,2.5vw,28px)] font-bold text-white tracking-[-0.02em] mb-3 font-heading border-l-4 border-[#CFAE70] pl-4">Fale com o advogado</h2>
+            <p className="text-[15px] text-white/60 leading-[1.65] font-light mb-10 pl-5">Análise do seu caso sem compromisso. Atendimento direto e em todo o Brasil.</p>
             
-            <div className="relative z-10">
-              <h2 className="text-[clamp(28px,3vw,36px)] font-bold text-white tracking-[-0.02em] mb-4 font-heading border-l-4 border-[#CFAE70] pl-6">Contato Direto</h2>
-              <p className="text-[16px] text-white/60 leading-[1.65] font-light mb-12 pl-7">Estamos prontos para oferecer o suporte jurídico técnico que o seu caso exige.</p>
+            <div className="space-y-6 pl-5">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 bg-white/5 flex items-center justify-center shrink-0 border border-white/10">
+                  <Phone className="w-4 h-4 text-[#CFAE70]" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[10px] font-bold tracking-[0.1em] uppercase text-white/40 mb-1">Telefone / WhatsApp</span>
+                  <strong className="text-[15px] font-bold text-white">+55 (27) 99294-2888</strong>
+                </div>
+              </div>
               
-              <div className="space-y-8 pl-7">
-                <div className="flex items-start gap-5 group cursor-pointer">
-                  <div className="w-12 h-12 bg-white/5 flex items-center justify-center shrink-0 border border-white/10 group-hover:bg-[#CFAE70] group-hover:border-[#CFAE70] transition-colors">
-                    <Phone className="w-5 h-5 text-[#CFAE70] group-hover:text-[#091D39] transition-colors" />
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-[10px] font-bold tracking-[0.15em] uppercase text-[#CFAE70] mb-1">Telefone / WhatsApp</span>
-                    <strong className="text-[18px] font-bold text-white">+55 27 99999-9999</strong>
-                  </div>
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 bg-white/5 flex items-center justify-center shrink-0 border border-white/10">
+                  <Mail className="w-4 h-4 text-[#CFAE70]" />
                 </div>
-                
-                <div className="flex items-start gap-5 group cursor-pointer">
-                  <div className="w-12 h-12 bg-white/5 flex items-center justify-center shrink-0 border border-white/10 group-hover:bg-[#CFAE70] group-hover:border-[#CFAE70] transition-colors">
-                    <Mail className="w-5 h-5 text-[#CFAE70] group-hover:text-[#091D39] transition-colors" />
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-[10px] font-bold tracking-[0.15em] uppercase text-[#CFAE70] mb-1">E-mail Institucional</span>
-                    <strong className="text-[18px] font-bold text-white break-all">contato@andersonlitig.adv.br</strong>
-                  </div>
+                <div className="flex flex-col">
+                  <span className="text-[10px] font-bold tracking-[0.1em] uppercase text-white/40 mb-1">E-mail</span>
+                  <strong className="text-[15px] font-bold text-white break-all">contato@andersonlitig.adv.br</strong>
                 </div>
+              </div>
 
-                <div className="flex items-start gap-5 group cursor-pointer">
-                  <div className="w-12 h-12 bg-white/5 flex items-center justify-center shrink-0 border border-white/10 group-hover:bg-[#CFAE70] group-hover:border-[#CFAE70] transition-colors">
-                    <MapPin className="w-5 h-5 text-[#CFAE70] group-hover:text-[#091D39] transition-colors" />
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-[10px] font-bold tracking-[0.15em] uppercase text-[#CFAE70] mb-1">Localização</span>
-                    <strong className="text-[18px] font-bold text-white">Serra/ES &middot; Atendimento Nacional</strong>
-                  </div>
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 bg-white/5 flex items-center justify-center shrink-0 border border-white/10">
+                  <MapPin className="w-4 h-4 text-[#CFAE70]" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[10px] font-bold tracking-[0.15em] uppercase text-[#CFAE70] mb-1">Localização</span>
+                  <strong className="text-[15px] font-bold text-white">Serra, na Grande Vitória - ES - Atendimento Nacional 100% Digital</strong>
                 </div>
               </div>
             </div>
+            
+            <button 
+              className="mt-10 bg-[#25D366] text-white text-[14px] font-bold tracking-[0.05em] px-6 py-3.5 flex items-center justify-center gap-3 hover:bg-[#1db957] transition-all w-fit ml-5"
+              onClick={() => window.open('https://wa.me/5527992942888?text=Ol%C3%A1%2C+preciso+de+ajuda+com+o+meu+caso','_blank')}
+            >
+              <Phone size={18} />
+              Falar pelo WhatsApp agora
+            </button>
           </div>
           
-          <div className="p-8 md:p-[64px_56px] bg-white">
-            <h3 className="text-[24px] font-bold text-[#091D39] mb-8 font-heading">Envie uma mensagem</h3>
-            <form className="flex flex-col gap-6" onSubmit={(e) => e.preventDefault()}>
-              <div>
-                <label className="block text-[11px] font-bold tracking-[0.1em] uppercase text-[#767672] mb-2">Seu nome completo</label>
-                <input type="text" className="w-full p-4 border border-[#E0E0DC] bg-[#F4F4F2] font-sans text-[15px] text-[#091D39] outline-none transition-all focus:bg-white focus:border-[#CFAE70] focus:ring-1 focus:ring-[#CFAE70]/50" placeholder="Como deseja ser chamado?" />
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-[11px] font-bold tracking-[0.1em] uppercase text-[#767672] mb-2">Seu E-mail</label>
-                  <input type="email" className="w-full p-4 border border-[#E0E0DC] bg-[#F4F4F2] font-sans text-[15px] text-[#091D39] outline-none transition-all focus:bg-white focus:border-[#CFAE70] focus:ring-1 focus:ring-[#CFAE70]/50" placeholder="exemplo@email.com" />
-                </div>
-                <div>
-                  <label className="block text-[11px] font-bold tracking-[0.1em] uppercase text-[#767672] mb-2">WhatsApp</label>
-                  <input type="tel" className="w-full p-4 border border-[#E0E0DC] bg-[#F4F4F2] font-sans text-[15px] text-[#091D39] outline-none transition-all focus:bg-white focus:border-[#CFAE70] focus:ring-1 focus:ring-[#CFAE70]/50" placeholder="(00) 00000-0000" />
-                </div>
-              </div>
-              <div>
-                <label className="block text-[11px] font-bold tracking-[0.1em] uppercase text-[#767672] mb-2">Como podemos ajudar?</label>
-                <textarea className="w-full min-h-[120px] resize-y p-4 border border-[#E0E0DC] bg-[#F4F4F2] font-sans text-[15px] text-[#091D39] outline-none transition-all focus:bg-white focus:border-[#CFAE70] focus:ring-1 focus:ring-[#CFAE70]/50" placeholder="Descreva brevemente a sua situação..." />
-              </div>
-              <button type="submit" className="w-full bg-[#091D39] text-white font-sans text-[13px] font-bold tracking-[0.15em] uppercase p-5 mt-4 hover:bg-[#CFAE70] hover:text-[#091D39] transition-all cursor-pointer border-none flex items-center justify-center gap-3">
-                Enviar Mensagem <Send size={16} />
-              </button>
-              <div className="text-[12px] text-[#767672] mt-2 leading-[1.5] text-center font-light">Seus dados estão seguros e serão utilizados apenas para retorno do contato.</div>
-            </form>
+          <div className="p-8 md:p-[48px_44px] bg-white flex flex-col justify-center">
+            <h3 className="text-[20px] font-bold text-[#091D39] mb-6 font-heading">Envie uma mensagem</h3>
+            <form className="flex flex-col gap-6" onSubmit={(e) => {
+          e.preventDefault();
+          const formData = new FormData(e.currentTarget);
+          const nome = formData.get('nome');
+          const wpp = formData.get('wpp');
+          const desc = formData.get('desc');
+          const text = `Olá, me chamo ${nome}. Meu número é ${wpp}. %0A%0AEstou entrando em contato pelo site sobre o seguinte caso: %0A${desc}`;
+          window.open(`https://wa.me/5527992942888?text=${text}`, '_blank');
+        }}>
+          <div className="flex flex-col gap-4">
+            <div>
+              <label className="block text-[10px] font-bold tracking-[0.1em] uppercase text-[#767672] mb-2">Nome e Sobrenome</label>
+              <input name="nome" type="text" required className="w-full p-3 border border-[#E0E0DC] bg-white font-sans text-[14px] text-[#091D39] outline-none transition-all focus:border-[#091D39]" placeholder="Como podemos chamar você?" />
+            </div>
+            <div>
+              <label className="block text-[10px] font-bold tracking-[0.1em] uppercase text-[#767672] mb-2">Seu WhatsApp</label>
+              <input name="wpp" type="tel" required className="w-full p-3 border border-[#E0E0DC] bg-white font-sans text-[14px] text-[#091D39] outline-none transition-all focus:border-[#091D39]" placeholder="(00) 00000-0000" />
+            </div>
+            <div>
+              <label className="block text-[10px] font-bold tracking-[0.1em] uppercase text-[#767672] mb-2">O que você precisa?</label>
+              <textarea name="desc" required className="w-full min-h-[120px] resize-y p-3 border border-[#E0E0DC] bg-white font-sans text-[14px] text-[#091D39] outline-none transition-all focus:border-[#091D39]" placeholder="Ex: Quero saber se já tenho tempo suficiente para me aposentar... Resuma sua dúvida ou situação." />
+            </div>
+          </div>
+          <button 
+            type="submit" 
+            className="w-full bg-[#091D39] text-white font-sans text-[12px] font-bold tracking-[0.12em] uppercase p-4 hover:bg-[#0d2548] transition-all cursor-pointer border-none flex items-center justify-center gap-3"
+          >
+            Solicitar Contato Inicial <Send size={16}/>
+          </button>
+          <div className="text-[11px] text-[#767672] leading-[1.5] font-light">Em conformidade com o Provimento nº 205/2021 do CFOAB. As informações deste site têm caráter informativo e não constituem consultoria jurídica.</div>
+        </form>
           </div>
         </motion.div>
       </div>
@@ -1037,16 +1141,17 @@ function FooterV2() {
           </div>
           <div className="flex flex-col">
             <h4 className="text-[12px] font-bold tracking-[0.15em] uppercase text-white mb-6">Áreas</h4>
-            <a href="#" className="text-[14px] font-light text-white/60 mb-3 hover:text-[#CFAE70] transition-colors cursor-pointer w-fit">Aposentadorias</a>
-            <a href="#" className="text-[14px] font-light text-white/60 mb-3 hover:text-[#CFAE70] transition-colors cursor-pointer w-fit">Planejamento</a>
-            <a href="#" className="text-[14px] font-light text-white/60 mb-3 hover:text-[#CFAE70] transition-colors cursor-pointer w-fit">Revisões</a>
-            <a href="#" className="text-[14px] font-light text-white/60 mb-3 hover:text-[#CFAE70] transition-colors cursor-pointer w-fit">Auxílio-doença</a>
+            <a href="/aposentadorias" className="text-[14px] font-light text-white/60 mb-3 hover:text-[#CFAE70] transition-colors cursor-pointer w-fit">Aposentadorias</a>
+            <a href="/planejamento" className="text-[14px] font-light text-white/60 mb-3 hover:text-[#CFAE70] transition-colors cursor-pointer w-fit">Planejamento Previdenci�rio</a>
+            <a href="/revisao-de-aposentadoria" className="text-[14px] font-light text-white/60 mb-3 hover:text-[#CFAE70] transition-colors cursor-pointer w-fit">Revisões</a>
+            <a href="/salario-maternidade" className="text-[14px] font-light text-white/60 mb-3 hover:text-[#CFAE70] transition-colors cursor-pointer w-fit">Salário-Maternidade</a>
+            <a href="/beneficio-negado" className="text-[14px] font-light text-white/60 mb-3 hover:text-[#CFAE70] transition-colors cursor-pointer w-fit">Auxílio-doença</a>
           </div>
           <div className="flex flex-col">
             <h4 className="text-[12px] font-bold tracking-[0.15em] uppercase text-white mb-6">Contato</h4>
             <div className="flex items-center gap-3 mb-4">
               <Phone size={16} className="text-[#CFAE70]" />
-              <span className="text-[14px] font-light text-white/80">(27) 99999-9999</span>
+              <span className="text-[14px] font-light text-white/80">(27) 99294-2888</span>
             </div>
             <div className="flex items-center gap-3 mb-4">
               <Mail size={16} className="text-[#CFAE70]" />
@@ -1054,7 +1159,7 @@ function FooterV2() {
             </div>
             <div className="flex items-start gap-3">
               <MapPin size={16} className="text-[#CFAE70] shrink-0 mt-0.5" />
-              <span className="text-[14px] font-light text-white/80 leading-relaxed">Atendimento Nacional 100% Digital<br/>Base: Serra / ES</span>
+              <span className="text-[14px] font-light text-white/80 leading-relaxed">Atendimento Nacional 100% Digital<br/>para todos os Estados</span>
             </div>
           </div>
         </div>
