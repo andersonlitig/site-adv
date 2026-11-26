@@ -20,10 +20,22 @@ export default function Footer() {
               Escritório de advocacia com atuação nacional, focado na excelência técnica e na defesa intransigente dos direitos do cidadão.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="p-3 bg-white/5 hover:bg-[#CFAE70] hover:text-[#091D39] transition-all duration-300">
+              <a
+                href="https://www.linkedin.com/in/andersonlitig/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn do Dr. Anderson Litig"
+                className="p-3 bg-white/5 hover:bg-[#CFAE70] hover:text-[#091D39] transition-all duration-300"
+              >
                 <Linkedin size={18} />
               </a>
-              <a href="#" className="p-3 bg-white/5 hover:bg-[#CFAE70] hover:text-[#091D39] transition-all duration-300">
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="p-3 bg-white/5 hover:bg-[#CFAE70] hover:text-[#091D39] transition-all duration-300"
+              >
                 <Instagram size={18} />
               </a>
               <a href="#" className="p-3 bg-white/5 hover:bg-[#CFAE70] hover:text-[#091D39] transition-all duration-300">
@@ -63,7 +75,7 @@ export default function Footer() {
 
       {/* Floating WhatsApp Button */}
       <a
-        href="https://wa.me/5527999999999"
+        href="https://wa.me/5527992942888"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-8 right-8 z-50 bg-[#25D366] text-white p-4 shadow-2xl hover:bg-[#128C7E] transition-all duration-300 hover:scale-110 active:scale-95 group"

@@ -1,6 +1,14 @@
 node_modules
+instagram-kit/
+claude-social-kit/
+.agent/
+.agents/
+.local/
 dist
 .DS_Store
+.env
+.env.*
+.superpowers
 server/public
 vite.config.ts.*
 *.tar.gz

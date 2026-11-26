@@ -168,7 +168,7 @@ export default function PartnerPage() {
                   <h3 className="text-xl font-bold uppercase tracking-widest mb-4">Dúvidas rápidas?</h3>
                   <p className="text-gray-400 text-sm mb-6">Fale diretamente com nossa gestão de parcerias via WhatsApp.</p>
                   <a 
-                    href="https://wa.me/5527999999999" 
+                    href="https://wa.me/5527992942888" 
                     className="inline-flex items-center gap-3 bg-[#25D366] text-white px-6 py-3 font-bold uppercase tracking-widest text-xs hover:bg-[#128C7E] transition-all"
                   >
                     <MessageCircle size={18} /> Chat de Parcerias

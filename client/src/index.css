@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --radius: 0px; /* STRICTLY SQUARE EDGES */
+  --radius: 16px;
   
   --color-background: var(--neutral-light);
   --color-foreground: var(--neutral-dark);
@@ -30,26 +30,24 @@
   --color-destructive: hsl(0 84.2% 60.2%);
   --color-destructive-foreground: hsl(210 40% 98%);
   
-  --color-border: var(--secondary-aco);
+  --color-border: rgba(9, 29, 57, 0.15);
   --color-input: var(--neutral-light);
   --color-ring: var(--accent-ouro);
   
-  --font-sans: 'Inter', sans-serif;
-  --font-heading: 'Manrope', sans-serif;
-  
-  /* Custom Spacing for Brutalist/Boxy feel */
-  --spacing-container: 1400px;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Montserrat', 'Inter', system-ui, sans-serif;
+  --font-display: 'Bricolage Grotesque', 'Montserrat', sans-serif;
 }
 
 :root {
   /* 
-  Color Palette (Strict Adherence)
-  - Primary (Azul Petróleo): #091D39 -> HSL(215, 73%, 13%)
-  - Secondary (Aço Sólido): #2C2C2C -> HSL(0, 0%, 17%)
-  - Accent (Ouro Imperial): #CFAE70 -> HSL(39, 49%, 62%)
-  - Neutral Dark (Noir Supremo): #0D0D0D -> HSL(0, 0%, 5%)
-  - Neutral Light (Platina Pura): #E8E8E8 -> HSL(0, 0%, 91%)
-  - White: #FFFFFF -> HSL(0, 0%, 100%)
+  Brand Visual Identity (Official Spec):
+  - Primária: Azul Petróleo (#091D39)
+  - Secundária: Aço Sólido (#2C2C2C)
+  - Apoio: Ouro Imperial (#CFAE70)
+  - Neutro Escuro: Noir Supremo (#0D0D0D)
+  - Neutro Claro: Platina Pura (#E8E8E8)
+  - Fundo Suave: Creme (#F4F4F3)
   */
   
   --primary-azul: #091D39;
@@ -57,44 +55,103 @@
   --accent-ouro: #CFAE70;
   --neutral-dark: #0D0D0D;
   --neutral-light: #E8E8E8;
+  --cream: #F4F4F3;
   --white: #FFFFFF;
-
-  --radius: 0px;
+  --ease: cubic-bezier(.2, .7, .15, 1);
 }
 
 @layer base {
   * {
-    @apply border-border;
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
   }
   body {
-    @apply font-sans antialiased bg-[#E8E8E8] text-[#0D0D0D];
+    font-family: var(--font-sans);
+    background-color: var(--neutral-dark);
+    color: var(--white);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+    letter-spacing: -0.01em;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading tracking-tight;
+    font-family: var(--font-heading);
+    letter-spacing: -0.025em;
   }
 
-  /* Reset all border radius to 0 for strict boxy look */
-  button, input, textarea, div, section, article, nav, span, a, img, video {
-    border-radius: 0px !important;
+  em {
+    font-family: var(--font-display);
+    font-style: normal;
+    font-weight: 700;
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  ::selection {
+    background: #CFAE70;
+    color: #091D39;
   }
 }
 
+/* Utilitários Editoriais estilo George Lucas / Nexu */
 @layer utilities {
-  .text-stroke {
-    -webkit-text-stroke: 1px currentColor;
-    color: transparent;
+  .site-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 90;
+    width: 100%;
+    transition: background 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
   }
-  
-  .grid-boxy {
+
+  .site-header.scrolled {
+    background: rgba(13, 13, 13, 0.92);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(207, 174, 112, 0.2);
+  }
+
+  /* Botão Circular Editorial */
+  .button-arrow {
+    width: 44px;
+    height: 44px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1px;
-    background-color: var(--secondary-aco); /* Creates the grid lines effect */
-    border: 1px solid var(--secondary-aco);
+    place-items: center;
+    border-radius: 50%;
+    transition: transform 0.35s cubic-bezier(.2,.7,.15,1), background 0.35s ease, color 0.35s ease;
   }
-  
-  .grid-boxy > * {
-    background-color: var(--white);
+
+  .group:hover .button-arrow {
+    transform: rotate(45deg);
+  }
+
+  /* Marquee Contínuo */
+  @keyframes marqueeAnim {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .animate-marquee {
+    display: flex;
+    width: max-content;
+    animation: marqueeAnim 30s linear infinite;
+  }
+
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
+
+  /* Destaque Inclinado Nexu */
+  .hl-tilt {
+    display: inline-block;
+    padding: 0.1em 0.35em;
+    border-radius: 0.35em;
+    transform: rotate(-1.5deg);
+    line-height: 1.1;
   }
 }

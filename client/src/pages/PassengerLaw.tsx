@@ -143,7 +143,7 @@ export default function PassengerLaw() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6">
                   <a 
-                    href="https://wa.me/5527999999999" 
+                    href="https://wa.me/5527992942888" 
                     className="bg-[#CFAE70] text-[#091D39] px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-white transition-all text-center"
                   >
                     Analisar meu Caso de Voo Agora
@@ -324,7 +324,7 @@ export default function PassengerLaw() {
                   Nossa atuação define qual norma é mais vantajosa em voos internacionais, garantindo a maior proteção possível ao passageiro e evitando a prescrição de direitos.
                 </p>
                 <a 
-                  href="https://wa.me/5527999999999" 
+                  href="https://wa.me/5527992942888" 
                   className="inline-flex items-center gap-3 text-[#CFAE70] font-bold uppercase tracking-widest text-xs border-b border-[#CFAE70] pb-2 hover:text-white hover:border-white transition-all"
                 >
                   Consultar meus Direitos de Voo <ArrowRight size={16} />
@@ -364,7 +364,7 @@ export default function PassengerLaw() {
               Se você sofreu com atrasos, cancelamentos ou problemas com bagagem, nossa equipe técnica está pronta para analisar seu caso sem compromisso.
             </p>
             <a 
-              href="https://wa.me/5527999999999" 
+              href="https://wa.me/5527992942888" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-[#091D39] text-white px-10 py-5 font-bold uppercase tracking-widest hover:bg-[#CFAE70] hover:text-[#091D39] transition-all"

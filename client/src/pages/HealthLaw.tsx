@@ -325,7 +325,7 @@ export default function HealthLaw() {
               A urgência da sua saúde <br /> <span className="text-[#CFAE70]">exige técnica jurídica</span>
             </h2>
             <a 
-              href="https://wa.me/5527999999999" 
+              href="https://wa.me/5527992942888" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-[#091D39] text-white px-10 py-5 font-bold uppercase tracking-widest hover:bg-[#CFAE70] hover:text-[#091D39] transition-all"

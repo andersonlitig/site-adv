@@ -287,7 +287,7 @@ export default function SocialSecurityLaw() {
                   Através da análise do CNIS e de documentos comprobatórios, projetamos o Valor da Causa e a Renda Mensal Inicial ($RMI$), definindo o momento exato da inativação para evitar perdas financeiras irreversíveis.
                 </p>
                 <a 
-                  href="https://wa.me/5527999999999" 
+                  href="https://wa.me/5527992942888" 
                   className="inline-flex items-center gap-3 text-[#CFAE70] font-bold uppercase tracking-widest text-xs border-b border-[#CFAE70] pb-2 hover:text-white hover:border-white transition-all"
                 >
                   Solicitar Análise de Histórico <ArrowRight size={16} />
@@ -352,7 +352,7 @@ export default function SocialSecurityLaw() {
               O seu futuro merece <br /> <span className="text-[#CFAE70]">uma estratégia sólida</span>
             </h2>
             <a 
-              href="https://wa.me/5527999999999" 
+              href="https://wa.me/5527992942888" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-[#091D39] text-white px-10 py-5 font-bold uppercase tracking-widest hover:bg-[#CFAE70] hover:text-[#091D39] transition-all"

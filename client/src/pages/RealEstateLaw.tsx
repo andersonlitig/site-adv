@@ -107,7 +107,7 @@ export default function RealEstateLaw() {
                       Atuação técnica voltada para a segurança e regularidade de negócios imobiliários.
                     </p>
                     <div className="flex flex-col gap-4">
-                      <a href="https://wa.me/5527999999999" target="_blank" className="flex items-center justify-center gap-3 w-full bg-[#25D366] text-white py-5 px-6 font-bold uppercase tracking-widest hover:bg-[#128C7E] transition-all shadow-lg">
+                      <a href="https://wa.me/5527992942888" target="_blank" className="flex items-center justify-center gap-3 w-full bg-[#25D366] text-white py-5 px-6 font-bold uppercase tracking-widest hover:bg-[#128C7E] transition-all shadow-lg">
                         <MessageCircle size={20} /> WhatsApp
                       </a>
                       <a href="#footer" className="flex items-center justify-center gap-3 w-full bg-[#CFAE70] text-[#091D39] py-5 px-6 font-bold uppercase tracking-widest hover:bg-white transition-all shadow-lg">

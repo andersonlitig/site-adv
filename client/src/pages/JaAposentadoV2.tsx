@@ -1,15 +1,49 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
-import { Phone, ArrowRight, ShieldAlert, CheckCircle2, AlertCircle, FileText, Calendar, ChevronDown, Plus, Minus, Mail, MapPin, Search, Clock, Target, Info, Users, Briefcase, FileSearch, ShieldCheck, Scale, Globe, ReceiptText, HandHeart, AlertTriangle } from "lucide-react";
-import logo from "@/assets/logo.png";
-import heroImage from "@/assets/3em3-vitoria_15_1767549660783.jpg";
+import {
+  AlertTriangle,
+  ArrowRight,
+  Briefcase,
+  Calculator,
+  CalendarCheck,
+  CheckCircle2,
+  FileSearch,
+  Globe,
+  HeartHandshake,
+  Mail,
+  MapPin,
+  Phone,
+  Plus,
+  ReceiptText,
+  Scale,
+  Search,
+  ShieldAlert,
+  Sparkles,
+  Target,
+  Users,
+} from "lucide-react";
+import {
+  SiteHeader,
+  SiteFooter,
+  PillButton,
+  TextButton,
+  Reveal,
+  wppLink,
+  SectionBadge,
+} from "@/components/site/Ui";
+
+const TEL_VISIVEL = "(27) 99294-2888";
+const EMAIL = "contato@andersonlitig.adv.br";
+const PAGE_URL = "https://andersonlitig.adv.br/revisao-de-aposentadoria";
 
 export default function JaAposentadoV2() {
+  useSeo();
+
   return (
-    <div className="font-sans text-[#2C2C2C] bg-white leading-relaxed overflow-x-hidden selection:bg-[#CFAE70] selection:text-[#091D39]">
+    <div className="min-h-screen bg-white text-[#091D39] selection:bg-[#CFAE70] selection:text-[#091D39] relative overflow-x-clip antialiased font-sans">
       <WppFloat />
-      <HeaderV2 />
+      <SiteHeader />
       <main>
         <Breadcrumb />
         <HeroJaAposentado />
@@ -23,63 +57,66 @@ export default function JaAposentadoV2() {
         <FAQJaAposentado />
         <ContatoJaAposentado />
       </main>
-      <FooterV2 />
+      <SiteFooter />
     </div>
   );
+}
+
+function useSeo() {
+  useEffect(() => {
+    const prevTitle = document.title;
+    document.title = "Já sou aposentado: Revisão e Descontos Indevidos | Anderson Litig";
+
+    let meta = document.head.querySelector<HTMLMetaElement>('meta[name="description"]');
+    if (!meta) {
+      meta = document.createElement("meta");
+      meta.name = "description";
+      document.head.appendChild(meta);
+    }
+    meta.content =
+      "Já recebe aposentadoria do INSS, mas o valor parece baixo ou há descontos não autorizados? Entenda como funciona a revisão de benefício e o cancelamento de descontos indevidos.";
+
+    return () => {
+      document.title = prevTitle;
+    };
+  }, []);
 }
 
 function WppFloat() {
   return (
-    <div 
-      className="fixed bottom-7 right-7 z-[999] bg-[#25D366] w-14 h-14 flex items-center justify-center cursor-pointer shadow-lg shadow-[#25D366]/30 transition-all duration-300 hover:bg-[#1db957] hover:scale-110 rounded-full"
-      onClick={() => window.open('https://wa.me/5527999999999','_blank')}
-      title="Falar pelo WhatsApp"
+    <motion.a
+      href={wppLink(
+        "Olá, Dr. Anderson! Já sou aposentado e tenho dúvidas sobre o valor ou descontos no meu benefício do INSS. [ja-aposentado]"
+      )}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Falar pelo WhatsApp"
+      initial={{ scale: 0, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ delay: 1, type: "spring", stiffness: 260, damping: 20 }}
+      className="fixed bottom-5 right-5 z-[999] w-14 h-14 rounded-2xl bg-[#25D366] hover:bg-[#20ba59] flex items-center justify-center shadow-[0_16px_36px_-10px_rgba(37,211,102,0.6)] transition-colors"
     >
-      <svg viewBox="0 0 24 24" className="w-6 h-6 fill-white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-    </div>
-  );
-}
-
-function HeaderV2() {
-  return (
-    <header className="sticky top-0 z-[100] transition-all duration-300 bg-[#091D39] py-3 shadow-lg">
-      <div className="max-w-[1160px] mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-[auto_1fr_auto] items-center gap-8">
-          <Link href="/" className="no-underline group flex items-center gap-4">
-            <img src={logo} alt="Anderson Litig" className="h-10 md:h-12 w-auto object-contain brightness-0 invert" />
-          </Link>
-          <nav className="hidden lg:flex gap-1 justify-center">
-            <Link href="/v2"><a className="text-[12px] uppercase tracking-wider font-medium text-white/70 px-4 py-2 border-b-2 border-transparent hover:text-white hover:border-[#CFAE70]/50 transition-colors">Início</a></Link>
-            <Link href="/v2#servicos"><a className="text-[12px] uppercase tracking-wider font-medium text-white/70 px-4 py-2 border-b-2 border-transparent hover:text-white hover:border-[#CFAE70]/50 transition-colors">Serviços</a></Link>
-            <Link href="/v2#sobre"><a className="text-[12px] uppercase tracking-wider font-medium text-white/70 px-4 py-2 border-b-2 border-transparent hover:text-white hover:border-[#CFAE70]/50 transition-colors">Sobre</a></Link>
-            <a className="text-[12px] uppercase tracking-wider font-medium text-white/70 px-4 py-2 border-b-2 border-transparent hover:text-white hover:border-[#CFAE70]/50 transition-colors" href="#faq">Dúvidas</a>
-            <a className="text-[12px] uppercase tracking-wider font-medium text-white/70 px-4 py-2 border-b-2 border-transparent hover:text-white hover:border-[#CFAE70]/50 transition-colors" href="#blog">Blog</a>
-            <a className="text-[12px] uppercase tracking-wider font-medium text-white/70 px-4 py-2 border-b-2 border-transparent hover:text-white hover:border-[#CFAE70]/50 transition-colors" href="#contato">Contato</a>
-          </nav>
-          <button 
-            className="bg-[#CFAE70] text-[#091D39] text-[12px] uppercase tracking-widest font-bold px-6 py-3 flex items-center gap-2 hover:bg-white transition-all duration-300"
-            onClick={() => window.open('https://wa.me/5527999999999','_blank')}
-          >
-            <Phone size={14} />
-            <span className="hidden sm:inline">Falar pelo WhatsApp</span>
-            <span className="sm:hidden">WhatsApp</span>
-          </button>
-        </div>
-      </div>
-    </header>
+      <svg viewBox="0 0 24 24" className="w-6 h-6 fill-white">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+      </svg>
+    </motion.a>
   );
 }
 
 function Breadcrumb() {
   return (
-    <div className="bg-[#F4F4F2] border-b border-[#E0E0DC] py-3">
-      <div className="max-w-[1160px] mx-auto px-4 md:px-8">
-        <div className="flex items-center gap-2 text-[12px] text-[#767672]">
-          <Link href="/v2"><a className="hover:text-[#091D39] transition-colors">Início</a></Link>
+    <div className="bg-[#FAF9F6] border-b border-[#091D39]/10 py-3">
+      <div className="max-w-[1360px] mx-auto px-5 md:px-10">
+        <div className="flex items-center gap-2 text-[12px] text-[#57534E]">
+          <Link href="/">
+            <a className="hover:text-[#091D39] transition-colors">Início</a>
+          </Link>
           <span className="opacity-50">/</span>
-          <Link href="/v2#servicos"><a className="hover:text-[#091D39] transition-colors">Serviços</a></Link>
+          <a href="/#servicos" className="hover:text-[#091D39] transition-colors">
+            Serviços
+          </a>
           <span className="opacity-50">/</span>
-          <span className="text-[#091D39] font-medium">Já sou aposentado e tenho dúvidas</span>
+          <span className="text-[#091D39] font-semibold">Já sou aposentado e tenho dúvidas</span>
         </div>
       </div>
     </div>
@@ -88,32 +125,88 @@ function Breadcrumb() {
 
 function HeroJaAposentado() {
   return (
-    <section className="bg-[#091D39] py-[64px] md:py-[80px] border-b-4 border-[#CFAE70]">
-      <div className="max-w-[1160px] mx-auto px-4 md:px-8">
-        <div className="inline-flex items-center gap-2 bg-[#CFAE70]/10 border border-[#CFAE70]/25 px-4 py-1.5 mb-5">
-          <span className="text-[11px] font-bold tracking-[0.1em] uppercase text-[#CFAE70]">Para quem já é aposentado</span>
+    <section className="bg-[#FAF9F6] text-[#091D39] py-16 md:py-24 border-b border-[#091D39]/10">
+      <div className="max-w-[1360px] mx-auto px-5 md:px-10 grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        <div className="lg:col-span-8 space-y-6">
+          <Reveal>
+            <SectionBadge icon={FileSearch}>Para quem já é aposentado</SectionBadge>
+          </Reveal>
+
+          <Reveal delay={0.05}>
+            <h1 className="font-heading text-[clamp(32px,4.8vw,60px)] font-bold text-[#091D39] tracking-[-0.03em] leading-[1.06]">
+              Já recebe a aposentadoria —{" "}
+              <span className="text-[#8a6a2b] block mt-1">
+                mas algo não parece estar certo?
+              </span>
+            </h1>
+          </Reveal>
+
+          <Reveal delay={0.1}>
+            <p className="text-[17px] md:text-[19px] text-[#44403C] leading-relaxed font-light max-w-[680px]">
+              Desconto que você não autorizou, valor que parece baixo demais, cobrança de associação que nunca pediu ou a dúvida: “será que o INSS calculou certo?”. Analisamos o seu extrato e a carta de concessão para esclarecer o que está acontecendo.
+            </p>
+          </Reveal>
+
+          <Reveal delay={0.15}>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 pt-2">
+              <PillButton
+                tone="gold"
+                external
+                href={wppLink(
+                  "Olá, Dr. Anderson! Já sou aposentado e gostaria de entender o meu caso. [ja-aposentado]"
+                )}
+                className="w-full sm:w-auto"
+              >
+                Quero entender o meu caso
+              </PillButton>
+              <TextButton tone="dark" href="#situacoes" className="self-center sm:self-auto">
+                Ver as situações mais comuns
+              </TextButton>
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.2}>
+            <p className="text-[13px] text-[#57534E] font-light">
+              Dr. Anderson Litig · OAB/ES nº 40.152 · Atendimento presencial em Serra/ES e 100% digital em todo o Brasil
+            </p>
+          </Reveal>
         </div>
-        <h1 className="text-[clamp(28px,3.5vw,44px)] font-bold text-white tracking-[-0.03em] leading-[1.1] mb-4 max-w-[680px] font-heading">
-          Já recebe a aposentadoria —<br /><em className="text-[#CFAE70] not-italic block">mas algo não parece estar certo?</em>
-        </h1>
-        <p className="text-[16px] text-white/60 leading-[1.75] mb-8 max-w-[580px] font-light">
-          Desconto que você não autorizou. Valor que parece baixo demais. Cobrança de associação que nunca pediu. Ou simplesmente a dúvida: "será que o INSS calculou certo?" Essas perguntas têm resposta — e muitas vezes a resposta é: não, não está correto.
-        </p>
-        <div className="flex flex-wrap gap-3">
-          <button 
-            className="bg-[#CFAE70] text-[#091D39] text-[14px] font-bold px-6 py-3.5 flex items-center gap-2 hover:bg-[#dfc880] transition-colors"
-            onClick={() => document.getElementById('contato')?.scrollIntoView({behavior:'smooth'})}
-          >
-            <Phone size={15} className="text-[#091D39]" />
-            Quero entender o meu caso
-          </button>
-          <button 
-            className="bg-transparent text-white border border-white/30 text-[14px] font-sans px-6 py-3.5 hover:border-white/60 transition-colors"
-            onClick={() => document.getElementById('situacoes')?.scrollIntoView({behavior:'smooth'})}
-          >
-            Ver as situações mais comuns
-          </button>
-        </div>
+
+        <Reveal delay={0.15} className="lg:col-span-4">
+          <div className="bg-white rounded-2xl border border-[#091D39]/10 p-7 shadow-[0_12px_36px_-16px_rgba(9,29,57,0.12)] space-y-5">
+            <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#8a6a2b]">
+              Atalhos úteis para você
+            </p>
+            <div className="space-y-3">
+              <Link href="/revisao-de-aposentadoria">
+                <a className="group flex items-center justify-between p-4 rounded-xl bg-[#FAF9F6] border border-[#091D39]/10 hover:border-[#CFAE70] transition-colors">
+                  <div>
+                    <p className="font-heading text-[15px] font-bold text-[#091D39] group-hover:text-[#8a6a2b] transition-colors">
+                      Revisão de Aposentadoria
+                    </p>
+                    <p className="text-[12.5px] text-[#57534E] font-light">
+                      Página completa sobre cálculo e prazo de 10 anos
+                    </p>
+                  </div>
+                  <ArrowRight size={16} className="text-[#8a6a2b] shrink-0" />
+                </a>
+              </Link>
+              <Link href="/planejamento">
+                <a className="group flex items-center justify-between p-4 rounded-xl bg-[#FAF9F6] border border-[#091D39]/10 hover:border-[#CFAE70] transition-colors">
+                  <div>
+                    <p className="font-heading text-[15px] font-bold text-[#091D39] group-hover:text-[#8a6a2b] transition-colors">
+                      Planejamento Previdenciário
+                    </p>
+                    <p className="text-[12.5px] text-[#57534E] font-light">
+                      Para familiares ou quem ainda vai se aposentar
+                    </p>
+                  </div>
+                  <ArrowRight size={16} className="text-[#8a6a2b] shrink-0" />
+                </a>
+              </Link>
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
@@ -121,66 +214,98 @@ function HeroJaAposentado() {
 
 function AlertaCNIS() {
   return (
-    <div className="bg-[#0D0D0D] py-[36px] border-b-[3px] border-[#CFAE70]/25">
-      <div className="max-w-[1160px] mx-auto px-4 md:px-8">
-        <div className="flex flex-col md:flex-row items-start md:items-center gap-6 max-w-[860px]">
-          <div className="w-[52px] h-[52px] bg-[#CFAE70]/10 border border-[#CFAE70]/20 flex items-center justify-center shrink-0">
-            <AlertTriangle className="w-[22px] h-[22px] text-[#CFAE70]" />
+    <section className="bg-[#091D39] text-white py-8 md:py-10 border-b border-white/10">
+      <div className="max-w-[1360px] mx-auto px-5 md:px-10">
+        <div className="flex flex-col md:flex-row items-start md:items-center gap-5 max-w-[960px]">
+          <div className="w-12 h-12 rounded-xl bg-[#CFAE70]/15 border border-[#CFAE70]/30 flex items-center justify-center shrink-0">
+            <AlertTriangle className="w-6 h-6 text-[#CFAE70]" />
           </div>
           <div>
-            <p className="text-[10px] font-bold tracking-[0.12em] uppercase text-[#CFAE70] mb-1.5">O INSS erra mais do que parece</p>
-            <h3 className="text-[15px] font-normal text-white/70 leading-[1.65]">
-              Erros no cálculo da aposentadoria são mais comuns do que a maioria das pessoas imagina. <strong className="text-white font-semibold">Quem não pede revisão continua recebendo menos para sempre</strong> — o INSS não corrige por conta própria. E os valores pagos a menos nos meses anteriores podem ser recuperados.
-            </h3>
+            <p className="text-[11px] font-bold tracking-[0.14em] uppercase text-[#CFAE70] mb-1">
+              O INSS não corrige erros por conta própria
+            </p>
+            <p className="text-[15px] md:text-[16px] text-white/80 leading-relaxed font-light">
+              Erros no cálculo do benefício e cobranças indevidas no extrato são mais frequentes do que parecem.{" "}
+              <strong className="text-white font-semibold">
+                Sem conferência técnica, o segurado continua recebendo menos ou sofrendo descontos mês a mês.
+              </strong>{" "}
+              Diferenças devidas dos últimos meses podem ser analisadas caso a caso.
+            </p>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
 function DuasSituacoes() {
   return (
-    <section className="py-[56px] md:py-[80px] bg-[#F4F4F2] border-b border-[#E0E0DC]" id="situacoes">
-      <div className="max-w-[1160px] mx-auto px-4 md:px-8">
-        <div className="mb-[32px]">
-          <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-[#CFAE70] mb-2.5 block">Você se identifica?</span>
-          <h2 className="text-[clamp(24px,3vw,32px)] font-bold text-[#091D39] tracking-[-0.02em] mt-2 mb-2 font-heading">Dois problemas diferentes —<br/>mas ambos têm solução</h2>
-          <p className="text-[15px] text-[#767672] max-w-[500px]">A maioria dos aposentados que chegam até nós enfrenta uma dessas duas situações. Às vezes, as duas ao mesmo tempo.</p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-[1px] bg-[#E0E0DC] border border-[#E0E0DC]">
-          <div className="bg-white p-[32px_28px] flex flex-col gap-4 border-t-[3px] border-transparent hover:border-[#CFAE70] hover:bg-[#F4F4F2] transition-colors">
-            <div className="flex items-center gap-3">
-              <div className="w-[40px] h-[40px] bg-[#091D39]/5 flex items-center justify-center shrink-0">
-                <Search className="w-[18px] h-[18px] text-[#091D39]" />
+    <section className="py-16 md:py-24 bg-white border-b border-[#091D39]/10" id="situacoes">
+      <div className="max-w-[1360px] mx-auto px-5 md:px-10">
+        <Reveal className="max-w-[780px] mb-12 space-y-4">
+          <SectionBadge icon={Search}>Você se identifica?</SectionBadge>
+          <h2 className="font-heading text-[clamp(28px,4vw,46px)] font-bold text-[#091D39] tracking-[-0.03em] leading-[1.08]">
+            Dois problemas diferentes —{" "}
+            <span className="text-[#8a6a2b]">e ambos têm caminho de solução.</span>
+          </h2>
+          <p className="text-[16px] md:text-[17px] text-[#57534E] font-light leading-relaxed">
+            A maioria dos aposentados que nos procuram enfrenta uma destas duas situações — ou as duas ao mesmo tempo.
+          </p>
+        </Reveal>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          <Reveal delay={0.05}>
+            <div className="bg-[#FAF9F6] rounded-2xl border border-[#091D39]/10 hover:border-[#CFAE70] p-7 md:p-8 flex flex-col justify-between h-full transition-all duration-300 shadow-[0_4px_16px_-8px_rgba(9,29,57,0.06)]">
+              <div className="space-y-4">
+                <div className="flex items-center gap-3.5">
+                  <div className="w-11 h-11 rounded-xl bg-[#091D39] text-[#CFAE70] flex items-center justify-center shrink-0">
+                    <Search className="w-5 h-5" />
+                  </div>
+                  <h3 className="font-heading text-[20px] font-bold text-[#091D39]">
+                    “Acho que recebo menos do que deveria”
+                  </h3>
+                </div>
+                <p className="text-[15px] text-[#44403C] leading-relaxed font-light">
+                  O valor sempre pareceu abaixo do esperado ou algum período de trabalho ficou de fora — seja por vínculo omitido no CNIS, salários desconsiderados ou trabalho em condições insalubres não reconhecido. Isso é{" "}
+                  <strong className="text-[#091D39] font-semibold">revisão de benefício</strong>.
+                </p>
               </div>
-              <strong className="text-[16px] text-[#091D39] font-bold">"Acho que recebo menos do que deveria"</strong>
-            </div>
-            <p className="text-[14px] text-[#767672] leading-[1.7] flex-grow">O valor sempre pareceu baixo. Ou você soube que o INSS pode ter errado no cálculo — por não incluir algum período de trabalho, por usar salários errados ou por não reconhecer que você trabalhou em condições perigosas. Isso é <strong className="text-[#091D39]">revisão de benefício</strong>.</p>
-            <button 
-              className="bg-[#091D39] text-white font-sans text-[14px] font-medium px-6 py-3.5 flex items-center gap-2 hover:bg-[#0d2548] transition-colors w-fit mt-2"
-              onClick={() => document.getElementById('revisao')?.scrollIntoView({behavior:'smooth'})}
-            >
-              Ver revisão de benefício ↓
-            </button>
-          </div>
-          
-          <div className="bg-white p-[32px_28px] flex flex-col gap-4 border-t-[3px] border-transparent hover:border-[#CFAE70] hover:bg-[#F4F4F2] transition-colors">
-            <div className="flex items-center gap-3">
-              <div className="w-[40px] h-[40px] bg-[#091D39]/5 flex items-center justify-center shrink-0">
-                <ReceiptText className="w-[18px] h-[18px] text-[#091D39]" />
+              <div className="mt-6 pt-4 border-t border-[#091D39]/10 flex flex-wrap items-center justify-between gap-4">
+                <TextButton tone="dark" href="#revisao">
+                  Ver revisão de benefício
+                </TextButton>
+                <Link href="/revisao-de-aposentadoria">
+                  <a className="text-[13px] font-semibold text-[#8a6a2b] hover:underline">
+                    Página dedicada de Revisão →
+                  </a>
+                </Link>
               </div>
-              <strong className="text-[16px] text-[#091D39] font-bold">"Tem um desconto que não reconheço"</strong>
             </div>
-            <p className="text-[14px] text-[#767672] leading-[1.7] flex-grow">Aparece todo mês um valor descontado do seu benefício — de empréstimo, associação, seguro ou cartão que você não pediu ou não consegue cancelar. Isso é <strong className="text-[#091D39]">desconto indevido</strong> — e você tem direito a cancelar e, em muitos casos, receber de volta o que foi descontado.</p>
-            <button 
-              className="bg-[#091D39] text-white font-sans text-[14px] font-medium px-6 py-3.5 flex items-center gap-2 hover:bg-[#0d2548] transition-colors w-fit mt-2"
-              onClick={() => document.getElementById('descontos')?.scrollIntoView({behavior:'smooth'})}
-            >
-              Ver descontos indevidos ↓
-            </button>
-          </div>
+          </Reveal>
+
+          <Reveal delay={0.1}>
+            <div className="bg-[#FAF9F6] rounded-2xl border border-[#091D39]/10 hover:border-[#CFAE70] p-7 md:p-8 flex flex-col justify-between h-full transition-all duration-300 shadow-[0_4px_16px_-8px_rgba(9,29,57,0.06)]">
+              <div className="space-y-4">
+                <div className="flex items-center gap-3.5">
+                  <div className="w-11 h-11 rounded-xl bg-[#091D39] text-[#CFAE70] flex items-center justify-center shrink-0">
+                    <ReceiptText className="w-5 h-5" />
+                  </div>
+                  <h3 className="font-heading text-[20px] font-bold text-[#091D39]">
+                    “Tem um desconto que não reconheço”
+                  </h3>
+                </div>
+                <p className="text-[15px] text-[#44403C] leading-relaxed font-light">
+                  Aparece todo mês um desconto no seu benefício — empréstimo, cartão consignado, associação, sindicato ou seguro que você não contratou ou não consegue cancelar. Isso é{" "}
+                  <strong className="text-[#091D39] font-semibold">desconto indevido</strong> e pode ser contestado.
+                </p>
+              </div>
+              <div className="mt-6 pt-4 border-t border-[#091D39]/10 flex items-center justify-between">
+                <TextButton tone="dark" href="#descontos">
+                  Ver descontos indevidos
+                </TextButton>
+              </div>
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>
@@ -189,51 +314,107 @@ function DuasSituacoes() {
 
 function RevisaoBeneficio() {
   const cards = [
-    { icon: <Calculator />, title: "Erro no cálculo dos salários", desc: "O INSS pode ter usado salários errados ou deixado de incluir contribuições que você fez. Cada salário ignorado ou reduzido diminui o valor médio que serve de base para calcular o seu benefício — e essa diferença se acumula mês a mês.", detail: "Erro mais comum em benefícios antigos" },
-    { icon: <ShieldAlert />, title: "Trabalho perigoso não reconhecido", desc: "Quem trabalhou em condições perigosas — barulho alto, produtos químicos, calor extremo — pode ter direito a uma conversão que aumenta o tempo de contribuição contado. Se o INSS não reconheceu, o cálculo fica menor do que deveria.", detail: "Aumenta o tempo de contribuição reconhecido" },
-    { icon: <Search />, title: "Revisão do teto", desc: "Alguns aposentados tiveram o benefício limitado pelo teto do INSS na época da concessão. Com a mudança dos tetos ao longo dos anos, pode ser possível revisar o cálculo para incluir aqueles salários que foram cortados.", detail: "Válido para quem tinha salários acima do teto" },
-    { icon: <Scale />, title: "Reflexo de processo trabalhista", desc: "Quem ganhou uma reclamação trabalhista — com reconhecimento de horas extras, diferenças salariais ou vínculo empregatício — pode ter direito a incluir esses valores no cálculo da aposentadoria, mesmo depois de aposentado.", detail: "Exige análise do processo trabalhista" },
-    { icon: <Briefcase />, title: "Atividades simultâneas não consideradas", desc: "Quem trabalhou em dois empregos ao mesmo tempo — com contribuições para os dois — pode ter direito a que as duas contribuições sejam consideradas no cálculo. O INSS às vezes não faz isso corretamente.", detail: "Comum em quem tinha dois vínculos empregatícios" },
-    { icon: <Target />, title: "Benefício abaixo do salário mínimo", desc: "Nenhum benefício previdenciário pode ser menor que o salário mínimo vigente. Se o seu benefício está abaixo — seja por erro de cálculo ou por defasagem — isso é um direito que pode e deve ser corrigido de imediato.", detail: "Correção imediata, sem prazo decadencial" }
+    {
+      icon: Calculator,
+      title: "Erro no cálculo dos salários",
+      desc: "O INSS pode ter utilizado salários desatualizados ou deixado de somar contribuições que você recolheu, reduzindo a média mensal do benefício.",
+      detail: "Erro frequente em benefícios com CNIS incompleto",
+    },
+    {
+      icon: ShieldAlert,
+      title: "Trabalho perigoso ou insalubre não reconhecido",
+      desc: "Quem trabalhou exposto a agentes nocivos (ruído, químicos, calor) pode ter direito ao reconhecimento do tempo especial com reflexo direto no cálculo.",
+      detail: "Exige análise de PPP e laudos",
+    },
+    {
+      icon: Search,
+      title: "Revisão do teto",
+      desc: "Aposentados que tiveram o benefício limitado pelo teto na concessão podem verificar se houve alteração que permita recalcular parcelas anteriores.",
+      detail: "Válido para perfis específicos acima do teto",
+    },
+    {
+      icon: Scale,
+      title: "Reflexo de processo trabalhista",
+      desc: "Quem ganhou reclamação trabalhista com reconhecimento de vínculo, horas extras ou diferenças salariais pode buscar a inclusão desses valores no benefício.",
+      detail: "Exige conferência da sentença trabalhista",
+    },
+    {
+      icon: Briefcase,
+      title: "Atividades simultâneas não consideradas",
+      desc: "Quem contribuiu em dois empregos ou atividades ao mesmo tempo pode verificar se o INSS somou corretamente as remunerações dentro do limite legal.",
+      detail: "Comum em profissionais com dois vínculos",
+    },
+    {
+      icon: Target,
+      title: "Benefício abaixo do salário mínimo",
+      desc: "Nenhum benefício que substitui o salário do trabalhador pode ficar abaixo do mínimo vigente. Se houver defasagem ou erro, cabe correção.",
+      detail: "Garantia constitucional do piso previdenciário",
+    },
   ];
 
   return (
-    <section className="py-[56px] md:py-[80px] bg-white border-b border-[#E0E0DC]" id="revisao">
-      <div className="max-w-[1160px] mx-auto px-4 md:px-8">
-        <div className="mb-[36px]">
-          <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-[#CFAE70] mb-2.5 block">Revisão de benefício</span>
-          <h2 className="text-[clamp(24px,3vw,32px)] font-bold text-[#091D39] tracking-[-0.02em] mt-2 mb-2 font-heading">O INSS pode ter errado<br/>no cálculo da sua aposentadoria</h2>
-          <p className="text-[15px] text-[#767672] max-w-[560px]">Existem vários tipos de erro que o INSS comete — e cada um pode ser corrigido de uma forma diferente. Veja os mais comuns:</p>
+    <section className="py-16 md:py-24 bg-[#FAF9F6] border-b border-[#091D39]/10" id="revisao">
+      <div className="max-w-[1360px] mx-auto px-5 md:px-10">
+        <Reveal className="max-w-[780px] mb-12 space-y-4">
+          <SectionBadge icon={Calculator}>Revisão de benefício</SectionBadge>
+          <h2 className="font-heading text-[clamp(28px,4vw,46px)] font-bold text-[#091D39] tracking-[-0.03em] leading-[1.08]">
+            O INSS pode ter errado{" "}
+            <span className="text-[#8a6a2b]">no cálculo da sua aposentadoria.</span>
+          </h2>
+          <p className="text-[16px] md:text-[17px] text-[#57534E] font-light leading-relaxed">
+            Antes de protocolar qualquer pedido no Meu INSS, é fundamental realizar cálculo prévio seguro para confirmar se a revisão traz vantagem real. Conheça as hipóteses mais comuns:
+          </p>
+        </Reveal>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {cards.map((c, i) => {
+            const Icon = c.icon;
+            return (
+              <Reveal key={c.title} delay={(i % 3) * 0.06}>
+                <div className="bg-white rounded-2xl border border-[#091D39]/10 hover:border-[#CFAE70] p-7 h-full flex flex-col justify-between transition-all duration-300 shadow-[0_4px_16px_-8px_rgba(9,29,57,0.06)]">
+                  <div>
+                    <div className="w-11 h-11 rounded-xl bg-[#091D39] text-[#CFAE70] flex items-center justify-center mb-5">
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    <h3 className="font-heading text-[18px] font-bold text-[#091D39] mb-2.5 leading-snug">
+                      {c.title}
+                    </h3>
+                    <p className="text-[14.5px] text-[#44403C] leading-relaxed font-light">
+                      {c.desc}
+                    </p>
+                  </div>
+                  <div className="mt-5 pt-3 border-t border-[#091D39]/8 text-[12.5px] font-medium text-[#8a6a2b] flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-[#CFAE70] rounded-full shrink-0" />
+                    {c.detail}
+                  </div>
+                </div>
+              </Reveal>
+            );
+          })}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-[#E0E0DC] border border-[#E0E0DC]">
-          {cards.map((c, i) => (
-            <div key={i} className="bg-[#F4F4F2] p-[26px_24px] border-t-[3px] border-transparent hover:border-[#CFAE70] hover:bg-[#e8e6e2] transition-colors flex flex-col">
-              <div className="w-[40px] h-[40px] bg-[#091D39]/5 flex items-center justify-center mb-[14px]">
-                {React.cloneElement(c.icon as React.ReactElement, { className: "w-[18px] h-[18px] text-[#091D39]", strokeWidth: 1.5 })}
-              </div>
-              <h3 className="text-[15px] font-bold text-[#091D39] mb-[8px] leading-[1.3]">{c.title}</h3>
-              <p className="text-[13px] text-[#767672] leading-[1.65] flex-grow">{c.desc}</p>
-              <div className="mt-[12px] text-[12px] text-[#767672] flex items-center gap-[8px]">
-                <span className="w-[5px] h-[5px] bg-[#CFAE70] rounded-full shrink-0" />
-                {c.detail}
-              </div>
+        <Reveal delay={0.15} className="mt-8">
+          <div className="bg-[#091D39] text-white rounded-2xl p-7 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div className="space-y-1.5 max-w-[780px]">
+              <p className="text-[11px] font-bold tracking-[0.14em] uppercase text-[#CFAE70]">
+                Prazo decadencial de 10 anos
+              </p>
+              <p className="text-[15.5px] text-white/85 leading-relaxed font-light">
+                Em regra, há o prazo de <strong className="text-white font-semibold">10 anos</strong> a partir do mês seguinte ao primeiro pagamento para revisar o ato de concessão, além da cobrança de diferenças dos últimos 5 anos quando cabível.
+              </p>
             </div>
-          ))}
-        </div>
-
-        <div className="bg-[#091D39] mt-[1px] p-[20px_24px] flex flex-col md:flex-row items-start md:items-center justify-between gap-[24px] flex-wrap">
-          <div>
-            <p className="text-[10px] font-bold tracking-[0.1em] uppercase text-[#CFAE70] mb-[4px]">Prazo importante</p>
-            <p className="text-[15px] text-white/80 leading-[1.5]">Em geral, você tem <strong className="text-white font-semibold">10 anos</strong> a partir da concessão do benefício para pedir a revisão. Depois disso, o direito decai. Mas quanto antes o pedido for feito, mais meses de retroativo podem ser recuperados.</p>
+            <PillButton
+              tone="gold"
+              external
+              href={wppLink(
+                "Olá, Dr. Anderson! Gostaria de analisar se cabe revisão no cálculo da minha aposentadoria. [ja-aposentado]"
+              )}
+              className="shrink-0 w-full md:w-auto"
+            >
+              Analisar meu benefício
+            </PillButton>
           </div>
-          <button 
-            className="bg-[#CFAE70] text-[#091D39] text-[14px] font-bold px-[24px] py-[13px] flex items-center gap-[8px] hover:bg-[#dfc880] transition-colors shrink-0 whitespace-nowrap"
-            onClick={() => document.getElementById('contato')?.scrollIntoView({behavior:'smooth'})}
-          >
-            Analisar meu benefício
-          </button>
-        </div>
+        </Reveal>
       </div>
     </section>
   );
@@ -241,51 +422,107 @@ function RevisaoBeneficio() {
 
 function DescontosIndevidos() {
   const cards = [
-    { icon: <ReceiptText />, title: "RMC — Reserva de Margem Consignável", desc: "Uma reserva que libera parte do seu benefício para uso com crédito consignado. Muitas vezes é ativada por empresas sem que o aposentado tenha realmente autorizado — ou o aposentado não entendeu o que estava assinando.", detail: "Cancelamento pode ser feito a qualquer momento" },
-    { icon: <ReceiptText />, title: "RCC — Reserva de Cartão de Crédito", desc: "Parecida com a RMC, mas vinculada a um cartão de crédito consignado. Muitos aposentados não sabem que têm um cartão ativo — mas o desconto aparece todo mês no benefício.", detail: "Cancelamento pode incluir devolução dos valores" },
-    { icon: <Briefcase />, title: "Empréstimo consignado não autorizado", desc: "Empréstimos contratados no nome do aposentado sem consentimento real — por fraude, pressão de vendedores ou assinatura de documento sem entender o que era. O desconto aparece todo mês, mas o dinheiro foi para outro lugar.", detail: "Possibilidade de cancelamento e devolução em dobro" },
-    { icon: <Users />, title: "Desconto de associação ou sindicato", desc: "Cobranças mensais de associações que o aposentado nunca pediu para participar. Muito comum em beneficiários que recebem ligações de \"representantes\" e acabam concordando sem entender o que estão autorizando.", detail: "Cancelamento pode ser feito via INSS ou na Justiça" },
-    { icon: <HeartHandshake />, title: "Plano de saúde ou seguro não pedido", desc: "Planos contratados por telefone, em agências bancárias ou durante a explicação de outro produto. O desconto aparece no benefício, mas o aposentado não tem clareza sobre o que está pagando ou se realmente quis contratar.", detail: "Direito ao cancelamento e à restituição" },
-    { icon: <FileSearch />, title: "Desconto que você não consegue identificar", desc: "Às vezes aparece um valor descontado todo mês e o aposentado simplesmente não sabe de onde vem. Se você não reconhece um desconto, isso já é motivo suficiente para investigar e, se necessário, cancelar.", detail: "Qualquer desconto não reconhecido merece análise" }
+    {
+      icon: ReceiptText,
+      title: "RMC — Reserva de Margem Consignável",
+      desc: "Reserva de margem vinculada a cartão consignado, muitas vezes ativada sem explicação clara ao aposentado sobre os juros rotativos permanentes.",
+      detail: "Cancelamento pode ser solicitado",
+    },
+    {
+      icon: ReceiptText,
+      title: "RCC — Reserva de Cartão de Crédito",
+      desc: "Modalidade semelhante à RMC, vinculada a cartão consignado com desconto mensal recorrente no extrato do benefício.",
+      detail: "Análise de contrato e restituição",
+    },
+    {
+      icon: Briefcase,
+      title: "Empréstimo consignado não autorizado",
+      desc: "Contratos realizados sem consentimento expresso, por fraude ou abordagem irregular, gerando descontos mensais sem que o segurado tenha contratado.",
+      detail: "Contestado via administrativa ou judicial",
+    },
+    {
+      icon: Users,
+      title: "Desconto de associação ou sindicato",
+      desc: "Cobranças mensais de entidades associativas que o aposentado não autorizou ou não consegue encerrar pelos canais comuns.",
+      detail: "Bloqueio direto e pedido de devolução",
+    },
+    {
+      icon: HeartHandshake,
+      title: "Plano de saúde ou seguro não contratado",
+      desc: "Descontos de seguros, assistências ou planos incluídos sem consentimento claro durante atendimento bancário ou telefônico.",
+      detail: "Direito ao cancelamento e apuração",
+    },
+    {
+      icon: FileSearch,
+      title: "Desconto não identificado no extrato",
+      desc: "Qualquer rubrica descontada no histórico de créditos (HISCRE) que você não reconhece merece conferência imediata.",
+      detail: "Conferência pelo extrato do Meu INSS",
+    },
   ];
 
   return (
-    <section className="py-[56px] md:py-[80px] bg-[#F4F4F2] border-b border-[#E0E0DC]" id="descontos">
-      <div className="max-w-[1160px] mx-auto px-4 md:px-8">
-        <div className="mb-[36px]">
-          <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-[#CFAE70] mb-2.5 block">Descontos indevidos</span>
-          <h2 className="text-[clamp(24px,3vw,32px)] font-bold text-[#091D39] tracking-[-0.02em] mt-2 mb-2 font-heading">Tem algo sendo descontado<br/>do seu benefício sem autorização?</h2>
-          <p className="text-[15px] text-[#767672] max-w-[560px]">Esse tipo de abuso é muito mais frequente do que deveria. Veja os tipos mais comuns — e saiba que todos podem ser cancelados.</p>
+    <section className="py-16 md:py-24 bg-white border-b border-[#091D39]/10" id="descontos">
+      <div className="max-w-[1360px] mx-auto px-5 md:px-10">
+        <Reveal className="max-w-[780px] mb-12 space-y-4">
+          <SectionBadge icon={ReceiptText}>Descontos Indevidos</SectionBadge>
+          <h2 className="font-heading text-[clamp(28px,4vw,46px)] font-bold text-[#091D39] tracking-[-0.03em] leading-[1.08]">
+            Tem algo sendo descontado{" "}
+            <span className="text-[#8a6a2b]">do seu benefício sem autorização?</span>
+          </h2>
+          <p className="text-[16px] md:text-[17px] text-[#57534E] font-light leading-relaxed">
+            Confira os descontos irregulares mais comuns no extrato de pagamento do INSS:
+          </p>
+        </Reveal>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {cards.map((c, i) => {
+            const Icon = c.icon;
+            return (
+              <Reveal key={c.title} delay={(i % 3) * 0.06}>
+                <div className="bg-[#FAF9F6] rounded-2xl border border-[#091D39]/10 hover:border-[#CFAE70] p-7 h-full flex flex-col justify-between transition-all duration-300 shadow-[0_4px_16px_-8px_rgba(9,29,57,0.06)]">
+                  <div>
+                    <div className="w-11 h-11 rounded-xl bg-[#091D39] text-[#CFAE70] flex items-center justify-center mb-5">
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    <h3 className="font-heading text-[18px] font-bold text-[#091D39] mb-2.5 leading-snug">
+                      {c.title}
+                    </h3>
+                    <p className="text-[14.5px] text-[#44403C] leading-relaxed font-light">
+                      {c.desc}
+                    </p>
+                  </div>
+                  <div className="mt-5 pt-3 border-t border-[#091D39]/8 text-[12.5px] font-medium text-[#8a6a2b] flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-[#CFAE70] rounded-full shrink-0" />
+                    {c.detail}
+                  </div>
+                </div>
+              </Reveal>
+            );
+          })}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-[#E0E0DC] border border-[#E0E0DC]">
-          {cards.map((c, i) => (
-            <div key={i} className="bg-white p-[26px_24px] border-t-[3px] border-transparent hover:border-[#CFAE70] hover:bg-[#F4F4F2] transition-colors flex flex-col">
-              <div className="w-[40px] h-[40px] bg-[#091D39]/5 flex items-center justify-center mb-[14px]">
-                {React.cloneElement(c.icon as React.ReactElement, { className: "w-[18px] h-[18px] text-[#091D39]", strokeWidth: 1.5 })}
-              </div>
-              <h3 className="text-[15px] font-bold text-[#091D39] mb-[8px] leading-[1.3]">{c.title}</h3>
-              <p className="text-[13px] text-[#767672] leading-[1.65] flex-grow">{c.desc}</p>
-              <div className="mt-[12px] text-[12px] text-[#767672] flex items-center gap-[8px]">
-                <span className="w-[5px] h-[5px] bg-[#CFAE70] rounded-full shrink-0" />
-                {c.detail}
-              </div>
+        <Reveal delay={0.15} className="mt-8">
+          <div className="bg-[#091D39] text-white rounded-2xl p-7 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div className="space-y-1.5 max-w-[780px]">
+              <p className="text-[11px] font-bold tracking-[0.14em] uppercase text-[#CFAE70]">
+                Proteção ao aposentado
+              </p>
+              <p className="text-[15.5px] text-white/85 leading-relaxed font-light">
+                Cobranças não autorizadas violam o Código de Defesa do Consumidor. Dependendo da prova e das circunstâncias do caso, é possível pleitear o cancelamento imediato e a restituição dos valores descontados indevidamente.
+              </p>
             </div>
-          ))}
-        </div>
-
-        <div className="bg-[#091D39] mt-[1px] p-[20px_24px] flex flex-col md:flex-row items-start md:items-center justify-between gap-[24px] flex-wrap">
-          <div>
-            <p className="text-[10px] font-bold tracking-[0.1em] uppercase text-[#CFAE70] mb-[4px]">Você sabia?</p>
-            <p className="text-[15px] text-white/80 leading-[1.5]">Descontos não autorizados são prática abusiva pelo Código de Defesa do Consumidor. Em muitos casos, você tem direito à <strong className="text-white font-semibold">devolução em dobro</strong> dos valores pagos indevidamente — além do cancelamento imediato.</p>
+            <PillButton
+              tone="gold"
+              external
+              href={wppLink(
+                "Olá, Dr. Anderson! Notei um desconto que não reconheço no meu benefício do INSS e gostaria de orientação. [ja-aposentado]"
+              )}
+              className="shrink-0 w-full md:w-auto"
+            >
+              Verificar meu extrato
+            </PillButton>
           </div>
-          <button 
-            className="bg-[#CFAE70] text-[#091D39] text-[14px] font-bold px-[24px] py-[13px] flex items-center gap-[8px] hover:bg-[#dfc880] transition-colors shrink-0 whitespace-nowrap"
-            onClick={() => document.getElementById('contato')?.scrollIntoView({behavior:'smooth'})}
-          >
-            Quero cancelar os descontos
-          </button>
-        </div>
+        </Reveal>
       </div>
     </section>
   );
@@ -293,21 +530,26 @@ function DescontosIndevidos() {
 
 function MidCTA() {
   return (
-    <section className="bg-[#091D39] py-[48px] border-t border-white/5 border-b">
-      <div className="max-w-[1160px] mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] items-center gap-[40px]">
-          <div>
-            <h3 className="text-[clamp(20px,2.5vw,26px)] font-bold text-white mb-[8px] tracking-[-0.01em] font-heading">Tem dúvida se o seu caso se encaixa em alguma dessas situações?</h3>
-            <p className="text-[14px] text-white/60">Mande o extrato do seu benefício ou descreva o que está acontecendo. Analisamos e te explicamos em linguagem simples.</p>
-          </div>
-          <button 
-            className="bg-[#25D366] text-white text-[14px] font-bold px-[28px] py-[14px] flex items-center gap-[10px] hover:bg-[#1db957] transition-colors whitespace-nowrap w-fit"
-            onClick={() => window.open('https://wa.me/5527999999999?text=Ol%C3%A1%2C+sou+aposentado+e+tenho+d%C3%BAvidas+sobre+meu+benef%C3%ADcio','_blank')}
-          >
-            <Phone size={18} />
-            Falar pelo WhatsApp
-          </button>
+    <section className="bg-[#070E18] text-white py-12 md:py-14 border-b border-white/10">
+      <div className="max-w-[1360px] mx-auto px-5 md:px-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div className="space-y-2 max-w-[760px]">
+          <h3 className="font-heading text-[clamp(22px,2.8vw,30px)] font-bold text-white tracking-[-0.02em]">
+            Tem dúvida se o seu caso se encaixa em revisão ou desconto indevido?
+          </h3>
+          <p className="text-[15px] text-white/75 font-light">
+            Envie o extrato de pagamento ou a carta de concessão pelo WhatsApp para conferência técnica sem compromisso.
+          </p>
         </div>
+        <PillButton
+          tone="gold"
+          external
+          href={wppLink(
+            "Olá, Dr. Anderson! Sou aposentado e tenho dúvidas sobre meu benefício do INSS. [ja-aposentado]"
+          )}
+          className="shrink-0 w-full md:w-auto"
+        >
+          Falar pelo WhatsApp
+        </PillButton>
       </div>
     </section>
   );
@@ -315,32 +557,56 @@ function MidCTA() {
 
 function ComoFunciona() {
   const steps = [
-    { num: "01", title: "Você nos mostra o que está acontecendo", desc: "Envia o extrato do benefício, conta quais descontos aparecem, quando se aposentou e o que te deixa com dúvida sobre o valor. Não precisa entender de lei — só nos mostrar o que você está vendo." },
-    { num: "02", title: "Identificamos o problema e verificamos se há algo a corrigir", desc: "Analisamos os descontos que aparecem no seu benefício, verificamos a origem de cada um e checamos se o valor da sua aposentadoria corresponde ao que o seu histórico de trabalho deveria gerar. Explicamos tudo com clareza." },
-    { num: "03", title: "Definimos o melhor caminho para resolver", desc: "Cancelamento administrativo direto no INSS, notificação às empresas responsáveis pelos descontos ou ação judicial — escolhemos o caminho mais rápido e eficaz para cada situação. Às vezes a solução é simples e rápida; outras vezes exige um processo judicial." },
-    { num: "04", title: "Agimos para cancelar os descontos ou corrigir o valor", desc: "Protocolamos tudo e acompanhamos o processo. Quando há descontos pagos indevidamente, incluímos o pedido de devolução. Quando há erro no cálculo, pedimos a correção com os retroativos desde a data do pedido." }
+    {
+      num: "Passo 01",
+      title: "Você envia o extrato ou carta",
+      desc: "Mande pelo WhatsApp o extrato de pagamento (HISCRE) ou a carta de concessão e conte o que chamou sua atenção.",
+    },
+    {
+      num: "Passo 02",
+      title: "Conferência matemática e documental",
+      desc: "Identificamos a origem dos descontos e verificamos se há salários ou vínculos omitidos no cálculo da aposentadoria.",
+    },
+    {
+      num: "Passo 03",
+      title: "Explicação clara do caminho",
+      desc: "Mostramos o que faz sentido fazer — cancelamento administrativo, contestação de cobrança ou ação judicial — só avançando com cálculo seguro.",
+    },
+    {
+      num: "Passo 04",
+      title: "Protocolo e acompanhamento",
+      desc: "Cuidamos de toda a petição e acompanhamos o andamento do pedido até a resolução do bloqueio ou revisão.",
+    },
   ];
 
   return (
-    <section className="bg-[#0D0D0D] py-[56px] border-b border-white/5">
-      <div className="max-w-[1160px] mx-auto px-4 md:px-8">
-        <div className="mb-[36px]">
-          <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-[#CFAE70] mb-2.5 block">Como funciona</span>
-          <h2 className="text-[clamp(24px,3vw,32px)] font-bold text-white tracking-[-0.02em] mt-2 mb-2 font-heading">O que fazemos pelo seu caso</h2>
-          <p className="text-[15px] text-white/50 max-w-[560px]">Do diagnóstico até a solução — em etapas simples.</p>
-        </div>
+    <section className="bg-[#FAF9F6] text-[#091D39] py-16 md:py-24 border-b border-[#091D39]/10">
+      <div className="max-w-[1360px] mx-auto px-5 md:px-10">
+        <Reveal className="max-w-[780px] mb-12 space-y-4">
+          <SectionBadge icon={CalendarCheck}>Como Funciona</SectionBadge>
+          <h2 className="font-heading text-[clamp(28px,4vw,46px)] font-bold text-[#091D39] tracking-[-0.03em] leading-[1.08]">
+            O que fazemos pelo seu caso,{" "}
+            <span className="text-[#8a6a2b]">em quatro passos claros.</span>
+          </h2>
+        </Reveal>
 
-        <div className="flex flex-col border border-white/10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {steps.map((s, i) => (
-            <div key={i} className="grid grid-cols-[56px_1fr] border-b border-white/5 hover:bg-white/5 transition-colors last:border-0">
-              <div className="flex items-start justify-center pt-[24px] border-r border-white/5 text-[18px] font-bold text-[#CFAE70] opacity-40">
-                {s.num}
+            <Reveal key={s.num} delay={i * 0.08}>
+              <div className="bg-white rounded-2xl border border-[#091D39]/10 p-7 h-full flex flex-col justify-between shadow-[0_4px_16px_-8px_rgba(9,29,57,0.06)]">
+                <div>
+                  <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-[#8a6a2b] bg-[#CFAE70]/20 px-2.5 py-1 rounded-md mb-4">
+                    {s.num}
+                  </span>
+                  <h3 className="font-heading text-[18px] font-bold text-[#091D39] mb-2.5 leading-snug">
+                    {s.title}
+                  </h3>
+                  <p className="text-[14.5px] text-[#44403C] leading-relaxed font-light">
+                    {s.desc}
+                  </p>
+                </div>
               </div>
-              <div className="p-[22px_28px]">
-                <h4 className="text-[15px] font-bold text-white mb-[8px]">{s.title}</h4>
-                <p className="text-[13px] text-white/50 leading-[1.65]">{s.desc}</p>
-              </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>
@@ -350,30 +616,56 @@ function ComoFunciona() {
 
 function OutrosDireitos() {
   const cards = [
-    { icon: <Target />, title: "Isenção de Imposto de Renda", desc: "Aposentados com doenças graves têm direito à isenção de IR sobre o benefício. A lista inclui cardiopatia, câncer, Parkinson, doenças renais, HIV e outras condições — mesmo que a doença tenha surgido depois da aposentadoria." },
-    { icon: <CheckCircle2 />, title: "Auxílio por nova incapacidade", desc: "Em certos casos, aposentados que ficam temporariamente incapacitados por uma doença diferente da que motivou a aposentadoria podem ter direito a um auxílio adicional do INSS enquanto estiverem impedidos de trabalhar." },
-    { icon: <Users />, title: "Pensão por morte para dependentes", desc: "Quando um aposentado falece, cônjuge, filhos e outros dependentes comprovados têm direito à pensão por morte. Esse benefício precisa ser solicitado — não é automático — e tem prazo para ser pedido." }
+    {
+      icon: Target,
+      title: "Isenção de Imposto de Renda",
+      desc: "Aposentados e pensionistas diagnosticados com moléstias graves previstas em lei (como cardiopatia grave, neoplasia maligna, Parkinson, nefropatia grave, entre outras) podem ter direito à isenção de IR sobre os proventos.",
+    },
+    {
+      icon: CheckCircle2,
+      title: "Adicional de 25% na invalidez",
+      desc: "Quem recebe aposentadoria por incapacidade permanente (antiga invalidez) e necessita de assistência permanente de outra pessoa pode requerer o acréscimo de 25% no valor do benefício.",
+    },
+    {
+      icon: Users,
+      title: "Pensão por morte para dependentes",
+      desc: "Cônjuge, companheiro(a), filhos menores ou com deficiência e dependentes habilitados têm direito à pensão por morte, cujo prazo de solicitação influencia a data de início dos pagamentos.",
+    },
   ];
 
   return (
-    <section className="py-[56px] md:py-[80px] bg-[#F4F4F2] border-b border-[#E0E0DC]">
-      <div className="max-w-[1160px] mx-auto px-4 md:px-8">
-        <div className="mb-[36px]">
-          <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-[#CFAE70] mb-2.5 block">Mais direitos para aposentados</span>
-          <h2 className="text-[clamp(24px,3vw,32px)] font-bold text-[#091D39] tracking-[-0.02em] mt-2 mb-2 font-heading">Outros benefícios que aposentados<br/>frequentemente desconhecem</h2>
-          <p className="text-[15px] text-[#767672] max-w-[560px]">Além da revisão e dos descontos, existem outros direitos que muitos aposentados têm e não sabem.</p>
-        </div>
+    <section className="py-16 md:py-24 bg-white border-b border-[#091D39]/10">
+      <div className="max-w-[1360px] mx-auto px-5 md:px-10">
+        <Reveal className="max-w-[780px] mb-12 space-y-4">
+          <SectionBadge icon={Sparkles}>Mais direitos para aposentados</SectionBadge>
+          <h2 className="font-heading text-[clamp(28px,4vw,46px)] font-bold text-[#091D39] tracking-[-0.03em] leading-[1.08]">
+            Outros direitos que aposentados{" "}
+            <span className="text-[#8a6a2b]">frequentemente desconhecem.</span>
+          </h2>
+          <p className="text-[16px] md:text-[17px] text-[#57534E] font-light leading-relaxed">
+            Além da revisão e do cancelamento de descontos, existem garantias legais relevantes após a concessão:
+          </p>
+        </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[1px] bg-[#E0E0DC] border border-[#E0E0DC]">
-          {cards.map((c, i) => (
-            <div key={i} className="bg-white p-[26px_24px] border-t-[3px] border-transparent hover:border-[#CFAE70] hover:bg-[#F4F4F2] transition-colors flex flex-col">
-              <div className="w-[40px] h-[40px] bg-[#091D39]/5 flex items-center justify-center mb-[14px]">
-                {React.cloneElement(c.icon as React.ReactElement, { className: "w-[18px] h-[18px] text-[#091D39]", strokeWidth: 1.5 })}
-              </div>
-              <h3 className="text-[15px] font-bold text-[#091D39] mb-[8px] leading-[1.3]">{c.title}</h3>
-              <p className="text-[13px] text-[#767672] leading-[1.65] flex-grow">{c.desc}</p>
-            </div>
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {cards.map((c, i) => {
+            const Icon = c.icon;
+            return (
+              <Reveal key={c.title} delay={i * 0.08}>
+                <div className="bg-[#FAF9F6] rounded-2xl border border-[#091D39]/10 p-7 h-full flex flex-col">
+                  <div className="w-11 h-11 rounded-xl bg-[#091D39] text-[#CFAE70] flex items-center justify-center mb-5">
+                    <Icon className="w-5 h-5" />
+                  </div>
+                  <h3 className="font-heading text-[18px] font-bold text-[#091D39] mb-2.5 leading-snug">
+                    {c.title}
+                  </h3>
+                  <p className="text-[14.5px] text-[#44403C] leading-relaxed font-light">
+                    {c.desc}
+                  </p>
+                </div>
+              </Reveal>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -382,56 +674,99 @@ function OutrosDireitos() {
 
 function FAQJaAposentado() {
   const faqs = [
-    { q: "Como faço para cancelar um desconto que não autorizei?", a: "O primeiro caminho é pela Central 135 do INSS ou pelo portal Meu INSS, pedindo o cancelamento direto. Se a empresa não atender ou demorar, a via judicial garante o resultado — e muitas vezes inclui a devolução dos valores descontados indevidamente, em dobro, por se tratar de cobrança abusiva." },
-    { q: "Posso receber de volta o dinheiro descontado sem minha autorização?", a: "Em muitos casos, sim. O Código de Defesa do Consumidor prevê devolução em dobro quando há cobrança indevida. Isso se aplica a descontos de associações, planos não pedidos e empréstimos contratados de forma irregular. A análise do caso define o que é possível recuperar." },
-    { q: "Qual o prazo para pedir a revisão da aposentadoria?", a: "Em geral, o prazo é de 10 anos a partir da data em que o benefício foi concedido. Depois disso, o direito à revisão decai. Alguns tipos específicos de correção — como benefício abaixo do salário mínimo — não têm prazo. Quanto antes o pedido for feito, mais meses de valores retroativos podem ser recuperados." },
-    { q: "A revisão pode diminuir o valor que recebo?", a: "A revisão que pedimos é sempre em favor do aposentado — buscando corrigir erros que resultaram em um valor menor do que o correto. O INSS pode fazer revisões por conta própria (o chamado pente-fino), mas esse é um processo separado, que acontece independentemente de um pedido de revisão judicial." },
-    { q: "Meu benefício foi suspenso sem aviso. O que faço?", a: "A suspensão pode acontecer por falta de prova de vida, suspeita de irregularidade ou descumprimento de alguma exigência do INSS. Em todos os casos, o bloqueio pode ser revertido. O importante é agir rapidamente — cada mês sem pagamento é um prejuízo que pode não ser totalmente recuperado." },
-    { q: "Preciso ir pessoalmente a algum lugar?", a: "Não. Todo o atendimento é feito de forma digital — por WhatsApp, vídeo ou e-mail. O extrato do benefício e os documentos são enviados por foto. Atendo clientes em todo o Brasil sem necessidade de deslocamento." }
+    {
+      q: "Como faço para cancelar um desconto que não autorizei no meu benefício?",
+      a: "É possível solicitar o bloqueio ou exclusão de mensalidades associativas diretamente pelo Meu INSS ou Central 135. Quando a cobrança persiste ou envolve empréstimo ou cartão consignado irregular (RMC/RCC), a via judicial permite buscar o cancelamento definitivo e a devolução dos valores descontados indevidamente.",
+    },
+    {
+      q: "Posso receber de volta o dinheiro descontado sem minha autorização?",
+      a: "Sim, mediante comprovação da irregularidade contratual. O Código de Defesa do Consumidor prevê a restituição de quantias cobradas indevidamente, inclusive em dobro quando caracterizada a falha ou má-fé na contratação.",
+    },
+    {
+      q: "A revisão pode diminuir o valor que recebo hoje?",
+      a: "Se o segurado protocola um pedido diretamente no INSS sem cálculo prévio, o órgão pode reexaminar todo o processo e até reduzir o valor caso encontre inconsistência anterior. Por isso, sempre realizamos a auditoria matemática prévia antes de qualquer medida.",
+    },
+    {
+      q: "Qual é o prazo para pedir a revisão da aposentadoria?",
+      a: "Em regra, o prazo decadencial é de 10 anos contados do primeiro dia do mês seguinte ao recebimento da primeira prestação do benefício. Situações específicas, como reflexo de ação trabalhista recente ou correção de erro material, exigem análise individual.",
+    },
+    {
+      q: "Meu benefício foi suspenso ou bloqueado. O que faço?",
+      a: "A suspensão costuma ocorrer por pendência cadastral, prova de vida ou exigência de revisão administrativa. Identificamos o motivo no sistema do INSS para regularizar ou contestar o bloqueio rapidamente.",
+    },
+    {
+      q: "Preciso ir pessoalmente ao escritório ou ter todos os papéis antes de chamar?",
+      a: "Não. Você pode começar explicando a situação pelo WhatsApp, sem precisar reunir tudo antes. Todo o acompanhamento é digital por WhatsApp, videochamada ou e-mail para aposentados em todo o Brasil e no exterior, além do atendimento presencial na Serra/ES.",
+    },
   ];
 
   const [openIdx, setOpenIdx] = useState<number | null>(0);
 
   return (
-    <section className="py-[56px] md:py-[80px] bg-white border-b border-[#E0E0DC]" id="faq">
-      <div className="max-w-[1160px] mx-auto px-4 md:px-8">
-        <div className="mb-[36px]">
-          <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-[#CFAE70] mb-2.5 block">Dúvidas comuns</span>
-          <h2 className="text-[clamp(24px,3vw,32px)] font-bold text-[#091D39] tracking-[-0.02em] mt-2 mb-2 font-heading">O que os aposentados<br/>mais perguntam</h2>
-        </div>
-        
-        <div className="flex flex-col gap-[1px] bg-[#E0E0DC] border border-[#E0E0DC]">
-          {faqs.map((f, i) => (
-            <div 
-              key={i} 
-              className={`bg-white transition-all duration-300`}
+    <section className="py-16 md:py-24 bg-[#FAF9F6] border-b border-[#091D39]/10" id="faq">
+      <div className="max-w-[1360px] mx-auto px-5 md:px-10 grid lg:grid-cols-12 gap-8 lg:gap-16">
+        <Reveal className="lg:col-span-4 space-y-4">
+          <p className="text-[12px] font-bold tracking-[0.2em] uppercase text-[#8a6a2b]">
+            Dúvidas comuns
+          </p>
+          <h2 className="font-heading text-[clamp(28px,3.8vw,44px)] font-bold text-[#091D39] tracking-[-0.03em] leading-[1.08]">
+            O que os aposentados{" "}
+            <span className="text-[#8a6a2b]">mais perguntam.</span>
+          </h2>
+          <p className="text-[15px] text-[#57534E] font-light leading-relaxed">
+            Se preferir conversar sobre o seu extrato específico, envie uma mensagem pelo WhatsApp.
+          </p>
+          <div className="pt-2">
+            <PillButton
+              tone="navy"
+              external
+              href={wppLink(
+                "Olá, Dr. Anderson! Tenho uma dúvida sobre minha aposentadoria ou descontos no extrato. [ja-aposentado]"
+              )}
             >
-              <div 
-                className={`p-[18px_22px] cursor-pointer flex items-center justify-between gap-4 border-l-4 ${openIdx === i ? 'border-[#CFAE70] bg-[#F4F4F2]' : 'border-transparent hover:bg-[#F4F4F2]'}`}
+              Tirar dúvida no WhatsApp
+            </PillButton>
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.08} className="lg:col-span-8 divide-y divide-[#091D39]/10">
+          {faqs.map((f, i) => (
+            <div key={f.q} className="py-5">
+              <button
+                type="button"
                 onClick={() => setOpenIdx(openIdx === i ? null : i)}
+                className="w-full flex items-center justify-between text-left gap-4 py-2 group cursor-pointer"
               >
-                <span className={`text-[14px] font-medium transition-colors ${openIdx === i ? 'text-[#091D39]' : 'text-[#091D39]'}`}>{f.q}</span>
-                <span className={`text-[18px] flex items-center justify-center shrink-0 transition-colors text-[#CFAE70] transform ${openIdx === i ? 'rotate-45' : 'rotate-0'}`}>
-                  <Plus size={20} />
+                <span className="font-heading text-[17px] md:text-[18px] font-bold text-[#091D39] group-hover:text-[#8a6a2b] transition-colors leading-snug">
+                  {f.q}
                 </span>
-              </div>
+                <span
+                  className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 ${
+                    openIdx === i
+                      ? "bg-[#CFAE70] text-[#091D39] rotate-45"
+                      : "bg-[#091D39]/5 text-[#091D39] group-hover:bg-[#CFAE70]/20"
+                  }`}
+                >
+                  <Plus size={16} />
+                </span>
+              </button>
               <AnimatePresence>
                 {openIdx === i && (
-                  <motion.div 
+                  <motion.div
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    className="overflow-hidden bg-[#F4F4F2]"
+                    className="overflow-hidden"
                   >
-                    <div className="px-[22px] pb-[18px] pt-0 text-[13px] text-[#767672] leading-[1.7] border-l-4 border-[#E0E0DC] ml-[-4px]">
+                    <p className="pb-4 md:pr-10 text-[15px] text-[#57534E] leading-relaxed font-light">
                       {f.a}
-                    </div>
+                    </p>
                   </motion.div>
                 )}
               </AnimatePresence>
             </div>
           ))}
-        </div>
+        </Reveal>
       </div>
     </section>
   );
@@ -439,149 +774,55 @@ function FAQJaAposentado() {
 
 function ContatoJaAposentado() {
   return (
-    <section id="contato" className="py-[56px] md:py-[80px] bg-[#F4F4F2] border-b border-[#E0E0DC]">
-      <div className="max-w-[1160px] mx-auto px-4 md:px-8">
-        <div className="mb-[32px]">
-          <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-[#CFAE70] mb-2.5 block">Contato</span>
-          <h2 className="text-[clamp(24px,3vw,32px)] font-bold text-[#091D39] tracking-[-0.02em] font-heading">Algo não está certo<br/>no seu benefício?</h2>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 border border-[#E0E0DC] shadow-lg items-stretch">
-          <div className="p-[40px] bg-[#091D39] relative overflow-hidden flex flex-col justify-center">
-            <h3 className="text-[clamp(18px,2vw,22px)] font-bold text-white tracking-[-0.02em] mb-2 font-heading border-l-4 border-[#CFAE70] pl-4">Fale com o advogado</h3>
-            <p className="text-[14px] text-white/60 leading-[1.65] font-light mb-[32px] mt-[12px] pl-5">Mande o extrato do benefício ou descreva o que está acontecendo. Análise inicial sem compromisso. Atendimento em todo o Brasil.</p>
-            
-            <div className="space-y-[20px] pl-5">
-              <div className="flex items-start gap-[14px]">
-                <div className="w-[40px] h-[40px] bg-white/5 flex items-center justify-center shrink-0 border border-white/10">
-                  <Phone className="w-[16px] h-[16px] text-[#CFAE70]" />
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-[10px] font-bold tracking-[0.1em] uppercase text-white/40 mb-[2px]">Telefone / WhatsApp</span>
-                  <strong className="text-[14px] font-bold text-white">+55 (27) 99999-9999</strong>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-[14px]">
-                <div className="w-[40px] h-[40px] bg-white/5 flex items-center justify-center shrink-0 border border-white/10">
-                  <Mail className="w-[16px] h-[16px] text-[#CFAE70]" />
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-[10px] font-bold tracking-[0.1em] uppercase text-white/40 mb-[2px]">E-mail</span>
-                  <strong className="text-[14px] font-bold text-white break-all">contato@andersonlitig.adv.br</strong>
-                </div>
-              </div>
+    <section id="contato" className="py-16 md:py-24 bg-white">
+      <div className="max-w-[1000px] mx-auto px-5 md:px-10 text-center space-y-6">
+        <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[12px] font-semibold uppercase tracking-wider bg-[#8a6a2b]/10 text-[#8a6a2b] border border-[#8a6a2b]/20">
+          <Sparkles size={14} /> Atendimento Previdenciário Especializado
+        </span>
 
-              <div className="flex items-start gap-[14px]">
-                <div className="w-[40px] h-[40px] bg-white/5 flex items-center justify-center shrink-0 border border-white/10">
-                  <MapPin className="w-[16px] h-[16px] text-[#CFAE70]" />
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-[10px] font-bold tracking-[0.1em] uppercase text-white/40 mb-[2px]">Atuação</span>
-                  <strong className="text-[14px] font-bold text-white">Serra/ES — Atendimento Nacional 100% Digital</strong>
-                </div>
-              </div>
-            </div>
-            
-            <button 
-              className="mt-[28px] bg-[#25D366] text-white text-[14px] font-bold px-[24px] py-[13px] flex items-center justify-center gap-[9px] hover:bg-[#1db957] transition-all w-fit ml-5"
-              onClick={() => window.open('https://wa.me/5527999999999?text=Ol%C3%A1%2C+sou+aposentado+e+tenho+d%C3%BAvidas+sobre+meu+benef%C3%ADcio+do+INSS','_blank')}
-            >
-              <Phone size={18} />
-              Falar pelo WhatsApp agora
-            </button>
-          </div>
-          
-          <div className="p-[40px] bg-white flex flex-col justify-center">
-            <h3 className="text-[18px] font-bold text-[#091D39] mb-[22px] font-heading">Envie uma mensagem</h3>
-            <form className="flex flex-col gap-[13px]" onSubmit={(e) => e.preventDefault()}>
-              <div>
-                <label className="block text-[10px] font-bold tracking-[0.1em] uppercase text-[#767672] mb-[5px]">Nome completo *</label>
-                <input type="text" className="w-full p-[11px_13px] border border-[#E0E0DC] bg-white font-sans text-[14px] text-[#091D39] outline-none transition-all focus:border-[#091D39]" placeholder="Digite seu nome" />
-              </div>
-              <div>
-                <label className="block text-[10px] font-bold tracking-[0.1em] uppercase text-[#767672] mb-[5px]">Telefone / WhatsApp *</label>
-                <input type="tel" className="w-full p-[11px_13px] border border-[#E0E0DC] bg-white font-sans text-[14px] text-[#091D39] outline-none transition-all focus:border-[#091D39]" placeholder="(00) 00000-0000" />
-              </div>
-              <div>
-                <label className="block text-[10px] font-bold tracking-[0.1em] uppercase text-[#767672] mb-[5px]">E-mail</label>
-                <input type="email" className="w-full p-[11px_13px] border border-[#E0E0DC] bg-white font-sans text-[14px] text-[#091D39] outline-none transition-all focus:border-[#091D39]" placeholder="Digite seu e-mail" />
-              </div>
-              <div>
-                <label className="block text-[10px] font-bold tracking-[0.1em] uppercase text-[#767672] mb-[5px]">Qual é a sua situação? *</label>
-                <div className="relative">
-                  <select className="w-full p-[11px_13px] border border-[#E0E0DC] bg-white font-sans text-[14px] text-[#091D39] outline-none transition-all focus:border-[#091D39] appearance-none pr-10 cursor-pointer">
-                    <option value="" disabled selected>Selecione</option>
-                    <option>Acho que recebo menos do que deveria</option>
-                    <option>Tem desconto que não reconheço no benefício</option>
-                    <option>Quero cancelar empréstimo consignado</option>
-                    <option>Quero cancelar desconto de associação ou sindicato</option>
-                    <option>Trabalhei em local perigoso e não foi reconhecido</option>
-                    <option>Tive processo trabalhista que pode afetar o cálculo</option>
-                    <option>Meu benefício foi suspenso ou bloqueado</option>
-                    <option>Quero saber sobre isenção de Imposto de Renda</option>
-                    <option>Outra dúvida</option>
-                  </select>
-                  <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 text-[#767672] pointer-events-none" size={16} />
-                </div>
-              </div>
-              <div>
-                <label className="block text-[10px] font-bold tracking-[0.1em] uppercase text-[#767672] mb-[5px]">Mensagem</label>
-                <textarea className="w-full min-h-[80px] resize-y p-[11px_13px] border border-[#E0E0DC] bg-white font-sans text-[14px] text-[#091D39] outline-none transition-all focus:border-[#091D39]" placeholder="Descreva o que está acontecendo com o seu benefício..." />
-              </div>
-            <button 
-              type="submit" 
-              className="w-full bg-[#091D39] text-white font-sans text-[12px] font-bold tracking-[0.12em] uppercase p-[14px] mt-[6px] hover:bg-[#0d2548] transition-all cursor-pointer border-none"
-            >
-              Enviar mensagem
-            </button>
-              <div className="text-[11px] text-[#767672] mt-[10px] leading-[1.5]">Em conformidade com o Provimento nº 205/2021 do CFOAB. As informações deste site têm caráter informativo e não constituem consultoria jurídica.</div>
-            </form>
-          </div>
+        <h2 className="font-heading text-[clamp(30px,4.2vw,50px)] font-bold tracking-[-0.03em] leading-tight text-[#091D39]">
+          Algo não está certo no seu benefício?{" "}
+          <span className="text-[#8a6a2b]">Converse com o advogado.</span>
+        </h2>
+
+        <p className="text-[17px] md:text-[18px] text-[#44403C] font-light max-w-[660px] mx-auto leading-relaxed">
+          Envie seu extrato ou relate sua dúvida pelo WhatsApp. Atendimento presencial em Serra/ES e 100% online em todo o Brasil.
+        </p>
+
+        <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-5">
+          <PillButton
+            tone="gold"
+            external
+            href={wppLink(
+              "Olá, Dr. Anderson! Sou aposentado e gostaria de analisar meu benefício do INSS. [ja-aposentado]"
+            )}
+          >
+            Falar pelo WhatsApp agora
+          </PillButton>
+          <Link href="/revisao-de-aposentadoria">
+            <a className="inline-flex items-center gap-2 text-[14px] font-semibold text-[#091D39] hover:text-[#8a6a2b] underline underline-offset-[7px] transition-colors">
+              Ver página de Revisão de Aposentadoria
+              <ArrowRight size={15} />
+            </a>
+          </Link>
         </div>
+
+        <div className="pt-6 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-x-8 gap-y-3 text-[15px] md:text-[16px] text-[#091D39]/85">
+          <a href="tel:+5527992942888" className="inline-flex items-center gap-2 hover:text-[#8a6a2b] transition-colors">
+            <Phone size={17} className="text-[#8a6a2b]" /> {TEL_VISIVEL}
+          </a>
+          <a href={`mailto:${EMAIL}`} className="inline-flex items-center gap-2 hover:text-[#8a6a2b] transition-colors">
+            <Mail size={17} className="text-[#8a6a2b]" /> {EMAIL}
+          </a>
+          <span className="inline-flex items-center gap-2">
+            <MapPin size={17} className="text-[#8a6a2b]" /> Serra/ES · Atendimento presencial e online em todo o Brasil
+          </span>
+        </div>
+
+        <p className="pt-6 text-[13px] text-[#57534E] leading-relaxed max-w-[720px] mx-auto">
+          Em conformidade com o Provimento nº 205/2021 do CFOAB. As informações deste site têm caráter estritamente informativo e educativo, sem promessa de resultado.
+        </p>
       </div>
     </section>
-  );
-}
-
-function FooterV2() {
-  return (
-    <footer className="bg-[#0D0D0D]">
-      <div className="max-w-[1160px] mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-[40px] py-[48px] border-b border-white/10">
-          <div>
-            <div className="text-[18px] font-bold text-[#CFAE70] mb-[4px]">Anderson Litig</div>
-            <div className="text-[11px] text-white/30 mb-[12px]">OAB/ES nº 40.152 &middot; Serra, Espírito Santo</div>
-            <div className="text-[12px] text-white/30 leading-[1.75] pr-4">As informações contidas neste site têm caráter exclusivamente informativo e não constituem consultoria jurídica. Atuação em conformidade com o Provimento nº 205/2021 do CFOAB.</div>
-          </div>
-          <div className="flex flex-col">
-            <h4 className="text-[10px] font-bold tracking-[0.12em] uppercase text-white/30 mb-[14px]">Serviços</h4>
-            <Link href="/v2/aposentar"><a className="text-[13px] text-white/40 mb-[9px] hover:text-[#CFAE70] transition-colors cursor-pointer w-fit">Aposentadorias</a></Link>
-            <Link href="/v2/planejamento"><a className="text-[13px] text-white/40 mb-[9px] hover:text-[#CFAE70] transition-colors cursor-pointer w-fit">Planejamento Previdenciário</a></Link>
-            <Link href="/v2/ja-aposentado#revisao"><a className="text-[13px] text-white/40 mb-[9px] hover:text-[#CFAE70] transition-colors cursor-pointer w-fit">Revisão de Benefício</a></Link>
-            <Link href="/v2/negado"><a className="text-[13px] text-white/40 mb-[9px] hover:text-[#CFAE70] transition-colors cursor-pointer w-fit">Benefício Negado</a></Link>
-            <a href="#" className="text-[13px] text-white/40 mb-[9px] hover:text-[#CFAE70] transition-colors cursor-pointer w-fit">Salário-Maternidade</a>
-            <a href="#" className="text-[13px] text-white/40 mb-[9px] hover:text-[#CFAE70] transition-colors cursor-pointer w-fit">BPC/LOAS</a>
-          </div>
-          <div className="flex flex-col">
-            <h4 className="text-[10px] font-bold tracking-[0.12em] uppercase text-white/30 mb-[14px]">Institucional</h4>
-            <Link href="/v2#sobre"><a className="text-[13px] text-white/40 mb-[9px] hover:text-[#CFAE70] transition-colors cursor-pointer w-fit">Sobre o advogado</a></Link>
-            <a href="#" className="text-[13px] text-white/40 mb-[9px] hover:text-[#CFAE70] transition-colors cursor-pointer w-fit">Blog jurídico</a>
-            <a href="#" className="text-[13px] text-white/40 mb-[9px] hover:text-[#CFAE70] transition-colors cursor-pointer w-fit">Política de privacidade</a>
-            <a href="#contato" className="text-[13px] text-white/40 mb-[9px] hover:text-[#CFAE70] transition-colors cursor-pointer w-fit">Contato</a>
-          </div>
-          <div className="flex flex-col">
-            <h4 className="text-[10px] font-bold tracking-[0.12em] uppercase text-white/30 mb-[14px]">Contato</h4>
-            <a href="https://wa.me/5527999999999" target="_blank" rel="noreferrer" className="text-[13px] text-white/40 mb-[9px] hover:text-[#CFAE70] transition-colors cursor-pointer w-fit">WhatsApp</a>
-            <a href="mailto:contato@andersonlitig.adv.br" className="text-[13px] text-white/40 mb-[9px] hover:text-[#CFAE70] transition-colors cursor-pointer w-fit">E-mail</a>
-            <a href="#" className="text-[13px] text-white/40 mb-[9px] hover:text-[#CFAE70] transition-colors cursor-pointer w-fit">Instagram</a>
-          </div>
-        </div>
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-2 py-[16px] text-[11px] text-white/20">
-          <span>&copy; 2025 Anderson Litig — Advocacia e Consultoria Jurídica</span>
-          <span>OAB/ES 40.152 &middot; Provimento 205/2021 CFOAB</span>
-        </div>
-      </div>
-    </footer>
   );
 }

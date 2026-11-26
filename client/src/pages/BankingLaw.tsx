@@ -134,7 +134,7 @@ export default function BankingLaw() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6">
                   <a 
-                    href="https://wa.me/5527999999999" 
+                    href="https://wa.me/5527992942888" 
                     className="bg-[#CFAE70] text-[#091D39] px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-white transition-all text-center"
                   >
                     Solicitar Auditoria Contratual
@@ -336,7 +336,7 @@ export default function BankingLaw() {
               Nossa equipe realiza auditorias preliminares para identificar juros abusivos e falhas de segurança. Proteja seu patrimônio com suporte técnico rigoroso.
             </p>
             <a 
-              href="https://wa.me/5527999999999" 
+              href="https://wa.me/5527992942888" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-[#091D39] text-white px-10 py-5 font-bold uppercase tracking-widest hover:bg-[#CFAE70] hover:text-[#091D39] transition-all"

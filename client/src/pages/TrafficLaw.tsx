@@ -343,7 +343,7 @@ export default function TrafficLaw() {
               Sua liberdade de dirigir <br /> <span className="text-[#CFAE70]">é o nosso compromisso</span>
             </h2>
             <a 
-              href="https://wa.me/5527999999999" 
+              href="https://wa.me/5527992942888" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-[#091D39] text-white px-10 py-5 font-bold uppercase tracking-widest hover:bg-[#CFAE70] hover:text-[#091D39] transition-all"
